@@ -1,0 +1,28 @@
+#-------------------------------------------------------------------------------
+# Preferred editor for local and remote sessions
+#-------------------------------------------------------------------------------
+
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+#-------------------------------------------------------------------------------
+# Compilation flags
+#-------------------------------------------------------------------------------
+
+# export ARCHFLAGS="-arch x86_64"
+
+#-------------------------------------------------------------------------------
+# For brew cask available options
+# @see. https://github.com/caskroom/homebrew-cask/blob/master/USAGE.md#options
+#-------------------------------------------------------------------------------
+
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+#-------------------------------------------------------------------------------
+# Make sure ANDROID SDK is loaded
+#-------------------------------------------------------------------------------
+
+export ANDROID_HOME=/usr/local/opt/android-sdk

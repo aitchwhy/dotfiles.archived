@@ -1,0 +1,270 @@
+#-------------------------------------------------------------------------------
+# Simple calculator
+# Note that * operator needs to be preceded with \
+#-------------------------------------------------------------------------------
+
+function cal() {
+  local result="";
+  result="$(printf "scale=10;$*\n" | bc --mathlib | tr -d '\\\n')";
+
+  if [[ "$result" == *.* ]]; then
+    # improve the output for decimal numbers
+    printf "$result" |
+    sed -e 's/^\./0./'        `# add "0" for cases like ".5"` \
+        -e 's/^-\./-0./'      `# add "0" for cases like "-.5"`\
+        -e 's/0*$//;s/\.$//';  # remove trailing zeros
+  else
+    printf "$result";
+  fi;
+  printf "\n";
+}
+
+#-------------------------------------------------------------------------------
+# Create a new directory and enter it
+#-------------------------------------------------------------------------------
+
+function mkd() {
+  mkdir -p "$@" && cd "$_";
+}
+
+#-------------------------------------------------------------------------------
+# Open man page as PDF
+#-------------------------------------------------------------------------------
+
+function manpdf() {
+  man -t "${1}" | open -f -a /Applications/Preview.app/
+}
+
+#-------------------------------------------------------------------------------
+# Extract many types of compressed packages
+# Credit: http://nparikh.org/notes/zshrc.txt
+#-------------------------------------------------------------------------------
+
+extract() {
+  if [ -f "$1" ]; then
+    case "$1" in
+      *.tar.bz2)  tar -jxvf "$1"                        ;;
+      *.tar.gz)   tar -zxvf "$1"                        ;;
+      *.bz2)      bunzip2 "$1"                          ;;
+      *.dmg)      hdiutil mount "$1"                    ;;
+      *.gz)       gunzip "$1"                           ;;
+      *.tar)      tar -xvf "$1"                         ;;
+      *.tbz2)     tar -jxvf "$1"                        ;;
+      *.tgz)      tar -zxvf "$1"                        ;;
+      *.zip)      unzip "$1"                            ;;
+      *.ZIP)      unzip "$1"                            ;;
+      *.pax)      cat "$1" | pax -r                     ;;
+      *.pax.Z)    uncompress "$1" --stdout | pax -r     ;;
+      *.Z)        uncompress "$1"                       ;;
+      *) echo "'$1' cannot be extracted/mounted via extract()" ;;
+    esac
+  else
+     echo "'$1' is not a valid file to extract"
+  fi
+}
+
+#-------------------------------------------------------------------------------
+# Determine size of a file or total size of a directory
+#-------------------------------------------------------------------------------
+
+function fs() {
+  if du -b /dev/null > /dev/null 2>&1; then
+    local arg=-sbh;
+  else
+    local arg=-sh;
+  fi
+  if [[ -n "$@" ]]; then
+    du $arg -- "$@";
+  else
+    du $arg .[^.]* ./*;
+  fi;
+}
+
+#-------------------------------------------------------------------------------
+# Create a data URL from a file
+#-------------------------------------------------------------------------------
+
+function dataurl() {
+  local mimeType=$(file -b --mime-type "$1");
+  if [[ $mimeType == text/* ]]; then
+    mimeType="${mimeType};charset=utf-8";
+  fi
+  echo "data:${mimeType};base64,$(openssl base64 -in "$1" | tr -d '\n')";
+}
+
+#-------------------------------------------------------------------------------
+# Start a PHP local server from a directory, optionally specifying the port
+# (Requires PHP 5.4.0+.)
+#-------------------------------------------------------------------------------
+
+function phpserver() {
+  local port="${1:-8000}";
+  local ip=$(ipconfig getifaddr en0);
+  sleep 1 && open "http://${ip}:${port}/" &
+  php -S "${ip}:${port}";
+}
+
+#-------------------------------------------------------------------------------
+# UTF-8-encode a string of Unicode symbols
+#-------------------------------------------------------------------------------
+
+function escape() {
+  printf "\\\x%s" $(printf "$@" | xxd -p -c1 -u);
+  # print a newline unless we’re piping the output to another program
+  if [ -t 1 ]; then
+    echo ""; # newline
+  fi;
+}
+
+#-------------------------------------------------------------------------------
+# Decode \x{ABCD}-style Unicode escape sequences
+#-------------------------------------------------------------------------------
+
+function unidecode() {
+  perl -e "binmode(STDOUT, ':utf8'); print \"$@\"";
+  # print a newline unless we’re piping the output to another program
+  if [ -t 1 ]; then
+    echo ""; # newline
+  fi;
+}
+
+#-------------------------------------------------------------------------------
+# Get a character’s Unicode code point
+#-------------------------------------------------------------------------------
+
+function codepoint() {
+  perl -e "use utf8; print sprintf('U+%04X', ord(\"$@\"))";
+  # print a newline unless we’re piping the output to another program
+  if [ -t 1 ]; then
+    echo ""; # newline
+  fi;
+}
+
+#-------------------------------------------------------------------------------
+# `s` with no arguments opens the current directory in Sublime Text, otherwise
+# opens the given location
+#-------------------------------------------------------------------------------
+
+function s() {
+  if [ $# -eq 0 ]; then
+    subl .;
+  else
+    subl "$@";
+  fi;
+}
+
+#-------------------------------------------------------------------------------
+# `o` with no arguments opens the current directory, otherwise opens the given
+# location
+#-------------------------------------------------------------------------------
+
+function o() {
+  if [ $# -eq 0 ]; then
+    open .;
+  else
+    open "$@";
+  fi;
+}
+
+#-------------------------------------------------------------------------------
+# `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring
+# the `.git` directory, listing directories first. The output gets piped into
+# `less` with options to preserve color and line numbers, unless the output is
+# small enough for one screen.
+#-------------------------------------------------------------------------------
+
+function tre() {
+  tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
+}
+
+#-------------------------------------------------------------------------------
+# Highlight
+#-------------------------------------------------------------------------------
+
+function hl() {
+  if [[ "$1" && "$2" ]]
+    then
+      if [[ -z "$3" ]] then; FONTSIZE=24; else; FONTSIZE=$3; fi;
+      highlight -O rtf $1 --syntax $2 --font D2Coding --style solarized-dark \
+          --font-size $FONTSIZE | pbcopy
+    else
+      echo "\033[31mError: missing required arguments.\033[0m"
+      echo "Usage: "
+      echo "  hl filename syntax [fontsize]"
+    fi
+}
+
+#-------------------------------------------------------------------------------
+# Homestead
+#-------------------------------------------------------------------------------
+
+function homestead() {
+    cd ~/Homestead
+    vagrant $*
+}
+
+#-------------------------------------------------------------------------------
+# Docker
+#-------------------------------------------------------------------------------
+
+function dip() {
+  docker inspect --format '{{ .NetworkSettings.IPAddress }}' "$@"
+}
+
+dsm() {
+	docker stop $1 && docker rm $1
+}
+
+drm() {
+	#docker rm $(docker ps -a -q)
+	docker ps -a -q | xargs docker rm
+}
+
+drmi() {
+	docker images | grep '<none>' | \
+	awk '{ print $3 }' | \
+	xargs docker rmi
+}
+
+drun() {
+	docker run --rm -t -i $@
+}
+
+drund() {
+	docker run -d --name $@ $@
+}
+
+dbash() {
+	if [ $# -lt 1 ] ; then
+	  echo "Please provide a container id or name. Usage: docker-exec-bash <containerIdOrName>"
+	else
+		docker exec -it $1 bash
+	fi
+}
+
+dps() {
+	docker exec $1 ps -f
+}
+
+dlogs() {
+  docker logs -f $1
+}
+
+#-------------------------------------------------------------------------------
+# IP check
+#-------------------------------------------------------------------------------
+
+function myip() {
+  curl -s "http://checkip.dyndns.org/" | grep -o "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]" | head -1
+}
+
+#-------------------------------------------------------------------------------
+# Release Versions
+#-------------------------------------------------------------------------------
+
+function version() {
+  BRANCH=`git rev-parse --abbrev-ref HEAD`
+  HASH=`git show --pretty='format:%h' | head -1`
+  echo $BRANCH~$HASH
+}
+
