@@ -6,7 +6,6 @@ tap 'caskroom/cask'
 tap 'caskroom/fonts'
 tap 'homebrew/php'
 tap 'homebrew/services'
-tap 'homebrew/versions'
 
 #-------------------------------------------------------------------------------
 # Make sure apps get installed in system Applications dir
@@ -40,22 +39,16 @@ brew 'findutils'
 brew 'bash'
 
 #-------------------------------------------------------------------------------
-# Install more recent versions of some OS X tools
-#-------------------------------------------------------------------------------
-
-brew 'homebrew/dupes/grep'
-
-#-------------------------------------------------------------------------------
 # Install Binaries
 #-------------------------------------------------------------------------------
 
+brew 'grep'
 brew 'aws-elasticbeanstalk'
 brew 'git'
 brew 'git-flow'
 brew 'htop'
 brew 'httpie'
 brew 'hub'
-brew 'nano'
 brew 'node@6', args: ['with-full-icu', 'with-npm']
 brew 'openssl'
 brew 'tcpdump'
