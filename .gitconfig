@@ -4,6 +4,7 @@
 
 [core]
 	editor = vim
+	excludesfile = /Users/hank/dotfiles/.gitignore_global
 
 [alias]
 	mylog = log --graph --decorate --pretty=oneline --abbrev-commit --all --date=relative
@@ -18,8 +19,8 @@
 	default = simple
 
 [user]
-	name = foo
-	email = foo@bar.com
+	name = hdd2k
+	email = hank.lee.qed@gmail.com
 
 [filter "lfs"]
 	clean = git-lfs clean %f

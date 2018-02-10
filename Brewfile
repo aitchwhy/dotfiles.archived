@@ -61,6 +61,7 @@ brew 'openssl'
 brew 'tcpdump'
 brew 'tree'
 brew 'wget'
+brew 'fzf'
 
 #-------------------------------------------------------------------------------
 # Development-PHP
