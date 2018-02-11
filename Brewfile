@@ -119,6 +119,7 @@ cask 'istat-menus'
 cask 'slack'
 cask 'postman'
 cask 'keyboard-maestro'
+cask 'flux'
 
 #-------------------------------------------------------------------------------
 # Fonts
