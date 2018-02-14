@@ -47,3 +47,12 @@ Change iterm2 font to one that supports Powerline
 
 Install Google Material color scheme for Iterm2
 - [Google's Material Design Color Palette for Iterm2](https://github.com/MartinSeeler/iterm2-material-design)
+
+
+## References
+- [Copied off of Mesh dotfiles](https://github.com/meshkorea/prime-utility/tree/master/dotfiles)
+- [David Culley - Installing software](https://www.davidculley.com/installing-software-via-homebrew/)
+- [David Culley - Setting up Python env](https://www.davidculley.com/installing-python-on-a-mac/)
+- [Python + Conda workflow](https://tdhopper.com/blog/my-python-environment-workflow-with-conda/)
+- #TODO [Automatically Activate env - AutoEnv](https://github.com/kennethreitz/autoenv)
+- #TODO [Automatically Activate env - DirEnv](https://direnv.net/)

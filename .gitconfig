@@ -4,7 +4,7 @@
 
 [core]
 	editor = vim
-	excludesfile = /Users/hank/dotfiles/.gitignore_global
+	excludesfile = /Users/hanklee/dotfiles/.gitignore_global
 
 [alias]
 	mylog = log --graph --decorate --pretty=oneline --abbrev-commit --all --date=relative
