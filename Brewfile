@@ -43,6 +43,7 @@ brew 'bash'
 #-------------------------------------------------------------------------------
 
 brew 'grep'
+brewk 'parallel'
 brew 'aws-elasticbeanstalk'
 brew 'git'
 brew 'git-flow'
