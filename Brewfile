@@ -120,6 +120,7 @@ cask 'slack'
 cask 'postman'
 cask 'keyboard-maestro'
 cask 'flux'
+cask 'dropbox'
 
 #-------------------------------------------------------------------------------
 # Fonts
