@@ -54,5 +54,4 @@ Install Google Material color scheme for Iterm2
 - [David Culley - Installing software](https://www.davidculley.com/installing-software-via-homebrew/)
 - [David Culley - Setting up Python env](https://www.davidculley.com/installing-python-on-a-mac/)
 - [Python + Conda workflow](https://tdhopper.com/blog/my-python-environment-workflow-with-conda/)
-- #TODO [Automatically Activate env - AutoEnv](https://github.com/kennethreitz/autoenv)
-- #TODO [Automatically Activate env - DirEnv](https://direnv.net/)
+- [Automatically Activate env - AutoEnv](https://github.com/kennethreitz/autoenv)

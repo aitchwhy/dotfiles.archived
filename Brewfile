@@ -42,6 +42,7 @@ brew 'bash'
 # Install Binaries
 #-------------------------------------------------------------------------------
 
+brew 'autoenv'
 brew 'grep'
 brewk 'parallel'
 brew 'aws-elasticbeanstalk'
