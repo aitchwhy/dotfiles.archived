@@ -132,3 +132,4 @@ unset files file;
 
 eval "$(hub alias -s)"
 
+source /usr/local/opt/autoenv/activate.sh
