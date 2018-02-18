@@ -11,6 +11,12 @@ export DOTFILES=$HOME/dotfiles
 export ZSH=$HOME/.oh-my-zsh
 
 #-------------------------------------------------------------------------------
+# Set default EDITOR env var to Path to your Vim binary
+#-------------------------------------------------------------------------------
+
+export EDITOR=$(which vim)
+
+#-------------------------------------------------------------------------------
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -132,4 +138,17 @@ unset files file;
 
 eval "$(hub alias -s)"
 
-source /usr/local/opt/autoenv/activate.sh
+#-------------------------------------------------------------------------------
+# Add Pyenv functionality to ZSH shell
+#-------------------------------------------------------------------------------
+eval "$(pyenv init -)"
+
+#-------------------------------------------------------------------------------
+# Hook direnv binary to shell so it activates on each directory change
+#-------------------------------------------------------------------------------
+eval "$(direnv hook zsh)"
+
+
+
+
+

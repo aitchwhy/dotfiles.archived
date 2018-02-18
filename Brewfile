@@ -42,9 +42,9 @@ brew 'bash'
 # Install Binaries
 #-------------------------------------------------------------------------------
 
-brew 'autoenv'
+brew 'direnv'
 brew 'grep'
-brewk 'parallel'
+brew 'parallel'
 brew 'aws-elasticbeanstalk'
 brew 'git'
 brew 'git-flow'
@@ -88,6 +88,7 @@ brew 'rbenv'
 
 brew 'python', args:['with-sphinx-doc']
 brew 'python3', args:['with-sphinx-doc']
+brew 'pyenv'
 brew 'pyenv-virtualenv'
 
 #-------------------------------------------------------------------------------
