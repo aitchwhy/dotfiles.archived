@@ -68,6 +68,13 @@ sleep 3
 rm -rf fonts
 
 #-------------------------------------------------------------------------------
+# Install oh-my-dir
+#-------------------------------------------------------------------------------
+
+cd $HOME && git clone git@github.com:ajmazurie/oh-my-dir.git && cd ./oh-my-dir && make install
+cd $HOME && rm -rf oh-my-dir
+
+#-------------------------------------------------------------------------------
 # Install & execute profile
 #-------------------------------------------------------------------------------
 
@@ -106,7 +113,7 @@ sudo mv composer.phar /usr/local/bin/composer
 # # brew services start php71 && brew services nginx
 #-------------------------------------------------------------------------------
 
-$HOME/.composer/vendor/bin/valet install
+# $HOME/.composer/vendor/bin/valet install
 # cd $HOME/$CODE_DIR && $HOME/.composer/vendor/bin/valet park
 
 #-------------------------------------------------------------------------------
@@ -142,10 +149,3 @@ sudo easy_install pip
 
 source $HOME/.zshrc
 
-
-#-------------------------------------------------------------------------------
-# Source Data Science related
-#-------------------------------------------------------------------------------
-pyenv install 2.7.13
-pyenv install 3.5.3
-pyenv install 3.6.2
