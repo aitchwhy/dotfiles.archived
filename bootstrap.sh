@@ -107,7 +107,7 @@ sudo mv composer.phar /usr/local/bin/composer
 #-------------------------------------------------------------------------------
 
 $HOME/.composer/vendor/bin/valet install
-cd $HOME/$CODE_DIR && $HOME/.composer/vendor/bin/valet park
+# cd $HOME/$CODE_DIR && $HOME/.composer/vendor/bin/valet park
 
 #-------------------------------------------------------------------------------
 # Install Homestead Repo & Add vagrant box
@@ -123,6 +123,12 @@ cd $HOME/$CODE_DIR && $HOME/.composer/vendor/bin/valet park
 #-------------------------------------------------------------------------------
 
 npm install gulp-cli gulp yo http-server nodemon yarn --global --save
+
+#-------------------------------------------------------------------------------
+# Install Pip + setuptools
+#-------------------------------------------------------------------------------
+
+sudo easy_install pip
 
 #-------------------------------------------------------------------------------
 # Install Rails

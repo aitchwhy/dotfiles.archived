@@ -110,6 +110,8 @@ brew 'sqlite'
 # Apps
 #-------------------------------------------------------------------------------
 
+
+cask 'anaconda'
 cask 'docker'
 cask 'google-chrome'
 cask 'iterm2'
