@@ -184,7 +184,7 @@ function tre() {
 function hl() {
   if [[ "$1" && "$2" ]]
     then
-      if [[ -z "$3" ]] then; FONTSIZE=24; else; FONTSIZE=$3; fi;
+      if [[ -z "$3" ]]; then FONTSIZE=24; else FONTSIZE=$3; fi;
       highlight -O rtf $1 --syntax $2 --font D2Coding --style solarized-dark \
           --font-size $FONTSIZE | pbcopy
     else
