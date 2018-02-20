@@ -71,8 +71,8 @@ rm -rf fonts
 # Install oh-my-dir
 #-------------------------------------------------------------------------------
 
-cd $HOME && git clone git@github.com:ajmazurie/oh-my-dir.git && cd ./oh-my-dir && make install
-cd $HOME && rm -rf oh-my-dir
+# cd $HOME && git clone git@github.com:ajmazurie/oh-my-dir.git && cd ./oh-my-dir && make install
+# cd $HOME && rm -rf oh-my-dir
 
 #-------------------------------------------------------------------------------
 # Install & execute profile
