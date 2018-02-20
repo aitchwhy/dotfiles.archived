@@ -84,12 +84,14 @@ brew 'rbenv'
 
 #-------------------------------------------------------------------------------
 # Development-Python (includes pip, easy_install)
+# ... Also jupyter for jupyter notebook
 #-------------------------------------------------------------------------------
 
 brew 'python', args:['with-sphinx-doc']
 brew 'python3', args:['with-sphinx-doc']
 brew 'pyenv'
 brew 'pyenv-virtualenv'
+brew 'jupyter'
 
 #-------------------------------------------------------------------------------
 # Development-Go

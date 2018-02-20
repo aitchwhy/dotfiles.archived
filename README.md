@@ -21,7 +21,7 @@ Generate appropriate SSH key pairs on Github (or other repository service)
 
 ## 3. Install dotfiles setup
 
-Make sure the dotfiles directory is downloaded to HOME directory
+Make sure the dotfiles directory is downloaded to $HOME directory
 
 ## 4. Run dotfiles setup
 
@@ -61,3 +61,4 @@ Install Google Material color scheme for Iterm2
 - [Python + Conda workflow](https://tdhopper.com/blog/my-python-environment-workflow-with-conda/)
 - [Automatically Activate env - Direnv](https://direnv.net/)
 - [Python per-project versions and environments](https://mike.place/2017/python-pyenv/)
+- [Shell command 'expect' for automating interactive programs for ID / PW](https://likegeeks.com/expect-command/)
