@@ -46,7 +46,10 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$DOTFILES/bin:$PATH"
 
 #-------------------------------------------------------------------------------
-# Anaconda paths
+# pipsi paths
 #-------------------------------------------------------------------------------
+export PATH=/Users/hanklee/.local/bin:$PATH
 
-export PATH="/usr/local/anaconda3/bin:$PATH"
+
+
+
