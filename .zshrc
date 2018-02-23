@@ -113,12 +113,6 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(git git-extras hub httpie npm composer rails)
 
 #-------------------------------------------------------------------------------
-# Activate Oh-My-Zsh
-#-------------------------------------------------------------------------------
-
-source $ZSH/oh-my-zsh.sh
-
-#-------------------------------------------------------------------------------
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
@@ -146,9 +140,12 @@ eval "$(pyenv init -)"
 #-------------------------------------------------------------------------------
 # Hook direnv binary to shell so it activates on each directory change
 #-------------------------------------------------------------------------------
-eval "$(direnv hook zsh)"
+# eval "$(direnv hook zsh)"
 
+#-------------------------------------------------------------------------------
+# Activate Oh-My-Zsh
+#-------------------------------------------------------------------------------
 
-
+source $ZSH/oh-my-zsh.sh
 
 
