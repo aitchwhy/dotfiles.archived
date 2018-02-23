@@ -2,6 +2,14 @@
 
 Environment setup files for OSX setup
 
+
+TODOS
+- [ ] Oh-My-Zsh install automatically exits (currently not exiting after installation)
+- [ ] brew bundle (Brewfile) add options to check existing installations
+- [ ] virtual env settings + automation + direnv (https://mike.place/2017/python-pyenv/)
+- [ ] pipenv workflow (https://jacobian.org/writing/python-environment-2018/)
+- [ ] Fix bash / zsh error script (originates from oh-my-zsh)
+
 ## 1. Xcode Installation + other App Store apps
 
 Need to install Xcode CLI tools.  Install them from the App Store
