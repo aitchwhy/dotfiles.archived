@@ -56,7 +56,6 @@ Install Google Material color scheme for Iterm2
 
 ## Notes
 
-
 ### Python environment setup
 
 *python, pip, virtualenv*
@@ -66,6 +65,12 @@ Install Google Material color scheme for Iterm2
 - [pipsi](https://github.com/mitsuhiko/pipsi)
     - PIP Script Installer (pipsi)
     - Wrapper(virtualenv, pip) ---> Separate virtualenv installs for Python-based-CLI programs (ex: awscli, pipenv, etc)
+    - Bugs! (02/23/18)
+        - [pipsi fails - no 'virtualenv' file](https://github.com/mitsuhiko/pipsi/issues/125)
+            - Must install using `master` branch
+            - `$ python get-pipsi.py --src=git+https://github.com/mitsuhiko/pipsi.git#egg=pipsi`
+        - [pipsi list fails - no 'package_info.json'](https://github.com/mitsuhiko/pipsi/issues/124)
+            - Edit pipsi virtualenvs file
 - [pipenv](https://github.com/pypa/pipenv)
     - Python Packaging tool
     - pip + virtualenv used together!
@@ -75,6 +80,8 @@ Install Google Material color scheme for Iterm2
 
 *data science libraries*
 
+- pipenv install tensorflow
+- pipenv install keras
 
 ## Helpful References
 - [Copied off of Mesh dotfiles](https://github.com/meshkorea/prime-utility/tree/master/dotfiles)
