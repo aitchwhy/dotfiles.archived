@@ -54,11 +54,29 @@ Install Google Material color scheme for Iterm2
 - [Google's Material Design Color Palette for Iterm2](https://github.com/MartinSeeler/iterm2-material-design)
 
 
-## References
+## Notes
+
+
+### Python environment setup
+
+*python, pip, virtualenv*
+
+- [pyenv](https://github.com/pyenv/pyenv)
+    - Manages + installs (global / local) Python versions (+pip)
+- [pipsi](https://github.com/mitsuhiko/pipsi)
+    - PIP Script Installer (pipsi)
+    - Wrapper(virtualenv, pip) ---> Separate virtualenv installs for Python-based-CLI programs (ex: awscli, pipenv, etc)
+- [pipenv](https://github.com/pypa/pipenv)
+    - Python Packaging tool
+    - pip + virtualenv used together!
+    - Hashes everywhere for security
+    - Pipfile.lock ensures deterministic builds
+    - Shows Dependency graph ($ pipenv graph)
+
+*data science libraries*
+
+
+## Helpful References
 - [Copied off of Mesh dotfiles](https://github.com/meshkorea/prime-utility/tree/master/dotfiles)
-- [David Culley - Installing software](https://www.davidculley.com/installing-software-via-homebrew/)
-- [David Culley - Setting up Python env](https://www.davidculley.com/installing-python-on-a-mac/)
-- [Python + Conda workflow](https://tdhopper.com/blog/my-python-environment-workflow-with-conda/)
+- [Python Environment Setup](https://jacobian.org/writing/python-environment-2018/)
 - [Automatically Activate env - Direnv](https://direnv.net/)
-- [Python per-project versions and environments](https://mike.place/2017/python-pyenv/)
-- [Shell command 'expect' for automating interactive programs for ID / PW](https://likegeeks.com/expect-command/)
