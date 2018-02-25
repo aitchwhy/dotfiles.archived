@@ -133,9 +133,29 @@ unset files file;
 eval "$(hub alias -s)"
 
 #-------------------------------------------------------------------------------
-# Add Pyenv functionality to ZSH shell
+# Add Pyenv functionality to ZSH shell + pyenv setup
+# Also install pipsi, pipenv
 #-------------------------------------------------------------------------------
 eval "$(pyenv init -)"
+
+pyenv install 3.6.4
+pyenv install 3.5.4
+pyenv install 2.7.14
+pyenv global 3.6.4
+
+# pipsi from github source
+curl -O https://raw.githubusercontent.com/mitsuhiko/pipsi/master/get-pipsi.py
+python get-pipsi.py --src=git+https://github.com/mitsuhiko/pipsi.git#egg=pipsi
+rm get-pipsi.py
+
+
+# Append pipsi list fail fix workaround
+rm $HOME/.local/venvs/pipsi/package_info.json
+echo '{"name": "pipsi", "version": "0.10.dev", "scripts": ["/Users/jacobkaplan-moss/.local/bin/pipsi"]}' > $HOME/.local/venvs/pipsi/package_info.json
+
+# pipenv
+pipsi install pew
+pipsi install pipenv
 
 #-------------------------------------------------------------------------------
 # Hook direnv binary to shell so it activates on each directory change

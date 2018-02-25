@@ -90,6 +90,7 @@ Install Google Material color scheme for Iterm2
 
 - pipenv install tensorflow
 - pipenv install keras
+- [How to install python packages from Jupyter notebook](https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyter/)
 
 ## Helpful References
 - [Copied off of Mesh dotfiles](https://github.com/meshkorea/prime-utility/tree/master/dotfiles)
