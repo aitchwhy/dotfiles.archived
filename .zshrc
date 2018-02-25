@@ -138,11 +138,6 @@ eval "$(hub alias -s)"
 #-------------------------------------------------------------------------------
 eval "$(pyenv init -)"
 
-pyenv install 3.6.4
-pyenv install 3.5.4
-pyenv install 2.7.14
-pyenv global 3.6.4
-
 # pipsi from github source
 curl -O https://raw.githubusercontent.com/mitsuhiko/pipsi/master/get-pipsi.py
 python get-pipsi.py --src=git+https://github.com/mitsuhiko/pipsi.git#egg=pipsi
