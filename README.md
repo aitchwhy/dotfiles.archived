@@ -94,4 +94,5 @@ Install Google Material color scheme for Iterm2
 ## Helpful References
 - [Copied off of Mesh dotfiles](https://github.com/meshkorea/prime-utility/tree/master/dotfiles)
 - [Python Environment Setup](https://jacobian.org/writing/python-environment-2018/)
+- [system python VS conda python VS pip python VS Jupyter Kernel Python](https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyter/)
 - [Automatically Activate env - Direnv](https://direnv.net/)
