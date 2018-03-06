@@ -110,7 +110,6 @@ brew 'sqlite'
 # Apps
 #-------------------------------------------------------------------------------
 
-cask 'private-internet-access'
 cask 'anaconda'
 cask 'docker'
 cask 'google-chrome'
