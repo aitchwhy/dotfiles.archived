@@ -48,7 +48,7 @@ export PATH="$DOTFILES/bin:$PATH"
 #-------------------------------------------------------------------------------
 # pipsi paths
 #-------------------------------------------------------------------------------
-export PATH=/Users/hanklee/.local/bin:$PATH
+export PATH="$HOME/.local/bin:$PATH"
 
 
 
