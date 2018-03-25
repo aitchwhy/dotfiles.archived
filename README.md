@@ -62,6 +62,12 @@ Install Google Material color scheme for Iterm2
 - [Google's Material Design Color Palette for Iterm2](https://github.com/MartinSeeler/iterm2-material-design)
 
 
+## 6. Intellij Setup
+
+- Color theme (Editor) : [Obsidian theme](http://color-themes.com/?view=theme&id=563a1a6180b4acf11273ae3d)
+- Setup Intellij Plugin : IdeaVim, Material Theme UI
+
+
 ## Notes
 
 ### Python environment setup
