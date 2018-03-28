@@ -46,6 +46,7 @@ brew 'direnv'
 brew 'grep'
 brew 'parallel'
 brew 'aws-elasticbeanstalk'
+brew 'awslogs'
 brew 'git'
 brew 'git-flow'
 brew 'htop'
@@ -118,7 +119,6 @@ brew 'sqlite'
 # Apps
 #-------------------------------------------------------------------------------
 
-cask 'cleanmymac'
 cask 'ngrok'
 cask 'anaconda'
 cask 'docker'
