@@ -118,6 +118,7 @@ brew 'sqlite'
 # Apps
 #-------------------------------------------------------------------------------
 
+cask 'cleanmymac'
 cask 'ngrok'
 cask 'anaconda'
 cask 'docker'
