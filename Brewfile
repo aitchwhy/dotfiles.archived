@@ -119,6 +119,7 @@ brew 'sqlite'
 # Apps
 #-------------------------------------------------------------------------------
 
+cask 'cheatsheet'
 cask 'ngrok'
 cask 'anaconda'
 cask 'docker'
