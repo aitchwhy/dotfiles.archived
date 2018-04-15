@@ -58,6 +58,7 @@ brew 'tcpdump'
 brew 'tree'
 brew 'wget'
 brew 'fzf'
+brew 'ag'
 
 #-------------------------------------------------------------------------------
 # Development-PHP
