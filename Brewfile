@@ -59,6 +59,7 @@ brew 'tree'
 brew 'wget'
 brew 'fzf'
 brew 'ag'
+brew 'cmake'
 
 #-------------------------------------------------------------------------------
 # Development-PHP
