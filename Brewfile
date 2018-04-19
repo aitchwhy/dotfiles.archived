@@ -42,6 +42,7 @@ brew 'bash'
 # Install Binaries
 #-------------------------------------------------------------------------------
 
+brew 'jq'
 brew 'direnv'
 brew 'grep'
 brew 'parallel'
