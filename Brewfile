@@ -122,6 +122,7 @@ brew 'sqlite'
 # Apps
 #-------------------------------------------------------------------------------
 
+cask 'dbschema'
 cask 'mactex'
 cask 'cheatsheet'
 cask 'ngrok'
