@@ -42,6 +42,7 @@ brew 'bash'
 # Install Binaries
 #-------------------------------------------------------------------------------
 
+brew 'mutt' # CLI email util (for crontab)
 brew 'jq'
 brew 'direnv'
 brew 'grep'
