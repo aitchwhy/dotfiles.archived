@@ -123,6 +123,7 @@ brew 'sqlite'
 # Apps
 #-------------------------------------------------------------------------------
 
+cask 'time-out'
 cask 'dbschema'
 cask 'mactex'
 cask 'cheatsheet'
