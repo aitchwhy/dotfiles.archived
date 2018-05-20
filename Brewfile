@@ -42,6 +42,7 @@ brew 'bash'
 # Install Binaries
 #------------------------------------------------------------------------------
 
+brew 'fasd' # Navigation
 brew 'macvim'
 brew 'mutt' # CLI email util (for crontab)
 brew 'jq'
