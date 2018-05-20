@@ -20,7 +20,7 @@ export PATH="$(brew --prefix homebrew/php/php71)/bin:$PATH"
 # Make sure coreutils are loaded before system commands
 #-------------------------------------------------------------------------------
 
-# PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
 #-------------------------------------------------------------------------------
 # Local bin directories before anything else
@@ -49,7 +49,4 @@ export PATH="$DOTFILES/bin:$PATH"
 # pipsi paths
 #-------------------------------------------------------------------------------
 export PATH="$HOME/.local/bin:$PATH"
-
-
-
 
