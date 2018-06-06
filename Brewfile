@@ -125,6 +125,7 @@ brew 'sqlite'
 # Apps
 #-------------------------------------------------------------------------------
 
+cask 'dashlane'
 cask 'time-out'
 cask 'dbschema'
 cask 'mactex'
