@@ -56,7 +56,7 @@ brew 'git-flow'
 brew 'htop'
 brew 'httpie'
 brew 'hub'
-brew 'node@6', args: ['with-full-icu', 'with-npm']
+brew 'node', args: ['with-full-icu', 'with-npm']
 brew 'openssl'
 brew 'tcpdump'
 brew 'tree'
