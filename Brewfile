@@ -126,6 +126,7 @@ brew 'sqlite'
 #-------------------------------------------------------------------------------
 
 cask 'dashlane'
+cask 'fantastical'
 cask 'time-out'
 cask 'dbschema'
 cask 'mactex'
