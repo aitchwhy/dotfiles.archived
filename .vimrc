@@ -557,3 +557,11 @@ else
   let g:airline_symbols.readonly = ''
   let g:airline_symbols.linenr = ''
 endif
+
+
+"*****************************************************************************
+"" Delimit (surrounding parens + etc) setting
+"*****************************************************************************
+
+let delimitMate_expand_cr = 1
+let delimitMate_expand_space = 1
