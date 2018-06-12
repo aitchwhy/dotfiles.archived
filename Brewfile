@@ -125,6 +125,7 @@ brew 'sqlite'
 # Apps
 #-------------------------------------------------------------------------------
 
+cask 'spotify'
 cask 'dashlane'
 cask 'fantastical'
 cask 'time-out'
