@@ -125,6 +125,7 @@ brew 'sqlite'
 # Apps
 #-------------------------------------------------------------------------------
 
+cask 'visual-studio-code'
 cask 'spotify'
 cask 'dashlane'
 cask 'fantastical'
