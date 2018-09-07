@@ -42,6 +42,7 @@ brew 'bash'
 # Install Binaries
 #------------------------------------------------------------------------------
 
+brew 'nvm' # Node version manager
 brew 'fasd' # Navigation
 brew 'macvim'
 brew 'mutt' # CLI email util (for crontab)
@@ -125,6 +126,8 @@ brew 'sqlite'
 # Apps
 #-------------------------------------------------------------------------------
 
+cask 'visual-studio-code'
+cask 'spotify'
 cask 'dashlane'
 cask 'fantastical'
 cask 'time-out'
