@@ -14,13 +14,15 @@ PATH="node_modules/.bin:vendor/bin:$PATH"
 # Make sure PHP 7 is loaded
 #-------------------------------------------------------------------------------
 
-export PATH="$(brew --prefix homebrew/php/php71)/bin:$PATH"
+#export PATH="$(brew --prefix homebrew/php/php71)/bin:$PATH"
 
 #-------------------------------------------------------------------------------
 # Make sure coreutils are loaded before system commands
 #-------------------------------------------------------------------------------
 
-PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+# TODO: below is too slow!!! (0.5 ~ 0.8 sec) for (brew --prefix)
+# PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
 #-------------------------------------------------------------------------------
 # Local bin directories before anything else
@@ -31,13 +33,13 @@ PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 # Composer
 #-------------------------------------------------------------------------------
 
-PATH="$PATH:$HOME/.composer/vendor/bin"
+#PATH="$PATH:$HOME/.composer/vendor/bin"
 
 #-------------------------------------------------------------------------------
 # Add RVM to PATH for scripting
 #-------------------------------------------------------------------------------
 
-export PATH="$PATH:$HOME/.rvm/bin"
+#export PATH="$PATH:$HOME/.rvm/bin"
 
 #-------------------------------------------------------------------------------
 # Load custom commands
@@ -49,4 +51,9 @@ export PATH="$DOTFILES/bin:$PATH"
 # pipsi paths
 #-------------------------------------------------------------------------------
 export PATH="$HOME/.local/bin:$PATH"
+
+#-------------------------------------------------------------------------------
+# Conda path
+#-------------------------------------------------------------------------------
+export PATH="$HOME/workspace/anaconda3/bin:$PATH"
 

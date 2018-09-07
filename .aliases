@@ -41,3 +41,13 @@ alias serve="php artisan serve"
 #-------------------------------------------------------------------------------
 
 alias dc="docker-compose"
+
+
+#-------------------------------------------------------------------------------
+# Improving CLI toolset - https://remysharp.com/2018/08/23/cli-improved
+#-------------------------------------------------------------------------------
+
+alias cat='bat'
+alias ping='prettyping --nolegend'
+alias help='tldr'
+alias du='ncdu --color dark -rr -x --exclude .git'

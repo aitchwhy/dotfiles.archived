@@ -33,3 +33,10 @@ export ANDROID_HOME=/usr/local/opt/android-sdk
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+#-------------------------------------------------------------------------------
+# FZF settings (https://mike.place/2017/fzf-fd/)
+#-------------------------------------------------------------------------------
+export FZF_DEFAULT_COMMAND="fd . --hidden $HOME"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd -t d . $HOME"

@@ -30,7 +30,8 @@ export POWERLINE_DISABLE_RPROMPT="true"
 POWERLINE_PATH="short"
 POWERLINE_DETECT_SSH="true"
 
-export ZSH_THEME="powerline"
+# export ZSH_THEME="powerline"
+export ZSH_THEME="agnoster"
 
 #-------------------------------------------------------------------------------
 # Uncomment the following line to use case-sensitive completion.
@@ -110,7 +111,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 #-------------------------------------------------------------------------------
 
-plugins=(git git-extras hub httpie npm composer rails)
+plugins=(git git-extras httpie)
 
 #-------------------------------------------------------------------------------
 # Load the shell dotfiles, and then some:
@@ -118,7 +119,13 @@ plugins=(git git-extras hub httpie npm composer rails)
 # * ~/.extra can be used for other settings you don’t want to commit.
 #-------------------------------------------------------------------------------
 
-files=("$DOTFILES/.path" "$DOTFILES/.export" "$DOTFILES/.aliases" "$DOTFILES/.functions" "$DOTFILES/.extra");
+files=(
+    "$DOTFILES/.path"
+    "$DOTFILES/.export"
+    "$DOTFILES/.aliases"
+    "$DOTFILES/.functions"
+    "$DOTFILES/.extra"
+    );
 
 for file in "${files[@]}"; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
@@ -146,12 +153,11 @@ eval "$(fasd --init auto)"
 #-------------------------------------------------------------------------------
 # Hook direnv binary to shell so it activates on each directory change
 #-------------------------------------------------------------------------------
-# eval "$(direnv hook zsh)"
+eval "$(direnv hook zsh)"
 
 #-------------------------------------------------------------------------------
 # Activate Oh-My-Zsh
 #-------------------------------------------------------------------------------
-
 source $ZSH/oh-my-zsh.sh
 
-
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -1,8 +1,9 @@
 "*****************************************************************************
 "" Vim-PLug core
 "*****************************************************************************
+" True on startup / False on running ---> check for when .vimrc manually sourced
 if has('vim_starting')
-  set nocompatible               " Be iMproved
+  set nocompatible
 endif
 
 let vimplug_exists=expand('~/.vim/autoload/plug.vim')
@@ -25,49 +26,95 @@ call plug#begin(expand('~/.vim/plugged'))
 "*****************************************************************************
 "" Plug install packages
 "*****************************************************************************
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Navigation
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Code Tagging
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" autotag: automatically regenerate tags for a file when written
+Plug 'craigemery/vim-autotag'
+" Overview of tags in current file (for ctags generated tags)
+Plug 'majutsushi/tagbar'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Code editing + commenting
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Commenting
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
+" Quoting / paren made simple (tpope)
 Plug 'tpope/vim-surround'
-Plug 'ctrlpvim/ctrlp.vim'
+" Repeat (.) for tpope plugins (tpope)
+Plug 'tpope/vim-repeat'
+" Fuzzy search for vim (+ shell FZF install)
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+" Automatic closing of quotes, etc
+Plug 'Raimondi/delimitMate'
+" Tabular lining up text
+Plug 'godlygeek/tabular'
+" Multiple cursors (Sublime-style)
+Plug 'terryma/vim-multiple-cursors'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Autocompletion + Snippets
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Autocompletion
+Plug 'Valloric/YouCompleteMe'
+" Snippet Engine
+Plug 'SirVer/ultisnips'
+" Actual Snippets collection for Engine usage
+Plug 'honza/vim-snippets'
+" SuperTab -> make YouCompleteMe compatible with Ultisnips
+Plug 'ervandew/supertab'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntax Linting / Highlighting / checking / error checking
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Async (vim 8) Linting Engine (will detect each language system installed linters)
+Plug 'w0rp/ale'
+" Vim syntax language packs
+Plug 'sheerun/vim-polyglot'
+" JS + JSX syntax plugins
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+" Highlight trailing whitespace
+Plug 'bronson/vim-trailing-whitespace'
+" Shows indent level with thin vertical lines
+Plug 'Yggdroot/indentLine'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" StatusLine
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Util
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Git wrapper
+Plug 'tpope/vim-fugitive'
+" Git gutter (left-side shows diff style)
 Plug 'airblade/vim-gitgutter'
-Plug 'vim-scripts/grep.vim'
+" Colorscheme approx (gvim only colors on terminal)
 Plug 'vim-scripts/CSApprox'
-Plug 'bronson/vim-trailing-whitespace'
-Plug 'Raimondi/delimitMate'
-Plug 'majutsushi/tagbar'
-Plug 'scrooloose/syntastic'
-Plug 'Yggdroot/indentLine'
-Plug 'avelino/vim-bootstrap-updater'
-Plug 'sheerun/vim-polyglot'
-
-let g:make = 'gmake'
-if exists('make')
-        let g:make = 'make'
-endif
-Plug 'Shougo/vimproc.vim', {'do': g:make}
-
-"" Vim-Session
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
-
-if v:version >= 703
-  Plug 'Shougo/vimshell.vim'
-endif
-
-if v:version >= 704
-  "" Snippets
-  Plug 'SirVer/ultisnips'
-  Plug 'FelikZ/ctrlp-py-matcher'
-endif
-
-Plug 'honza/vim-snippets'
-
 "" Color
 Plug 'tomasr/molokai'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Sessions (persist / restore vim editing sessions)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Extends Vim session command (:mksession)
+Plug 'xolox/vim-session'
+Plug 'xolox/vim-misc'
+" Use (:Obsess) to save session
+Plug 'tpope/vim-obsession'
+" Fancy start screen for Vim
+Plug 'mhinz/vim-startify'
 
 "*****************************************************************************
 "" Custom bundles
@@ -79,25 +126,6 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'gorodinskiy/vim-coloresque'
 Plug 'tpope/vim-haml'
 Plug 'mattn/emmet-vim'
-
-
-" javascript
-"" Javascript Bundle
-Plug 'jelera/vim-javascript-syntax'
-
-
-" php
-"" PHP Bundle
-Plug 'arnaud-lb/vim-php-namespace'
-
-
-" ruby
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rake'
-Plug 'tpope/vim-projectionist'
-Plug 'thoughtbot/vim-rspec'
-Plug 'ecomba/vim-ruby-refactoring'
-
 
 "*****************************************************************************
 "*****************************************************************************
@@ -120,8 +148,9 @@ filetype plugin indent on
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
-set bomb
-set binary
+" if set, Vim puts "Byte Order Mark" (BOM) at start of Unicode files
+" set bomb
+" fast terminal redrawing
 set ttyfast
 
 "" Fix backspace indent
@@ -151,7 +180,7 @@ set noswapfile
 
 set fileformats=unix,dos,mac
 set showcmd
-set shell=/bin/sh
+set shell=/usr/local/bin/zsh
 
 " session management
 let g:session_directory = "~/.vim/session"
@@ -264,14 +293,10 @@ nnoremap <silent> <F2> :NERDTreeFind<CR>
 noremap <F3> :NERDTreeToggle<CR>
 
 " grep.vim
-nnoremap <silent> <leader>f :Rgrep<CR>
-let Grep_Default_Options = '-IR'
-let Grep_Skip_Files = '*.log *.db'
-let Grep_Skip_Dirs = '.git node_modules'
-
-" vimshell.vim
-let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
-let g:vimshell_prompt =  '$ '
+" nnoremap <silent> <leader>f :Rgrep<CR>
+" let Grep_Default_Options = '-IR'
+" let Grep_Skip_Files = '*.log *.db'
+" let Grep_Skip_Dirs = '.git node_modules'
 
 " terminal emulation
 if g:vim_bootstrap_editor == 'nvim'
@@ -359,14 +384,13 @@ noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 "" Opens a tab edit command with the path of the currently edited file filled
 noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
-"" ctrlp.vim
-set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|tox|ico|git|hg|svn))$'
-let g:ctrlp_user_command = "find %s -type f | grep -Ev '"+ g:ctrlp_custom_ignore +"'"
-let g:ctrlp_use_caching = 1
+""" fzf bindings
+nmap ; :Buffers<CR>
+nmap <Leader>f :Files<CR>
+nmap <Leader>t :Tags<CR>
+nmap <Leader>m :Marks<CR>
 
-" The Silver Searcher
+" Use Ag for Vim external search
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
@@ -379,10 +403,14 @@ let g:ctrlp_map = '<leader>e'
 let g:ctrlp_open_new_file = 'r'
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 
-" snippets
+" Snippets (SuperTab) to make YouCompleteMe compatible with Ultisnips (https://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
 
 " syntastic
@@ -431,11 +459,13 @@ noremap <leader>c :bd<CR>
 "" Clean search (highlight)
 nnoremap <silent> <leader><space> :noh<cr>
 
-"" Switching windows
+"" Switching windows + resizing
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 noremap <C-h> <C-w>h
+nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> - :exe "resize " . (winheight(0) * 2/3)<CR>
 
 "" Vmap for maintain Visual Mode after shifting > and <
 vmap < <gv
@@ -456,7 +486,6 @@ nnoremap <Leader>o :.Gbrowse<CR>
 " for html files, 2 spaces
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
 
-
 " javascript
 let g:javascript_enable_domhtmlcss = 1
 
@@ -465,10 +494,6 @@ augroup vimrc-javascript
   autocmd!
   autocmd FileType javascript set tabstop=4|set shiftwidth=4|set expandtab softtabstop=4 smartindent
 augroup END
-
-
-" php
-
 
 " ruby
 let g:rubycomplete_buffer_loading = 1
@@ -491,24 +516,6 @@ let g:tagbar_type_ruby = {
         \ 'F:singleton methods'
     \ ]
 \ }
-
-" RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
-
-" Ruby refactory
-nnoremap <leader>rap  :RAddParameter<cr>
-nnoremap <leader>rcpc :RConvertPostConditional<cr>
-nnoremap <leader>rel  :RExtractLet<cr>
-vnoremap <leader>rec  :RExtractConstant<cr>
-vnoremap <leader>relv :RExtractLocalVariable<cr>
-nnoremap <leader>rit  :RInlineTemp<cr>
-vnoremap <leader>rrlv :RRenameLocalVariable<cr>
-vnoremap <leader>rriv :RRenameInstanceVariable<cr>
-vnoremap <leader>rem  :RExtractMethod<cr>
-
 
 "*****************************************************************************
 "*****************************************************************************
