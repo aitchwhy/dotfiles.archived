@@ -42,16 +42,29 @@ brew 'bash'
 # Install Binaries
 #------------------------------------------------------------------------------
 
-brew 'nvm' # Node version manager
-brew 'fasd' # Navigation
-brew 'macvim'
-brew 'mutt' # CLI email util (for crontab)
+brew 'tldr'                                      # Simplified to 'man' pages
+brew 'ncdu'                                      # Upgrade to 'du'
+brew 'fd'                                        # Upgrade to 'find'
+brew 'graphviz'                                  # Graph visualizations
+brew 'diff-so-fancy'                             # 'diff' upgrade for Git usage
+brew 'bat'                                       # 'cat' upgrade
+brew 'ctags'                                     # tags for Project navigation
+brew 'nginx'                                     # web server
+brew 'postgresql'                                # DBMS
+brew 'dnsmasq'                                   # lightweight DNS forwarder + DHCP server
+brew 'prettyping'                                # Pretty ping (simple, colorized output)
+brew 'tmux'                                      # terminal multiplexing
+brew 'ripgrep'                                   # fast search
+brew 'nvm'                                       # Node version manager
+brew 'fasd'                                      # Navigation
+brew 'mutt'                                      # CLI email util (for crontab)
 brew 'jq'
 brew 'direnv'
 brew 'grep'
 brew 'parallel'
 brew 'aws-elasticbeanstalk'
 brew 'awslogs'
+brew 'awscli'
 brew 'git'
 brew 'git-flow'
 brew 'htop'
@@ -74,14 +87,14 @@ brew 'cmake'
 # --with-httpd24 option. See  brew options php71  for more details.
 #-------------------------------------------------------------------------------
 
-brew 'php71' #, args: ['without-apache']
-brew 'php71-intl'
-brew 'php71-redis'
-brew 'php71-xdebug'
-brew 'phpdocumentor'
-brew 'composer'
-brew 'phpunit'
-brew 'php-cs-fixer'
+# brew 'php71' #, args: ['without-apache']
+# brew 'php71-intl'
+# brew 'php71-redis'
+# brew 'php71-xdebug'
+# brew 'phpdocumentor'
+# brew 'composer'
+# brew 'phpunit'
+# brew 'php-cs-fixer'
 
 #-------------------------------------------------------------------------------
 # Development-Ruby
