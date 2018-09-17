@@ -59,6 +59,7 @@ brew 'nvm'                                       # Node version manager
 brew 'fasd'                                      # Navigation
 brew 'mutt'                                      # CLI email util (for crontab)
 brew 'jq'
+brew 'cscope'                                    # Ctags complement for tagged code
 brew 'direnv'
 brew 'grep'
 brew 'parallel'
