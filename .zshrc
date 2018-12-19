@@ -62,7 +62,7 @@ export UPDATE_ZSH_DAYS=7
 # Uncomment the following line to disable colors in ls.
 #-------------------------------------------------------------------------------
 
-# DISABLE_LS_COLORS="true"
+DISABLE_LS_COLORS="true"
 
 #-------------------------------------------------------------------------------
 # Uncomment the following line to disable auto-setting terminal title.
@@ -118,7 +118,6 @@ plugins=(git git-extras httpie)
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
 #-------------------------------------------------------------------------------
-
 files=(
     "$DOTFILES/.path"
     "$DOTFILES/.export"

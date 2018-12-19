@@ -8,6 +8,12 @@ alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 alias ll="$(brew --prefix coreutils)/libexec/gnubin/ls -ahlF --color --group-directories-first"
 
 #-------------------------------------------------------------------------------
+# ls command colorized output setting
+#-------------------------------------------------------------------------------
+
+alias ls='ls --color=auto'
+
+#-------------------------------------------------------------------------------
 # Recursively remove .DS_Store files
 #-------------------------------------------------------------------------------
 
