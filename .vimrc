@@ -30,8 +30,10 @@ call plug#begin(expand('~/.vim/plugged'))
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Navigation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'scrooloose/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
+" Netrw boost (split file explorer ... OPPOSITE OF NERDTREE project drawer)
+Plug 'tpope/vim-vinegar'
+" Add marker to each mark
+Plug 'kshenoy/vim-signature'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Code Tagging
@@ -280,18 +282,6 @@ cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Qall qall
 
-"" NERDTree configuration
-let g:NERDTreeChDirMode=2
-let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
-let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
-let g:NERDTreeShowBookmarks=1
-let g:nerdtree_tabs_focus_on_files=1
-let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
-let g:NERDTreeWinSize = 50
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
-nnoremap <silent> <F2> :NERDTreeFind<CR>
-noremap <F3> :NERDTreeToggle<CR>
-
 " grep.vim
 " nnoremap <silent> <leader>f :Rgrep<CR>
 " let Grep_Default_Options = '-IR'
@@ -464,8 +454,6 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 noremap <C-h> <C-w>h
-nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2)<CR>
-nnoremap <silent> - :exe "resize " . (winheight(0) * 2/3)<CR>
 
 "" Vmap for maintain Visual Mode after shifting > and <
 vmap < <gv
