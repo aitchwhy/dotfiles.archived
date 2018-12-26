@@ -267,6 +267,9 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline_skip_empty_sections = 1
 
+" Netrw setting (highlight)
+let g:netrw_special_syntax= 1
+
 "*****************************************************************************
 "" Abbreviations
 "*****************************************************************************
