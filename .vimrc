@@ -34,6 +34,8 @@ call plug#begin(expand('~/.vim/plugged'))
 Plug 'tpope/vim-vinegar'
 " Add marker to each mark
 Plug 'kshenoy/vim-signature'
+" Tmux / Vim navigator
+Plug 'christoomey/vim-tmux-navigator'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Code Tagging
