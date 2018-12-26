@@ -143,6 +143,7 @@ eval "$(hub alias -s)"
 # Also install pipsi, pipenv
 #-------------------------------------------------------------------------------
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 #-------------------------------------------------------------------------------
 # Initialize fasd for fast FS navigation
