@@ -58,7 +58,7 @@ Plug 'tpope/vim-repeat'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " Automatic closing of quotes, etc
-Plug 'Raimondi/delimitMate'
+Plug 'jiangmiao/auto-pairs'
 " Tabular lining up text
 Plug 'godlygeek/tabular'
 " Multiple cursors (Sublime-style)
@@ -559,9 +559,3 @@ else
 endif
 
 
-"*****************************************************************************
-"" Delimit (surrounding parens + etc) setting
-"*****************************************************************************
-
-let delimitMate_expand_cr = 1
-let delimitMate_expand_space = 1
