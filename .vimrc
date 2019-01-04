@@ -63,6 +63,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'godlygeek/tabular'
 " Multiple cursors (Sublime-style)
 Plug 'terryma/vim-multiple-cursors'
+" Conversion between single / multi lines (function args, lists)
+Plug 'FooSoft/vim-argwrap'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocompletion + Snippets
@@ -384,6 +386,9 @@ nmap ; :Buffers<CR>
 nmap <Leader>f :Files<CR>
 nmap <Leader>t :Tags<CR>
 nmap <Leader>m :Marks<CR>
+
+""" vim-argwrap bindings
+nnoremap <silent> <Leader>a :ArgWrap<CR>
 
 " Use Ag for Vim external search
 if executable('ag')
