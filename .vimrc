@@ -40,8 +40,8 @@ Plug 'christoomey/vim-tmux-navigator'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Code Tagging
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" autotag: automatically regenerate tags for a file when written
-Plug 'craigemery/vim-autotag'
+" gutentag: automatically regenerate tags for a file when written (PURE VIM)
+Plug 'ludovicchabant/vim-gutentags'
 " Overview of tags in current file (for ctags generated tags)
 Plug 'majutsushi/tagbar'
 
