@@ -386,22 +386,15 @@ nmap ; :Buffers<CR>
 nmap <Leader>f :Files<CR>
 nmap <Leader>t :Tags<CR>
 nmap <Leader>m :Marks<CR>
+nmap <Leader>c :Rg<CR>
 
 """ vim-argwrap bindings
 nnoremap <silent> <Leader>a :ArgWrap<CR>
 
-" Use Ag for Vim external search
-if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-  let g:ctrlp_use_caching = 0
+" Use Rg for Vim external search
+if executable('rg')
+  set grepprg=rg\ --nogroup\ --nocolor\ --noignore-vcs
 endif
-
-cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
-noremap <leader>b :CtrlPBuffer<CR>
-let g:ctrlp_map = '<leader>e'
-let g:ctrlp_open_new_file = 'r'
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 
 " Snippets (SuperTab) to make YouCompleteMe compatible with Ultisnips (https://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
@@ -446,15 +439,6 @@ if has('macunix')
   vmap <C-x> :!pbcopy<CR>
   vmap <C-c> :w !pbcopy<CR><CR>
 endif
-
-"" Buffer nav
-noremap <leader>z :bp<CR>
-noremap <leader>q :bp<CR>
-noremap <leader>x :bn<CR>
-noremap <leader>w :bn<CR>
-
-"" Close buffer
-noremap <leader>c :bd<CR>
 
 "" Clean search (highlight)
 nnoremap <silent> <leader><space> :noh<cr>

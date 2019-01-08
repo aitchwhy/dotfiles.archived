@@ -18,31 +18,28 @@
 # For brew cask available options
 # @see. https://github.com/caskroom/homebrew-cask/blob/master/USAGE.md#options
 #-------------------------------------------------------------------------------
-
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 #-------------------------------------------------------------------------------
 # Make sure ANDROID SDK is loaded
 #-------------------------------------------------------------------------------
-
 export ANDROID_HOME=/usr/local/opt/android-sdk
 
 #-------------------------------------------------------------------------------
 # Export language settings
 #-------------------------------------------------------------------------------
-
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 #-------------------------------------------------------------------------------
-# FZF settings (https://mike.place/2017/fzf-fd/)
+# FZF settings
 #-------------------------------------------------------------------------------
 export FZF_DEFAULT_COMMAND="fd . --hidden $HOME"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="fd -t d . $HOME"
-
 
 #-------------------------------------------------------------------------------
 # (workaround) pyenv 'gettext' error - shims do not work with gettext
 #-------------------------------------------------------------------------------
 export GIT_INTERNAL_GETTEXT_TEST_FALLBACKS=1
+
+

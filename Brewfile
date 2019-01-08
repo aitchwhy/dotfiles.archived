@@ -77,7 +77,7 @@ brew 'tcpdump'
 brew 'tree'
 brew 'wget'
 brew 'fzf'
-brew 'ag'
+brew 'ripgrep'
 brew 'cmake'
 
 #-------------------------------------------------------------------------------
