@@ -69,11 +69,21 @@ Plug 'FooSoft/vim-argwrap'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocompletion + Snippets
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" (Vim -> Engine -> Lang client -> Lang Server)
+" [1] (Vim -> Engine -> (Lang client -> Lang Server))
+" [2] (Vim -> Engine -> source)
 " Deoplete Engine (Autocompletion)
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Lang Client
-Plug 'autozimu/LanguageClient-neovim', { 'branch':'next', 'do':'bash install.sh' }
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+" Lang Client (Pure VimL Lang server)
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+" Python Source
+Plug 'zchee/deoplete-jedi'
+
+" JS Source + Typescript
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern'  }
+Plug 'mhartington/nvim-typescript'
 
 " Snippet Engine
 Plug 'SirVer/ultisnips'
@@ -402,24 +412,32 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources = {}
 " Disable the completion candidates in Comment/String syntaxes.
 call deoplete#custom#source('_', 'disabled_syntaxes', ['Comment', 'String'])
-" Language sources
+" Language sources setting (set to 'LanguageClient' if using Language Client/Server)
 call deoplete#custom#option('sources', {
-    \ 'python': ['LanguageClient'],
+    \ 'python': ['deoplete-jedi'],
+    \ 'javascript': ['deoplete-ternjs'],
 \})
 
-
-
-" Minimal LSP configuration for JavaScript
-let g:LanguageClient_serverCommands = {}
-if executable('javascript-typescript-stdio')
-  let g:LanguageClient_serverCommands.javascript = ['javascript-typescript-stdio']
-  " Use LanguageServer for omnifunc completion
-  autocmd FileType javascript setlocal omnifunc=LanguageClient#complete
-else
-  echo "javascript-typescript-stdio not installed!\nInstall with npm install -g javascript-typescript-langserver"
-  :cq
+" Minimal LSP configuration for JavaScript / Typescript
+if executable('typescript-language-server')
+  au User lsp_setup call lsp#register_server({
+          \ 'name': 'typescript-language-server',
+          \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
+          \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
+          \ 'whitelist': ['typescript', 'typescript.tsx'],
+          \ 
+  })
 endif
 
+" Python
+if executable('pyls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'whitelist': ['python'],
+        \ 'workspace_config': {'pyls': {'plugins': {'pydocstyle': {'enabled': v:true}}}}
+        \ })
+endif
 
 " <leader>ld to go to definition
 autocmd FileType javascript nnoremap <buffer>
@@ -430,11 +448,6 @@ autocmd FileType javascript nnoremap <buffer>
 " <leader>lr to rename variable under cursor
 autocmd FileType javascript nnoremap <buffer>
   \ <leader>lr :call LanguageClient_textDocument_rename()<cr>
-
-
-
-
-
 
 " Lang Client shortcut
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
