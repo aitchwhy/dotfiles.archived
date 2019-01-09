@@ -57,10 +57,7 @@ chsh -s $(which zsh)
 
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
-# Install cobalt2 theme
-# wget https://raw.githubusercontent.com/wesbos/Cobalt2-iterm/master/cobalt2.zsh-theme -O $HOME/.oh-my-zsh/themes/cobalt2.zsh-theme
-
-# Install Powerlinm e theme
+# Install Powerline theme
 wget https://raw.githubusercontent.com/jeremyFreeAgent/oh-my-zsh-powerline-theme/master/powerline.zsh-theme -O $HOME/.oh-my-zsh/themes/powerline.zsh-theme
 git clone git@github.com:powerline/fonts.git && bash fonts/install.sh
 sleep 3
@@ -106,29 +103,33 @@ sudo mv composer.phar /usr/local/bin/composer
 /usr/local/bin/composer global require laravel/installer laravel/valet
 
 #-------------------------------------------------------------------------------
-# Install Laravel Valet
-# IMPORTANT NOTE
-# For valet to work correctly, php71 & nginx must be run as sudo privileges.
-# # brew services start php71 && brew services nginx
-#-------------------------------------------------------------------------------
-
-# $HOME/.composer/vendor/bin/valet install
-# cd $HOME/$CODE_DIR && $HOME/.composer/vendor/bin/valet park
-
-#-------------------------------------------------------------------------------
-# Install Homestead Repo & Add vagrant box
-# Commented out on behalf of Docker
-#-------------------------------------------------------------------------------
-
-# git clone git@github.com:laravel/homestead.git $HOME/Homestead
-# cd $HOME/Homestead && bash ./init.sh
-# [[ $(basename $(pwd)) != "Homestead" ]] && cd $HOME/Homestead; vagrant box add laravel/homestead
-
-#-------------------------------------------------------------------------------
 # Install global Node packages
 #-------------------------------------------------------------------------------
 
-npm install gulp-cli gulp yo http-server nodemon yarn --global --save
+# yarn package manager
+npm install -g yarn
+
+# hot reloading on file save
+npm install -g nodemon
+
+# linting
+npm install -g eslint
+npm install -g babel-eslint
+npm install -g eslint-config-standard
+npm install -g eslint-config-standard-react
+npm install -g eslint-config-standard-jsx
+npm install -g eslint-plugin-react
+npm install -g eslint-config-prettier
+npm install -g eslint-plugin-prettier
+npm install -g prettier
+npm install -g standard
+npm install -g typescript
+
+# React
+npm install -g create-react-app
+npm install -g create-react-library
+npm install -g react-native-cli
+
 
 #-------------------------------------------------------------------------------
 # Install Pip + setuptools
