@@ -17,10 +17,7 @@ export ZSH=$HOME/.oh-my-zsh
 export EDITOR=$(which vim)
 
 #-------------------------------------------------------------------------------
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
+# Set name of the theme to load
 #-------------------------------------------------------------------------------
 
 export POWERLINE_RIGHT_B="none"
@@ -135,7 +132,6 @@ unset files file;
 #-------------------------------------------------------------------------------
 # Merge hub function to git
 #-------------------------------------------------------------------------------
-
 eval "$(hub alias -s)"
 
 #-------------------------------------------------------------------------------
@@ -160,4 +156,4 @@ eval "$(direnv hook zsh)"
 #-------------------------------------------------------------------------------
 source $ZSH/oh-my-zsh.sh
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -1,4 +1,24 @@
 #-------------------------------------------------------------------------------
+# CLI shortcuts (functions instead of alias to avoid slow startup (alias uses 'eval'))
+# Note that * operator needs to be preceded with \
+#-------------------------------------------------------------------------------
+function copyssh() {
+  pbcopy < $HOME/.ssh/id_rsa.pub
+}
+function reloadcli() {
+  source $HOME/.zshrc
+}
+function reloaddns() {
+  dscacheutil -flushcache && sudo killall -HUP mDNSResponder
+}
+function copyssh() {
+  $(brew --prefix coreutils)/libexec/gnubin/ls -ahlF --color --group-directories-first
+}
+function cleanupds() {
+  find . -type f -name '*.DS_Store' -ls -delete
+}
+
+#-------------------------------------------------------------------------------
 # Simple calculator
 # Note that * operator needs to be preceded with \
 #-------------------------------------------------------------------------------
@@ -192,15 +212,6 @@ function hl() {
       echo "Usage: "
       echo "  hl filename syntax [fontsize]"
     fi
-}
-
-#-------------------------------------------------------------------------------
-# Homestead
-#-------------------------------------------------------------------------------
-
-function homestead() {
-    cd ~/Homestead
-    vagrant $*
 }
 
 #-------------------------------------------------------------------------------

@@ -69,8 +69,12 @@ Plug 'FooSoft/vim-argwrap'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocompletion + Snippets
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Autocompletion
-Plug 'Valloric/YouCompleteMe'
+" (Vim -> Engine -> Lang client -> Lang Server)
+" Deoplete Engine (Autocompletion)
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Lang Client
+Plug 'autozimu/LanguageClient-neovim', { 'branch':'next', 'do':'bash install.sh' }
+
 " Snippet Engine
 Plug 'SirVer/ultisnips'
 " Actual Snippets collection for Engine usage
@@ -225,7 +229,6 @@ else
   let g:indentLine_char = '┆'
   let g:indentLine_faster = 1
 
-  
   if $COLORTERM == 'gnome-terminal'
     set term=gnome-256color
   else
@@ -233,7 +236,6 @@ else
       set term=xterm-256color
     endif
   endif
-  
 endif
 
 
@@ -265,7 +267,6 @@ endif
 
 " vim-airline
 let g:airline_theme = 'powerlineish'
-let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
@@ -288,12 +289,6 @@ cnoreabbrev WQ wq
 cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Qall qall
-
-" grep.vim
-" nnoremap <silent> <leader>f :Rgrep<CR>
-" let Grep_Default_Options = '-IR'
-" let Grep_Skip_Files = '*.log *.db'
-" let Grep_Skip_Dirs = '.git node_modules'
 
 " terminal emulation
 if g:vim_bootstrap_editor == 'nvim'
@@ -397,23 +392,58 @@ if executable('rg')
 endif
 
 " Snippets (SuperTab) to make YouCompleteMe compatible with Ultisnips (https://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
+" let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+" let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+" let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" Deoplete (Autocomplete) config
+let g:deoplete#enable_at_startup = 1
+" Set Language sources empty (to nullify defaults)
+let g:deoplete#sources = {}
+" Disable the completion candidates in Comment/String syntaxes.
+call deoplete#custom#source('_', 'disabled_syntaxes', ['Comment', 'String'])
+" Language sources
+call deoplete#custom#option('sources', {
+    \ 'python': ['LanguageClient'],
+\})
+
+
+
+" Minimal LSP configuration for JavaScript
+let g:LanguageClient_serverCommands = {}
+if executable('javascript-typescript-stdio')
+  let g:LanguageClient_serverCommands.javascript = ['javascript-typescript-stdio']
+  " Use LanguageServer for omnifunc completion
+  autocmd FileType javascript setlocal omnifunc=LanguageClient#complete
+else
+  echo "javascript-typescript-stdio not installed!\nInstall with npm install -g javascript-typescript-langserver"
+  :cq
+endif
+
+
+" <leader>ld to go to definition
+autocmd FileType javascript nnoremap <buffer>
+  \ <leader>ld :call LanguageClient_textDocument_definition()<cr>
+" <leader>lh for type info under cursor
+autocmd FileType javascript nnoremap <buffer>
+  \ <leader>lh :call LanguageClient_textDocument_hover()<cr>
+" <leader>lr to rename variable under cursor
+autocmd FileType javascript nnoremap <buffer>
+  \ <leader>lr :call LanguageClient_textDocument_rename()<cr>
+
+
+
+
+
+
+" Lang Client shortcut
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
-
-" syntastic
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_style_error_symbol = '✗'
-let g:syntastic_style_warning_symbol = '⚠'
-let g:syntastic_auto_loc_list=1
-let g:syntastic_aggregate_errors = 1
 
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>

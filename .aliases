@@ -1,53 +1,14 @@
 #-------------------------------------------------------------------------------
-# CLI Shortcuts
-#-------------------------------------------------------------------------------
-
-alias copyssh="pbcopy < $HOME/.ssh/id_rsa.pub"
-alias reloadcli="source $HOME/.zshrc"
-alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
-alias ll="$(brew --prefix coreutils)/libexec/gnubin/ls -ahlF --color --group-directories-first"
-
-#-------------------------------------------------------------------------------
 # ls command colorized output setting
 #-------------------------------------------------------------------------------
 
 alias ls='ls --color=auto'
 
 #-------------------------------------------------------------------------------
-# Recursively remove .DS_Store files
-#-------------------------------------------------------------------------------
-
-alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"
-
-#-------------------------------------------------------------------------------
-# Homebrew
-#-------------------------------------------------------------------------------
-
-alias service="brew services"
-
-#-------------------------------------------------------------------------------
-# Laravel
-#-------------------------------------------------------------------------------
-
-alias art="php artisan"
-alias artisan="php artisan"
-alias tinker="php artisan tinker"
-alias serve="php artisan serve"
-
-#-------------------------------------------------------------------------------
-# Some more alias to avoid making mistakes:
-#-------------------------------------------------------------------------------
-
-# alias rm='rm -i'
-# alias cp='cp -i'
-# alias mv='mv -i'
-
-#-------------------------------------------------------------------------------
 # Docker
 #-------------------------------------------------------------------------------
 
 alias dc="docker-compose"
-
 
 #-------------------------------------------------------------------------------
 # Improving CLI toolset - https://remysharp.com/2018/08/23/cli-improved
