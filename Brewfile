@@ -79,6 +79,7 @@ brew 'wget'
 brew 'fzf'
 brew 'ripgrep'
 brew 'cmake'
+brew 'hexyl'                                     # Better 'xxd' (hex code viewer)
 
 #-------------------------------------------------------------------------------
 # Development-PHP
