@@ -156,4 +156,4 @@ eval "$(direnv hook zsh)"
 #-------------------------------------------------------------------------------
 source $ZSH/oh-my-zsh.sh
 
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
