@@ -19,3 +19,10 @@ alias ping='prettyping --nolegend'
 alias help='tldr'
 alias du='ncdu --color dark -rr -x --exclude .git'
 alias xxd='hexyl'
+
+#-------------------------------------------------------------------------------
+# Vim -> NVim (muscle memory)
+#-------------------------------------------------------------------------------
+if type nvim > /dev/null 2>&1; then
+  alias vim='nvim'
+fi
