@@ -80,6 +80,8 @@ brew 'fzf'
 brew 'ripgrep'
 brew 'cmake'
 brew 'hexyl'                                     # Better 'xxd' (hex code viewer)
+brew 'neovim'                                    # Better 'vim'
+brew 'zlib'
 
 #-------------------------------------------------------------------------------
 # Development-PHP
