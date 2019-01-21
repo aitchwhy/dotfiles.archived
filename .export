@@ -44,4 +44,13 @@ export FZF_DEFAULT_OPTS='-m'
 #-------------------------------------------------------------------------------
 export GIT_INTERNAL_GETTEXT_TEST_FALLBACKS=1
 
+#-------------------------------------------------------------------------------
+# Zlib flag export (Pyenv install 'zlib not found' error)
+#-------------------------------------------------------------------------------
 
+# For compilers to find zlib you may need to set:
+export LDFLAGS="${LDFLAGS} -L/usr/local/opt/zlib/lib"
+export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/zlib/include"
+
+# For pkg-config to find zlib you may need to set:
+export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} /usr/local/opt/zlib/lib/pkgconfig"
