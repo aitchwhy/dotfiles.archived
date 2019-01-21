@@ -69,28 +69,31 @@ Plug 'FooSoft/vim-argwrap'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocompletion + Snippets
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Autocompletion
 " [1] (Vim -> Engine -> (Lang client -> Lang Server))
 " [2] (Vim -> Engine -> source)
-" Deoplete Engine (Autocompletion)
-Plug 'Shougo/deoplete.nvim'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
-" Lang Client (Pure VimL Lang server)
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
-" Python Source
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
+"""""""""""
+" Python
+"""""""""""
+" Language Source
 Plug 'zchee/deoplete-jedi'
+" Function doc show
+Plug 'Shougo/echodoc.vim'
 
-" JS Source + Typescript
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern'  }
-Plug 'mhartington/nvim-typescript'
-
-" Snippet Engine
-Plug 'SirVer/ultisnips'
+" Snippet Engine ---> TODO: comeback with better config
+" Plug 'SirVer/ultisnips'
 " Actual Snippets collection for Engine usage
-Plug 'honza/vim-snippets'
-" SuperTab -> make YouCompleteMe compatible with Ultisnips
-Plug 'ervandew/supertab'
+" Plug 'honza/vim-snippets'
+" SuperTab -> make YouCompleteMe compatible with Ultisnips ---> TODO: comeback with better config
+" Plug 'ervandew/supertab'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax Linting / Highlighting / checking / error checking
@@ -106,6 +109,11 @@ Plug 'mxw/vim-jsx'
 Plug 'bronson/vim-trailing-whitespace'
 " Shows indent level with thin vertical lines
 Plug 'Yggdroot/indentLine'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Color theme
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'ayu-theme/ayu-vim' " Ayu colorscheme
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " StatusLine
@@ -208,6 +216,16 @@ let g:session_autoload = "no"
 let g:session_autosave = "no"
 let g:session_command_aliases = 1
 
+" Set up Omni func completion
+augroup omnifuncs
+  autocmd!
+  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+augroup end
+
 "*****************************************************************************
 "" Visual Settings
 "*****************************************************************************
@@ -219,6 +237,12 @@ let no_buffers_menu=1
 if !exists('g:not_finish_vimplug')
   colorscheme molokai
 endif
+
+set termguicolors     " enable true colors support
+" let ayucolor="light"  " for light version of theme
+let ayucolor="mirage" " for mirage version of theme
+" let ayucolor="dark"   " for dark version of theme
+colorscheme ayu
 
 set mousemodel=popup
 set t_Co=256
@@ -401,64 +425,44 @@ if executable('rg')
   set grepprg=rg\ --nogroup\ --nocolor\ --noignore-vcs
 endif
 
-" Snippets (SuperTab) to make YouCompleteMe compatible with Ultisnips (https://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme)
-" let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-" let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-" let g:SuperTabDefaultCompletionType = '<C-n>'
+" Emmet setting (remap leader to Ctrl+e)
+let g:user_emmet_leader_key = '<c-e>'
 
-" Deoplete (Autocomplete) config
+""" Auto-completion + Snippet bindings
 let g:deoplete#enable_at_startup = 1
-" Set Language sources empty (to nullify defaults)
+" disable autocomplete by default
+let b:deoplete_disable_auto_complete=1
+let g:deoplete_disable_auto_complete=1
+
 let g:deoplete#sources = {}
-" Disable the completion candidates in Comment/String syntaxes.
-call deoplete#custom#source('_', 'disabled_syntaxes', ['Comment', 'String'])
-" Language sources setting (set to 'LanguageClient' if using Language Client/Server)
+let g:deoplete#sources#jedi#show_docstring = 1
+" Disable the candidates in Comment/String syntaxes.
+call deoplete#custom#source('_',
+      \ 'disabled_syntaxes', ['Comment', 'String'])
 call deoplete#custom#option('sources', {
-    \ 'python': ['deoplete-jedi'],
-    \ 'javascript': ['deoplete-ternjs'],
+      \ 'python': [ 'jedi' ]
 \})
 
-" Minimal LSP configuration for JavaScript / Typescript
-if executable('typescript-language-server')
-  au User lsp_setup call lsp#register_server({
-          \ 'name': 'typescript-language-server',
-          \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
-          \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
-          \ 'whitelist': ['typescript', 'typescript.tsx'],
-          \ 
-  })
-endif
+" deoplete tab-complete
+inoremap <Tab> <C-n>
+inoremap <S-Tab> <C-p>
 
-" Python
-if executable('pyls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'pyls',
-        \ 'cmd': {server_info->['pyls']},
-        \ 'whitelist': ['python'],
-        \ 'workspace_config': {'pyls': {'plugins': {'pydocstyle': {'enabled': v:true}}}}
-        \ })
-endif
-
-" <leader>ld to go to definition
-autocmd FileType javascript nnoremap <buffer>
-  \ <leader>ld :call LanguageClient_textDocument_definition()<cr>
-" <leader>lh for type info under cursor
-autocmd FileType javascript nnoremap <buffer>
-  \ <leader>lh :call LanguageClient_textDocument_hover()<cr>
-" <leader>lr to rename variable under cursor
-autocmd FileType javascript nnoremap <buffer>
-  \ <leader>lr :call LanguageClient_textDocument_rename()<cr>
-
-" Lang Client shortcut
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+"  "Snippets (SuperTab) to make YouCompleteMe compatible with Ultisnips using SuperTab
+" (https://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme)
+" let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpForwardTrigger="<tab>"
+" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+" let g:UltiSnipsEditSplit="vertical"
 
 
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:UltiSnipsEditSplit="vertical"
+" Func doc show (otherwise INSERT mode overrides auto-complete function)
+let g:echodoc#enable_at_startup = 1
+let g:echodoc#enable_force_overwrite = 1
+set noshowmode
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
-" Tagbar
+
+"Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 
