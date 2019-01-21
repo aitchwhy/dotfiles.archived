@@ -174,7 +174,7 @@ pipsi install pipenv
 #-------------------------------------------------------------------------------
 # Install Vim-anywhere
 #-------------------------------------------------------------------------------
-curl -fsSL https://raw.github.com/cknadler/vim-anywhere/master/install | bash
+# curl -fsSL https://raw.github.com/cknadler/vim-anywhere/master/install | bash
 
 #-------------------------------------------------------------------------------
 # Source profile
