@@ -54,6 +54,7 @@ Thumbs.db
 # Language version settings
 #-------------------------------------------------------------------------------
 .python-version
+__pycache__/
 
 #-------------------------------------------------------------------------------
 # Ignore tags created by etags, ctags, gtags (GNU global) and cscope
