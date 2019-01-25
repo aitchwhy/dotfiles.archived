@@ -92,8 +92,6 @@ Plug 'Shougo/echodoc.vim'
 " Plug 'SirVer/ultisnips'
 " Actual Snippets collection for Engine usage
 " Plug 'honza/vim-snippets'
-" SuperTab -> make YouCompleteMe compatible with Ultisnips ---> TODO: comeback with better config
-" Plug 'ervandew/supertab'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax Linting / Highlighting / checking / error checking
@@ -413,6 +411,7 @@ noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 """ fzf bindings
 nmap ; :Buffers<CR>
 nmap <Leader>f :Files<CR>
+nmap <Leader>ff :Files $HOME<CR>
 nmap <Leader>t :Tags<CR>
 nmap <Leader>m :Marks<CR>
 nmap <Leader>c :Rg<CR>
@@ -433,6 +432,7 @@ let g:deoplete#enable_at_startup = 1
 " disable autocomplete by default
 let b:deoplete_disable_auto_complete=1
 let g:deoplete_disable_auto_complete=1
+let g:deoplete#auto_complete_delay = 150
 
 let g:deoplete#sources = {}
 let g:deoplete#sources#jedi#show_docstring = 1
@@ -443,24 +443,14 @@ call deoplete#custom#option('sources', {
       \ 'python': [ 'jedi' ]
 \})
 
-" deoplete tab-complete
-inoremap <Tab> <C-n>
-inoremap <S-Tab> <C-p>
-
-"  "Snippets (SuperTab) to make YouCompleteMe compatible with Ultisnips using SuperTab
-" (https://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme)
-" let g:UltiSnipsExpandTrigger="<tab>"
-" let g:UltiSnipsJumpForwardTrigger="<tab>"
-" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-" let g:UltiSnipsEditSplit="vertical"
-
+" deoplete <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Func doc show (otherwise INSERT mode overrides auto-complete function)
 let g:echodoc#enable_at_startup = 1
 let g:echodoc#enable_force_overwrite = 1
 set noshowmode
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-
 
 "Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
