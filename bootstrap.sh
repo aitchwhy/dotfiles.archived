@@ -157,6 +157,7 @@ sudo easy_install pip
 # Install python stuff (pyenv, pipsi, pipenv)
 #-------------------------------------------------------------------------------
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 # pipsi from github source
 curl -O https://raw.githubusercontent.com/mitsuhiko/pipsi/master/get-pipsi.py
