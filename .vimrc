@@ -419,6 +419,10 @@ nmap <Leader>c :Rg<CR>
 """ vim-argwrap bindings
 nnoremap <silent> <Leader>a :ArgWrap<CR>
 
+" Swap the word the cursor is on with the next word (which can be on a
+" newline, and punctuation is "skipped"):
+nmap <Leader>sw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><C-o>:noh<CR>
+
 " Use Rg for Vim external search
 if executable('rg')
   set grepprg=rg\ --nogroup\ --nocolor\ --noignore-vcs
