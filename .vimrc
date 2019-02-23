@@ -428,6 +428,10 @@ if executable('rg')
   set grepprg=rg\ --nogroup\ --nocolor\ --noignore-vcs
 endif
 
+" Auto-Pairs settings (extension specific) "
+" Python (add multiline string)
+au FileType python let b:AutoPairs = AutoPairsDefine({"'''" : "'''"})
+
 " Emmet setting (remap leader to Ctrl+e)
 let g:user_emmet_leader_key = '<c-e>'
 
