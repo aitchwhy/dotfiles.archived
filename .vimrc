@@ -408,6 +408,12 @@ noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 "" Opens a tab edit command with the path of the currently edited file filled
 noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
+""" Remap Shift+hjkl for quick navigation
+nnoremap H ^
+nnoremap L $
+nnoremap J <C-d>
+nnoremap K <C-u>
+
 """ fzf bindings
 nmap ; :Buffers<CR>
 nmap <Leader>f :Files<CR>
