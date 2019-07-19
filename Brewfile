@@ -153,8 +153,9 @@ cask 'postman'
 cask 'keyboard-maestro'
 cask 'flux'
 cask 'dropbox'
-cask 'anki'
 cask 'launchcontrol'
+cask 'little-snitch'
+cask 'moom'
 
 #-------------------------------------------------------------------------------
 # Fonts
