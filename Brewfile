@@ -6,6 +6,7 @@ tap 'caskroom/cask'
 tap 'caskroom/fonts'
 tap 'homebrew/php'
 tap 'homebrew/services'
+tap 'sambadevi/powerlevel9k'
 
 #-------------------------------------------------------------------------------
 # Make sure apps get installed in system Applications dir
@@ -42,7 +43,6 @@ brew 'bash'
 # Install Binaries
 #------------------------------------------------------------------------------
 
-brew 'zplug'                                     # plugin manager
 brew 'tldr'                                      # Simplified to 'man' pages
 brew 'ncdu'                                      # Upgrade to 'du'
 brew 'fd'                                        # Upgrade to 'find'
@@ -82,6 +82,7 @@ brew 'cmake'
 brew 'hexyl'                                     # Better 'xxd' (hex code viewer)
 brew 'neovim'                                    # Better 'vim'
 brew 'zlib'
+brew 'powerlevel9k'				 # zsh shell powerline
 
 #-------------------------------------------------------------------------------
 # Development-Ruby
@@ -133,9 +134,6 @@ cask 'dashlane'
 cask 'fantastical'
 cask 'time-out'
 cask 'dbschema'
-cask 'mactex'
-cask 'cheatsheet'
-cask 'ngrok'
 cask 'anaconda'
 cask 'docker'
 cask 'google-chrome'

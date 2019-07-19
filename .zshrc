@@ -8,21 +8,15 @@ export DOTFILES=$HOME/dotfiles
 # Set default EDITOR env var to Path to your Vim binary
 #-------------------------------------------------------------------------------
 
-export EDITOR=$(nvim)
+export EDITOR=nvim
 
 #-------------------------------------------------------------------------------
+# Shell prompt setting
+#
 # Set name of the theme to load
 #-------------------------------------------------------------------------------
-
-export POWERLINE_RIGHT_B="none"
-export POWERLINE_HIDE_USER_NAME="true"
-export POWERLINE_HIDE_HOST_NAME="true"
-export POWERLINE_DISABLE_RPROMPT="true"
-POWERLINE_PATH="short"
-POWERLINE_DETECT_SSH="true"
-
-# export ZSH_THEME="powerline"
-export ZSH_THEME="agnoster"
+export POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+export POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
 #-------------------------------------------------------------------------------
 # Uncomment the following line to use case-sensitive completion.
@@ -90,16 +84,6 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
 
 #-------------------------------------------------------------------------------
-# Would you like to use another custom folder than $ZSH/custom?
-#-------------------------------------------------------------------------------
-
-# ZSH_CUSTOM=$DOTFILES
-
-#-------------------------------------------------------------------------------
-# Zsh plugins (zplug)
-#-------------------------------------------------------------------------------
-
-#-------------------------------------------------------------------------------
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
@@ -143,4 +127,6 @@ eval "$(fasd --init auto)"
 #-------------------------------------------------------------------------------
 eval "$(direnv hook zsh)"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"

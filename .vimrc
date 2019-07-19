@@ -2,9 +2,10 @@
 "" Vim-PLug core
 "*****************************************************************************
 " True on startup / False on running ---> check for when .vimrc manually sourced
-if has('vim_starting')
-  set nocompatible
-endif
+set nocompatible
+"if has('vim_starting')
+"  set nocompatible
+"endif
 
 let vimplug_exists=expand('~/.vim/autoload/plug.vim')
 

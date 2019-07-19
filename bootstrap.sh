@@ -18,20 +18,32 @@ fi
 # -------------------------------------------------
 # Update brew Cellar filepath permissions to write to it
 # -------------------------------------------------
-sudo chown -R $(whoami) /usr/local/Cellar
+sudo chown -R $(whoami) $(brew --prefix)/*
 
+# -------------------------------------------------
+# Add zsh to standard shells
+# -------------------------------------------------
+echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
 
+# -------------------------------------------------
+# create neovim config (init <- vimrc)
+# -------------------------------------------------
+mkdir -p $HOME/.config/nvim
+ln -nfs $DOTFILES/.vimrc ~/.config/nvim/init.vim
+
+# -------------------------------------------------
+# install zsh plugin manager
+# -------------------------------------------------
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
 # -------------------------------------------------
 # Update Homebrew recipes
 # -------------------------------------------------
-
 brew update
 
 # -------------------------------------------------
 # Install all our dependencies with bundle (See Brewfile)
 # -------------------------------------------------
-
 brew tap homebrew/bundle
 brew bundle --file=$DOTFILES/Brewfile # Install binary & applications
 brew cleanup
@@ -67,6 +79,14 @@ ln -nfs $DOTFILES/.tmux.conf $HOME/.tmux.conf
 
 # Direnv link (env vars per project)
 ln -nfs $DOTFILES/.direnvrc $HOME/.direnvrc
+
+# -------------------------------------------------
+# Install vim plugin manager (vim-plug)
+# -------------------------------------------------
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # -------------------------------------------------
 # Install global Node packages
