@@ -16,6 +16,13 @@ if test ! $(which brew); then
 fi
 
 # -------------------------------------------------
+# Update brew Cellar filepath permissions to write to it
+# -------------------------------------------------
+sudo chown -R $(whoami) /usr/local/Cellar
+
+
+
+# -------------------------------------------------
 # Update Homebrew recipes
 # -------------------------------------------------
 
