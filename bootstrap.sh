@@ -1,111 +1,75 @@
-#!/bin/sh
-
-#-------------------------------------------------------------------------------
-# Thanks Maxime Fabre! https://speakerdeck.com/anahkiasen/a-storm-homebrewin
-# Thanks Mathias Bynens! https://mths.be/osx
-#-------------------------------------------------------------------------------
-#-------------------------------------------------------------------------------
+# -------------------------------------------------
 # Set temporary variable
-#-------------------------------------------------------------------------------
+# -------------------------------------------------
 
 CODE_DIR=$HOME/workspace
 GIT_USER_NAME="hdd2k"
 GIT_EMAIL="hank.lee.qed@gmail.com"
 DOTFILES=$HOME/dotfiles
 
-#-------------------------------------------------------------------------------
+
+# -------------------------------------------------
+# Install personal dotfiles
+# -------------------------------------------------
+git clone git@github.com:hdd2k/dotfiles.git $DOTFILES
+
+# -------------------------------------------------
 # Check for Homebrew and install if we don't have it
-#-------------------------------------------------------------------------------
+# -------------------------------------------------
 
 if test ! $(which brew); then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-#-------------------------------------------------------------------------------
+# -------------------------------------------------
 # Update Homebrew recipes
-#-------------------------------------------------------------------------------
+# -------------------------------------------------
 
 brew update
 
-#-------------------------------------------------------------------------------
+# -------------------------------------------------
 # Install all our dependencies with bundle (See Brewfile)
-#-------------------------------------------------------------------------------
+# -------------------------------------------------
 
 brew tap homebrew/bundle
 brew bundle --file=$DOTFILES/Brewfile # Install binary & applications
 brew cleanup
 brew cask cleanup
 
-#-------------------------------------------------------------------------------
+# -------------------------------------------------
 # Install global Git configuration
-#-------------------------------------------------------------------------------
+# -------------------------------------------------
 
 ln -nfs $DOTFILES/.gitconfig $HOME/.gitconfig
 git config --global core.excludesfile $DOTFILES/.gitignore_global
 git config --global user.name "${GIT_USER_NAME}"
 git config --global user.email "${GIT_EMAIL}"
 
-#-------------------------------------------------------------------------------
+# -------------------------------------------------
 # Make ZSH the default shell environment
-#-------------------------------------------------------------------------------
+# -------------------------------------------------
 
 chsh -s $(which zsh)
 
-#-------------------------------------------------------------------------------
-# Install Oh-my-zsh
-#-------------------------------------------------------------------------------
+# -------------------------------------------------
+# Config files linked (home -> dotfiles)
+# -------------------------------------------------
 
-sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-
-# Install Powerline theme
-wget https://raw.githubusercontent.com/jeremyFreeAgent/oh-my-zsh-powerline-theme/master/powerline.zsh-theme -O $HOME/.oh-my-zsh/themes/powerline.zsh-theme
-git clone git@github.com:powerline/fonts.git && bash fonts/install.sh
-sleep 3
-rm -rf fonts
-
-#-------------------------------------------------------------------------------
-# Install oh-my-dir
-#-------------------------------------------------------------------------------
-
-# cd $HOME && git clone git@github.com:ajmazurie/oh-my-dir.git && cd ./oh-my-dir && make install
-# cd $HOME && rm -rf oh-my-dir
-
-#-------------------------------------------------------------------------------
-# Install & execute profile
-#-------------------------------------------------------------------------------
-
+# Zsh configs linked
 ln -nfs $DOTFILES/.zshrc $HOME/.zshrc
-ln -nfs $DOTFILES/.zshenv $HOME/.zshrc
 
-#-------------------------------------------------------------------------------
-# Install .vimrc
-#-------------------------------------------------------------------------------
-
+# Vim configs linked
 ln -nfs $DOTFILES/.vimrc $HOME/.vimrc
 
-#-------------------------------------------------------------------------------
-# Install .direnv
-#-------------------------------------------------------------------------------
+# tmux config files linked
+ln -nfs $DOTFILES/.tmux.conf $HOME/.tmux.conf
 
+# Direnv link (env vars per project)
 ln -nfs $DOTFILES/.direnvrc $HOME/.direnvrc
 
-
-#-------------------------------------------------------------------------------
-# Install Composer
-#-------------------------------------------------------------------------------
-
-curl -sS https://getcomposer.org/installer | php
-sudo mv composer.phar /usr/local/bin/composer
-
-#-------------------------------------------------------------------------------
-# Install global Composer packages
-#-------------------------------------------------------------------------------
-
-/usr/local/bin/composer global require laravel/installer laravel/valet
-
-#-------------------------------------------------------------------------------
+# -------------------------------------------------
 # Install global Node packages
-#-------------------------------------------------------------------------------
+# -------------------------------------------------
 
 # yarn package manager
 npm install -g yarn
@@ -131,31 +95,24 @@ npm install -g create-react-app
 npm install -g create-react-library
 npm install -g react-native-cli
 
-
-#-------------------------------------------------------------------------------
+# -------------------------------------------------
 # Install Langauge server
-#-------------------------------------------------------------------------------
+# -------------------------------------------------
 
 # Javascript
 npm install -g javascript-typescript-langserver
 # Python
 pip install python-language-server
 
-#-------------------------------------------------------------------------------
+# -------------------------------------------------
 # Install Pip + setuptools
-#-------------------------------------------------------------------------------
+# -------------------------------------------------
 
 sudo easy_install pip
 
-#-------------------------------------------------------------------------------
-# Install Rails
-#-------------------------------------------------------------------------------
-
-# gem install rails
-
-#-------------------------------------------------------------------------------
+# -------------------------------------------------
 # Install python stuff (pyenv, pipsi, pipenv)
-#-------------------------------------------------------------------------------
+# -------------------------------------------------
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
@@ -172,14 +129,9 @@ echo '{"name": "pipsi", "version": "0.10.dev", "scripts": ["/Users/jacobkaplan-m
 pipsi install pew
 pipsi install pipenv
 
-#-------------------------------------------------------------------------------
-# Install Vim-anywhere
-#-------------------------------------------------------------------------------
-# curl -fsSL https://raw.github.com/cknadler/vim-anywhere/master/install | bash
-
-#-------------------------------------------------------------------------------
+# -------------------------------------------------
 # Source profile
-#-------------------------------------------------------------------------------
+# -------------------------------------------------
 
 source $HOME/.zshrc
 

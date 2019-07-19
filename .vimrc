@@ -143,7 +143,7 @@ Plug 'tpope/vim-obsession'
 Plug 'mhinz/vim-startify'
 
 "*****************************************************************************
-"" Custom bundles
+"" Custom language syntax bundles
 "*****************************************************************************
 
 " html
@@ -152,6 +152,10 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'gorodinskiy/vim-coloresque'
 Plug 'tpope/vim-haml'
 Plug 'mattn/emmet-vim'
+
+" PSQL + set as default
+Plug 'lifepillar/pgsql.vim'
+let g:sql_type_default = 'pgsql'
 
 "*****************************************************************************
 "*****************************************************************************

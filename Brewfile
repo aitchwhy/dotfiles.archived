@@ -39,15 +39,10 @@ brew 'findutils'
 brew 'bash'
 
 #-------------------------------------------------------------------------------
-# Install IRC
-#-------------------------------------------------------------------------------
-
-brew 'irssi'
-
-#-------------------------------------------------------------------------------
 # Install Binaries
 #------------------------------------------------------------------------------
 
+brew 'zplug'                                     # plugin manager
 brew 'tldr'                                      # Simplified to 'man' pages
 brew 'ncdu'                                      # Upgrade to 'du'
 brew 'fd'                                        # Upgrade to 'find'
@@ -56,7 +51,6 @@ brew 'diff-so-fancy'                             # 'diff' upgrade for Git usage
 brew 'bat'                                       # 'cat' upgrade
 brew 'ctags'                                     # tags for Project navigation
 brew 'nginx'                                     # web server
-brew 'postgresql'                                # DBMS
 brew 'dnsmasq'                                   # lightweight DNS forwarder + DHCP server
 brew 'prettyping'                                # Pretty ping (simple, colorized output)
 brew 'tmux'                                      # terminal multiplexing
@@ -88,23 +82,6 @@ brew 'cmake'
 brew 'hexyl'                                     # Better 'xxd' (hex code viewer)
 brew 'neovim'                                    # Better 'vim'
 brew 'zlib'
-
-#-------------------------------------------------------------------------------
-# Development-PHP
-# @see $ brew info php71, which reads...
-# With the release of macOS Sierra the Apache module is now not built by default.
-# If you want to build it on your system you have to install php with the
-# --with-httpd24 option. See  brew options php71  for more details.
-#-------------------------------------------------------------------------------
-
-# brew 'php71' #, args: ['without-apache']
-# brew 'php71-intl'
-# brew 'php71-redis'
-# brew 'php71-xdebug'
-# brew 'phpdocumentor'
-# brew 'composer'
-# brew 'phpunit'
-# brew 'php-cs-fixer'
 
 #-------------------------------------------------------------------------------
 # Development-Ruby
@@ -139,10 +116,11 @@ brew 'gradle'
 brew 'kotlin'
 
 #-------------------------------------------------------------------------------
-# Development-Database
+# Databases
 #-------------------------------------------------------------------------------
 
 brew 'mysql'
+brew 'postgresql'                                # DBMS
 brew 'sqlite'
 
 #-------------------------------------------------------------------------------

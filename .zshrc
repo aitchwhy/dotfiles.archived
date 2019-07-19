@@ -5,16 +5,10 @@
 export DOTFILES=$HOME/dotfiles
 
 #-------------------------------------------------------------------------------
-# Path to your oh-my-zsh installation.
-#-------------------------------------------------------------------------------
-
-export ZSH=$HOME/.oh-my-zsh
-
-#-------------------------------------------------------------------------------
 # Set default EDITOR env var to Path to your Vim binary
 #-------------------------------------------------------------------------------
 
-export EDITOR=$(which vim)
+export EDITOR=$(nvim)
 
 #-------------------------------------------------------------------------------
 # Set name of the theme to load
@@ -102,13 +96,8 @@ HIST_STAMPS="yyyy-mm-dd"
 # ZSH_CUSTOM=$DOTFILES
 
 #-------------------------------------------------------------------------------
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
+# Zsh plugins (zplug)
 #-------------------------------------------------------------------------------
-
-plugins=(git git-extras httpie)
 
 #-------------------------------------------------------------------------------
 # Load the shell dotfiles, and then some:
@@ -135,9 +124,7 @@ unset files file;
 # Git / Github settings
 #-------------------------------------------------------------------------------
 #
-export HOMEBREW_GITHUB_API_TOKEN="697117e4ec9c7ccafbcc261ac87f50e4824e6f7d"
-# Merge hub function to git
-eval "$(hub alias -s)"
+export HOMEBREW_GITHUB_API_TOKEN="ecb231b54bd248f4236ed32f1d18077331c192cd"
 
 #-------------------------------------------------------------------------------
 # Add Pyenv functionality to ZSH shell + pyenv setup
@@ -155,10 +142,5 @@ eval "$(fasd --init auto)"
 # Hook direnv binary to shell so it activates on each directory change
 #-------------------------------------------------------------------------------
 eval "$(direnv hook zsh)"
-
-#-------------------------------------------------------------------------------
-# Activate Oh-My-Zsh
-#-------------------------------------------------------------------------------
-source $ZSH/oh-my-zsh.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
