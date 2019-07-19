@@ -7,12 +7,6 @@ GIT_USER_NAME="hdd2k"
 GIT_EMAIL="hank.lee.qed@gmail.com"
 DOTFILES=$HOME/dotfiles
 
-
-# -------------------------------------------------
-# Install personal dotfiles
-# -------------------------------------------------
-git clone git@github.com:hdd2k/dotfiles.git $DOTFILES
-
 # -------------------------------------------------
 # Check for Homebrew and install if we don't have it
 # -------------------------------------------------
