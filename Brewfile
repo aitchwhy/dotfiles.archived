@@ -4,7 +4,6 @@
 
 tap 'caskroom/cask'
 tap 'caskroom/fonts'
-tap 'homebrew/php'
 tap 'homebrew/services'
 tap 'sambadevi/powerlevel9k'
 
@@ -159,4 +158,4 @@ cask 'moom'
 # Fonts
 #-------------------------------------------------------------------------------
 
-cask 'font-source-code-pro'
+cask 'caskroom/fonts/font-hack-nerd-font'

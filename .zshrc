@@ -5,18 +5,27 @@
 export DOTFILES=$HOME/dotfiles
 
 #-------------------------------------------------------------------------------
+# Path to oh-my-zsh installation
+#-------------------------------------------------------------------------------
+export ZSH=$HOME/.oh-my-zsh
+
+#-------------------------------------------------------------------------------
 # Set default EDITOR env var to Path to your Vim binary
 #-------------------------------------------------------------------------------
 
 export EDITOR=nvim
 
 #-------------------------------------------------------------------------------
-# Shell prompt setting
+# Shell prompt + theme setting
 #
 # Set name of the theme to load
 #-------------------------------------------------------------------------------
+# Source powerlevel9k
+source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
+export POWERLEVEL9K_MODE="nerdfont-complete"
 export POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 export POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+
 
 #-------------------------------------------------------------------------------
 # Uncomment the following line to use case-sensitive completion.
@@ -82,6 +91,20 @@ COMPLETION_WAITING_DOTS="true"
 #-------------------------------------------------------------------------------
 
 HIST_STAMPS="yyyy-mm-dd"
+#-------------------------------------------------------------------------------
+# Would you like to use another custom folder than $ZSH/custom?
+#-------------------------------------------------------------------------------
+
+# ZSH_CUSTOM=$DOTFILES
+
+#-------------------------------------------------------------------------------
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+#-------------------------------------------------------------------------------
+
+plugins=()
 
 #-------------------------------------------------------------------------------
 # Load the shell dotfiles, and then some:
@@ -102,12 +125,9 @@ done;
 
 unset files file;
 
-
-
 #-------------------------------------------------------------------------------
 # Git / Github settings
 #-------------------------------------------------------------------------------
-#
 export HOMEBREW_GITHUB_API_TOKEN="ecb231b54bd248f4236ed32f1d18077331c192cd"
 
 #-------------------------------------------------------------------------------
@@ -127,6 +147,9 @@ eval "$(fasd --init auto)"
 #-------------------------------------------------------------------------------
 eval "$(direnv hook zsh)"
 
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#-------------------------------------------------------------------------------
+# Activate Oh-My-Zsh
+#-------------------------------------------------------------------------------
+source $ZSH/oh-my-zsh.sh
 
-source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

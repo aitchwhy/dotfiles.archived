@@ -32,11 +32,6 @@ mkdir -p $HOME/.config/nvim
 ln -nfs $DOTFILES/.vimrc ~/.config/nvim/init.vim
 
 # -------------------------------------------------
-# install zsh plugin manager
-# -------------------------------------------------
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-
-# -------------------------------------------------
 # Update Homebrew recipes
 # -------------------------------------------------
 brew update
@@ -63,6 +58,25 @@ git config --global user.email "${GIT_EMAIL}"
 # -------------------------------------------------
 
 chsh -s $(which zsh)
+
+#-------------------------------------------------------------------------------
+# Install Oh-my-zsh
+#-------------------------------------------------------------------------------
+
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+
+# Install Powerline theme
+wget https://raw.githubusercontent.com/jeremyFreeAgent/oh-my-zsh-powerline-theme/master/powerline.zsh-theme -O $HOME/.oh-my-zsh/themes/powerline.zsh-theme
+git clone git@github.com:powerline/fonts.git && bash fonts/install.sh
+sleep 3
+rm -rf fonts
+
+#-------------------------------------------------------------------------------
+# Install oh-my-dir
+#-------------------------------------------------------------------------------
+
+# cd $HOME && git clone git@github.com:ajmazurie/oh-my-dir.git && cd ./oh-my-dir && make install
+# cd $HOME && rm -rf oh-my-dir
 
 # -------------------------------------------------
 # Config files linked (home -> dotfiles)
