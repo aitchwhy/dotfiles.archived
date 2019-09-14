@@ -103,6 +103,12 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # -------------------------------------------------
+# Git - global
+# -------------------------------------------------
+
+npm install --global git-open
+
+# -------------------------------------------------
 # Install global Node packages
 # -------------------------------------------------
 

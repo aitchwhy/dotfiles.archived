@@ -11,7 +11,7 @@ alias ls='ls --color=auto'
 alias dc="docker-compose"
 
 #-------------------------------------------------------------------------------
-# Git
+# Git (sensible aliases + https://hackernoon.com/be-125-more-efficient-with-git-60556a1ce971)
 #-------------------------------------------------------------------------------
 
 # GIT ADD
@@ -24,8 +24,14 @@ alias gs='git status'
 
 # GIT BRANCH
 alias gb='git branch'
+alias gbr='git recent'
 alias gba='git branch -a'
 alias gbd='git branch -d'
+
+# GIT CHECKOUT
+alias gco='git checkout "$(git recent-branches | fzf)"' # command sub quoted to avoid execution before alias call
+alias gcob="git checkout -b"
+
 
 # GIT BLAME
 alias gbl='git blame'
@@ -36,10 +42,6 @@ alias gc!='git commit -v --amend'
 # -a option : auto stage added/modified but don't mind files not known to git
 alias gca='git commit -v -a'
 alias gca!='git commit -v -a --amend'
-
-# GIT CHECKOUT
-alias gco="git checkout"
-alias gcob="git checkout -b"
 
 # GIT STASH
 alias gst="git stash"
@@ -68,6 +70,12 @@ alias gr="git rebase"
 alias gri="git rebase -i"
 alias gra="git rebase --abort"
 alias grc="git rebase --continue"
+
+# Git-recent (recent git branches plugin : https://github.com/paulirish/git-recent)
+
+
+# Git-open (open repo/branch in browser plugin : https://github.com/paulirish/git-open)
+
 
 #-------------------------------------------------------------------------------
 # Improving CLI toolset - https://remysharp.com/2018/08/23/cli-improved
