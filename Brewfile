@@ -70,7 +70,7 @@ brew 'git-flow'
 brew 'htop'
 brew 'httpie'
 brew 'hub'
-brew 'node', args: ['with-full-icu', 'with-npm']
+brew 'node', args: ['with-npm']
 brew 'openssl'
 brew 'tcpdump'
 brew 'tree'
@@ -82,6 +82,7 @@ brew 'hexyl'                                     # Better 'xxd' (hex code viewer
 brew 'neovim'                                    # Better 'vim'
 brew 'zlib'
 brew 'powerlevel9k'				 # zsh shell powerline
+brew 'git-recent'          # viewing latest git branches
 
 #-------------------------------------------------------------------------------
 # Development-Ruby
@@ -114,6 +115,7 @@ brew 'golang'
 cask 'java'
 brew 'gradle'
 brew 'kotlin'
+brew 'maven'
 
 #-------------------------------------------------------------------------------
 # Databases

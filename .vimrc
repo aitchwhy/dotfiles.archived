@@ -54,6 +54,8 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 " Repeat (.) for tpope plugins (tpope)
 Plug 'tpope/vim-repeat'
+" Working with variants or a word (capitalization, plural)
+Plug 'tpope/vim-abolish'
 " Fuzzy search for vim (+ shell FZF install)
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -192,6 +194,9 @@ set softtabstop=0
 set shiftwidth=2
 set expandtab
 
+"" set pastetoggle mode to F2
+set pastetoggle=<F2>
+
 "" Map leader to ,
 let mapleader=','
 
@@ -237,7 +242,7 @@ set number
 
 let no_buffers_menu=1
 if !exists('g:not_finish_vimplug')
-  colorscheme molokai
+ colorscheme molokai
 endif
 
 set termguicolors     " enable true colors support
@@ -455,11 +460,11 @@ let g:deoplete#auto_complete_delay = 150
 let g:deoplete#sources = {}
 let g:deoplete#sources#jedi#show_docstring = 1
 " Disable the candidates in Comment/String syntaxes.
-call deoplete#custom#source('_',
-      \ 'disabled_syntaxes', ['Comment', 'String'])
-call deoplete#custom#option('sources', {
-      \ 'python': [ 'jedi' ]
-\})
+"call deoplete#custom#source('_',
+"      \ 'disabled_syntaxes', ['Comment', 'String'])
+"call deoplete#custom#option('sources', {
+"      \ 'python': [ 'jedi' ]
+"\})
 
 " deoplete <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"

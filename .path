@@ -57,3 +57,11 @@ export PATH="$HOME/.local/bin:$PATH"
 #-------------------------------------------------------------------------------
 export PATH="$HOME/workspace/anaconda3/bin:$PATH"
 
+
+#-------------------------------------------------------------------------------
+# k8s tools (Lacework)
+#-------------------------------------------------------------------------------
+
+export PATH="$HOME/lacework/k8s/tools:$PATH"
+export PATH="$HOME/lacework/k8s/scripts:$PATH"
+export PATH="$HOME/lacework/k8s/scripts:$PATH"

@@ -11,6 +11,65 @@ alias ls='ls --color=auto'
 alias dc="docker-compose"
 
 #-------------------------------------------------------------------------------
+# Git
+#-------------------------------------------------------------------------------
+
+# GIT ADD
+alias ga='git add'
+alias gaa='git add --all'
+alias gap='git add --patch'
+
+# GIT STATUS
+alias gs='git status'
+
+# GIT BRANCH
+alias gb='git branch'
+alias gba='git branch -a'
+alias gbd='git branch -d'
+
+# GIT BLAME
+alias gbl='git blame'
+
+# GIT COMMIT
+alias gc='git commit -v'
+alias gc!='git commit -v --amend'
+# -a option : auto stage added/modified but don't mind files not known to git
+alias gca='git commit -v -a'
+alias gca!='git commit -v -a --amend'
+
+# GIT CHECKOUT
+alias gco="git checkout"
+alias gcob="git checkout -b"
+
+# GIT STASH
+alias gst="git stash"
+
+# GIT PUSH
+alias gp="git push"
+
+# GIT PULL
+alias gl="git pull"
+
+# GIT DIFF
+alias gd="git diff"
+
+# GIT CONFIG
+alias gcnf="git config"
+
+# GIT CONFIG
+alias gw="git worktree"
+
+# GIT MERGE
+alias gm="git merge"
+alias gma="git merge --abort"
+
+# GIT REBASE (useful for squashing commits too) -- Squashing 4 commits (git rebase -i HEAD~4)
+alias gr="git rebase"
+alias gri="git rebase -i"
+alias gra="git rebase --abort"
+alias grc="git rebase --continue"
+
+#-------------------------------------------------------------------------------
 # Improving CLI toolset - https://remysharp.com/2018/08/23/cli-improved
 #-------------------------------------------------------------------------------
 

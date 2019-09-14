@@ -26,7 +26,6 @@ export POWERLEVEL9K_MODE="nerdfont-complete"
 export POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 export POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
-
 #-------------------------------------------------------------------------------
 # Uncomment the following line to use case-sensitive completion.
 #-------------------------------------------------------------------------------
@@ -126,11 +125,6 @@ done;
 unset files file;
 
 #-------------------------------------------------------------------------------
-# Git / Github settings
-#-------------------------------------------------------------------------------
-export HOMEBREW_GITHUB_API_TOKEN="ecb231b54bd248f4236ed32f1d18077331c192cd"
-
-#-------------------------------------------------------------------------------
 # Add Pyenv functionality to ZSH shell + pyenv setup
 # Also install pipsi, pipenv
 #-------------------------------------------------------------------------------
@@ -146,6 +140,14 @@ eval "$(fasd --init auto)"
 # Hook direnv binary to shell so it activates on each directory change
 #-------------------------------------------------------------------------------
 eval "$(direnv hook zsh)"
+
+#-------------------------------------------------------------------------------
+# [Lacework] activate dev env
+#-------------------------------------------------------------------------------
+# Check if command exists before source
+if type "lwenv" > /dev/null; then
+  source lwenv dev2
+fi
 
 #-------------------------------------------------------------------------------
 # Activate Oh-My-Zsh

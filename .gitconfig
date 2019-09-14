@@ -3,11 +3,13 @@
 ##
 
 [core]
-	editor = vim
-	excludesfile = /Users/hank/dotfiles/.gitignore_global
+	editor = nvim
+	excludesfile = /Users/hanklee/dotfiles/.gitignore_global
 
 [alias]
-	mylog = log --graph --decorate --pretty=oneline --abbrev-commit --all --date=relative
+  log1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+  log2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+  log = !"git lg1"
 
 [color]
 	ui = true
@@ -19,8 +21,8 @@
 	default = simple
 
 [user]
-	name = hdd2k
-	email = hank.lee.qed@gmail.com
+	name = hanklw
+	email = hank@lacework.net
 
 [filter "lfs"]
 	clean = git-lfs clean %f
