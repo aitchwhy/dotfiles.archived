@@ -136,6 +136,21 @@ npm install -g create-react-app
 npm install -g create-react-library
 npm install -g react-native-cli
 
+
+
+# -------------------------------------------------
+# Install Pip + setuptools
+# -------------------------------------------------
+
+brew install pip
+brew install pip3
+
+# -------------------------------------------------
+# Pip installs
+# -------------------------------------------------
+# Python client for Neovim
+pip3 install pynvim
+
 # -------------------------------------------------
 # Install Langauge server
 # -------------------------------------------------
@@ -143,13 +158,7 @@ npm install -g react-native-cli
 # Javascript
 npm install -g javascript-typescript-langserver
 # Python
-pip install python-language-server
-
-# -------------------------------------------------
-# Install Pip + setuptools
-# -------------------------------------------------
-
-sudo easy_install pip
+pip3 install python-language-server
 
 # -------------------------------------------------
 # Install python stuff (pyenv, pipsi, pipenv)
