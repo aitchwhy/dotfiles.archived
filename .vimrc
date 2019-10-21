@@ -36,6 +36,8 @@ Plug 'tpope/vim-vinegar'
 Plug 'kshenoy/vim-signature'
 " Tmux / Vim navigator
 Plug 'christoomey/vim-tmux-navigator'
+" Floating window - finder / dispatcher
+Plug 'liuchengxu/vim-clap'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Code Tagging

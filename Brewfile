@@ -155,6 +155,7 @@ cask 'dropbox'
 cask 'launchcontrol'
 cask 'little-snitch'
 cask 'moom'
+cask 'netspot'
 
 #-------------------------------------------------------------------------------
 # Fonts
