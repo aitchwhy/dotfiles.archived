@@ -45,23 +45,25 @@ PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 # Load custom commands
 #-------------------------------------------------------------------------------
 
-export PATH="$DOTFILES/bin:$PATH"
+PATH="$DOTFILES/bin:$PATH"
 
 #-------------------------------------------------------------------------------
 # pipsi paths
 #-------------------------------------------------------------------------------
-export PATH="$HOME/.local/bin:$PATH"
+PATH="$HOME/.local/bin:$PATH"
 
 #-------------------------------------------------------------------------------
 # Conda path
 #-------------------------------------------------------------------------------
-export PATH="$HOME/workspace/anaconda3/bin:$PATH"
+PATH="$HOME/workspace/anaconda3/bin:$PATH"
 
 
 #-------------------------------------------------------------------------------
 # k8s tools (Lacework)
 #-------------------------------------------------------------------------------
 
-export PATH="$HOME/lacework/k8s/tools:$PATH"
-export PATH="$HOME/lacework/k8s/scripts:$PATH"
-export PATH="$HOME/lacework/k8s/scripts:$PATH"
+PATH="$HOME/lacework/k8s/tools:$PATH"
+PATH="$HOME/lacework/k8s/scripts:$PATH"
+PATH="$HOME/lacework/k8s/scripts:$PATH"
+
+export PATH

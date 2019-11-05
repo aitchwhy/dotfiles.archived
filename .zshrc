@@ -1,7 +1,6 @@
 #-------------------------------------------------------------------------------
 # Path to your dotfiles installation.
 #-------------------------------------------------------------------------------
-
 export DOTFILES=$HOME/dotfiles
 
 #-------------------------------------------------------------------------------
@@ -104,6 +103,24 @@ HIST_STAMPS="yyyy-mm-dd"
 #-------------------------------------------------------------------------------
 
 plugins=()
+
+#-------------------------------------------------------------------------------
+# Set working directories (for rg, fzf, fd searching)
+#-------------------------------------------------------------------------------
+WORKDIRS=(
+  "workspace"
+  "lacework"
+  "Dropbox"
+  "dotfiles"
+  "Downloads"
+  "Google\ Drive"
+);
+# Join working dir strings for RipGrep file search (using conditional parameter expansion - https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
+WORKDIR_PATHS=""
+for WORKDIR in "${WORKDIRS[@]}";
+do
+  WORKDIR_PATHS+="$HOME/${WORKDIR} "
+done
 
 #-------------------------------------------------------------------------------
 # Load the shell dotfiles, and then some:

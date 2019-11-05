@@ -10,6 +10,21 @@ export EDITOR='nvim'
 # export ARCHFLAGS="-arch x86_64"
 
 #-------------------------------------------------------------------------------
+# FZF settings
+#-------------------------------------------------------------------------------
+# m : multi-select with TAB
+# reverse layout : filter prompt on TOP not bottom
+# inline-info : filtered result count shown INLINE with filter prompt
+# border : draw border around fuzzy finder
+# key bind : bind keys WHILE in FZF to execute without leaving FZF
+# * Press F1 to open the file with less without leaving fzf
+# * Press CTRL-Y to copy the line to clipboard and aborts fzf (requires pbcopy)
+export FZF_DEFAULT_OPTS="-m --layout=reverse --inline-info --border --bind 'f1:execute(less -f {}),ctrl-y:execute-silent(echo {} | pbcopy)+abort'"
+export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden $WORKDIR_PATHS"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd . $HOME --hidden --no-ignore --type d"
+
+#-------------------------------------------------------------------------------
 # For brew cask available options
 # @see. https://github.com/caskroom/homebrew-cask/blob/master/USAGE.md#options
 #-------------------------------------------------------------------------------
@@ -25,15 +40,6 @@ export ANDROID_HOME=/usr/local/opt/android-sdk
 #-------------------------------------------------------------------------------
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-
-#-------------------------------------------------------------------------------
-# FZF settings
-#-------------------------------------------------------------------------------
-export FZF_DEFAULT_COMMAND="fd . --hidden --no-ignore"  # Add filepath in vimrc keymapping
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="rg --files --no-ignore-vcs --hidden"
-export FZF_DEFAULT_OPTS='-m'
-
 
 #-------------------------------------------------------------------------------
 # (workaround) pyenv 'gettext' error - shims do not work with gettext

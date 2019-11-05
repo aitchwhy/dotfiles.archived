@@ -23,15 +23,13 @@ alias gap='git add --patch'
 alias gs='git status'
 
 # GIT BRANCH
-alias gb='git branch'
 alias gbr='git recent'
 alias gba='git branch -a'
 alias gbd='git branch -d'
 
 # GIT CHECKOUT
-alias gco='git checkout "$(git recent-branches | fzf)"' # command sub quoted to avoid execution before alias call
+alias gco='git checkout $(gb)' # command single quoted to avoid execution before alias call
 alias gcob="git checkout -b"
-
 
 # GIT BLAME
 alias gbl='git blame'
@@ -44,32 +42,35 @@ alias gca='git commit -v -a'
 alias gca!='git commit -v -a --amend'
 
 # GIT STASH
-alias gst="git stash"
-
-# GIT PUSH
-alias gp="git push"
+alias gst='git stash'
 
 # GIT PULL
-alias gl="git pull"
+alias gl='$(glog)'
+
+# GIT PUSH
+alias gpush='git push'
+
+# GIT PULL
+alias gpull='git pull'
 
 # GIT DIFF
-alias gd="git diff"
+alias gd='git diff'
 
 # GIT CONFIG
-alias gcnf="git config"
+alias gcnf='git config'
 
 # GIT CONFIG
-alias gw="git worktree"
+alias gw='git worktree'
 
 # GIT MERGE
-alias gm="git merge"
-alias gma="git merge --abort"
+alias gm='git merge'
+alias gma='git merge --abort'
 
 # GIT REBASE (useful for squashing commits too) -- Squashing 4 commits (git rebase -i HEAD~4)
-alias gr="git rebase"
-alias gri="git rebase -i"
-alias gra="git rebase --abort"
-alias grc="git rebase --continue"
+# alias gr="git rebase"
+alias gri='git rebase -i'
+alias gra='git rebase --abort'
+alias grc='git rebase --continue'
 
 # Git-recent (recent git branches plugin : https://github.com/paulirish/git-recent)
 
@@ -86,6 +87,7 @@ alias ping='prettyping --nolegend'
 alias help='tldr'
 alias du='ncdu --color dark -rr -x --exclude .git'
 alias xxd='hexyl'
+
 
 #-------------------------------------------------------------------------------
 # Lacework (July 22, 2019 ~ )

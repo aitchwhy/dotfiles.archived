@@ -38,6 +38,8 @@ Plug 'kshenoy/vim-signature'
 Plug 'christoomey/vim-tmux-navigator'
 " Floating window - finder / dispatcher
 Plug 'liuchengxu/vim-clap'
+" CamelCase motion script (words respect camelcase - when used with LEADER)
+Plug 'bkad/CamelCaseMotion'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Code Tagging
@@ -59,7 +61,6 @@ Plug 'tpope/vim-repeat'
 " Working with variants or a word (capitalization, plural)
 Plug 'tpope/vim-abolish'
 " Fuzzy search for vim (+ shell FZF install)
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " Automatic closing of quotes, etc
 Plug 'jiangmiao/auto-pairs'
@@ -433,6 +434,8 @@ nmap <Leader>t :Tags<CR>
 nmap <Leader>m :Marks<CR>
 nmap <Leader>c :Rg<CR>
 
+set rtp+=/usr/local/opt/fzf
+
 """ vim-argwrap bindings
 nnoremap <silent> <Leader>a :ArgWrap<CR>
 
@@ -609,4 +612,5 @@ else
   let g:airline_symbols.linenr = ''
 endif
 
+let g:camelcasemotion_key = '<leader>'
 

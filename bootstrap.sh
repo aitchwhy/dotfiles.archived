@@ -161,6 +161,11 @@ npm install -g javascript-typescript-langserver
 pip3 install python-language-server
 
 # -------------------------------------------------
+# FZF additional install (fuzzy completion + key-bindings)
+# -------------------------------------------------
+$(brew --prefix)/opt/fzf/install
+
+# -------------------------------------------------
 # Install python stuff (pyenv, pipsi, pipenv)
 # -------------------------------------------------
 eval "$(pyenv init -)"
