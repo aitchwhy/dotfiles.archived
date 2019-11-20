@@ -166,9 +166,14 @@ if type "lwenv" > /dev/null; then
   source lwenv dev2
 fi
 
+source /Users/hanklee/.ghcup/env
+
 #-------------------------------------------------------------------------------
 # Activate Oh-My-Zsh
 #-------------------------------------------------------------------------------
 source $ZSH/oh-my-zsh.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# added by Snowflake SnowSQL installer v1.0
+export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH

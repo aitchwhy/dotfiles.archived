@@ -420,12 +420,6 @@ noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 "" Opens a tab edit command with the path of the currently edited file filled
 noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
-""" Remap Shift+hjkl for quick navigation
-nnoremap H ^
-nnoremap L $
-nnoremap J <C-d>
-nnoremap K <C-u>
-
 """ fzf bindings
 nmap ; :Buffers<CR>
 nmap <Leader>f :Files<CR>
@@ -528,6 +522,20 @@ nnoremap <Leader>o :.Gbrowse<CR>
 "*****************************************************************************
 "" Custom configs
 "*****************************************************************************
+
+" netrw buffer won't close, so workaround to delete when hidden
+" Remove 'set hidden'
+set nohidden
+augroup netrw_buf_hidden_fix
+    autocmd!
+
+    " Set all non-netrw buffers to bufhidden=hide
+    autocmd BufWinEnter *
+                \  if &ft != 'netrw'
+                \|     set bufhidden=hide
+                \| endif
+augroup end
+
 
 " html
 " for html files, 2 spaces
