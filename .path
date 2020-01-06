@@ -1,14 +1,24 @@
+# Custom function to adding valid directories (dir exists, non-duplicate)
+# https://superuser.com/questions/39751/add-directory-to-path-if-its-not-already-there
+pathadd() {
+  if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+    PATH="${PATH:+"$PATH:"}$1"
+  fi
+}
+
 #-------------------------------------------------------------------------------
 # Load Node global installed binaries
 #-------------------------------------------------------------------------------
 
-PATH="/usr/local/opt/node@6/bin:$PATH"
+pathadd "/usr/local/opt/node@6/bin"
+# PATH="/usr/local/opt/node@6/bin:$PATH"
 
 #-------------------------------------------------------------------------------
 # Use project specific binaries before global ones
 #-------------------------------------------------------------------------------
 
-PATH="node_modules/.bin:vendor/bin:$PATH"
+pathadd "node_modules/.bin:vendor/bin"
+# PATH="node_modules/.bin:vendor/bin:$PATH"
 
 #-------------------------------------------------------------------------------
 # Make sure PHP 7 is loaded
@@ -22,18 +32,14 @@ PATH="node_modules/.bin:vendor/bin:$PATH"
 
 # TODO: below is too slow!!! (0.5 ~ 0.8 sec) for (brew --prefix)
 # PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+# PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+pathadd "/usr/local/opt/coreutils/libexec/gnubin"
 
 #-------------------------------------------------------------------------------
 # Local bin directories before anything else
 #-------------------------------------------------------------------------------
-PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-
-#-------------------------------------------------------------------------------
-# Composer
-#-------------------------------------------------------------------------------
-
-#PATH="$PATH:$HOME/.composer/vendor/bin"
+pathadd "/usr/local/bin:/usr/local/sbin"
+# PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
 #-------------------------------------------------------------------------------
 # Add RVM to PATH for scripting
@@ -45,25 +51,29 @@ PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 # Load custom commands
 #-------------------------------------------------------------------------------
 
-PATH="$DOTFILES/bin:$PATH"
+# PATH="$DOTFILES/bin:$PATH"
+pathadd "$DOTFILES/bin"
 
 #-------------------------------------------------------------------------------
 # pipsi paths
 #-------------------------------------------------------------------------------
-PATH="$HOME/.local/bin:$PATH"
+# PATH="$HOME/.local/bin:$PATH"
+pathadd "$HOME/.local/bin"
 
 #-------------------------------------------------------------------------------
 # Conda path
 #-------------------------------------------------------------------------------
-PATH="$HOME/workspace/anaconda3/bin:$PATH"
+# PATH="$HOME/workspace/anaconda3/bin:$PATH"
+pathadd "$HOME/workspace/anaconda3/bin"
 
 
 #-------------------------------------------------------------------------------
 # k8s tools (Lacework)
 #-------------------------------------------------------------------------------
 
-PATH="$HOME/lacework/k8s/tools:$PATH"
-PATH="$HOME/lacework/k8s/scripts:$PATH"
-PATH="$HOME/lacework/k8s/scripts:$PATH"
+# PATH="$HOME/lacework/k8s/tools:$PATH"
+# PATH="$HOME/lacework/k8s/scripts:$PATH"
+pathadd "$HOME/lacework/k8s/tools"
+pathadd "$HOME/lacework/k8s/scripts"
 
 export PATH
