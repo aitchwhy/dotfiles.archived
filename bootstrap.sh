@@ -94,6 +94,9 @@ ln -nfs $DOTFILES/.tmux.conf $HOME/.tmux.conf
 # Direnv link (env vars per project)
 ln -nfs $DOTFILES/.direnvrc $HOME/.direnvrc
 
+# dir colors (zsh color config)
+ln -nfs $DOTFILES/.dir_colors $HOME/.dir_colors
+
 # -------------------------------------------------
 # Install vim plugin manager (vim-plug)
 # -------------------------------------------------
