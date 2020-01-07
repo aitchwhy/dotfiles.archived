@@ -116,7 +116,7 @@ Plug 'Yggdroot/indentLine'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Color theme
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'ayu-theme/ayu-vim' " Ayu colorscheme
+Plug 'arcticicestudio/nord-vim'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " StatusLine
@@ -132,9 +132,7 @@ Plug 'tpope/vim-fugitive'
 " Git gutter (left-side shows diff style)
 Plug 'airblade/vim-gitgutter'
 " Colorscheme approx (gvim only colors on terminal)
-Plug 'vim-scripts/CSApprox'
-"" Color
-Plug 'tomasr/molokai'
+" Plug 'vim-scripts/CSApprox'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sessions (persist / restore vim editing sessions)
@@ -244,15 +242,15 @@ set ruler
 set number
 
 let no_buffers_menu=1
-if !exists('g:not_finish_vimplug')
- colorscheme molokai
-endif
 
-set termguicolors     " enable true colors support
-" let ayucolor="light"  " for light version of theme
-let ayucolor="mirage" " for mirage version of theme
-" let ayucolor="dark"   " for dark version of theme
-colorscheme ayu
+" enable true colors support
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set t_Co=256
+  set termguicolors
+endif
+colorscheme nord
 
 set mousemodel=popup
 set t_Co=256
@@ -273,20 +271,14 @@ else
   let g:indentLine_char = '┆'
   let g:indentLine_faster = 1
 
-  if $COLORTERM == 'gnome-terminal'
-    set term=gnome-256color
-  else
-    if $TERM == 'xterm'
-      set term=xterm-256color
-    endif
-  endif
+  " if $COLORTERM == 'gnome-terminal'
+  "   set term=gnome-256color
+  " else
+  "   if $TERM == 'xterm'
+  "     set term=xterm-256color
+  "   endif
+  " endif
 endif
-
-
-if &term =~ '256color'
-  set t_ut=
-endif
-
 
 "" Disable the blinking cursor.
 set gcr=a:blinkon0
