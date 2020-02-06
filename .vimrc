@@ -427,7 +427,7 @@ nmap <Leader>c :Rg<CR>
 noremap <Leader>h :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
 
-""" Git
+""" Git (Fugitive + gitgutter)
 noremap <Leader>ga :Gwrite<CR>
 noremap <Leader>gc :Gcommit<CR>
 noremap <Leader>gsh :Gpush<CR>
@@ -436,6 +436,7 @@ noremap <Leader>gs :Gstatus<CR>
 noremap <Leader>gbl :Gblame<CR>
 noremap <Leader>gd :Gvdiff<CR>
 noremap <Leader>gr :Gremove<CR>
+noremap <Leader>gg :GitGutterToggle<CR>
 
 """ vim-argwrap bindings
 nnoremap <silent> <Leader>a :ArgWrap<CR>
