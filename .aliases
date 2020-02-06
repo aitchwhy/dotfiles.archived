@@ -49,10 +49,10 @@ alias gst='git stash'
 alias gl='$(glog)'
 
 # GIT PUSH
-alias gpush='git push'
+alias gsh='git push'
 
 # GIT PULL
-alias gpull='git pull'
+alias gll='git pull'
 
 # GIT DIFF
 alias gd='git diff'

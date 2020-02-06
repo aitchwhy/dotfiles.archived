@@ -182,3 +182,5 @@ source $ZSH/oh-my-zsh.sh
 
 # added by Snowflake SnowSQL installer v1.0
 export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
+
+source /Users/hanklee/Library/Preferences/org.dystroy.broot/launcher/bash/br

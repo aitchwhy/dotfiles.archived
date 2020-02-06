@@ -83,6 +83,7 @@ brew 'neovim'                                    # Better 'vim'
 brew 'zlib'
 brew 'powerlevel9k'				 # zsh shell powerline
 brew 'git-recent'          # viewing latest git branches
+brew 'broot'          # modern tree command
 
 #-------------------------------------------------------------------------------
 # Development-Ruby
