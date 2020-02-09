@@ -158,7 +158,7 @@ if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set t_Co=256
-  set termguicolors
+  " set termguicolors --- sets vim colorscheme to be off (do not set)
 endif
 colorscheme nord
 
@@ -285,6 +285,8 @@ if executable('rg')
   set grepprg=rg\ --nogroup\ --nocolor\ --noignore-vcs
 endif
 
+" Keymap waiting period length (:help timeoutlen) - happens when multiple keys mapped to same prefix
+set timeoutlen=200
 
 "*****************************************************************************
 " coc.vim settings
@@ -419,9 +421,16 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 nmap ; :Buffers<CR>
 nmap <Leader>f :Files<CR>
 nmap <Leader>ff :Files $HOME<CR>
-nmap <Leader>t :Tags<CR>
+" Current buffer tags only
+nmap <Leader>t :BTags<CR>
+" all tags only
+nmap <Leader>tt :Tags<CR>
 nmap <Leader>m :Marks<CR>
-nmap <Leader>c :Rg<CR>
+nmap <Leader>c :BCommits<CR>
+nmap <Leader>cc :Commits<CR>
+nmap <Leader>l :BLines<CR>
+nmap <Leader>ll :Lines<CR>
+nmap <Leader>s :Rg<CR>
 
 """ Split
 noremap <Leader>h :<C-u>split<CR>
@@ -501,6 +510,9 @@ nnoremap <silent> <leader><space> :noh<cr>
 vmap < <gv
 vmap > >gv
 
+" Netrw bindings
+map <leader>nt :Ntree<cr>
+
 "*****************************************************************************
 "" Autocmd Rules
 "*****************************************************************************
@@ -533,10 +545,10 @@ augroup END
 " Python (add multiline string)
 " au FileType python let b:AutoPairs = AutoPairsDefine({"'''" : "'''"})
 
+" Netrw closing
+autocmd FileType netrw setl bufhidden=wipe
 
-"*****************************************************************************
-"" Custom configs
-"*****************************************************************************
+
 
 " netrw buffer won't close, so workaround to delete when hidden
 " Remove 'set hidden'
@@ -590,6 +602,9 @@ let g:tagbar_type_ruby = {
 "*****************************************************************************
 "" Convenience variables
 "*****************************************************************************
+" Netrw Settings
+let g:netrw_liststyle = 3       " default style (tree style)
+let g:netrw_winsize = 25        " window size 25%
 
 " session management
 let g:session_directory = "~/.vim/session"
