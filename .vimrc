@@ -167,6 +167,9 @@ set t_Co=256
 set guioptions=egmrti
 set gfn=Monospace\ 10
 
+" cursor shape (empty value means shape won't change by mode)
+set guicursor=
+
 "" Disable the blinking cursor.
 set gcr=a:blinkon0
 set scrolloff=3
@@ -233,6 +236,24 @@ endif
 
 set autoread
 
+function! FloatingFZF()
+  let buf = nvim_create_buf(v:false, v:true)
+  call setbufvar(buf, '&signcolumn', 'no')
+  let height = &lines - 3
+  let width = float2nr(&columns - (&columns * 2 / 10))
+  let col = float2nr((&columns - width) / 2)
+
+  let opts = {
+        \ 'relative': 'editor',
+        \ 'row': 1,
+        \ 'col': col,
+        \ 'width': width,
+        \ 'height': height
+        \ }
+
+  call nvim_open_win(buf, v:true, opts)
+endfunction
+
 "*****************************************************************************
 "" Option setting
 "*****************************************************************************
@@ -286,7 +307,7 @@ if executable('rg')
 endif
 
 " Keymap waiting period length (:help timeoutlen) - happens when multiple keys mapped to same prefix
-set timeoutlen=200
+set timeoutlen=250
 
 "*****************************************************************************
 " coc.vim settings
@@ -602,6 +623,9 @@ let g:tagbar_type_ruby = {
 "*****************************************************************************
 "" Convenience variables
 "*****************************************************************************
+" FZF floating window
+let g:fzf_layout = { 'window': 'call FloatingFZF()' }
+
 " Netrw Settings
 let g:netrw_liststyle = 3       " default style (tree style)
 let g:netrw_winsize = 25        " window size 25%
