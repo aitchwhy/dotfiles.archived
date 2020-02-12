@@ -537,6 +537,10 @@ map <leader>nt :Ntree<cr>
 "*****************************************************************************
 "" Autocmd Rules
 "*****************************************************************************
+
+" Disable indentLine Plugin JSON file quote concealing
+autocmd Filetype json let g:indentLine_enabled = 0
+
 "" The PC is fast enough, do syntax highlight syncing from start unless 200 lines
 augroup vimrc-sync-fromstart
   autocmd!
@@ -568,8 +572,6 @@ augroup END
 
 " Netrw closing
 autocmd FileType netrw setl bufhidden=wipe
-
-
 
 " netrw buffer won't close, so workaround to delete when hidden
 " Remove 'set hidden'
