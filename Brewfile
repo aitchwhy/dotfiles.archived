@@ -78,12 +78,12 @@ brew 'wget'
 brew 'fzf'
 brew 'ripgrep'
 brew 'cmake'
-brew 'hexyl'                                     # Better 'xxd' (hex code viewer)
-brew 'neovim'                                    # Better 'vim'
+brew 'hexyl'                                        # Better 'xxd' (hex code viewer)
+brew 'neovim'                                       # Better 'vim'
 brew 'zlib'
-brew 'powerlevel9k'				 # zsh shell powerline
-brew 'git-recent'          # viewing latest git branches
-brew 'broot'          # modern tree command
+brew 'powerlevel9k'				                    # zsh shell powerline
+brew 'git-recent'                                   # viewing latest git branches
+brew 'vifm'                                         # Vim-like file manager (so good)
 
 #-------------------------------------------------------------------------------
 # Development-Ruby

@@ -309,6 +309,9 @@ endif
 " Keymap waiting period length (:help timeoutlen) - happens when multiple keys mapped to same prefix
 set timeoutlen=250
 
+" Vim folding
+set foldmethod=indent
+set foldlevelstart=20
 "*****************************************************************************
 " coc.vim settings
 "*****************************************************************************
