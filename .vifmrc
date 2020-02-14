@@ -406,7 +406,7 @@ command! FzfBMarks :execute "normal! :bmarks\r:write ~/.config/vifm/bookmarks\rq
 
 nnoremap ,ff :FzfRecentDir<cr>
 nnoremap ,f :FzfFind<cr>
-nnoremap ,bc :FzfBMarkCurr<cr>
+nnoremap ,ba :FzfBMarkCurr<cr>
 nnoremap ,b :FzfBMarks<cr>
 
 " ------------------------------------------------------------------------------
