@@ -130,8 +130,8 @@ done
 files=(
     "$DOTFILES/.path"
     "$DOTFILES/.export"
-    "$DOTFILES/.aliases"
     "$DOTFILES/.functions"
+    "$DOTFILES/.aliases"
     "$DOTFILES/.extra"
     );
 

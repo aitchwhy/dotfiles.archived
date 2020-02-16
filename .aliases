@@ -13,43 +13,48 @@ alias dc="docker-compose"
 
 #-------------------------------------------------------------------------------
 # Git (sensible aliases + https://hackernoon.com/be-125-more-efficient-with-git-60556a1ce971)
+#   - smart shortcut (frequenty usage)  ->  (g${short-command} - like gl for [git log]
 #-------------------------------------------------------------------------------
 
-# GIT ADD
-alias ga='git add'
-alias gaa='git add --all'
-alias gap='git add --patch'
+# GIT CONFIG
+alias gcnf='git config'
 
 # GIT STATUS
 alias gs='git status'
 
+# GIT log
+# .function gl
+
 # GIT BRANCH
-alias gbr='git recent'
+# .function gb()
 alias gba='git branch -a'
 alias gbd='git branch -d'
+alias gbdd='git push origin --delete'
 
 # GIT CHECKOUT
 alias gco='git checkout $(gb)' # command single quoted to avoid execution before alias call
 alias gcob="git checkout -b"
 
-# GIT BLAME
-alias gbl='git blame'
+# GIT ADD
+alias ga='git add -i'
+alias gaa='git add --all'
+alias gap='git add --patch'
 
 # GIT COMMIT
 alias gc='git commit -v'
 alias gc!='git commit -v --amend'
-# -a option : auto stage added/modified but don't mind files not known to git
+# -a option : auto stage ("add") added/modified but don't mind files not known to git
 alias gca='git commit -v -a'
 alias gca!='git commit -v -a --amend'
+
+# GIT BLAME
+alias gbl='git blame'
 
 # GIT STASH
 alias gst='git stash'
 
-# GIT PULL
-alias gl='$(glog)'
-
 # GIT PUSH
-alias gsh='git push'
+# .function gsh()
 
 # GIT PULL
 alias gll='git pull'
@@ -57,10 +62,7 @@ alias gll='git pull'
 # GIT DIFF
 alias gd='git diff'
 
-# GIT CONFIG
-alias gcnf='git config'
-
-# GIT CONFIG
+# GIT worktree
 alias gw='git worktree'
 
 # GIT MERGE

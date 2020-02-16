@@ -305,6 +305,16 @@ is_in_git_repo() {
   git rev-parse HEAD > /dev/null 2>&1
 }
 
+git_curr_branch() {
+  is_in_git_repo || return
+  echo "$(git rev-parse --abbrev-ref HEAD)"
+}
+
+git_curr_url() {
+  is_in_git_repo || return
+  echo "$(git remote get-url origin)"
+}
+
 fzf-down() {
   fzf --height 50% "$@" --border
 }
@@ -334,7 +344,7 @@ gt() {
 }
 
 # TODO: clashes vim-tmux-navigator mapping (BOTH gh() + gl())
-glog() {
+gl() {
   is_in_git_repo || return
   git log --date=short --format="%C(green)%C(bold)%cd %C(auto)%h%d %s (%an)" --graph --color=always |
   fzf-down --ansi --no-sort --reverse --multi --bind 'ctrl-s:toggle-sort' \
@@ -351,6 +361,21 @@ gr() {
   cut -d$'\t' -f1
 }
 
+gsh() {
+  # Push upstream to remote if none exist at 'origin'
+  is_in_git_repo || return
+  local curr_branch=$(git_curr_branch)
+  local curr_url=$(git_curr_url)
+  git ls-remote --exit-code --heads $curr_url $curr_branch
+  # Check exit code (0 if branch remote exists, 2 otherwise)
+  if [[ "$?" = "0"  ]]; then
+    # remote exists
+    git push
+  else
+    # no remote exists -> create one for current
+    git push --set-upstream origin $curr_branch
+  fi
+}
 
 # Key-bindings
 join-lines() {
