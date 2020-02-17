@@ -373,7 +373,7 @@ gsh() {
     git push
   else
     # no remote exists -> create one for current
-    git push --set-upstream origin $curr_branch > /dev/null 2>&1
+    git push --set-upstream origin $curr_branch
   fi
 }
 
