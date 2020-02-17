@@ -366,7 +366,7 @@ gsh() {
   is_in_git_repo || return
   local curr_branch=$(git_curr_branch)
   local curr_url=$(git_curr_url)
-  git ls-remote --exit-code --heads $curr_url $curr_branch
+  git ls-remote --exit-code --heads $curr_url $curr_branch > /dev/null 2>&1
   # Check exit code (0 if branch remote exists, 2 otherwise)
   if [[ "$?" = "0"  ]]; then
     # remote exists
