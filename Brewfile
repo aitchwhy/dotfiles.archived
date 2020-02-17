@@ -84,6 +84,7 @@ brew 'zlib'
 brew 'powerlevel9k'				                    # zsh shell powerline
 brew 'git-recent'                                   # viewing latest git branches
 brew 'vifm'                                         # Vim-like file manager (so good)
+brew 'broot'                                        # broot - tree,cd,fuzzy-search
 
 #-------------------------------------------------------------------------------
 # Development-Ruby
