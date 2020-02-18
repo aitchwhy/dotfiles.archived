@@ -630,6 +630,12 @@ let g:tagbar_type_ruby = {
 "*****************************************************************************
 " FZF floating window
 let g:fzf_layout = { 'window': 'call FloatingFZF()' }
+" FZF Rg search default command override
+" Options + include file pattern (2nd line) + exclude file pattern (3rd line)
+let g:rg_command = '
+  \ rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always"
+  \ -g "!{.git,node_modules,vendor}/*" '
+command! -bang -nargs=* Rg call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
 
 " Netrw Settings
 let g:netrw_liststyle = 3       " default style (tree style)
