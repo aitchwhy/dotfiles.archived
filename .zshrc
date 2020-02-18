@@ -11,7 +11,6 @@ export ZSH=$HOME/.oh-my-zsh
 #-------------------------------------------------------------------------------
 # Set default EDITOR env var to Path to your Vim binary
 #-------------------------------------------------------------------------------
-
 export EDITOR=nvim
 
 #-------------------------------------------------------------------------------
@@ -180,7 +179,7 @@ source $ZSH/oh-my-zsh.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# added by Snowflake SnowSQL installer v1.0
-export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
-
 source /Users/hanklee/Library/Preferences/org.dystroy.broot/launcher/bash/br
+
+# Remove PATH duplicates - https://unix.stackexchange.com/questions/40749/remove-duplicate-path-entries-with-awk-command/149054#149054
+export PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV{PATH}))')"
