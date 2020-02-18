@@ -64,7 +64,7 @@ set norunexec
 
 " Selected color scheme
 
-colorscheme iceberg
+colorscheme gruvbox
 
 " Format for displaying time in file list. For example:
 " TIME_STAMP_FORMAT=%m/%d-%H:%M
@@ -326,6 +326,7 @@ set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
 " Customize view columns a bit (enable ellipsis for truncated file names)
 "
 " set viewcolumns=-{name}..,6{}.
+set viewcolumns=-60%{name},15%{ext},5%{mtime},20%{size}
 
 " Filter-out build and temporary files
 "
