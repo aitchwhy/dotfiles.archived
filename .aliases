@@ -3,7 +3,7 @@
 #-------------------------------------------------------------------------------
 
 # alias ls='ls --color=auto'
-alias ls='br -dp'
+alias ls='br -dp --hidden'
 
 #-------------------------------------------------------------------------------
 # Docker
@@ -27,12 +27,13 @@ alias gs='git status'
 
 # GIT BRANCH
 # .function gb()
-alias gba='git branch -a'
+# .function gba()
 alias gbd='git branch -d'
 alias gbdd='git push origin --delete'
 
 # GIT CHECKOUT
 alias gco='git checkout $(gb)' # command single quoted to avoid execution before alias call
+alias gcoa='git checkout $(gba)' # command single quoted to avoid execution before alias call
 alias gcob="git checkout -b"
 
 # GIT ADD
