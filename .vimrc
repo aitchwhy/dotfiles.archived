@@ -537,6 +537,10 @@ vmap > >gv
 " Netrw bindings
 map <leader>nt :Ntree<cr>
 
+" QuickFix keymaps (inspired from unimpaired.vim)
+noremap [q :cprev<cr>
+noremap ]q :cnext<cr>
+
 "*****************************************************************************
 "" Autocmd Rules
 "*****************************************************************************
