@@ -443,11 +443,11 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 """ fzf bindings
 nmap ; :Buffers<CR>
-nmap <Leader>f :Files<CR>
-nmap <Leader>ff :Files $HOME<CR>
+nmap <Leader>f :GitFiles<CR>
+nmap <Leader>ff :Files<CR>
 " Current buffer tags only
 nmap <Leader>t :BTags<CR>
-" all tags only
+" all tags
 nmap <Leader>tt :Tags<CR>
 nmap <Leader>m :Marks<CR>
 nmap <Leader>c :BCommits<CR>
