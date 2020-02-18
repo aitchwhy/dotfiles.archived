@@ -10,6 +10,14 @@ export EDITOR='nvim'
 # export ARCHFLAGS="-arch x86_64"
 
 #-------------------------------------------------------------------------------
+# Status prompt configuration (powerlevel9k) - https://github.com/Powerlevel9k/powerlevel9k
+# Defaults for left + right are below
+#-------------------------------------------------------------------------------
+export POWERLEVEL9K_CONTEXT_TEMPLATE="%n@$TF_VAR_env_name"
+# export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS="(context dir vcs)"
+# export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS="(status root_indicator background_jobs history time)"
+
+#-------------------------------------------------------------------------------
 # FZF settings
 #-------------------------------------------------------------------------------
 # m : multi-select with TAB
