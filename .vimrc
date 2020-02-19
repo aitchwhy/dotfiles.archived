@@ -440,6 +440,7 @@ nmap <Leader>cc :Commits<CR>
 nmap <Leader>l :BLines<CR>
 nmap <Leader>ll :Lines<CR>
 nmap <Leader>s :Rg<CR>
+nmap <Leader>ss :PRg<CR>
 
 """ Split
 noremap <Leader>h :<C-u>split<CR>
@@ -473,10 +474,10 @@ noremap <C-h> <C-w>h
 nmap <silent> <F8> :TagbarToggle<CR>
 
 " session management
-nnoremap <leader>so :OpenSession<Space>
-nnoremap <leader>ss :SaveSession<Space>
-nnoremap <leader>sd :DeleteSession<CR>
-nnoremap <leader>sc :CloseSession<CR>
+" nnoremap <leader>so :OpenSession<Space>
+" nnoremap <leader>ss :SaveSession<Space>
+" nnoremap <leader>sd :DeleteSession<CR>
+" nnoremap <leader>sc :CloseSession<CR>
 
 "" Tabs
 nnoremap <Tab> gt
@@ -625,6 +626,9 @@ let g:rg_command = '
   \ rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always"
   \ -g "!{.git,node_modules,vendor}/*" '
 command! -bang -nargs=* Rg call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
+
+command! -bang -nargs=* PRg
+  \ call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'dir': system('git rev-parse --show-toplevel 2> /dev/null')[:-2]}, <bang>0)
 
 " Netrw Settings
 let g:netrw_liststyle = 3       " default style (tree style)
