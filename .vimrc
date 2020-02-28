@@ -93,12 +93,20 @@ Plug 'vim-airline/vim-airline-themes'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Util
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Window resizing
+Plug 'camspiers/lens.vim'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Util
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Git wrapper
 Plug 'tpope/vim-fugitive'
 " Git gutter (left-side shows diff style)
 Plug 'airblade/vim-gitgutter'
 " Colorscheme approx (gvim only colors on terminal)
 " Plug 'vim-scripts/CSApprox'
+
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sessions (persist / restore vim editing sessions)
