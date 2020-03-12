@@ -69,3 +69,8 @@ export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} /usr/local/opt/zlib/lib/pkgconfig"
 # Java home (class path for .class files path)
 #-------------------------------------------------------------------------------
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
+
+#-------------------------------------------------------------------------------
+# Tmux fzf gnu-sed (gsed) path
+#-------------------------------------------------------------------------------
+export TMUX_FZF_SED="/usr/local/bin/gsed"
