@@ -78,6 +78,8 @@ Plug 'godlygeek/tabular'
 Plug 'terryma/vim-multiple-cursors'
 " Conversion between single / multi lines (function args, lists)
 Plug 'FooSoft/vim-argwrap'
+" Conversion between single / multi lines (function args, lists)
+Plug 'mbbill/undotree'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Color theme
@@ -477,6 +479,11 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 noremap <C-h> <C-w>h
+
+""" Undotree
+noremap <Leader>ut :UndotreeToggle<CR>
+noremap <F9> :earlier<CR>
+noremap <F10> :later<CR>
 
 """ Tagbar
 nmap <silent> <F8> :TagbarToggle<CR>
