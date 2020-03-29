@@ -310,6 +310,10 @@ set timeoutlen=250
 " Vim folding
 set foldmethod=indent
 set foldlevelstart=20
+
+" Vim Jumplist (<C-i> clashes with coc.vim so using <c-p> instead)
+nnoremap <C-p> <C-i>
+
 "*****************************************************************************
 " coc.vim settings
 "*****************************************************************************
