@@ -85,6 +85,9 @@ Plug 'mbbill/undotree'
 " Color theme
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'arcticicestudio/nord-vim'
+Plug 'nanotech/jellybeans.vim'
+Plug 'whatyouhide/vim-gotham'
+Plug 'ayu-theme/ayu-vim'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " StatusLine
@@ -169,9 +172,14 @@ if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set t_Co=256
-  " set termguicolors --- sets vim colorscheme to be off (do not set)
+  " set termguicolors --- sets vim colorscheme to be off (do not set unless with iterm support)
+  set termguicolors
 endif
-colorscheme nord
+" colorscheme nord
+" colorscheme jellybeans
+" colorscheme gotham
+colorscheme ayu
+let ayucolor="mirage"
 
 set mousemodel=popup
 set t_Co=256
