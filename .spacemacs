@@ -1,4 +1,6 @@
 ;; -*- mode: emacs-lisp -*-
+
+
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
@@ -17,6 +19,7 @@ values."
    ;; not listed in variable `dotspacemacs-configuration-layers'), `all' will
    ;; lazy install any layer that support lazy installation even the layers
    ;; listed in `dotspacemacs-configuration-layers'. `nil' disable the lazy
+
    ;; installation feature and you have to explicitly list a layer in the
    ;; variable `dotspacemacs-configuration-layers' to install it.
    ;; (default 'unused)
@@ -48,7 +51,9 @@ values."
      git
      markdown
      (org :variables
-          org-enable-org-journal-support t)
+          org-enable-org-journal-support t
+          org-want-todo-bindings t
+          )
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
@@ -56,6 +61,7 @@ values."
      syntax-checking
      version-control
      org-roam
+     colors
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -134,7 +140,9 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
+   dotspacemacs-themes '(
+                         gotham
+                         spacemacs-dark
                          spacemacs-light)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
@@ -235,7 +243,7 @@ values."
    ;; If non nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup t
+   dotspacemacs-maximized-at-startup nil
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
@@ -267,7 +275,7 @@ values."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers 'relative
+   dotspacemacs-line-numbers nil
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -299,6 +307,8 @@ values."
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
    dotspacemacs-whitespace-cleanup nil
+   ;; modeline set to spacemacs
+   dotspacemacs-mode-line-theme 'spacemacs
    ))
 
 (defun dotspacemacs/user-init ()
@@ -318,6 +328,9 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  ;; Make Spacemacs use SPC / as Ag base command (without selection current under cursor) - we also set Ag base command as Ripgrep
+  (evil-leader/set-key "/" 'spacemacs/helm-project-do-ag)
+
   ;; bind evil-args text objects
   (define-key evil-inner-text-objects-map "a" 'evil-inner-arg)
   (define-key evil-outer-text-objects-map "a" 'evil-outer-arg)
@@ -331,30 +344,59 @@ you should place your code here."
   ;; bind evil-jump-out-args
   (define-key evil-normal-state-map "K" 'evil-jump-out-args)
 
-  ;; Make Spacemacs use SPC / as Ag base command (without selection current under cursor) - we also set Ag base command as Ripgrep
-  (evil-leader/set-key "/" 'spacemacs/helm-project-do-ag)
 
-  ;; Org-mode eval after load
-  (with-eval-after-load 'org
-    ;; here goes your Org config
+  ;; Vim Jumplist Keymap
+  (define-key evil-normal-state-map (kbd "C-p") 'evil-jump-forward)
 
-    ;; Replace org-set-tags with org-set-tags-command in keybinding
-    (spacemacs/set-leader-keys-for-major-mode 'org-mode ":" 'org-set-tags-command)
+  ;; Follow symbolic links
+  (setq vc-follow-symlinks t)
 
-    ;; Set org-journal directory
-    (setq org-journal-dir "~/org/journal/")
+  ;; Org directory for all
+  (setq org-root-directory "~/org")
 
-    ;; Set different sets of TODO states
-    ;; (setq org-todo-keywords
-    ;;       '((sequence "TODO(t)" "|" "DONE(d)")
-    ;;         (sequence "REPORT(r)" "BUG(b)" "KNOWNCAUSE(k)" "|" "FIXED(f)")
-    ;;         (sequence "|" "CANCELED(c)")))
-    )
+  ;;;;;;;;;;;;;;;;;;;;;;
+  ;; General Org settings
+  ;;;;;;;;;;;;;;;;;;;;;;
+  (setq org-directory org-root-directory)
+  (setq org-enforce-todo-dependencies t)
+  (setq org-todo-keywords
+        '((sequence "TODO(t)" "IN-PROGRESS(i)" "WAITING(w)" "DONE(d)"))
+        )
+  (setq org-default-notes-file (concat org-root-directory "/capture.org"))
+  ;; Archive to 1 file (archive.org) with level-1 (*) header with filepath as heading (%s)
+  (setq org-archive-location (concat org-root-directory "/archive.org::* Archive from %s"))
+  ;; Set files for org-agenda - entry needs to be list type (https://superuser.com/questions/633746/loading-all-org-files-on-a-folder-to-agenda)
+  (setq org-agenda-files (list org-root-directory))
+
+  ;;;;;;;;;;;;;;;;;;;;;;
+  ;; Org-journal settings
+  ;;;;;;;;;;;;;;;;;;;;;;
+  (setq org-journal-dir org-root-directory)
+  (setq org-journal-file-format "%Y-%m-%d.org")
+  (setq org-journal-date-prefix "#+TITLE: *")
+  (setq org-journal-date-format "%A, %B %d %Y")
+  ;; Next day carry over TODO items
+  (setq org-journal-carryover-items "TODO=\"TODO\"|TODO=\"IN-PROGRESS\"|TODO=\"WAITING\"")
+
+  ;; Replace org-set-tags with org-set-tags-command in keybinding
+  (spacemacs/set-leader-keys-for-major-mode 'org-mode ":" 'org-set-tags-command)
+
+  ;;;;;;;;;;;;;;;;;;;;;;
+  ;; Org-roam settings
+  ;;;;;;;;;;;;;;;;;;;;;;
+
+  (setq org-roam-directory org-root-directory)
+
+  ;;;;;;;;;;;;;;;;;;;;;;
+  ;; Org settings
+  ;;;;;;;;;;;;;;;;;;;;;;
+  ;; (with-eval-after-load 'org
+
+  ;;   )
+
+
 
   )
-
-
-
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -373,3 +415,43 @@ you should place your code here."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(evil-want-Y-yank-to-eol nil)
+ '(hl-todo-keyword-faces
+   (quote
+    (("TODO" . "#dc752f")
+     ("NEXT" . "#dc752f")
+     ("THEM" . "#2d9574")
+     ("PROG" . "#4f97d7")
+     ("OKAY" . "#4f97d7")
+     ("DONT" . "#f2241f")
+     ("FAIL" . "#f2241f")
+     ("DONE" . "#86dc2f")
+     ("NOTE" . "#b1951d")
+     ("KLUDGE" . "#b1951d")
+     ("HACK" . "#b1951d")
+     ("TEMP" . "#b1951d")
+     ("FIXME" . "#dc752f")
+     ("XXX+" . "#dc752f")
+     ("\\?\\?\\?+" . "#dc752f"))))
+ '(org-roam-directory "/path/to/org-files/")
+ '(package-selected-packages
+   (quote
+    (org-journal org-roam emacsql-sqlite emacsql xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help unfill smeargle orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download mwim mmm-mode markdown-toc markdown-mode magit-gitflow magit-popup htmlize helm-gitignore helm-company helm-c-yasnippet gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md fuzzy flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck evil-magit magit git-commit with-editor transient diff-hl company-statistics company-anaconda company auto-yasnippet yasnippet auto-dictionary ac-ispell auto-complete yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional helm-pydoc cython-mode anaconda-mode pythonic yaml-mode reveal-in-osx-finder pbcopy osx-trash osx-dictionary launchctl ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra lv hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile projectile pkg-info epl helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async)))
+ '(pdf-view-midnight-colors (quote ("#b2b2b2" . "#292b2e"))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+)
