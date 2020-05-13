@@ -364,7 +364,7 @@ you should place your code here."
   ;; ‘!’ (for a timestamp) or ‘@’ (for a note with timestamp) in parentheses after each keyword (entering / leaving)
   (setq org-todo-keywords
         '(
-          (sequence "TODO(t)" "IN-PROGRESS(i!)" "WAITING(w@)" "|" "DONE(d!)" "CANCELLED(c@)")
+          (sequence "TODO(t)" "IN-PROGRESS(i!)" "WAITING(w@)" "|" "DONE(d)" "CANCELLED(c@)")
           )
         )
   (setq org-default-notes-file (concat org-root-directory "/capture.org"))
