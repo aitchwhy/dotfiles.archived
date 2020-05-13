@@ -359,8 +359,13 @@ you should place your code here."
   ;;;;;;;;;;;;;;;;;;;;;;
   (setq org-directory org-root-directory)
   (setq org-enforce-todo-dependencies t)
+  ;; TODO item config (fast-access chars (t, i, w, d, c))
+  ;; Tracking TODO states with time + notes (stuff in parens) - (https://orgmode.org/manual/Tracking-TODO-state-changes.html#Tracking-TODO-state-changes)
+  ;; ‘!’ (for a timestamp) or ‘@’ (for a note with timestamp) in parentheses after each keyword (entering / leaving)
   (setq org-todo-keywords
-        '((sequence "TODO(t)" "IN-PROGRESS(i)" "WAITING(w)" "DONE(d)"))
+        '(
+          (sequence "TODO(t)" "IN-PROGRESS(i!)" "WAITING(w@)" "|" "DONE(d!)" "CANCELLED(c@)")
+          )
         )
   (setq org-default-notes-file (concat org-root-directory "/capture.org"))
   ;; Archive to 1 file (archive.org) with level-1 (*) header with filepath as heading (%s)
