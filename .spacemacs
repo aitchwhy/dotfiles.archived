@@ -377,8 +377,10 @@ you should place your code here."
   ;; Clocking work time (persisted acorss emacs sessions)
   (setq org-clock-persist 'history)
   (org-clock-persistence-insinuate)
-  ;; Set min idle time before needing to "resolve" idle time 
+  ;; Set min idle time before needing to "resolve" idle time
   (setq org-clock-idle-time '15)
+  ;; Set region 'active' so commands LOOP over ALL headlines in region (visual selection etc)
+  (setq org-loop-over-headlines-in-active-region t)
 
   ;;;;;;;;;;;;;;;;;;;;;;
   ;; Org-journal settings
