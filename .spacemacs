@@ -372,6 +372,13 @@ you should place your code here."
   (setq org-archive-location (concat org-root-directory "/archive.org::* Archive from %s"))
   ;; Set files for org-agenda - entry needs to be list type (https://superuser.com/questions/633746/loading-all-org-files-on-a-folder-to-agenda)
   (setq org-agenda-files (list org-root-directory))
+  ;; Org time tracking (for DONE)
+  (setq org-log-done 'time)
+  ;; Clocking work time (persisted acorss emacs sessions)
+  (setq org-clock-persist 'history)
+  (org-clock-persistence-insinuate)
+  ;; Set min idle time before needing to "resolve" idle time 
+  (setq org-clock-idle-time '15)
 
   ;;;;;;;;;;;;;;;;;;;;;;
   ;; Org-journal settings
