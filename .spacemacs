@@ -344,6 +344,23 @@ you should place your code here."
   ;; bind evil-jump-out-args
   (define-key evil-normal-state-map "K" 'evil-jump-out-args)
 
+  ;;;;;;;;;;;;;;;;;;;;;;
+  ;; which-key config
+  ;;;;;;;;;;;;;;;;;;;;;;
+  (setq which-key-show-early-on-C-h t)
+  ;; https://github.com/justbur/emacs-which-key/issues/226
+  (setq which-key-idle-delay 1.0)
+  (setq which-key-idle-secondary-delay 0.05)
+
+
+  ;;;;;;;;;;;;;;;;;;;;;;
+  ;; helm config (fuzzy search)
+  ;;;;;;;;;;;;;;;;;;;;;;
+  ;; Make Spacemacs use SPC / as Ag base command (without selection current under cursor) - we also set Ag base command as Ripgrep
+  (evil-leader/set-key "/" 'spacemacs/helm-project-do-ag)
+  
+  (setq helm-ag-base-command "rg --vimgrep --no-heading --smart-case")
+  (setq helm-grep-input-idle-delay 0.1)
 
   ;; Vim Jumplist Keymap
   (define-key evil-normal-state-map (kbd "C-p") 'evil-jump-forward)
