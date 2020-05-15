@@ -398,6 +398,69 @@ you should place your code here."
   (setq org-clock-idle-time '15)
   ;; Set region 'active' so commands LOOP over ALL headlines in region (visual selection etc)
   (setq org-loop-over-headlines-in-active-region t)
+  ;; Set state change info into drawer (collapsed section) - to avoid clutter
+  (setq org-log-into-drawer t)
+
+  ;;;;;;;;;;;;;;;;;;;;;;
+  ;; Org-capture config
+  ;;;;;;;;;;;;;;;;;;;;;;
+  ;; templates : https://orgmode.org/manual/Template-elements.html#Template-elements
+  (setq org-capture-templates
+        '(
+
+          ;; TODO : add reminders (-2 days) etc
+
+          ;; todo items (appointments, anything with timestamp)
+          ("t" "todos and schedule items" entry
+           (file+datetree+prompt org-default-notes-file)
+           "* TODO %^{Title} %^T"
+           )
+          ;; TODO - template schedule with followup
+          ;; TODO - template schedule with previous + followup
+
+          ;; Notes
+          ("n" "notes" entry
+           (file+datetree+prompt org-default-notes-file)
+           "* %^{Title} %U"
+           )
+
+          ;; Notes
+          ("q" "queue items" entry
+           (file+headline (concat org-root-directory "/queue.org") "Links")
+           "* %A %T"
+           )
+
+          ;; Active list (buy, projects, etc)
+          ("a" "Active list")
+          ("ab" "Active list" entry
+           (file+headline (concat org-root-directory "/active.org") "Buy")
+           "* %^{Title}\n:BUY:"
+           )
+
+          ;; habit
+          ("h" "Habit" entry
+           (file+headline (concat org-root-directory "/active.org") "Habits")
+           "* NEXT %?\n%U\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d>>\")\n:STYLE: habit\n:END:\n")
+          ))
+
+  ;;;;;;;;;;;;;;;;;;;;;;
+  ;; Org-agenda config
+  ;;;;;;;;;;;;;;;;;;;;;;
+  ;; custom agenda commands
+
+  (setq org-agenda-custom-commands
+        '(("a" agenda)
+          ("y" agenda*)
+          ("w" todo "WAITING")
+          ("W" todo-tree "WAITING")
+          ("u" tags "+boss-urgent")
+          ("v" tags-todo "+boss-urgent")
+          ("U" tags-tree "+boss-urgent")
+          ("f" occur-tree "\\<FIXME\\>")
+          ("h" . "HOME+Name tags searches") ;description for "h" prefix
+          ("hl" tags "+home+Lisa")
+          ("hp" tags "+home+Peter")
+          ("hk" tags "+home+Kim")))
 
   ;;;;;;;;;;;;;;;;;;;;;;
   ;; Org-journal settings
