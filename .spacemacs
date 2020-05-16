@@ -422,7 +422,7 @@ you should place your code here."
 
           ;; todo items (into inbox)
           ("t" "todos" entry
-           (file+headline "~/org/journal.org" "Inbox")
+           (file "~/org/inbox.org")
            "* TODO %^{Title}"
            )
 
@@ -451,6 +451,12 @@ you should place your code here."
   ;; Targets include this file and any file contributing to the agenda - up to 9 levels deep
   (setq org-refile-targets (quote ((nil :maxlevel . 9)
                                    (org-agenda-files :maxlevel . 9))))
+
+  ;;;;;;;;;;;;;;;;;;;;;;
+  ;; Org-archive config
+  ;;;;;;;;;;;;;;;;;;;;;;
+  (setq org-archive-hook org-save-all-org-buffers)
+
   ;;;;;;;;;;;;;;;;;;;;;;
   ;; Org-agenda config + refile
   ;;;;;;;;;;;;;;;;;;;;;;
