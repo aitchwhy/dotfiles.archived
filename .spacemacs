@@ -50,11 +50,11 @@ values."
      emacs-lisp
      git
      markdown
-     (org :variables
+     (org :variables ;; these variables are those required on init (cannot find way to configure in user-config)
           org-enable-org-journal-support t
           org-want-todo-bindings t
           )
-     (shell :variables
+     (shell :variables ;; these variables are those required on init (cannot find way to configure in user-config)
             shell-default-height 30
             shell-default-position 'bottom)
      spell-checking
@@ -381,10 +381,10 @@ you should place your code here."
   ;; ‘!’ (for a timestamp) or ‘@’ (for a note with timestamp) in parentheses after each keyword (entering / leaving)
   (setq org-todo-keywords
         '(
-          (sequence "TODO(t)" "IN-PROGRESS(i!)" "WAITING(w@)" "|" "DONE(d)" "CANCELLED(c@)")
+          (sequence "TODO(t)" "NEXT(n)" "IN-PROGRESS(i!)" "WAITING(w@)" "|" "DONE(d)" "CANCELLED(c@)")
           )
         )
-  (setq org-default-notes-file (concat org-root-directory "/capture.org"))
+  (setq org-default-notes-file (concat org-root-directory "/journal.org"))
   ;; Archive to 1 file (archive.org) with level-1 (*) header with filepath as heading (%s)
   (setq org-archive-location (concat org-root-directory "/archive.org::* Archive from %s"))
   ;; Set files for org-agenda - entry needs to be list type (https://superuser.com/questions/633746/loading-all-org-files-on-a-folder-to-agenda)
@@ -408,44 +408,53 @@ you should place your code here."
   (setq org-capture-templates
         '(
 
-          ;; TODO : add reminders (-2 days) etc
-
-          ;; todo items (appointments, anything with timestamp)
-          ("t" "todos and schedule items" entry
-           (file+datetree+prompt org-default-notes-file)
+          ;; scheduled events (appointments + anything with time)
+          ("s" "scheduled items" entry
+           (file+datetree org-default-notes-file)
            "* TODO %^{Title} %^T"
            )
-          ;; TODO - template schedule with followup
-          ;; TODO - template schedule with previous + followup
 
           ;; Notes
           ("n" "notes" entry
            (file+datetree+prompt org-default-notes-file)
-           "* %^{Title} %U"
+           "* %^{Title} %U\n%?"
            )
 
-          ;; Notes
+          ;; todo items (into inbox)
+          ("t" "todos" entry
+           (file+headline "~/org/journal.org" "Inbox")
+           "* TODO %^{Title}"
+           )
+
+          ;; Queue (someday items, etc)
           ("q" "queue items" entry
-           (file+headline (concat org-root-directory "/queue.org") "Links")
-           "* %A %T"
+           (file+headline "~/org/queue.org" "Links")
+           "* %A %U"
            )
 
           ;; Active list (buy, projects, etc)
           ("a" "Active list")
-          ("ab" "Active list" entry
-           (file+headline (concat org-root-directory "/active.org") "Buy")
+          ("ab" "Buy list" entry
+           (file+headline "~/org/journal.org" "Buy")
            "* %^{Title}\n:BUY:"
            )
 
           ;; habit
           ("h" "Habit" entry
-           (file+headline (concat org-root-directory "/active.org") "Habits")
+           (file+headline "~/org/journal.org" "Habits")
            "* NEXT %?\n%U\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d>>\")\n:STYLE: habit\n:END:\n")
           ))
 
   ;;;;;;;;;;;;;;;;;;;;;;
-  ;; Org-agenda config
+  ;; Org refile config
   ;;;;;;;;;;;;;;;;;;;;;;
+  ;; Targets include this file and any file contributing to the agenda - up to 9 levels deep
+  (setq org-refile-targets (quote ((nil :maxlevel . 9)
+                                   (org-agenda-files :maxlevel . 9))))
+  ;;;;;;;;;;;;;;;;;;;;;;
+  ;; Org-agenda config + refile
+  ;;;;;;;;;;;;;;;;;;;;;;
+
   ;; custom agenda commands
 
   (setq org-agenda-custom-commands
@@ -478,16 +487,6 @@ you should place your code here."
   ;;;;;;;;;;;;;;;;;;;;;;
   ;; Org-roam settings
   ;;;;;;;;;;;;;;;;;;;;;;
-
-  (setq org-roam-directory org-root-directory)
-
-  ;;;;;;;;;;;;;;;;;;;;;;
-  ;; Org settings
-  ;;;;;;;;;;;;;;;;;;;;;;
-  ;; (with-eval-after-load 'org
-
-  ;;   )
-
 
 
   )
@@ -537,7 +536,6 @@ This function is called at the very end of Spacemacs initialization."
      ("FIXME" . "#dc752f")
      ("XXX+" . "#dc752f")
      ("\\?\\?\\?+" . "#dc752f"))))
- '(org-roam-directory "/path/to/org-files/")
  '(package-selected-packages
    (quote
     (web-beautify utop tuareg caml tide typescript-mode tern seeing-is-believing rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocopfmt rubocop rspec-mode robe rbenv rake prettier-js ocp-indent ob-elixir nodejs-repl mvn minitest meghanada maven-test-mode lsp-ui lsp-treemacs lsp-python-ms lsp-java livid-mode skewer-mode simple-httpd json-navigator hierarchy json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc helm-lsp lsp-mode groovy-mode groovy-imports pcache gradle-mode flycheck-ocaml merlin flycheck-mix flycheck-credo emojify emoji-cheat-sheet-plus dune company-emoji chruby bundler inf-ruby alchemist elixir-mode org-roam emacsql-sqlite emacsql xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help unfill smeargle orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download mwim mmm-mode markdown-toc markdown-mode magit-gitflow magit-popup htmlize helm-gitignore helm-company helm-c-yasnippet gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md fuzzy flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck evil-magit magit git-commit with-editor transient diff-hl company-statistics company-anaconda company auto-yasnippet yasnippet auto-dictionary ac-ispell auto-complete yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional helm-pydoc cython-mode anaconda-mode pythonic yaml-mode reveal-in-osx-finder pbcopy osx-trash osx-dictionary launchctl ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra lv hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile projectile pkg-info epl helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async)))
