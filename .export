@@ -74,3 +74,10 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Content
 # Tmux fzf gnu-sed (gsed) path
 #-------------------------------------------------------------------------------
 export TMUX_FZF_SED="/usr/local/bin/gsed"
+
+#-------------------------------------------------------------------------------
+# Golang setup
+#-------------------------------------------------------------------------------
+# GOPATH : root of golang workspace in my file directory
+export GOPATH="$HOME/go"
+
