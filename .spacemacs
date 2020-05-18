@@ -347,6 +347,11 @@ you should place your code here."
   ;;;;;;;;;;;;;;;;;;;;;;
   ;; Basic config
   ;;;;;;;;;;;;;;;;;;;;;;
+
+  ;; custom key
+  ;; Define shortcut for MAIN orgmode file (journal.org) - https://github.com/syl20bnr/spacemacs/blob/master/doc/DOCUMENTATION.org#binding-keys
+  (spacemacs/set-leader-keys "o" (lambda () (interactive) (find-file "~/org/journal.org")))
+
   ;; bind evil-args text objects
   (define-key evil-inner-text-objects-map "a" 'evil-inner-arg)
   (define-key evil-outer-text-objects-map "a" 'evil-outer-arg)
