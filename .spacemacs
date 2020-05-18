@@ -58,7 +58,6 @@ values."
      (shell :variables ;; these variables are those required on init (cannot find way to configure in user-config)
             shell-default-height 30
             shell-default-position 'bottom)
-     spell-checking
      syntax-checking
      version-control
      org-roam
@@ -77,7 +76,7 @@ values."
      (treemacs :variables
                treemacs-use-follow-mode t
                treemacs-use-filewatch-mode nil)
-     dap
+     ;; dap
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -370,7 +369,7 @@ you should place your code here."
   ;;;;;;;;;;;;;;;;;;;;;;
   (setq which-key-show-early-on-C-h t)
   ;; https://github.com/justbur/emacs-which-key/issues/226
-  (setq which-key-idle-delay 1.0)
+  (setq which-key-idle-delay 0.7)
   (setq which-key-idle-secondary-delay 0.05)
 
 
@@ -426,53 +425,66 @@ you should place your code here."
   ;; Org-capture config
   ;;;;;;;;;;;;;;;;;;;;;;
   ;; templates : https://orgmode.org/manual/Template-elements.html#Template-elements
+  ;; Must add %? expansion (where to put cursor) property :empty-lines 1 to avoid capture gobbling next newlines (and eating up next heading) - https://orgmode.org/manual/Template-elements.html#Template-elements
   (setq org-capture-templates
         '(
 
           ;; scheduled events (appointments + anything with time)
           ("s" "scheduled items" entry
            (file+datetree org-default-notes-file)
-           "* TODO %^{Title}\nSCHEDULED: %^T"
+           "* TODO %^{Title}%?\nSCHEDULED: %^T"
+           :empty-lines-after 2
            )
 
           ;; Notes
           ("n" "notes" entry
            (file+datetree+prompt org-default-notes-file)
            "* %^{Title} %U\n%?"
+           :empty-lines-after 1
+           :unnarrowed t
            )
 
           ;; todo items (into inbox)
           ;; from : https://sachachua.com/blog/2015/02/org-mode-reusing-date-file-datetree-prompt/
           ("t" "todos" entry
            (file+datetree+prompt org-default-notes-file)
-           "* TODO %^{Title}\nSCHEDULED: <%(org-read-date nil nil org-read-date-final-answer)>"
+           "* TODO %^{Title}%?\nSCHEDULED: <%(org-read-date nil nil org-read-date-final-answer)>"
+           :empty-lines-after 1
+           :unnarrowed t
            )
 
           ;; Queue (someday items, etc)
           ("q" "queue items" entry
            (file+headline "~/org/queue.org" "Links")
-           "* %A %U"
+           "* %A %? %U"
+           :empty-lines-after 1
+           :unnarrowed t
            )
 
           ;; Active list (buy, projects, etc)
           ("a" "Active list")
           ("ab" "Buy list" entry
            (file+headline "~/org/journal.org" "Buy")
-           "* %^{Title}\n:BUY:"
+           "* %^{Title}%?\n:BUY:"
+           :empty-lines-after 1
+           :unnarrowed t
            )
 
           ;; habit
           ("h" "Habit" entry
            (file+headline "~/org/journal.org" "Habits")
-           "* NEXT %?\n%U\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d>>\")\n:STYLE: habit\n:END:\n")
+           "* NEXT %^{Title}%?\n%U\n:PROPERTIES:\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d>>\")\n:STYLE: habit\n:END:\n"
+           :empty-lines-after 1
+           :unnarrowed t
+           )
           ))
 
   ;;;;;;;;;;;;;;;;;;;;;;
   ;; Org refile config
   ;;;;;;;;;;;;;;;;;;;;;;
   ;; Targets include this file and any file contributing to the agenda - up to 9 levels deep
-  (setq org-refile-targets (quote ((nil :maxlevel . 9)
-                                   (org-agenda-files :maxlevel . 9))))
+  (setq org-refile-targets (quote ((nil :maxlevel . 6)
+                                   (org-agenda-files :maxlevel . 6))))
 
   ;;;;;;;;;;;;;;;;;;;;;;
   ;; Org-archive config
