@@ -372,6 +372,15 @@ you should place your code here."
   (setq which-key-idle-delay 0.7)
   (setq which-key-idle-secondary-delay 0.05)
 
+  ;;;;;;;;;;;;;;;;;;;;;;
+  ;; Magit configuration
+  ;;;;;;;;;;;;;;;;;;;;;;
+  ;; SSH-agent issue - https://magit.vc/manual/magit.html#I-am-using-OS-X-and-SOMETHING-works-in-shell-but-not-in-Magit
+  ;; basically magit should (use same git as shell) + (same ENV vars)
+  ;; (when (memq window-system '(mac ns x))
+  ;;   (exec-path-from-shell-initialize))
+  ;; (exec-path-from-shell-copy-env "SSH_AUTH_SOCK")
+  ;; (exec-path-from-shell-copy-env "SSH_AGENT_PID")
 
   ;;;;;;;;;;;;;;;;;;;;;;
   ;; helm config (fuzzy search)
@@ -433,15 +442,12 @@ you should place your code here."
           ("s" "scheduled items" entry
            (file+datetree org-default-notes-file)
            "* TODO %^{Title}%?\nSCHEDULED: %^T"
-           :empty-lines-after 2
            )
 
           ;; Notes
           ("n" "notes" entry
            (file+datetree+prompt org-default-notes-file)
            "* %^{Title} %U\n%?"
-           :empty-lines-after 1
-           :unnarrowed t
            )
 
           ;; todo items (into inbox)
@@ -449,16 +455,12 @@ you should place your code here."
           ("t" "todos" entry
            (file+datetree+prompt org-default-notes-file)
            "* TODO %^{Title}%?\nSCHEDULED: <%(org-read-date nil nil org-read-date-final-answer)>"
-           :empty-lines-after 1
-           :unnarrowed t
            )
 
           ;; Queue (someday items, etc)
           ("q" "queue items" entry
            (file+headline "~/org/queue.org" "Links")
            "* %A %? %U"
-           :empty-lines-after 1
-           :unnarrowed t
            )
 
           ;; Active list (buy, projects, etc)
@@ -466,16 +468,12 @@ you should place your code here."
           ("ab" "Buy list" entry
            (file+headline "~/org/journal.org" "Buy")
            "* %^{Title}%?\n:BUY:"
-           :empty-lines-after 1
-           :unnarrowed t
            )
 
           ;; habit
           ("h" "Habit" entry
            (file+headline "~/org/journal.org" "Habits")
            "* NEXT %^{Title}%?\n%U\n:PROPERTIES:\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d>>\")\n:STYLE: habit\n:END:\n"
-           :empty-lines-after 1
-           :unnarrowed t
            )
           ))
 

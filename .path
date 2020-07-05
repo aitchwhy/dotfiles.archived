@@ -66,6 +66,15 @@ pathadd "$HOME/.local/bin"
 # PATH="$HOME/workspace/anaconda3/bin:$PATH"
 pathadd "$HOME/workspace/anaconda3/bin"
 
+#-------------------------------------------------------------------------------
+# dotfiles scripts
+#-------------------------------------------------------------------------------
+pathadd "$HOME/dotfiles/scripts"
+
+#-------------------------------------------------------------------------------
+# Emacs binaries
+#-------------------------------------------------------------------------------
+pathadd "$HOME/.emacs.d/bin"
 
 #-------------------------------------------------------------------------------
 # k8s tools (Lacework)
@@ -75,5 +84,6 @@ pathadd "$HOME/workspace/anaconda3/bin"
 # PATH="$HOME/lacework/k8s/scripts:$PATH"
 pathadd "$HOME/lacework/k8s/tools"
 pathadd "$HOME/lacework/k8s/scripts"
+
 
 export PATH

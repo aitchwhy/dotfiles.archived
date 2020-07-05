@@ -181,5 +181,6 @@ source $ZSH/oh-my-zsh.sh
 
 source /Users/hanklee/Library/Preferences/org.dystroy.broot/launcher/bash/br
 
+
 # Remove PATH duplicates - https://unix.stackexchange.com/questions/40749/remove-duplicate-path-entries-with-awk-command/149054#149054
 export PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV{PATH}))')"
