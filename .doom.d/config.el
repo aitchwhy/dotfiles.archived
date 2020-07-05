@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
+(setq user-full-name "Hank Lee"
+      user-mail-address "hank.lee.qed@gmail.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -19,27 +19,23 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
-;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
+(setq doom-font (font-spec :family "monospace" :size 14))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-city-lights)
 
-;; If you use `org' and don't want your org files in the default location below,
-;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type t)
+(setq display-line-numbers-type 'relative)
 
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one
-;; - `use-package!' for configuring packages
+;; - `use-package' for configuring packages
 ;; - `after!' for running code after a package has loaded
 ;; - `add-load-path!' for adding directories to the `load-path', relative to
 ;;   this file. Emacs searches the `load-path' when you load packages with
@@ -47,8 +43,157 @@
 ;; - `map!' for binding new keys
 ;;
 ;; To get information about any of these functions/macros, move the cursor over
-;; the highlighted symbol at press 'K' (non-evil users must press 'C-c c k').
+;; the highlighted symbol at press 'K' (non-evil users must press 'C-c g k').
 ;; This will open documentation for it, including demos of how they are used.
 ;;
-;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
+;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Basic config
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+(setq which-key-idle-delay 0.4)
+
+;; Frame setting
+(add-to-list 'initial-frame-alist
+             '(fullscreen . maximized))
+
+;; Vim Jumplist Keymap
+(define-key evil-normal-state-map (kbd "C-p") 'evil-jump-forward)
+
+;;;;;;;;;;;;;;;;;;;;;;
+;; Window resizing (Golden Ratio)
+;;;;;;;;;;;;;;;;;;;;;;
+(use-package! golden-ratio
+  :after-call pre-command-hook
+  :config
+  (golden-ratio-mode +1)
+  ;; Using this hook for resizing windows is less precise than
+  ;; `doom-switch-window-hook'.
+  (remove-hook 'window-configuration-change-hook #'golden-ratio)
+  (add-hook 'doom-switch-window-hook #'golden-ratio))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Orgmode config
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; tips on editing config for org -> https://github.com/hlissner/doom-emacs/issues/407
+(after! org
+  (setq org-directory "~/org/"
+        org-want-todo-bindings t
+        org-enforce-todo-dependencies t
+        org-todo-keywords
+        '(
+          (sequence "TODO(t)" "NEXT(n)" "IN-PROGRESS(i!)" "WAITING(w@)" "|" "DONE(d)" "CANCELLED(c@)")
+        )
+        org-default-notes-file (concat org-directory "/journal.org")
+        org-archive-location (concat org-directory "/archive.org::* Archive from %s")
+        org-agenda-files (list org-directory)
+        org-log-done 'time
+        org-log-into-drawer t
+        )
+  (add-to-list 'org-capture-templates
+        '(
+          ;; scheduled events (appointments + anything with time)
+          ("s" "scheduled items" entry
+            (file+datetree org-default-notes-file)
+            "* TODO %^{Title}%?\nSCHEDULED: %^T"
+            )
+
+          ;; Notes
+          ("n" "notes" entry
+            (file+datetree+prompt org-default-notes-file)
+            "* %^{Title} %U\n%?"
+            )
+
+          ;; todo items (into inbox)
+          ;; from : https://sachachua.com/blog/2015/02/org-mode-reusing-date-file-datetree-prompt/
+          ("t" "todos" entry
+            (file+datetree+prompt org-default-notes-file)
+            "* TODO %^{Title}%?\nSCHEDULED: <%(org-read-date nil nil org-read-date-final-answer)>"
+            )
+
+          ;; Queue (someday items, etc)
+          ("q" "queue items" entry
+            (file+headline "~/org/queue.org" "Links")
+            "* %A %? %U"
+            )
+
+          ;; Active list (buy, projects, etc)
+          ("a" "Active list")
+          ("ab" "Buy list" entry
+            (file+headline "~/org/journal.org" "Buy")
+            "* %^{Title}%?\n:BUY:"
+            )
+
+          ;; habit
+          ("h" "Habit" entry
+            (file+headline "~/org/journal.org" "Habits")
+            "* NEXT %^{Title}%?\n%U\n:PROPERTIES:\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d>>\")\n:STYLE: habit\n:END:\n"
+            )
+          ))
+)
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;
+;; Org-capture config
+;;;;;;;;;;;;;;;;;;;;;;
+;; templates : https://orgmode.org/manual/Template-elements.html#Template-elements
+;; Must add %? expansion (where to put cursor) property :empty-lines 1 to avoid capture gobbling next newlines (and eating up next heading) - https://orgmode.org/manual/Template-elements.html#Template-elements
+;; (setq org-capture-templates
+;;       '(
+;;         ;; scheduled events (appointments + anything with time)
+;;         ("s" "scheduled items" entry
+;;           (file+datetree org-default-notes-file)
+;;           "* TODO %^{Title}%?\nSCHEDULED: %^T"
+;;           )
+
+;;         ;; Notes
+;;         ("n" "notes" entry
+;;           (file+datetree+prompt org-default-notes-file)
+;;           "* %^{Title} %U\n%?"
+;;           )
+
+;;         ;; todo items (into inbox)
+;;         ;; from : https://sachachua.com/blog/2015/02/org-mode-reusing-date-file-datetree-prompt/
+;;         ("t" "todos" entry
+;;           (file+datetree+prompt org-default-notes-file)
+;;           "* TODO %^{Title}%?\nSCHEDULED: <%(org-read-date nil nil org-read-date-final-answer)>"
+;;           )
+
+;;         ;; Queue (someday items, etc)
+;;         ("q" "queue items" entry
+;;           (file+headline "~/org/queue.org" "Links")
+;;           "* %A %? %U"
+;;           )
+
+;;         ;; Active list (buy, projects, etc)
+;;         ("a" "Active list")
+;;         ("ab" "Buy list" entry
+;;           (file+headline "~/org/journal.org" "Buy")
+;;           "* %^{Title}%?\n:BUY:"
+;;           )
+
+;;         ;; habit
+;;         ("h" "Habit" entry
+;;           (file+headline "~/org/journal.org" "Habits")
+;;           "* NEXT %^{Title}%?\n%U\n:PROPERTIES:\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d>>\")\n:STYLE: habit\n:END:\n"
+;;           )
+;;         ))
+
+;;;;;;;;;;;;;;;;;;;;;;
+;; Org refile config
+;;;;;;;;;;;;;;;;;;;;;;
+;; Targets include this file and any file contributing to the agenda - up to 9 levels deep
+(setq org-refile-targets (quote ((nil :maxlevel . 6)
+                                  (org-agenda-files :maxlevel . 6))))
+
+;;;;;;;;;;;;;;;;;;;;;;
+;; Org-archive config
+;;;;;;;;;;;;;;;;;;;;;;
+;; (setq org-archive-hook org-save-all-org-buffers)
+
+
+
