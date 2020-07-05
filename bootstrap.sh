@@ -97,6 +97,9 @@ ln -nfs $DOTFILES/.direnvrc $HOME/.direnvrc
 # dir colors (zsh color config)
 ln -nfs $DOTFILES/.dir_colors $HOME/.dir_colors
 
+# dir colors (zsh color config)
+ln -nfs $DOTFILES/.doom.d $HOME/.doom.d
+
 # -------------------------------------------------
 # Install vim plugin manager (vim-plug)
 # -------------------------------------------------
