@@ -86,8 +86,8 @@
         '(
           (sequence "TODO(t)" "NEXT(n)" "IN-PROGRESS(i!)" "WAITING(w@)" "|" "DONE(d)" "CANCELLED(c@)")
         )
-        org-default-notes-file (concat org-directory "/journal.org")
-        org-archive-location (concat org-directory "/archive.org::* Archive from %s")
+        org-default-notes-file (concat org-directory "journal.org")
+        org-archive-location (concat org-directory "archive.org::* Archive from %s")
         org-agenda-files (list org-directory)
         org-log-done 'time
         org-log-into-drawer t
