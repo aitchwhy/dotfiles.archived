@@ -54,6 +54,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setq which-key-idle-delay 0.4)
 
+;; Disables Vim behavior where ESC from Normal mode moves cursor 1 space back
+(setq evil-move-cursor-back nil)
+
 ;; Frame setting
 (add-to-list 'initial-frame-alist
              '(fullscreen . maximized))
@@ -72,6 +75,7 @@
   ;; `doom-switch-window-hook'.
   (remove-hook 'window-configuration-change-hook #'golden-ratio)
   (add-hook 'doom-switch-window-hook #'golden-ratio))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Orgmode config
@@ -135,6 +139,12 @@
 )
 
 
+;;;;;;;;;;;;;;;;;;;;;;
+;; Slime (IDE features for Common Lisp)
+;;;;;;;;;;;;;;;;;;;;;;
+;; (setq inferior-lisp-program "sbcl")
+;; (after! sly
+;;   (setq sly-command-switch-to-existing-lisp 1))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;
@@ -197,3 +207,15 @@
 
 
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote (slime))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
