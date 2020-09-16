@@ -18,11 +18,16 @@ export EDITOR=nvim
 #
 # Set name of the theme to load
 #-------------------------------------------------------------------------------
+# source kube-ps1 for Kubernetes prompts
+source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+
 # Source powerlevel9k
 source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
 export POWERLEVEL9K_MODE="nerdfont-complete"
 export POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 export POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+
+
 
 #-------------------------------------------------------------------------------
 # Uncomment the following line to use case-sensitive completion.
@@ -101,7 +106,9 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 #-------------------------------------------------------------------------------
 
-plugins=()
+plugins=(
+    kube-ps1
+    )
 
 #-------------------------------------------------------------------------------
 # Set working directories (for rg, fzf, fd searching)

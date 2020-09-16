@@ -84,6 +84,7 @@ pathadd "$HOME/.emacs.d/bin"
 # PATH="$HOME/lacework/k8s/scripts:$PATH"
 pathadd "$HOME/lacework/k8s/tools"
 pathadd "$HOME/lacework/k8s/scripts"
-
+# Baga (Kubernetes setup - ENVVARs used for scripts)
+pathadd "$HOME/baga/includes"
 
 export PATH

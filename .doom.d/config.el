@@ -29,7 +29,7 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type 'relative)
+(setq display-line-numbers-type nil)
 
 
 ;; Here are some additional functions/macros that could help you configure Doom:
@@ -64,6 +64,19 @@
 ;; Vim Jumplist Keymap
 (define-key evil-normal-state-map (kbd "C-p") 'evil-jump-forward)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Tabs/indentation configuration - http://ergoemacs.org/emacs/emacs_tabs_space_indentation_setup.html
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Disable electric mode globally (https://www.reddit.com/r/emacs/comments/2mu7yi/disable_electric_indent_mode/)
+;; (add-hook 'after-change-major-mode-hook (lambda () (electric-indent-mode -1)))
+(defun remove-electric-indent-mode ()
+  (electric-indent-local-mode -1))
+(add-hook 'json-mode-hook 'remove-electric-indent-mode)
+(setq-default tab-always-indent 'complete)
+
+;; Zen mode config
+(setq +zen-text-scale 1)
+
 ;;;;;;;;;;;;;;;;;;;;;;
 ;; Window resizing (Golden Ratio)
 ;;;;;;;;;;;;;;;;;;;;;;
@@ -75,6 +88,37 @@
   ;; `doom-switch-window-hook'.
   (remove-hook 'window-configuration-change-hook #'golden-ratio)
   (add-hook 'doom-switch-window-hook #'golden-ratio))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; LSP config
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
+;; (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
+
+(after! lsp-ui
+  (setq lsp-ui-peek-enable t)
+  (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
+  (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references))
+
+;; Disable formatting automatically on type
+;; (use-package-hook! lsp-mode
+;;   :post-config
+;;   (setq lsp-enable-on-type-formatting nil))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; LSP Java
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(dap-register-debug-template "My Runner"
+                             (list :type "java"
+                                   :request "launch"
+                                   :args ""
+                                   :vmArgs "-ea -Dmyapp.instance.name=myapp_1"
+                                   :projectName "myapp"
+                                   :mainClass "com.domain.AppRunner"
+                                   :env '(("DEV" . "1"))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -205,14 +249,12 @@
 ;;;;;;;;;;;;;;;;;;;;;;
 ;; (setq org-archive-hook org-save-all-org-buffers)
 
-
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (slime))))
+ '(package-selected-packages (quote (lsp-ui slime))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
