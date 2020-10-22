@@ -76,7 +76,6 @@ brew 'tcpdump'
 brew 'tree'
 brew 'wget'
 brew 'fzf'
-brew 'ripgrep'
 brew 'cmake'
 brew 'hexyl'                                        # Better 'xxd' (hex code viewer)
 brew 'neovim'                                       # Better 'vim'
@@ -85,6 +84,19 @@ brew 'powerlevel9k'				                    # zsh shell powerline
 brew 'git-recent'                                   # viewing latest git branches
 brew 'vifm'                                         # Vim-like file manager (so good)
 brew 'broot'                                        # broot - tree,cd,fuzzy-search
+
+brew 'sbcl'
+brew 'teleport'
+brew 'terraform@0.11'
+brew 'pipenv'
+brew 'poetry'
+brew 'kube-ps1'
+brew 'kops'
+brew 'ksh'
+brew 'd12frosted/emacs-plus/emacs-plus@27'
+brew 'cfr-decompiler'
+brew 'exa'
+brew 'git-recent'
 
 #-------------------------------------------------------------------------------
 # Development-Ruby
@@ -164,3 +176,8 @@ cask 'netspot'
 #-------------------------------------------------------------------------------
 
 cask 'caskroom/fonts/font-hack-nerd-font'
+
+------
+
+-------
+
