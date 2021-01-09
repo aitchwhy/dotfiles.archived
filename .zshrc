@@ -177,7 +177,6 @@ if type "lwenv" > /dev/null; then
   source lwenv dev2
 fi
 
-source /Users/hanklee/.ghcup/env
 
 #-------------------------------------------------------------------------------
 # Activate Oh-My-Zsh
@@ -186,7 +185,6 @@ source $ZSH/oh-my-zsh.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source /Users/hanklee/Library/Preferences/org.dystroy.broot/launcher/bash/br
 
 
 # Remove PATH duplicates - https://unix.stackexchange.com/questions/40749/remove-duplicate-path-entries-with-awk-command/149054#149054
