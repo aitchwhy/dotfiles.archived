@@ -6,6 +6,8 @@ tap 'caskroom/cask'
 tap 'caskroom/fonts'
 tap 'homebrew/services'
 tap 'sambadevi/powerlevel9k'
+tap 'emacs-plus'
+tap 'railwaycat/emacsmacport'
 
 #-------------------------------------------------------------------------------
 # Make sure apps get installed in system Applications dir
@@ -93,10 +95,11 @@ brew 'poetry'
 brew 'kube-ps1'
 brew 'kops'
 brew 'ksh'
-brew 'd12frosted/emacs-plus/emacs-plus@27'
+brew 'emacs-plus'
 brew 'cfr-decompiler'
 brew 'exa'
 brew 'git-recent'
+brew 'emacs-mac' # emacs mac version (mac-friendly yamamoto ported version)
 
 #-------------------------------------------------------------------------------
 # Development-Ruby
@@ -176,8 +179,4 @@ cask 'netspot'
 #-------------------------------------------------------------------------------
 
 cask 'caskroom/fonts/font-hack-nerd-font'
-
-------
-
--------
 

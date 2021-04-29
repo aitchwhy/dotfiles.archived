@@ -16,8 +16,18 @@
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;(package! some-package)
 
-(package! golden-ratio)
+(package! zoom)
 (package! dap-mode)
+(package! expand-region)
+(package! org-download)
+(package! org-roam)
+(package! org-board)
+(package! pdf-tools)
+(package! undo-tree)
+
+;; evil-matchit - match all tags and jump with "%" (https://github.com/redguardtoo/evil-matchit)
+(package! evil-matchit)
+
 
 ;; To install a package directly from a particular repo, you'll need to specify
 ;; a `:recipe'. You'll find documentation on what `:recipe' accepts here:
