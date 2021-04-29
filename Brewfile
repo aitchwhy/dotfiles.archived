@@ -90,6 +90,8 @@ brew 'broot'                                        # broot - tree,cd,fuzzy-sear
 brew 'sbcl'
 brew 'teleport'
 brew 'terraform@0.11'
+brew 'pip'
+brew 'pip3'
 brew 'pipenv'
 brew 'poetry'
 brew 'kube-ps1'
@@ -99,7 +101,6 @@ brew 'emacs-plus'
 brew 'cfr-decompiler'
 brew 'exa'
 brew 'git-recent'
-brew 'emacs-mac' # emacs mac version (mac-friendly yamamoto ported version)
 
 #-------------------------------------------------------------------------------
 # Development-Ruby
@@ -113,8 +114,6 @@ brew 'rbenv'
 # ... Also jupyter for jupyter notebook
 #-------------------------------------------------------------------------------
 
-brew 'python', args:['with-sphinx-doc']
-brew 'python3', args:['with-sphinx-doc']
 brew 'pyenv'
 brew 'pyenv-virtualenv'
 brew 'jupyter'
@@ -148,30 +147,20 @@ brew 'sqlite'
 
 cask 'visual-studio-code'
 cask 'spotify'
-cask 'dashlane'
 cask 'fantastical'
-cask 'time-out'
-cask 'dbschema'
 cask 'anaconda'
 cask 'docker'
-cask 'google-chrome'
 cask 'iterm2'
 cask 'psequel'
 cask 'rdm'
-cask 'sequel-pro'
 cask 'sublime-text'
 cask 'wireshark'
 cask 'alfred'
-cask 'mosaic'
 cask 'istat-menus'
 cask 'slack'
 cask 'postman'
-cask 'keyboard-maestro'
 cask 'flux'
 cask 'dropbox'
-cask 'launchcontrol'
-cask 'little-snitch'
-cask 'netspot'
 
 #-------------------------------------------------------------------------------
 # Fonts
