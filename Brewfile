@@ -171,7 +171,6 @@ cask 'flux'
 cask 'dropbox'
 cask 'launchcontrol'
 cask 'little-snitch'
-cask 'moom'
 cask 'netspot'
 
 #-------------------------------------------------------------------------------
@@ -180,3 +179,7 @@ cask 'netspot'
 
 cask 'caskroom/fonts/font-hack-nerd-font'
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9c0d6ce18058f740902b5a71aa45283fd996f370

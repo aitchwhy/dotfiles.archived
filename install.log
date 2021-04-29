@@ -1,0 +1,246 @@
+/usr/local/bin/zsh
+Already up-to-date.
+Using caskroom/cask
+Using caskroom/fonts
+Using homebrew/services
+Using sambadevi/powerlevel9k
+Using zsh
+Using zsh-completions
+Using coreutils
+Using findutils
+Using bash
+Using tldr
+Using ncdu
+Using fd
+Using graphviz
+Using diff-so-fancy
+Using bat
+Using ctags
+Using nginx
+Using dnsmasq
+Using prettyping
+Using tmux
+Using ripgrep
+Using nvm
+Using fasd
+Using mutt
+Using jq
+Using cscope
+Using direnv
+Using grep
+Using parallel
+Using aws-elasticbeanstalk
+Using awslogs
+Using awscli
+Using git
+Using git-flow
+Using htop
+Using httpie
+Using hub
+Using node
+Using openssl
+Using tcpdump
+Using tree
+Using wget
+Using fzf
+Using ripgrep
+Using cmake
+Using hexyl
+Using neovim
+Using zlib
+Using powerlevel9k
+Using ruby
+Using rbenv
+Using python
+Using python3
+Using pyenv
+Using pyenv-virtualenv
+Using jupyter
+Using golang
+Using java
+Using gradle
+Using kotlin
+Using mysql
+Using postgresql
+Using sqlite
+Using visual-studio-code
+Using spotify
+Using dashlane
+Using fantastical
+==> Upgrading 1 outdated package:
+time-out 2.4 -> 2.5
+==> Upgrading time-out
+==> Satisfying dependencies
+==> Downloading https://www.dejal.com/download/timeout-2.5.zip
+Already downloaded: /Users/hank/Library/Caches/Homebrew/downloads/10e14b5deb1fa6d777ba807278919617f07de1aef73fdbe5bbdbb9853368c7f4--timeout-2.5.zip
+Error: It seems there is already an App at '/usr/local/Caskroom/time-out/2.4/Time Out.app'.
+==> Verifying SHA-256 checksum for Cask 'time-out'.
+==> Purging files for version 2.5 of Cask time-out
+Installing time-out has failed!
+Using dbschema
+Using anaconda
+Using docker
+==> Satisfying dependencies
+==> Downloading https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg
+Already downloaded: /Users/hank/Library/Caches/Homebrew/downloads/9830ac8a5256756d2643fbdb6a47ba0eb019c3816fc4366049f2483999b2ee4f--googlechrome.dmg
+==> Verifying SHA-256 checksum for Cask 'google-chrome'.
+==> Installing Cask google-chrome
+Error: It seems there is already an App at '/Applications/Google Chrome.app'.
+==> Purging files for version 75.0.3770.142 of Cask google-chrome
+Installing google-chrome has failed!
+Using iterm2
+Using psequel
+Using rdm
+Using sequel-pro
+Using sublime-text
+Error: Cask 'wireshark' definition is invalid: invalid 'depends_on macos' value: ":mountain_lion"
+==> Upgrading 1 outdated package:
+Installing wireshark has failed!
+Using alfred
+==> Upgrading 1 outdated package:
+mosaic 1.0.8 -> 1.2.1
+==> Upgrading mosaic
+==> Satisfying dependencies
+==> Downloading https://lightpillar.com/appdata/mosaic/archive/Mosaic_1_2_1.pkg
+Already downloaded: /Users/hank/Library/Caches/Homebrew/downloads/948843a1038a04f8834fa81a32ea7974381fee55ae6182f86c993e77112f7c66--Mosaic_1_2_1.pkg
+Error: It seems there is already an App at '/usr/local/Caskroom/mosaic/1.0.8/Mosaic.app'.
+==> Verifying SHA-256 checksum for Cask 'mosaic'.
+==> Purging files for version 1.2.1 of Cask mosaic
+Installing mosaic has failed!
+Using istat-menus
+Using slack
+Using postman
+==> Upgrading 1 outdated package:
+keyboard-maestro 8.1.1 -> 8.2.4
+==> Upgrading keyboard-maestro
+==> Satisfying dependencies
+==> Downloading https://files.stairways.com/keyboardmaestro-824.zip
+Already downloaded: /Users/hank/Library/Caches/Homebrew/downloads/e424e9223a055565055a6c7326b4e56f20d30e0eb505c6475df7edec6998d9fc--keyboardmaestro-824.zip
+Error: It seems there is already an App at '/usr/local/Caskroom/keyboard-maestro/8.1.1/Keyboard Maestro.app'.
+==> Verifying SHA-256 checksum for Cask 'keyboard-maestro'.
+==> Purging files for version 8.2.4 of Cask keyboard-maestro
+Installing keyboard-maestro has failed!
+Using flux
+==> Satisfying dependencies
+==> Downloading https://www.dropbox.com/download?plat=mac&full=1
+Already downloaded: /Users/hank/Library/Caches/Homebrew/downloads/2c8afbdc56eb2cb1170f526424b46e25565b9acf4fecaa19b4b294cf1b3e9a7d--Dropbox 77.4.131.dmg
+==> No SHA-256 checksum defined for Cask 'dropbox', skipping verification.
+==> Installing Cask dropbox
+Error: It seems there is already an App at '/Applications/Dropbox.app'.
+==> Purging files for version latest of Cask dropbox
+Installing dropbox has failed!
+Using launchcontrol
+Using little-snitch
+==> Satisfying dependencies
+==> Downloading https://manytricks.com/download/_do_not_hotlink_/moom3214.dmg
+Already downloaded: /Users/hank/Library/Caches/Homebrew/downloads/cc636b54136be7867b426b2d321b1208f32c57d09d765dc016e7a33ee8298923--moom3214.dmg
+==> Verifying SHA-256 checksum for Cask 'moom'.
+==> Installing Cask moom
+Error: It seems there is already an App at '/Applications/Moom.app'.
+==> Purging files for version 3.2.14 of Cask moom
+Installing moom has failed!
+Installing caskroom/fonts/font-hack-nerd-font
+Homebrew Bundle failed! 7 Brewfile dependencies failed to install.
+Homebrew Cask provides a friendly CLI workflow for the administration
+of macOS applications distributed as binaries.
+
+Commands:
+
+    --cache    display the file used to cache the Cask
+    audit      verifies installability of Casks
+    cat        dump raw source of the given Cask to the standard output
+    create     creates the given Cask and opens it in an editor
+    doctor     checks for configuration issues
+    edit       edits the given Cask
+    fetch      downloads remote application files to local cache
+    home       opens the homepage of the given Cask
+    info       displays information about the given Cask
+    install    installs the given Cask
+    list       with no args, lists installed Casks; given installed Casks, lists staged files
+    outdated   list the outdated installed Casks
+    reinstall  reinstalls the given Cask
+    style      checks Cask style using RuboCop
+    uninstall  uninstalls the given Cask
+    upgrade    upgrades all outdated casks
+    zap        zaps all files associated with the given Cask
+
+See also "man brew-cask"
+You already have Oh My Zsh installed.
+You'll need to remove '/Users/hank/.oh-my-zsh' if you want to reinstall.
+Copying fonts...
+Resetting font cache, this may take a moment...
+Powerline fonts installed to /Users/hank/Library/Fonts
+/usr/local/bin/yarnpkg -> /usr/local/lib/node_modules/yarn/bin/yarn.js
+/usr/local/bin/yarn -> /usr/local/lib/node_modules/yarn/bin/yarn.js
++ yarn@1.17.3
+updated 1 package in 0.406s
+/usr/local/bin/nodemon -> /usr/local/lib/node_modules/nodemon/bin/nodemon.js
+
+> nodemon@1.19.1 postinstall /usr/local/lib/node_modules/nodemon
+> node bin/postinstall || exit 0
+
++ nodemon@1.19.1
+updated 1 package in 6.105s
+/usr/local/bin/eslint -> /usr/local/lib/node_modules/eslint/bin/eslint.js
++ eslint@6.1.0
+updated 1 package in 3.749s
++ babel-eslint@10.0.2
+updated 1 package in 1.337s
++ eslint-config-standard@13.0.1
+updated 1 package in 0.331s
++ eslint-config-standard-react@8.0.0
+updated 1 package in 0.376s
++ eslint-config-standard-jsx@7.0.0
+updated 1 package in 0.31s
++ eslint-plugin-react@7.14.2
+updated 1 package in 1.179s
+/usr/local/bin/eslint-config-prettier-check -> /usr/local/lib/node_modules/eslint-config-prettier/bin/cli.js
++ eslint-config-prettier@6.0.0
+updated 1 package in 0.389s
++ eslint-plugin-prettier@3.1.0
+updated 1 package in 0.534s
+/usr/local/bin/prettier -> /usr/local/lib/node_modules/prettier/bin-prettier.js
++ prettier@1.18.2
+updated 1 package in 0.4s
+/usr/local/bin/standard -> /usr/local/lib/node_modules/standard/bin/cmd.js
++ standard@13.1.0
+updated 1 package in 6.105s
+/usr/local/bin/tsc -> /usr/local/lib/node_modules/typescript/bin/tsc
+/usr/local/bin/tsserver -> /usr/local/lib/node_modules/typescript/bin/tsserver
++ typescript@3.5.3
+updated 1 package in 0.726s
+/usr/local/bin/create-react-app -> /usr/local/lib/node_modules/create-react-app/index.js
++ create-react-app@3.0.1
+updated 1 package in 3.047s
+/usr/local/bin/create-react-library -> /usr/local/lib/node_modules/create-react-library/index.js
++ create-react-library@2.6.7
+updated 1 package in 10.288s
+/usr/local/bin/react-native -> /usr/local/lib/node_modules/react-native-cli/index.js
++ react-native-cli@2.0.1
+updated 1 package in 1.465s
+/usr/local/bin/javascript-typescript-langserver -> /usr/local/lib/node_modules/javascript-typescript-langserver/lib/language-server.js
+/usr/local/bin/javascript-typescript-stdio -> /usr/local/lib/node_modules/javascript-typescript-langserver/lib/language-server-stdio.js
++ javascript-typescript-langserver@2.11.3
+updated 1 package in 2.211s
+Requirement already satisfied: python-language-server in /Users/hank/.pyenv/versions/3.6.4/lib/python3.6/site-packages (0.21.5)
+  Ignoring configparser: markers 'python_version < "3.0"' don't match your environment
+  Ignoring futures: markers 'python_version < "3.2"' don't match your environment
+Requirement already satisfied: future>=0.14.0 in /Users/hank/.pyenv/versions/3.6.4/lib/python3.6/site-packages (from python-language-server) (0.17.1)
+Requirement already satisfied: jedi>=0.12 in /Users/hank/.pyenv/versions/3.6.4/lib/python3.6/site-packages (from python-language-server) (0.13.2)
+Requirement already satisfied: python-jsonrpc-server>=0.1.0 in /Users/hank/.pyenv/versions/3.6.4/lib/python3.6/site-packages (from python-language-server) (0.1.2)
+  Ignoring futures: markers 'python_version < "3.2"' don't match your environment
+Requirement already satisfied: pluggy in /Users/hank/.pyenv/versions/3.6.4/lib/python3.6/site-packages (from python-language-server) (0.8.1)
+Requirement already satisfied: parso>=0.3.0 in /Users/hank/.pyenv/versions/3.6.4/lib/python3.6/site-packages (from jedi>=0.12->python-language-server) (0.3.1)
+Searching for pip
+Best match: pip 18.1
+Adding pip 18.1 to easy-install.pth file
+Installing pip script to /Users/hank/.pyenv/versions/3.6.4/bin
+Installing pip3 script to /Users/hank/.pyenv/versions/3.6.4/bin
+Installing pip3.7 script to /Users/hank/.pyenv/versions/3.6.4/bin
+
+Using /Users/hank/.pyenv/versions/3.6.4/lib/python3.6/site-packages
+Processing dependencies for pip
+Finished processing dependencies for pip
+You already have pipsi installed
+pew is already installed
+pipenv is already installed
