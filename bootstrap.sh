@@ -97,7 +97,7 @@ ln -nfs $DOTFILES/.direnvrc $HOME/.direnvrc
 # dir colors (zsh color config)
 ln -nfs $DOTFILES/.dir_colors $HOME/.dir_colors
 
-# dir colors (zsh color config)
+# Doom directory
 ln -nfs $DOTFILES/.doom.d $HOME/.doom.d
 
 # -------------------------------------------------
@@ -141,15 +141,6 @@ npm install -g typescript
 npm install -g create-react-app
 npm install -g create-react-library
 npm install -g react-native-cli
-
-
-
-# -------------------------------------------------
-# Install Pip + setuptools
-# -------------------------------------------------
-
-brew install pip
-brew install pip3
 
 # -------------------------------------------------
 # Pip installs

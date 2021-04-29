@@ -4,7 +4,7 @@
 
 [core]
 	editor = nvim
-	excludesfile = $HOME/dotfiles/.gitignore_global
+	excludesfile = /Users/hank/dotfiles/.gitignore_global
 
 [alias]
   recent-branches = for-each-ref --sort=-committerdate --count=10 --format='%(refname:short)' refs/heads/
