@@ -6,7 +6,7 @@ tap 'caskroom/cask'
 tap 'caskroom/fonts'
 tap 'homebrew/services'
 tap 'sambadevi/powerlevel9k'
-tap 'emacs-plus'
+tap 'd12frosted/emacs-plus'
 tap 'railwaycat/emacsmacport'
 
 #-------------------------------------------------------------------------------
