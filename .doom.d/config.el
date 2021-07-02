@@ -65,6 +65,10 @@
 (define-key evil-normal-state-map (kbd "C-p") 'evil-jump-forward)
 
 
+;; Set special keys (both left / right option should be interpreted as meta)
+(setq ns-right-alternate-modifier 'left) ;; should be left otherwise left option fails
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Tabs/indentation configuration - http://ergoemacs.org/emacs/emacs_tabs_space_indentation_setup.html
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

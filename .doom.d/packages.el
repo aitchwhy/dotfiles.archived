@@ -25,6 +25,8 @@
 (package! pdf-tools)
 (package! undo-tree)
 
+(package! lsp-python-ms-python-executable-cmd)
+
 ;; evil-matchit - match all tags and jump with "%" (https://github.com/redguardtoo/evil-matchit)
 (package! evil-matchit)
 
