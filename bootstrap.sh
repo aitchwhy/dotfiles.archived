@@ -12,7 +12,7 @@ DOTFILES=$HOME/dotfiles
 # -------------------------------------------------
 
 if test ! $(which brew); then
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
 # -------------------------------------------------
@@ -71,13 +71,6 @@ git clone git@github.com:powerline/fonts.git && bash fonts/install.sh
 sleep 3
 rm -rf fonts
 
-#-------------------------------------------------------------------------------
-# Install oh-my-dir
-#-------------------------------------------------------------------------------
-
-# cd $HOME && git clone git@github.com:ajmazurie/oh-my-dir.git && cd ./oh-my-dir && make install
-# cd $HOME && rm -rf oh-my-dir
-
 # -------------------------------------------------
 # Config files linked (home -> dotfiles)
 # -------------------------------------------------
@@ -104,9 +97,9 @@ ln -nfs $DOTFILES/.doom.d $HOME/.doom.d
 # Install vim plugin manager (vim-plug)
 # -------------------------------------------------
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # -------------------------------------------------
 # Git - global
@@ -120,27 +113,6 @@ npm install --global git-open
 
 # yarn package manager
 npm install -g yarn
-
-# hot reloading on file save
-npm install -g nodemon
-
-# linting
-npm install -g eslint
-npm install -g babel-eslint
-npm install -g eslint-config-standard
-npm install -g eslint-config-standard-react
-npm install -g eslint-config-standard-jsx
-npm install -g eslint-plugin-react
-npm install -g eslint-config-prettier
-npm install -g eslint-plugin-prettier
-npm install -g prettier
-npm install -g standard
-npm install -g typescript
-
-# React
-npm install -g create-react-app
-npm install -g create-react-library
-npm install -g react-native-cli
 
 # -------------------------------------------------
 # Pip installs
@@ -168,22 +140,7 @@ $(brew --prefix)/opt/fzf/install
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-# pipsi from github source
-curl -O https://raw.githubusercontent.com/mitsuhiko/pipsi/master/get-pipsi.py
-python get-pipsi.py --src=git+https://github.com/mitsuhiko/pipsi.git#egg=pipsi
-rm get-pipsi.py
-
-# Append pipsi list fail fix workaround
-rm $HOME/.local/venvs/pipsi/package_info.json
-echo '{"name": "pipsi", "version": "0.10.dev", "scripts": ["/Users/jacobkaplan-moss/.local/bin/pipsi"]}' > $HOME/.local/venvs/pipsi/package_info.json
-
-# pipenv
-pipsi install pew
-pipsi install pipenv
-
 # -------------------------------------------------
 # Source profile
 # -------------------------------------------------
-
 source $HOME/.zshrc
-
