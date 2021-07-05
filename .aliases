@@ -1,9 +1,3 @@
-#-------------------------------------------------------------------------------
-# ls command colorized output setting
-#-------------------------------------------------------------------------------
-
-# alias ls='ls --color=auto'
-alias ls='exa -al'
 
 #-------------------------------------------------------------------------------
 # Docker
@@ -76,27 +70,17 @@ alias gri='git rebase -i'
 alias gra='git rebase --abort'
 alias grc='git rebase --continue'
 
-# Git-recent (recent git branches plugin : https://github.com/paulirish/git-recent)
-
-
-# Git-open (open repo/branch in browser plugin : https://github.com/paulirish/git-open)
-
-
 #-------------------------------------------------------------------------------
-# Improving CLI toolset - https://remysharp.com/2018/08/23/cli-improved
+# Improving CLI toolset
+# - https://remysharp.com/2018/08/23/cli-improved
 #-------------------------------------------------------------------------------
 
+alias ls='exa -al'
 alias cat='bat'
 alias ping='prettyping --nolegend'
 alias help='tldr'
 alias du='ncdu --color dark -rr -x --exclude .git'
 alias xxd='hexyl'
-
-
-#-------------------------------------------------------------------------------
-# Lacework (July 22, 2019 ~ )
-#-------------------------------------------------------------------------------
-alias lw='~/lacework'
 
 #-------------------------------------------------------------------------------
 # Vim -> NVim (muscle memory)

@@ -26,7 +26,6 @@
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-city-lights)
 
-
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type nil)
@@ -64,10 +63,8 @@
 ;; Vim Jumplist Keymap
 (define-key evil-normal-state-map (kbd "C-p") 'evil-jump-forward)
 
-
 ;; Set special keys (both left / right option should be interpreted as meta)
-(setq ns-right-alternate-modifier 'left) ;; should be left otherwise left option fails
-
+(setq ns-right-alternate-modifier 'left) ;; should be left otherwise left option fails to send Meta
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Tabs/indentation configuration - http://ergoemacs.org/emacs/emacs_tabs_space_indentation_setup.html
@@ -106,24 +103,14 @@
 ;;   (setq lsp-enable-on-type-formatting nil))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; LSP Java
-;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; (dap-register-debug-template "My Runner"
-;;                              (list :type "java"
-;;                                    :request "launch"
-;;                                    :args ""
-;;                                    :vmArgs "-ea -Dmyapp.instance.name=myapp_1"
-;;                                    :projectName "myapp"
-;;                                    :mainClass "com.domain.AppRunner"
-;;                                    :env '(("DEV" . "1"))))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Text region configs (expand region)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (define-key evil-normal-state-map (kbd "+" ) 'er/expand-region)
 
+;; set left margin to show git-gutter (if no buffer margin then gutter not shown)
+(setq-default left-margin-width 1)
+(set-window-buffer nil (current-buffer))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Treemacs config
@@ -197,11 +184,11 @@
             "* NEXT %^{Title}%?\n%U\n:PROPERTIES:\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d>>\")\n:STYLE: habit\n:END:\n"
             )
           ))
-)
-
-
-
-;; smmoth scrolling for images (org mode)
+  (setq org-hide-emphasis-markers t) ; hide bold+italics marker chars (just do the operation)
+  ;; Setup Org mode bullet point prettify
+  (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
+  )
+;; smooth scrolling for images (org mode)
 (pixel-scroll-mode)
 ;; (setq pixel-dead-time 0) ; Never go back to the old scrolling behaviour.
 (setq pixel-resolution-fine-flag t) ; Scroll by number of pixels instead of lines (t = frame-char-height pixels).

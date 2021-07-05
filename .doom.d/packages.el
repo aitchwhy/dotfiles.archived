@@ -25,10 +25,11 @@
 (package! pdf-tools)
 (package! undo-tree)
 
-(package! lsp-python-ms-python-executable-cmd)
 
 ;; evil-matchit - match all tags and jump with "%" (https://github.com/redguardtoo/evil-matchit)
 (package! evil-matchit)
+;; Org mode bullet heading prettify (replace with UTF8 chars)
+(package! org-superstar)
 
 
 ;; To install a package directly from a particular repo, you'll need to specify
