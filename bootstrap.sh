@@ -2,6 +2,7 @@
 # Set temporary variable
 # -------------------------------------------------
 
+BREW_PREFIX=$(brew --prefix)
 CODE_DIR=$HOME/workspace
 GIT_USER_NAME="hdd2k"
 GIT_EMAIL="hank.lee.qed@gmail.com"
@@ -18,7 +19,7 @@ fi
 # -------------------------------------------------
 # Update brew Cellar filepath permissions to write to it
 # -------------------------------------------------
-sudo chown -R $(whoami) $(brew --prefix)/*
+sudo chown -R $(whoami) $BREW_PREFIX/*
 
 # -------------------------------------------------
 # Add zsh to standard shells
@@ -132,7 +133,7 @@ pip3 install python-language-server
 # -------------------------------------------------
 # FZF additional install (fuzzy completion + key-bindings)
 # -------------------------------------------------
-$(brew --prefix)/opt/fzf/install
+$BREW_PREFIX/opt/fzf/install
 
 # -------------------------------------------------
 # Install python stuff (pyenv, pipsi, pipenv)
