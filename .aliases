@@ -71,15 +71,22 @@ alias gra='git rebase --abort'
 alias grc='git rebase --continue'
 
 #-------------------------------------------------------------------------------
-# Improving CLI toolset
+# Improving CLI toolset (more modern tooling)
 # - https://remysharp.com/2018/08/23/cli-improved
+# - https://news.ycombinator.com/item?id=26559334
 #-------------------------------------------------------------------------------
 
+alias grep='rg'
+alias find='fd'
+alias sed='sd'
+alias diff='delta'
 alias ls='exa -al'
 alias cat='bat'
+alias du='dust -X .git'
+alias ps='procs'
+alias top='htop'
 alias ping='prettyping --nolegend'
 alias help='tldr'
-alias du='ncdu --color dark -rr -x --exclude .git'
 alias xxd='hexyl'
 
 #-------------------------------------------------------------------------------
