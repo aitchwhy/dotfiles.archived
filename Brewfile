@@ -2,8 +2,8 @@
 # Taps
 #-------------------------------------------------------------------------------
 
-tap 'caskroom/cask'
-tap 'caskroom/fonts'
+tap 'homebrew/cask'
+tap 'homebrew/fonts'
 tap 'homebrew/services'
 tap 'sambadevi/powerlevel9k'
 tap 'd12frosted/emacs-plus'
