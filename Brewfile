@@ -3,7 +3,7 @@
 #-------------------------------------------------------------------------------
 
 tap 'homebrew/cask'
-tap 'homebrew/fonts'
+tap 'homebrew/cask-fonts'
 tap 'homebrew/services'
 tap 'sambadevi/powerlevel9k'
 tap 'd12frosted/emacs-plus'
