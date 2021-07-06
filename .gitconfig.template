@@ -35,6 +35,3 @@
 
 [credential]
 	helper = osxkeychain
-[user]
-	name = Hank Lee
-	email = hank.lee.qed@gmail.com
