@@ -34,7 +34,8 @@ ln -nfs $DOTFILES/.vimrc ~/.config/nvim/init.vim
 # -------------------------------------------------
 # Update Homebrew recipes
 # -------------------------------------------------
-echo "Brew update"
+echo "Brew update --- setup brew to master branch in case something is misconfigured"
+git -C $(brew --repository homebrew/core) checkout master
 brew update
 
 # -------------------------------------------------
