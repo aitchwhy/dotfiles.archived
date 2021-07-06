@@ -43,11 +43,6 @@ export FZF_ALT_C_COMMAND="fd . $HOME --hidden --no-ignore --type d"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 #-------------------------------------------------------------------------------
-# Make sure ANDROID SDK is loaded
-#-------------------------------------------------------------------------------
-export ANDROID_HOME=/usr/local/opt/android-sdk
-
-#-------------------------------------------------------------------------------
 # Export language settings
 #-------------------------------------------------------------------------------
 export LC_ALL=en_US.UTF-8
