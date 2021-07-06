@@ -1,20 +1,14 @@
 # -------------------------------------------------
-# Set temporary variable
-# -------------------------------------------------
-
-BREW_PREFIX=$(brew --prefix)
-CODE_DIR=$HOME/workspace
-GIT_USER_NAME="hdd2k"
-GIT_EMAIL="hank.lee.qed@gmail.com"
-DOTFILES=$HOME/dotfiles
-
-# -------------------------------------------------
 # Check for Homebrew and install if we don't have it
 # -------------------------------------------------
-
 if test ! $(which brew); then
-	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
+
+# -------------------------------------------------
+# Set temporary variables (from .extra <- created from .extra.template)
+# -------------------------------------------------
+source "$HOME/dotfiles/.extra"
 
 # -------------------------------------------------
 # Update brew Cellar filepath permissions to write to it
@@ -48,7 +42,6 @@ brew cask cleanup
 # -------------------------------------------------
 # Install global Git configuration
 # -------------------------------------------------
-
 ln -nfs $DOTFILES/.gitconfig $HOME/.gitconfig
 git config --global core.excludesfile $DOTFILES/.gitignore_global
 git config --global user.name "${GIT_USER_NAME}"
@@ -63,7 +56,6 @@ chsh -s $(which zsh)
 #-------------------------------------------------------------------------------
 # Install Oh-my-zsh
 #-------------------------------------------------------------------------------
-
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
 # Install Powerline theme
@@ -98,9 +90,9 @@ ln -nfs $DOTFILES/.doom.d $HOME/.doom.d
 # Install vim plugin manager (vim-plug)
 # -------------------------------------------------
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # -------------------------------------------------
 # Git - global

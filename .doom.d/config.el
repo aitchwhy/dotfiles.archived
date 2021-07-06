@@ -19,7 +19,10 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "monospace" :size 14))
+;;
+;; Example from Doom Emacs Repo - https://github.com/hlissner/doom-emacs/blob/develop/docs/faq.org#how-do-i-change-the-fonts
+;; "monospace" - default
+(setq doom-font (font-spec :family "Monospace" :size 14))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -141,6 +144,9 @@
         org-log-done 'time
         org-log-into-drawer t
         org-image-actual-width 300 ;; limit image size (avoid large images taking over screen) - https://emacs.stackexchange.com/questions/26363/downscaling-inline-images-in-org-mode
+
+        ;; org-roam
+        org-roam-directory "~/org/"
         )
   ;; Org-download (images)
   (setq org-startup-with-inline-images t)

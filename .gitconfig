@@ -1,5 +1,5 @@
 ##
-# This is Git's per-user configuration file.
+#  Git's per-user Global configuration file
 ##
 
 [core]
@@ -19,10 +19,6 @@
 
 [push]
 	default = simple
-
-[user]
-	name = hdd2k
-	email = hank.lee.qed@gmail.com
 
 [filter "lfs"]
 	clean = git-lfs clean %f

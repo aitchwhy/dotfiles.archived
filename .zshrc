@@ -1,19 +1,4 @@
 #-------------------------------------------------------------------------------
-# Path to your dotfiles installation.
-#-------------------------------------------------------------------------------
-export DOTFILES=$HOME/dotfiles
-
-#-------------------------------------------------------------------------------
-# Path to oh-my-zsh installation
-#-------------------------------------------------------------------------------
-export ZSH=$HOME/.oh-my-zsh
-
-#-------------------------------------------------------------------------------
-# Set default EDITOR env var to Path to your Vim binary
-#-------------------------------------------------------------------------------
-export EDITOR=nvim
-
-#-------------------------------------------------------------------------------
 # Shell prompt + theme setting
 #
 # Set name of the theme to load
@@ -23,11 +8,6 @@ source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
 
 # Source powerlevel9k
 source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
-export POWERLEVEL9K_MODE="nerdfont-complete"
-export POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-export POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-
-
 
 #-------------------------------------------------------------------------------
 # Uncomment the following line to use case-sensitive completion.

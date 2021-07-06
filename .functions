@@ -93,23 +93,6 @@ extract() {
 }
 
 #-------------------------------------------------------------------------------
-# Determine size of a file or total size of a directory
-#-------------------------------------------------------------------------------
-
-function fs() {
-  if du -b /dev/null > /dev/null 2>&1; then
-    local arg=-sbh;
-  else
-    local arg=-sh;
-  fi
-  if [[ -n "$@" ]]; then
-    du $arg -- "$@";
-  else
-    du $arg .[^.]* ./*;
-  fi;
-}
-
-#-------------------------------------------------------------------------------
 # Create a data URL from a file
 #-------------------------------------------------------------------------------
 
@@ -119,18 +102,6 @@ function dataurl() {
     mimeType="${mimeType};charset=utf-8";
   fi
   echo "data:${mimeType};base64,$(openssl base64 -in "$1" | tr -d '\n')";
-}
-
-#-------------------------------------------------------------------------------
-# Start a PHP local server from a directory, optionally specifying the port
-# (Requires PHP 5.4.0+.)
-#-------------------------------------------------------------------------------
-
-function phpserver() {
-  local port="${1:-8000}";
-  local ip=$(ipconfig getifaddr en0);
-  sleep 1 && open "http://${ip}:${port}/" &
-  php -S "${ip}:${port}";
 }
 
 #-------------------------------------------------------------------------------

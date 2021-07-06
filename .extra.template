@@ -1,0 +1,7 @@
+# Template Shell script for uncommitted items (template to be replaced per machine)
+
+BREW_PREFIX=$(brew --prefix)
+DOTFILES=$HOME/dotfiles
+CODE_DIR=$HOME/workspace
+GIT_USER_NAME="GIT_USER_NAME"
+GIT_EMAIL="GIT_EMAIL"

@@ -75,17 +75,3 @@ pathadd "$HOME/dotfiles/scripts"
 # Emacs binaries
 #-------------------------------------------------------------------------------
 pathadd "$HOME/.emacs.d/bin"
-
-#-------------------------------------------------------------------------------
-# k8s tools (Lacework)
-#-------------------------------------------------------------------------------
-
-# PATH="$HOME/lacework/k8s/tools:$PATH"
-# PATH="$HOME/lacework/k8s/scripts:$PATH"
-pathadd "$HOME/baga/includes"
-pathadd "$HOME/lacework/k8s/tools"
-pathadd "$HOME/lacework/k8s/scripts"
-pathadd "$HOME/lacework/milkyway/dev_tools/mysql_scripts"
-# Baga (Kubernetes setup - ENVVARs used for scripts)
-
-export PATH
