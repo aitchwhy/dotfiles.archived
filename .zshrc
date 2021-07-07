@@ -1,3 +1,9 @@
+# -------------------------------------------------
+# Set temporary variables (from .extra <- created from .extra.template)
+# -------------------------------------------------
+echo "Exporting env vars for per-machine config"
+source "$HOME/dotfiles/.extra"
+
 #-------------------------------------------------------------------------------
 # Shell prompt + theme setting
 #
