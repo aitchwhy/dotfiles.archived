@@ -4,11 +4,6 @@ Environment setup files for OSX setup
 
 
 TODOS
-- [ ] Oh-My-Zsh install automatically exits (currently not exiting after installation)
-- [ ] brew bundle (Brewfile) add options to check existing installations
-- [ ] virtual env settings + automation + direnv (https://mike.place/2017/python-pyenv/)
-- [ ] pipenv workflow (https://jacobian.org/writing/python-environment-2018/)
-- [ ] Fix bash / zsh error script (originates from oh-my-zsh)
 
 ## 1. Xcode Installation + other App Store apps
 
@@ -58,15 +53,15 @@ Setup Autoenv
 
 Change iterm2 font to one that supports Powerline
 
-Install Google Material color scheme for Iterm2
+Install Google Material color scheme for Iterm2 (or whichever color preset you'd like)
 - [Google's Material Design Color Palette for Iterm2](https://github.com/MartinSeeler/iterm2-material-design)
 
 
-## 6. Intellij Setup
+## App store setup (apps not on Brew Cask)
 
-- Color theme (Editor) : [Obsidian theme](http://color-themes.com/?view=theme&id=563a1a6180b4acf11273ae3d)
-- Setup Intellij Plugin : IdeaVim, Material Theme UI
-
+- Install Magnet (window sizing)
+- Spark (email)
+- Bear (notes)
 
 ## Notes
 
@@ -91,6 +86,7 @@ Install Google Material color scheme for Iterm2
     - Hashes everywhere for security
     - Pipfile.lock ensures deterministic builds
     - Shows Dependency graph ($ pipenv graph)
+
 
 *data science libraries*
 

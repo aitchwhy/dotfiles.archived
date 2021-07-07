@@ -159,6 +159,7 @@ cask 'slack'
 cask 'postman'
 cask 'flux'
 cask 'dropbox'
+cask 'zoom'
 
 #-------------------------------------------------------------------------------
 # Fonts
