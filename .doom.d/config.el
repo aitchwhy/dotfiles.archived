@@ -22,7 +22,11 @@
 ;;
 ;; Example from Doom Emacs Repo - https://github.com/hlissner/doom-emacs/blob/develop/docs/faq.org#how-do-i-change-the-fonts
 ;; "monospace" - default
-(setq doom-font (font-spec :family "Monospace" :size 14))
+;; (setq doom-font (font-spec :family "Monospace" :size 14))
+;; (setq doom-font (font-spec :family "Fira Code" :size 12))
+(setq doom-font (font-spec :family "Fira Mono for Powerline" :size 12))
+;; When zooming in/out do not step too much (orig 2)
+(setq doom-font-increment 1)
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
