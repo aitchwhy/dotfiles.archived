@@ -38,3 +38,5 @@
 [user]
 	name = hdd2k
 	email = hank.lee.qed@gmail.com
+[init]
+	defaultBranch = main
