@@ -1,8 +1,18 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # -------------------------------------------------
 # Set temporary variables (from .extra <- created from .extra.template)
 # -------------------------------------------------
 echo "Exporting env vars for per-machine config"
 source "$HOME/dotfiles/.extra"
+
+# Set vim shell to Zsh (homebrew version)
+set shell=/opt/homebrew/bin/zsh
 
 #-------------------------------------------------------------------------------
 # Shell prompt + theme setting
@@ -10,10 +20,7 @@ source "$HOME/dotfiles/.extra"
 # Set name of the theme to load
 #-------------------------------------------------------------------------------
 # source kube-ps1 for Kubernetes prompts
-source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
-
-# Source powerlevel9k
-source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
+source "/opt/homebrew/Cellar/kube-ps1/0.7.0/share/kube-ps1.sh"
 
 #-------------------------------------------------------------------------------
 # Uncomment the following line to use case-sensitive completion.
@@ -175,3 +182,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Remove PATH duplicates - https://unix.stackexchange.com/questions/40749/remove-duplicate-path-entries-with-awk-command/149054#149054
 export PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV{PATH}))')"
+source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
