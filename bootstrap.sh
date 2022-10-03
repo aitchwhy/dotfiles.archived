@@ -98,6 +98,9 @@ ln -nfs $DOTFILES/.dir_colors $HOME/.dir_colors
 # Doom directory
 ln -nfs $DOTFILES/.doom.d $HOME/.doom.d
 
+# Powerlevel10k
+ln -nfs $DOTFILES/.p10k.zsh $HOME/.p10k.zsh
+
 # -------------------------------------------------
 # Install vim plugin manager (vim-plug)
 # -------------------------------------------------
