@@ -163,6 +163,11 @@ eval "$(direnv hook zsh)"
 test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
 
 #-------------------------------------------------------------------------------
+# Homebrew fix for M1 apple silicon version
+#-------------------------------------------------------------------------------
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+#-------------------------------------------------------------------------------
 # [Lacework] activate dev env
 #-------------------------------------------------------------------------------
 # Check if command exists before source

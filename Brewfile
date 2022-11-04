@@ -160,6 +160,9 @@ cask 'postman'
 cask 'flux'
 cask 'dropbox'
 cask 'zoom'
+cask 'zotero'
+cask 'pdf-expert'
+cask 'monitorcontrol'
 
 #-------------------------------------------------------------------------------
 # Fonts
