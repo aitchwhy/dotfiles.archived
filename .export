@@ -95,3 +95,9 @@ export TMUX_FZF_SED="/usr/local/bin/gsed"
 # GOPATH : root of golang workspace in my file directory
 export GOPATH="$HOME/go"
 
+#-------------------------------------------------------------------------------
+# Pyenv setup
+#-------------------------------------------------------------------------------
+export PYENV_ROOT=$HOME/.pyenv
+
+
