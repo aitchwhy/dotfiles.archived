@@ -11,9 +11,6 @@ fi
 echo "Exporting env vars for per-machine config"
 source "$HOME/dotfiles/.extra"
 
-# Set vim shell to Zsh (homebrew version)
-set shell=/opt/homebrew/bin/zsh
-
 #-------------------------------------------------------------------------------
 # Shell prompt + theme setting
 #

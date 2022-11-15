@@ -4,3 +4,7 @@ if [ -f /etc/profile ]; then
     PATH=""
     source /etc/profile
 fi
+
+# Set ZSH as default shell for M1 mac homebrew. 
+# Zsh (installed via brew), will be installed in /opt/homebrew/bin/zsh.
+SHELL=/opt/homebrew/bin/zsh

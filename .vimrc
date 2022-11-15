@@ -302,7 +302,8 @@ set noswapfile
 
 set fileformats=unix,dos,mac
 set showcmd
-set shell=/usr/local/bin/zsh
+"" Shell settings for Zsh (specify binary location)
+set shell=/opt/homebrew/bin/zsh
 
 """ Enable FZF in vim by adding it to runtimepath (path is for Brew install)
 set rtp+=/usr/local/opt/fzf
