@@ -99,6 +99,7 @@ brew 'ksh'
 brew 'emacs-plus'
 brew 'cfr-decompiler'
 brew 'git-recent'
+brew 'zola'
 
 #-------------------------------------------------------------------------------
 # Development-Ruby
