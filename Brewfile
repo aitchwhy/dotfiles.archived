@@ -100,6 +100,7 @@ brew 'emacs-plus'
 brew 'cfr-decompiler'
 brew 'git-recent'
 brew 'zola'
+brew 'httrack' # website download / mirror tool
 
 #-------------------------------------------------------------------------------
 # Development-Ruby
