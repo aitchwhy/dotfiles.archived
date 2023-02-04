@@ -63,6 +63,14 @@ Install Google Material color scheme for Iterm2 (or whichever color preset you'd
 - Spark (email)
 - Bear (notes)
 
+
+## App setup
+
+- Alfred
+  - add workflows
+    - Bear : https://github.com/drgrib/alfred-bear
+    - Browser tabs : https://github.com/epilande/alfred-browser-tabs
+
 ## Notes
 
 ### Python environment setup
