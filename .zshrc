@@ -17,7 +17,7 @@ source "$HOME/dotfiles/.extra"
 # Set name of the theme to load
 #-------------------------------------------------------------------------------
 # source kube-ps1 for Kubernetes prompts
-source "/opt/homebrew/Cellar/kube-ps1/0.7.0/share/kube-ps1.sh"
+source "/opt/homebrew/Cellar/kube-ps1/0.8.0/share/kube-ps1.sh"
 
 #-------------------------------------------------------------------------------
 # Uncomment the following line to use case-sensitive completion.

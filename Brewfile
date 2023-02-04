@@ -7,6 +7,7 @@ tap 'homebrew/cask-fonts'
 tap 'homebrew/services'
 tap 'sambadevi/powerlevel9k'
 tap 'd12frosted/emacs-plus'
+tap 'romkatv/powerlevel10k'
 
 #-------------------------------------------------------------------------------
 # Make sure apps get installed in system Applications dir
