@@ -7,6 +7,12 @@ TODOS
 
 ## 1. Xcode Installation + other App Store apps
 
+Install Brew
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
 Need to install Xcode CLI tools.  Install them from the App Store
 
 After installation, run the following command in the shell
@@ -62,6 +68,11 @@ Install Google Material color scheme for Iterm2 (or whichever color preset you'd
 - Install Magnet (window sizing)
 - Spark (email)
 - Bear (notes)
+
+
+## Additonal Apps
+
+- Install Todoist : https://todoist.com/downloads
 
 
 ## App setup
