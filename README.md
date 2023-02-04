@@ -76,6 +76,7 @@ Install Google Material color scheme for Iterm2 (or whichever color preset you'd
 
 - Install Todoist : https://todoist.com/downloads
 - Install Signal
+- Install Anki
 
 ## App setup
 
