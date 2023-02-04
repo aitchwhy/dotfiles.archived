@@ -75,6 +75,7 @@ Install Google Material color scheme for Iterm2 (or whichever color preset you'd
 - Install Todoist : https://todoist.com/downloads
 - Install Authy
 - Install KakaoTalk
+- Install Signal
 
 ## App setup
 
