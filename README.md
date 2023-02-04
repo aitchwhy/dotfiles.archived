@@ -68,13 +68,13 @@ Install Google Material color scheme for Iterm2 (or whichever color preset you'd
 - Install Magnet (window sizing)
 - Spark (email)
 - Bear (notes)
+- Authy
+- Install KakaoTalk
 
 
 ## Additonal Apps
 
 - Install Todoist : https://todoist.com/downloads
-- Install Authy
-- Install KakaoTalk
 - Install Signal
 
 ## App setup
