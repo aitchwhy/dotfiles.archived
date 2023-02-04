@@ -70,6 +70,7 @@ Install Google Material color scheme for Iterm2 (or whichever color preset you'd
   - add workflows
     - Bear : https://github.com/drgrib/alfred-bear
     - Browser tabs : https://github.com/epilande/alfred-browser-tabs
+  - add snippets
 
 ## Notes
 
