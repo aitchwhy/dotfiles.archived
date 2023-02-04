@@ -73,7 +73,8 @@ Install Google Material color scheme for Iterm2 (or whichever color preset you'd
 ## Additonal Apps
 
 - Install Todoist : https://todoist.com/downloads
-
+- Install Authy
+- Install KakaoTalk
 
 ## App setup
 
@@ -82,6 +83,7 @@ Install Google Material color scheme for Iterm2 (or whichever color preset you'd
     - Bear : https://github.com/drgrib/alfred-bear
     - Browser tabs : https://github.com/epilande/alfred-browser-tabs
   - add snippets
+
 
 ## Notes
 
