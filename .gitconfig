@@ -40,3 +40,5 @@
 	email = hank.lee.qed@gmail.com
 [init]
 	defaultBranch = main
+[pull]
+	rebase = false
