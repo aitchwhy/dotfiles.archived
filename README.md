@@ -37,7 +37,7 @@ Make sure the dotfiles directory is downloaded to $HOME directory
 Open necessary files to update correct Git user info
 
 ```bash
-# ~/dotfiles/bootstrap.sh
+# ~/dotfiles/.extra <--- copy afresh from .extra.template
 
 CODE_DIR=$HOME/workspace
 GIT_USER_NAME="foo"
