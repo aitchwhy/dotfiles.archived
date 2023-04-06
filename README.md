@@ -5,6 +5,15 @@ Environment setup files for OSX setup
 
 TODOS
 
+## 0. Hardware setup
+
+- update modifier keys (e.g. Caps lock -> Ctrl)
+- enable key hold [link](https://www.macworld.com/article/351347/how-to-activate-key-repetition-through-the-macos-terminal.html)
+
+```
+$ defaults write -g ApplePressAndHoldEnabled -bool false
+```
+
 ## 1. Xcode Installation + other App Store apps
 
 Install Brew
