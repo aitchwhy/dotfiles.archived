@@ -90,12 +90,6 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Content
 export TMUX_FZF_SED="/usr/local/bin/gsed"
 
 #-------------------------------------------------------------------------------
-# Golang setup
-#-------------------------------------------------------------------------------
-# GOPATH : root of golang workspace in my file directory
-export GOPATH="$HOME/go"
-
-#-------------------------------------------------------------------------------
 # Pyenv setup
 #-------------------------------------------------------------------------------
 export PYENV_ROOT=$HOME/.pyenv
