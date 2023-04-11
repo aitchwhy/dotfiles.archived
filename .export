@@ -94,17 +94,3 @@ export TMUX_FZF_SED="/usr/local/bin/gsed"
 #-------------------------------------------------------------------------------
 export PYENV_ROOT=$HOME/.pyenv
 
-
-#-------------------------------------------------------------------------------
-# Golang setup
-#-------------------------------------------------------------------------------
-
-# this is for manual installation (where download goes to default to /usr/local/go)
-
-export GOROOT="/usr/local/go"
-export GOPATH=""
-
-# this is for M1,2 homebrew (ARM Apple Silicon)
-
-# export GOROOT= ...
-
