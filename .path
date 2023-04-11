@@ -80,5 +80,4 @@ pathadd "$HOME/.emacs.d/bin"
 #-------------------------------------------------------------------------------
 # Golang
 #-------------------------------------------------------------------------------
-pathadd "$BREW_PREFIX/opt/go@1.18/bin"
-pathadd "$(go env GOPATH)/go/bin"
+pathadd "/usr/local/go/bin"
