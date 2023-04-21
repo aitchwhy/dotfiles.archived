@@ -32,6 +32,13 @@ mkdir -p $HOME/.config/nvim
 ln -nfs $DOTFILES/.vimrc ~/.config/nvim/init.vim
 
 # -------------------------------------------------
+# create shell GPT config folder (https://github.com/TheR1D/shell_gpt)
+# -------------------------------------------------
+echo "Create shell_gpt config"
+mkdir -p $HOME/.config/shell_gpt/.sgptrc
+ln -nfs $DOTFILES/.sgptrc $HOME/.config/shell_gpt/.sgptrc
+
+# -------------------------------------------------
 # Update Homebrew recipes
 # -------------------------------------------------
 echo "Brew update --- setup brew to master branch in case something is misconfigured"
