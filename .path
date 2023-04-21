@@ -76,3 +76,6 @@ pathadd "$HOME/dotfiles/scripts"
 # Emacs binaries
 #-------------------------------------------------------------------------------
 pathadd "$HOME/.emacs.d/bin"
+
+# Golang (homebrew go binaries)
+pathadd "$BREW_PREFIX/opt/go@1.18/bin"
