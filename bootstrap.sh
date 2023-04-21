@@ -141,6 +141,7 @@ npm install -g yarn
 # Python client for Neovim
 echo "PIP global installs"
 pip3 install pynvim
+pip3 install shell-gpt # shell-gpt==0.9.0
 
 # -------------------------------------------------
 # Install Langauge server
