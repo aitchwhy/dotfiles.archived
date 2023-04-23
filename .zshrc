@@ -165,13 +165,9 @@ test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 #-------------------------------------------------------------------------------
-# [Lacework] activate dev env
+# Activate secrets shell (should be empty on bootstrap)
 #-------------------------------------------------------------------------------
-# Check if command exists before source
-if type "lwenv" > /dev/null; then
-  source lwenv dev2
-fi
-
+source $DOTFILES/secrets.sh
 
 #-------------------------------------------------------------------------------
 # Activate Oh-My-Zsh
