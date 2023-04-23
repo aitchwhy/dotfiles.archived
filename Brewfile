@@ -87,6 +87,7 @@ brew 'zlib'
 brew 'powerlevel9k'				                    # zsh shell powerline
 brew 'git-recent'                                   # viewing latest git branches
 brew 'broot'                                        # broot - tree,cd,fuzzy-search
+brew 'chrome-cli'
 
 brew 'sbcl'
 brew 'teleport'
