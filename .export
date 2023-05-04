@@ -98,3 +98,4 @@ export PYENV_ROOT=$HOME/.pyenv
 # Golang setup
 #-------------------------------------------------------------------------------
 export GOPATH="$HOME/go"
+export GOROOT="$(brew --prefix golang)/libexec"
