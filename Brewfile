@@ -93,6 +93,7 @@ brew 'act' # local Github Actions (GHA) runner (using docker)
 brew 'sbcl'
 brew 'teleport'
 brew 'terraform@0.11'
+brew 'terraform-ls' # Used for VSCode IDE terraform plugin to do Goto Symbol + etc.
 brew 'pip'
 brew 'pip3'
 brew 'poetry'
