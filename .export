@@ -90,8 +90,10 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Content
 export TMUX_FZF_SED="/usr/local/bin/gsed"
 
 #-------------------------------------------------------------------------------
-# Pyenv setup
+# Python + Pyenv setup
 #-------------------------------------------------------------------------------
+# No __pycache__ 
+export PYTHONDONTWRITEBYTECODE=1
 export PYENV_ROOT=$HOME/.pyenv
 
 #-------------------------------------------------------------------------------
