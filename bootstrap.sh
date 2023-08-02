@@ -163,8 +163,8 @@ $BREW_PREFIX/opt/fzf/install
 # Secrets management
 # Create secrets file (should be manually populated)
 # -------------------------------------------------
-echo "Add empty files for secrets"
-touch $DOTFILES/secrets.sh
+echo "Add template file for secrets"
+echo "export ENV_VAR=foobar" > $DOTFILES/secrets.sh
 
 # -------------------------------------------------
 # Install python stuff (pyenv, pipsi, pipenv)
