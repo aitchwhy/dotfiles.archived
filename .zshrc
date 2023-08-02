@@ -137,6 +137,9 @@ done;
 
 unset files file;
 
+# Set Vim editor mode in shell CLI (activate using ESC key)
+set -o vi
+
 #-------------------------------------------------------------------------------
 # Add Pyenv functionality to ZSH shell + pyenv setup
 # Also install pipsi, pipenv

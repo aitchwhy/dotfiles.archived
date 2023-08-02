@@ -62,7 +62,8 @@ brew 'tmux'                                      # terminal multiplexing
 brew 'nvm'                                       # Node version manager
 brew 'fasd'                                      # Navigation
 brew 'mutt'                                      # CLI email util (for crontab)
-brew 'jq'
+brew 'jq'                                        # CLI JSON manipulator
+brew 'fx'                                        # CLI JSON editor
 brew 'cscope'                                    # Ctags complement for tagged code
 brew 'direnv'
 brew 'grep'
