@@ -260,6 +260,17 @@ function version() {
 }
 
 
+#-------------------------------------------------------------------------------
+# AWS CLI (aws, awslocal Localstack)
+#-------------------------------------------------------------------------------
+# params
+# $1: queue name
+# $1: message body (JSON)
+awslocal_sqs_send_message() {
+  LOCALHOST_QUEUE_NAME="$1"
+  MESSAGE_JSON="$2"
+  awslocal sqs send-message --queue-url "http://localhost:4566/000000000000/$1" --message-body "$2"
+}
 
 #-------------------------------------------------------------------------------
 # View contents of file
