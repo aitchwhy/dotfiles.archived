@@ -85,6 +85,11 @@ export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} /usr/local/opt/zlib/lib/pkgconfig"
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
 
 #-------------------------------------------------------------------------------
+# Javascript (Node, Deno, etc)
+#-------------------------------------------------------------------------------
+export DENO_INSTALL="/Users/hanklee/.deno"
+
+#-------------------------------------------------------------------------------
 # Tmux fzf gnu-sed (gsed) path
 #-------------------------------------------------------------------------------
 export TMUX_FZF_SED="/usr/local/bin/gsed"
