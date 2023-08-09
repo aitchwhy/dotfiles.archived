@@ -207,14 +207,21 @@ dsm() {
 }
 
 drm() {
-	#docker rm $(docker ps -a -q)
-	docker ps -a -q | xargs docker rm
+  docker rm -f $(docker ps -a --format "{{.ID}}")
 }
 
 drmi() {
-	docker images | grep '<none>' | \
-	awk '{ print $3 }' | \
-	xargs docker rmi
+  docker rmi -f $(docker images -a --format "{{.ID}}")
+}
+
+dprune() {
+  docker system prune --force
+}
+
+dreset() {
+  drm
+  drmi
+  dprune
 }
 
 drun() {
