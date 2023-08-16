@@ -214,6 +214,10 @@ drmi() {
   docker rmi -f $(docker images -a --format "{{.ID}}")
 }
 
+dvrm() {
+  docker volume rm -f $(docker volume ls -q)
+}
+
 dprune() {
   docker system prune --force
 }
@@ -222,6 +226,7 @@ dreset() {
   drm
   drmi
   dprune
+  dvrm
 }
 
 drun() {
