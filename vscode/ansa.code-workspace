@@ -1,0 +1,19 @@
+{
+    // Apparently no variable expansion in paths (no $HOME or ~)
+    // But relative paths work (https://github.com/microsoft/vscode-docs/issues/3264)
+    "folders": [
+        {
+            "path": "../../workspace/ansa-platform"
+        },
+        {
+            "path": "../../workspace/ansa-infra"
+        },
+        {
+            "path": "../../workspace/ansa-ios-backend"
+        },
+        {
+            "path": "../../workspace/ansa-scripts"
+        }
+    ],
+    "settings": {}
+}
