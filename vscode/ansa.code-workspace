@@ -6,29 +6,23 @@
             "name": "ansa-platform",
             "path": "../../workspace/ansa-platform"
         },
-        {
-            "name": "ansa-infra",
-            "path": "../../workspace/ansa-infra"
-        },
-        {
-            "name": "ansa-ios-backend",
-            "path": "../../workspace/ansa-ios-backend"
-        },
-        {
-            "name": "ansa-scripts",
-            "path": "../../workspace/ansa-scripts"
-        }
+        // TODO: Configure golang multiple project workspaces
+        // bear://x-callback-url/open-note?id=8B128F26-D36E-4124-8158-6DB9CD9B9024-619-0000023DCC338EEB
+        // {
+        //     "name": "ansa-infra",
+        //     "path": "../../workspace/ansa-infra"
+        // },
+        // {
+        //     "name": "ansa-ios-backend",
+        //     "path": "../../workspace/ansa-ios-backend"
+        // },
+        // {
+        //     "name": "ansa-scripts",
+        //     "path": "../../workspace/ansa-scripts"
+        // }
     ],
     "settings": {
-        // // GOPATH setting for vscode-go - https://github.com/golang/vscode-go/blob/master/docs/gopath.md
-        // // Use project-specific go (in ./opt/go) - does NOT work with VSCode multi-root workspaces
-        "go.gopath": "${workspaceFolder}/opt/go",
-        // Infer gopath from vscode workspace root. Overrides "go.gopath" setting.
-        // "go.inferGopath": true,
-        // // install binaries (tools) to SAME global shared space (to avoid installing each time)
-        // "go.toolsEnvVars": {
-        //     "GOBIN": "$HOME/go/bin"
-        // }
+        // TODO: this gets applied to ALL workspaces so GOPATH conflicts
     },
     "tasks": {
         // See https://go.microsoft.com/fwlink/?LinkId=733558
