@@ -5,8 +5,6 @@
 tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/services'
-tap 'sambadevi/powerlevel9k'
-tap 'd12frosted/emacs-plus'
 tap 'romkatv/powerlevel10k'
 
 #-------------------------------------------------------------------------------
@@ -75,7 +73,6 @@ brew 'git-flow'
 brew 'htop'
 brew 'httpie'
 brew 'hub'
-brew 'node', args: ['with-npm']
 brew 'openssl'
 brew 'tcpdump'
 brew 'tree'
@@ -85,24 +82,19 @@ brew 'cmake'
 brew 'hexyl'                                        # Better 'xxd' (hex code viewer)
 brew 'neovim'                                       # Better 'vim'
 brew 'zlib'
-brew 'powerlevel9k'				                    # zsh shell powerline
+brew 'powerlevel10k'				                # zsh shell powerline
 brew 'git-recent'                                   # viewing latest git branches
 brew 'broot'                                        # broot - tree,cd,fuzzy-search
 brew 'chrome-cli'
+brew 'bitwarden-cli' # password manager CLI
 brew 'act' # local Github Actions (GHA) runner (using docker)
 
-brew 'sbcl'
 brew 'terraform@0.11'
 brew 'terraform-ls' # Used for VSCode IDE terraform plugin to do Goto Symbol + etc.
-brew 'pip'
-brew 'pip3'
-brew 'poetry'
 brew 'kube-ps1'
 brew 'kops'
 brew 'ksh'
-brew 'emacs-plus'
 brew 'cfr-decompiler'
-brew 'git-recent'
 brew 'zola'
 brew 'httrack' # website download / mirror tool
 brew 'ngrok' # ingress-as-a-service (easiest way to expose localhost to public internet)
@@ -129,6 +121,7 @@ brew 'jupyter'
 #-------------------------------------------------------------------------------
 
 brew 'golang'
+brew 'golang-migrate' # golang DB migration
 
 #-------------------------------------------------------------------------------
 # Development-Java
@@ -143,7 +136,6 @@ brew 'maven'
 # Databases
 #-------------------------------------------------------------------------------
 
-brew 'mysql'
 brew 'postgresql'                                # DBMS
 brew 'sqlite'
 
@@ -154,23 +146,18 @@ brew 'sqlite'
 cask 'visual-studio-code'
 cask 'spotify'
 cask 'fantastical'
-cask 'anaconda'
 cask 'docker'
 cask 'iterm2'
-cask 'psequel'
-cask 'rdm'
-cask 'sublime-text'
 cask 'wireshark'
-cask 'alfred'
 cask 'istat-menus'
 cask 'slack'
 cask 'postman'
 cask 'flux'
 cask 'dropbox'
 cask 'zoom'
-cask 'zotero'
 cask 'pdf-expert'
 cask 'monitorcontrol'
+cask 'datagrip' # JetBrains data IDE
 
 #-------------------------------------------------------------------------------
 # Fonts

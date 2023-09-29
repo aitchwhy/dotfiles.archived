@@ -82,10 +82,6 @@ git clone git@github.com:powerline/fonts.git && bash fonts/install.sh
 sleep 3
 rm -rf fonts
 
-# Install powerlevel10k
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $BREW_PREFIX/opt/powerlevel10k
-
-
 # -------------------------------------------------
 # Config files linked (home -> dotfiles)
 # -------------------------------------------------

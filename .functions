@@ -1,13 +1,5 @@
 
 #-------------------------------------------------------------------------------
-# precmd (before each prompt) hook functions - http://zsh.sourceforge.net/Doc/Release/Functions.html
-#-------------------------------------------------------------------------------
-function precmd () {
-  # Gets exported BEFORE prompt
-  export POWERLEVEL9K_CONTEXT_TEMPLATE="%n@$TF_VAR_env_name"
-}
-
-#-------------------------------------------------------------------------------
 # CLI shortcuts (functions instead of alias to avoid slow startup (alias uses 'eval'))
 # Note that * operator needs to be preceded with \
 #-------------------------------------------------------------------------------

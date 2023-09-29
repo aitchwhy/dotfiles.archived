@@ -28,7 +28,7 @@ After installation, run the following command in the shell
 
 ```bash
 ~ $ sudo xcodebuild -license accept # License agreement (accept all)
-~ $ xcode-select --install   # Command Line Tool 설치installation
+~ $ xcode-select --install   # Command Line Tool installation
 ```
 
 ## 2. SSH setup
@@ -72,64 +72,62 @@ Install Google Material color scheme for Iterm2 (or whichever color preset you'd
 - [Google's Material Design Color Palette for Iterm2](https://github.com/MartinSeeler/iterm2-material-design)
 
 
-## App store setup (apps not on Brew Cask)
+## App Store setup (apps not on Brew Cask)
 
 - Install Magnet (window sizing)
 - Spark (email)
 - Bear (notes)
-- Authy
+- Authy (NOT website download .dmg)
+  - Authy CAN also be installed via website Mac dmg download, BUT App Store Authy is preferred
 - Install KakaoTalk
 
+## Additonal Apps (Non-app store)
 
-## Additonal Apps
-
+- Install Raycast : https://www.raycast.com/
 - Install Todoist : https://todoist.com/downloads
 - Install Signal : https://signal.org/download/
+- Bartender 5 : https://www.macbartender.com/
+- Install Bitwarden (App) : https://bitwarden.com/
 - Install Anki : https://apps.ankiweb.net/
-- Bartender : https://www.macbartender.com/
-
-## App setup
-
-- Alfred
-  - add workflows
-    - Bear : https://github.com/drgrib/alfred-bear
-    - Browser tabs : https://github.com/epilande/alfred-browser-tabs
-  - add snippets
 
 
-## Notes
+## main tools configuration setup
 
-### Python environment setup
+### Vim
 
-*python, pip, virtualenv*
+- install Vim plugins (in .vimrc) by entering vim in shell, and then ":PlugInstall"
 
-- [pyenv](https://github.com/pyenv/pyenv)
-    - Manages + installs (global / local) Python versions (+pip)
-- [pipsi](https://github.com/mitsuhiko/pipsi)
-    - PIP Script Installer (pipsi)
-    - Wrapper(virtualenv, pip) ---> Separate virtualenv installs for Python-based-CLI programs (ex: awscli, pipenv, etc)
-    - Bugs! (02/23/18)
-        - [pipsi fails - no 'virtualenv' file](https://github.com/mitsuhiko/pipsi/issues/125)
-            - Must install using `master` branch
-            - `$ python get-pipsi.py --src=git+https://github.com/mitsuhiko/pipsi.git#egg=pipsi`
-        - [pipsi list fails - no 'package_info.json'](https://github.com/mitsuhiko/pipsi/issues/124)
-            - Edit pipsi virtualenvs file
-- [pipenv](https://github.com/pypa/pipenv)
-    - Python Packaging tool
-    - pip + virtualenv used together!
-    - Hashes everywhere for security
-    - Pipfile.lock ensures deterministic builds
-    - Shows Dependency graph ($ pipenv graph)
+### Python (installed by Brewfile)
 
+- [pyenv](https://github.com/pyenv/pyenv) ---> shoudl be installed by Homebrew 
 
-*data science libraries*
+```shell
+$ pyenv install 3.10 # installs python version (3.10)
+$ pyenv versions # list installed python versions
+$ pyenv global 3.10 # set global default version
+```
 
-- pipenv install tensorflow
-- pipenv install keras
-- [How to install python packages from Jupyter notebook](https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyter/)
+###  Node/nvm (nvm installed by Brewfile)
 
-## Helpful References
-- [Copied off of Mesh dotfiles](https://github.com/meshkorea/prime-utility/tree/master/dotfiles)
-- [Python Environment Setup](https://jacobian.org/writing/python-environment-2018/)
-- [system python VS conda python VS pip python VS Jupyter Kernel Python](https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyter/)
+- nvm install global version
+```shell
+$ nvm install node # installs latest "node" version
+$ nvm ls
+$ nvm alias default node # set global default version
+# ...
+$ nvm use node # specify a version of node to use now
+```
+
+### VSCode
+
+- login to Github user for settings sync
+- most custom changes are in Bear notes tag "vscode"
+
+### Datagrip
+
+- login to Jetbrains user for settings sync
+- most custom changes are in Bear notes tag "datagrip"
+
+### Direnv
+
 - [Automatically Activate env - Direnv](https://direnv.net/)
