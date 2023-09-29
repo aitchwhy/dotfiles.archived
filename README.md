@@ -59,11 +59,6 @@ Run dotfiles setup script
 ~/dotfiles $ bash bootstrap.sh
 ```
 
-Setup Autoenv
-```bash
-~/dotfiles $ echo "source $(brew --prefix autoenv)/activate.sh" >> ~/.zshrc
-```
-
 ## 5. Iterm2 setup
 
 Change iterm2 font to one that supports Powerline
