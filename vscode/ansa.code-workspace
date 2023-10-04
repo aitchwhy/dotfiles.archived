@@ -65,6 +65,25 @@
                 "args": [],
                 "showLog": true
             },
+            // This runs ONLY the API tests in (ansa-server/restapi/apitests) folder
+            // Entry point for tests is (ansa-server/restapi/apitests/main_test.go)
+            {
+                "name": "(Debug) Run all API tests",
+                "type": "go",
+                "request": "launch",
+                "mode": "test",
+                "program": "${workspaceFolder}/ansa-server/restapi/apitests",
+                "debugAdapter": "dlv-dap",
+                "showLog": true,
+                "args": [
+                    "-test.v",
+                ],
+                "env": {
+                    "DEPLOY_ENV": "test",
+                    "SRC_ROOT": "${workspaceFolder}",
+                    "INTEGRATION": "true",
+                },
+            },
             {
                 "name": "(Debug) Run Ansa Server",
                 "type": "go",
