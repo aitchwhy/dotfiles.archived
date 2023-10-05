@@ -128,8 +128,7 @@
                 "debugAdapter": "dlv-dap",
                 "env": {
                     "SRC_ROOT": "${workspaceFolder}",
-                    "LOCAL_AWS_ENABLED": "false",
-                    "LOCAL_AWS_HOSTNAME": "localstack",
+                    "LOCAL_AWS_ENABLED": "true",
                 },
             },
             {
