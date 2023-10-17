@@ -48,7 +48,7 @@ brew 'sd'                                        # Upgrade to 'sed'
 brew 'delta'                                     # Upgrade to 'diff'
 brew 'tldr'                                      # Simplified to 'man' pages
 brew 'dust'                                      # Upgrade to 'du'
-brew 'exa'
+brew 'eza'                                       # modern 'ls'
 brew 'graphviz'                                  # Graph visualizations
 brew 'diff-so-fancy'                             # 'diff' upgrade for Git usage
 brew 'bat'                                       # 'cat' upgrade
