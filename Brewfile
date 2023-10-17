@@ -99,6 +99,7 @@ brew 'zola'
 brew 'httrack' # website download / mirror tool
 brew 'ngrok' # ingress-as-a-service (easiest way to expose localhost to public internet)
 brew 'gh' # github cli
+brew 'devutils' # devutils (~50 various dev utils like cron parser, uuid generator, etc)
 
 #-------------------------------------------------------------------------------
 # Development-Ruby
