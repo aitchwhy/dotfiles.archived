@@ -159,6 +159,7 @@ cask 'zoom'
 cask 'pdf-expert'
 cask 'monitorcontrol'
 cask 'datagrip' # JetBrains data IDE
+brew 'superhuman' # Superhuman email client
 
 #-------------------------------------------------------------------------------
 # Fonts

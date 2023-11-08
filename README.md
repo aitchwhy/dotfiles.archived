@@ -78,11 +78,11 @@ Install Google Material color scheme for Iterm2 (or whichever color preset you'd
 
 ## Additonal Apps (Non-app store)
 
+- Install Bitwarden (App) : https://bitwarden.com/
 - Install Raycast : https://www.raycast.com/
 - Install Todoist : https://todoist.com/downloads
 - Install Signal : https://signal.org/download/
 - Bartender 5 : https://www.macbartender.com/
-- Install Bitwarden (App) : https://bitwarden.com/
 - Install Anki : https://apps.ankiweb.net/
 
 
