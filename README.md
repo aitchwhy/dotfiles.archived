@@ -75,6 +75,7 @@ Install Google Material color scheme for Iterm2 (or whichever color preset you'd
 - Authy (NOT website download .dmg)
   - Authy CAN also be installed via website Mac dmg download, BUT App Store Authy is preferred
 - Install KakaoTalk
+- Install Ominvore (read it later app)
 
 ## Additonal Apps (Non-app store)
 
