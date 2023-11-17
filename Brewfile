@@ -57,7 +57,6 @@ brew 'nginx'                                     # web server
 brew 'dnsmasq'                                   # lightweight DNS forwarder + DHCP server
 brew 'prettyping'                                # Pretty ping (simple, colorized output)
 brew 'tmux'                                      # terminal multiplexing
-brew 'nvm'                                       # Node version manager
 brew 'fasd'                                      # Navigation
 brew 'mutt'                                      # CLI email util (for crontab)
 brew 'jq'                                        # CLI JSON manipulator
@@ -66,13 +65,8 @@ brew 'cscope'                                    # Ctags complement for tagged c
 brew 'direnv'
 brew 'grep'
 brew 'parallel'
-brew 'awslogs'
-brew 'awscli'
-brew 'git'
-brew 'git-flow'
 brew 'htop'
 brew 'httpie'
-brew 'hub'
 brew 'openssl'
 brew 'tcpdump'
 brew 'tree'
@@ -87,19 +81,52 @@ brew 'git-recent'                                   # viewing latest git branche
 brew 'broot'                                        # broot - tree,cd,fuzzy-search
 brew 'chrome-cli'
 brew 'bitwarden-cli' # password manager CLI
-brew 'act' # local Github Actions (GHA) runner (using docker)
 
-brew 'terraform@0.11'
-brew 'terraform-ls' # Used for VSCode IDE terraform plugin to do Goto Symbol + etc.
-brew 'kube-ps1'
-brew 'kops'
-brew 'ksh'
 brew 'cfr-decompiler'
 brew 'zola'
 brew 'httrack' # website download / mirror tool
 brew 'ngrok' # ingress-as-a-service (easiest way to expose localhost to public internet)
-brew 'gh' # github cli
 brew 'devutils' # devutils (~50 various dev utils like cron parser, uuid generator, etc)
+
+#-------------------------------------------------------------------------------
+# AWS
+#-------------------------------------------------------------------------------
+
+brew 'awslogs'
+brew 'awscli'
+
+#-------------------------------------------------------------------------------
+# Git + Github
+#-------------------------------------------------------------------------------
+
+brew 'git'
+brew 'git-flow'
+brew 'hub'
+brew 'gh' # github cli
+brew 'act' # local Github Actions (GHA) runner (using docker)
+
+#-------------------------------------------------------------------------------
+# Node
+#-------------------------------------------------------------------------------
+
+brew 'nvm'                                       # Node version manager
+
+#-------------------------------------------------------------------------------
+# terraform
+#-------------------------------------------------------------------------------
+
+# Terraform version manager (tfenv) - no need for separate "terraform" brew install with tfenv.
+brew 'tfenv'
+# Terraform official language server (ls)
+brew 'terraform-ls' # Used for VSCode IDE terraform plugin to do Goto Symbol + etc.
+
+#-------------------------------------------------------------------------------
+# kubernetes
+#-------------------------------------------------------------------------------
+
+brew 'kube-ps1'
+brew 'kops'
+brew 'ksh'
 
 #-------------------------------------------------------------------------------
 # Development-Ruby
