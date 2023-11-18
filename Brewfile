@@ -188,6 +188,7 @@ cask 'monitorcontrol'
 cask 'datagrip' # JetBrains data IDE
 cask 'superhuman' # Superhuman email client
 cask 'tableau' # Tableau (BI tool + data viz)
+cask 'arc' # Arc Browser (Chromium based)
 
 #-------------------------------------------------------------------------------
 # Fonts
