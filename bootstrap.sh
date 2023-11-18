@@ -96,8 +96,9 @@ ln -nfs $DOTFILES/.vimrc $HOME/.vimrc
 # tmux config files linked
 ln -nfs $DOTFILES/.tmux.conf $HOME/.tmux.conf
 
-# Direnv link (env vars per project)
-ln -nfs $DOTFILES/.direnvrc $HOME/.direnvrc
+# Direnv global RC file link (env vars per project)
+mkdir -p $HOME/.config/direnv
+ln -nfs $DOTFILES/.direnvrc $HOME/.config/direnv/direnvrc
 
 # dir colors (zsh color config)
 ln -nfs $DOTFILES/.dir_colors $HOME/.dir_colors

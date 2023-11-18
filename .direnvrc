@@ -10,3 +10,24 @@ export_alias() {
   echo "$@" >> "$target"
   chmod +x "$target"
 }
+
+# Custom Node+NVM shell function
+#
+# Example usage in ".envrc"
+#########################
+# export NODE_VER="v18.18.2"
+# 
+# use nvm $NODE_VER
+# 
+# # PREPEND to override global node (brew node globally is used by bitwarden-cli as dep)
+# PATH_add $(dirname $(nvm which $NODE_VER))
+#########################
+
+
+use_nvm() {
+    NODE_VERSION="$1"
+
+    # 'type nvm' confirms nvm binary exists and is reachable
+    type nvm >/dev/null 2>&1 || . ~/.nvm/nvm.sh
+    nvm use "$NODE_VERSION"
+}
