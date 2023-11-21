@@ -12,22 +12,25 @@ export_alias() {
 }
 
 # Custom Node+NVM shell function
+# https://github.com/direnv/direnv/wiki/Node#using-auto-installing-nvm
 #
 # Example usage in ".envrc"
 #########################
-# export NODE_VER="v18.18.2"
-# 
-# use nvm $NODE_VER
-# 
-# # PREPEND to override global node (brew node globally is used by bitwarden-cli as dep)
-# PATH_add $(dirname $(nvm which $NODE_VER))
+# # with no node ver specified, below "use node" will look for ".nvmrc" or ".node-version"
+# use nvm
+#
+# # source .env.local file using "dotenv"
+# dotenv ".env.local"
 #########################
 
-
 use_nvm() {
-    NODE_VERSION="$1"
-
-    # 'type nvm' confirms nvm binary exists and is reachable
-    type nvm >/dev/null 2>&1 || . ~/.nvm/nvm.sh
-    nvm use "$NODE_VERSION"
+  watch_file .nvmrc
+  local NVM_PATH="$HOME/.nvm/nvm.sh"
+  if ! [ -f "$NVM_PATH" ]; then
+    echo "Installing NVM" >&2
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+  fi
+  . "${NVM_PATH}"
+  nvm install
+  layout node
 }
