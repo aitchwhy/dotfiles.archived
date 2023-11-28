@@ -120,7 +120,7 @@ brew 'tfenv'
 # Terraform official language server (ls)
 brew 'terraform-ls' # Used for VSCode IDE terraform plugin to do Goto Symbol + etc.
 
-# Terragrunt version manager (tgenv)
+# Terragrunt version manager (tgswitch)
 brew 'warrensbox/tap/tgswitch'
 
 #-------------------------------------------------------------------------------

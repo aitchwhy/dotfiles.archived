@@ -87,3 +87,9 @@ pathadd "$HOME/.emacs.d/bin"
 #-------------------------------------------------------------------------------
 pathadd "$GOPATH/bin"
 pathadd "$(brew --prefix golang)/bin"
+
+#-------------------------------------------------------------------------------
+# tgswitcher (Terragrunt switcher) setup  - https://github.com/warrensbox/tgswitch
+# (related to Terraform)
+#-------------------------------------------------------------------------------
+pathadd "$HOME/bin"
