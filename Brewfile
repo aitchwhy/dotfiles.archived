@@ -112,13 +112,16 @@ brew 'act' # local Github Actions (GHA) runner (using docker)
 brew 'nvm'                                       # Node version manager
 
 #-------------------------------------------------------------------------------
-# terraform
+# terraform + terragrunt
 #-------------------------------------------------------------------------------
 
 # Terraform version manager (tfenv) - no need for separate "terraform" brew install with tfenv.
 brew 'tfenv'
 # Terraform official language server (ls)
 brew 'terraform-ls' # Used for VSCode IDE terraform plugin to do Goto Symbol + etc.
+
+# Terragrunt version manager (tgenv)
+brew 'warrensbox/tap/tgswitch'
 
 #-------------------------------------------------------------------------------
 # kubernetes
