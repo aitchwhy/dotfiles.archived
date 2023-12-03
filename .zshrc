@@ -163,6 +163,20 @@ eval "$(tfenv init -)"
 eval "$(direnv hook zsh)"
 
 #-------------------------------------------------------------------------------
+# Add Terragrunt switcher hook (tgswitch)
+#-------------------------------------------------------------------------------
+load-tgswitch() {
+  local tgswitchrc_path=".tgswitchrc"
+  local terragrunt_version_path=".terragrunt-version"
+
+  if [ -f "$tgswitchrc_path" ] || [ -f "$terragrunt_version_path" ]; then
+    tgswitch
+  fi
+}
+add-zsh-hook chpwd load-tgswitch
+load-tgswitch
+
+#-------------------------------------------------------------------------------
 # Activate dir colors
 #-------------------------------------------------------------------------------
 test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)

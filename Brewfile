@@ -87,6 +87,7 @@ brew 'zola'
 brew 'httrack' # website download / mirror tool
 brew 'ngrok' # ingress-as-a-service (easiest way to expose localhost to public internet)
 brew 'devutils' # devutils (~50 various dev utils like cron parser, uuid generator, etc)
+brew 'jc' # CLI JSON converter + other useful conversions CLI tool
 
 #-------------------------------------------------------------------------------
 # AWS
@@ -112,13 +113,16 @@ brew 'act' # local Github Actions (GHA) runner (using docker)
 brew 'nvm'                                       # Node version manager
 
 #-------------------------------------------------------------------------------
-# terraform
+# terraform + terragrunt
 #-------------------------------------------------------------------------------
 
 # Terraform version manager (tfenv) - no need for separate "terraform" brew install with tfenv.
 brew 'tfenv'
 # Terraform official language server (ls)
 brew 'terraform-ls' # Used for VSCode IDE terraform plugin to do Goto Symbol + etc.
+
+# Terragrunt version manager (tgswitch)
+brew 'warrensbox/tap/tgswitch'
 
 #-------------------------------------------------------------------------------
 # kubernetes
