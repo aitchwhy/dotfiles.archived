@@ -89,6 +89,7 @@ brew 'ngrok' # ingress-as-a-service (easiest way to expose localhost to public i
 brew 'devutils' # devutils (~50 various dev utils like cron parser, uuid generator, etc)
 brew 'jc' # CLI JSON converter + other useful conversions CLI tool
 brew '1password-cli' # 1password CLI
+brew 'rsync'
 
 #-------------------------------------------------------------------------------
 # AWS
