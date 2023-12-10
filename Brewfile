@@ -199,4 +199,4 @@ cask '1password' # 1password 8
 # Fonts
 #-------------------------------------------------------------------------------
 
-cask 'caskroom/fonts/font-hack-nerd-font'
+cask 'homebrew/cask-fonts'
