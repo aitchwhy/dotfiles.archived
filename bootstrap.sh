@@ -51,6 +51,8 @@ brew update
 echo "Install all Brewfile dependencies in bundle"
 brew tap homebrew/bundle
 brew bundle --file=$DOTFILES/Brewfile # Install binary & applications
+# Nerd font dynamic install all - https://gist.github.com/davidteren/898f2dcccd42d9f8680ec69a3a5d350e
+brew search '/font-.*-nerd-font/' | awk '{ print $1 }' | xargs -I{} brew install --cask {} || true
 brew cleanup
 brew cask cleanup
 
@@ -161,7 +163,7 @@ $BREW_PREFIX/opt/fzf/install
 # Create secrets file (should be manually populated)
 # -------------------------------------------------
 echo "Add template file for secrets"
-echo "export ENV_VAR=foobar" > $DOTFILES/secrets.sh
+echo "export ENV_VAR=foobar" >$DOTFILES/secrets.sh
 
 # -------------------------------------------------
 # Install python stuff (pyenv, pipsi, pipenv)
