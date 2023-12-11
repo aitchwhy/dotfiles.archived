@@ -53,7 +53,7 @@ brew 'mas'
 brew 'ripgrep'                                   # fast search
 brew 'fd'                                        # Upgrade to 'find'
 brew 'sd'                                        # Upgrade to 'sed'
-brew 'delta'                                     # Upgrade to 'diff'
+brew 'git-delta'                                 # Upgrade to 'diff'
 brew 'tldr'                                      # Simplified to 'man' pages
 brew 'dust'                                      # Upgrade to 'du'
 brew 'eza'                                       # modern 'ls'
@@ -65,7 +65,7 @@ brew 'nginx'                                     # web server
 brew 'dnsmasq'                                   # lightweight DNS forwarder + DHCP server
 brew 'prettyping'                                # Pretty ping (simple, colorized output)
 brew 'tmux'                                      # terminal multiplexing
-brew 'fasd'                                      # Navigation
+brew 'z'                                         # Navigation
 brew 'mutt'                                      # CLI email util (for crontab)
 brew 'jq'                                        # CLI JSON manipulator
 brew 'fx'                                        # CLI JSON editor
