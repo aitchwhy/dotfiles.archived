@@ -2,7 +2,7 @@
   "entries": {
     "tap": {
       "homebrew/cask": {
-        "revision": "e1259f9c73b6c7b0e0a9722a4293df8cff6390cc"
+        "revision": "7c1da1a76bf8a7507cd09678dbd378c2d20953e2"
       },
       "homebrew/cask-fonts": {
         "revision": "a7fb1a6146ccd9a8d164c4c7f529da56d56310e9"
@@ -3725,7 +3725,7 @@
       },
       "Slack": {
         "id": "803453959",
-        "version": "4.35.131"
+        "version": "4.35.126"
       },
       "The Unarchiver": {
         "id": "425424353",
@@ -3741,7 +3741,7 @@
       },
       "Bitwarden": {
         "id": "1352778147",
-        "version": "2023.9.1"
+        "version": "2023.10.1"
       },
       "Toggl Track": {
         "id": "1291898086",
@@ -3756,7 +3756,7 @@
   "system": {
     "macos": {
       "sonoma": {
-        "HOMEBREW_VERSION": "4.1.24",
+        "HOMEBREW_VERSION": "4.1.24-12-gc32bd1c",
         "HOMEBREW_PREFIX": "/opt/homebrew",
         "Homebrew/homebrew-core": "api",
         "CLT": "15.0.0.0.1.1694021235",
