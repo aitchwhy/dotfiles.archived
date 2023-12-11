@@ -65,7 +65,7 @@ brew 'nginx'                                     # web server
 brew 'dnsmasq'                                   # lightweight DNS forwarder + DHCP server
 brew 'prettyping'                                # Pretty ping (simple, colorized output)
 brew 'tmux'                                      # terminal multiplexing
-brew 'z'                                         # Navigation
+brew 'zoxide'                                    # Filesystem Navigation
 brew 'mutt'                                      # CLI email util (for crontab)
 brew 'jq'                                        # CLI JSON manipulator
 brew 'fx'                                        # CLI JSON editor
@@ -223,37 +223,3 @@ mas "WhatsApp", id: 1147396723
 mas "Bitwarden", id: 1352778147
 mas "Toggl Track", id: 1291898086
 mas "Human Japanese", id: 412213489
-# 1091189122  Bear            (2.0.17)
-# 899247664   TestFlight      (3.3.0)
-# 1564031042  Omnivore        (1.38.0)
-# 803453959   Slack           (4.35.131)
-# 425424353   The Unarchiver  (4.3.6)
-# 497799835   Xcode           (15.0.1)
-# 1147396723  WhatsApp        (2.2349.52)
-# 1352778147  Bitwarden       (2023.10.1)
-# 1291898086  Toggl Track     (9.3.0)
-# 412213489   Human Japanese  (3.1)
-
-
-# 441258766   Magnet          (2.13.0)
-# 869223134   KakaoTalk       (3.3.5)
-# 1091189122  Bear            (2.0.17)
-# 899247664   TestFlight      (3.3.0)
-# 1564031042  Omnivore        (1.38.0)
-# 803453959   Slack           (4.35.131)
-# 425424353   The Unarchiver  (4.3.6)
-# 497799835   Xcode           (15.0.1)
-# 1147396723  WhatsApp        (2.2349.52)
-# 1352778147  Bitwarden       (2023.10.1)
-# 1291898086  Toggl Track     (9.3.0)
-# 412213489   Human Japanese  (3.1)
-
-
-# - Install Magnet (window sizing)
-# - Bear (notes)
-# - Authy (NOT website download .dmg)
-#   - Authy CAN also be installed via website Mac dmg download, BUT App Store Authy is preferred
-# - Install KakaoTalk
-# - Install Ominvore (read it later app)
-
-

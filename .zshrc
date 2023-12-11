@@ -148,9 +148,9 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 #-------------------------------------------------------------------------------
-# Initialize fasd for fast FS navigation
+# Init fast filesystem navigation with smarter cd command (zoxide) 
 #-------------------------------------------------------------------------------
-eval "$(fasd --init auto)"
+eval "$(zoxide init zsh)"
 
 #-------------------------------------------------------------------------------
 # Init Terraform version manager (tfenv)
