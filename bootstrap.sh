@@ -85,7 +85,8 @@ sleep 3
 rm -rf fonts
 
 # -------------------------------------------------
-# Config files linked (home -> dotfiles)
+# Config files linked (mostly home-----alias---->dotfiles)
+# NOTE: ln -nfs ${ORIG} ${ALIAS}
 # -------------------------------------------------
 echo "Symlink all config dotfiles to home"
 
@@ -110,6 +111,10 @@ ln -nfs $DOTFILES/.doom.d $HOME/.doom.d
 
 # Powerlevel10k
 ln -nfs $DOTFILES/.p10k.zsh $HOME/.p10k.zsh
+
+# Global VSCode Bookmarks file (use "dotfiles" git repo as global) + use Dropbox to real-time sync
+# (tl;dr -> Dropbox bookmark JSON is the MAIN source of truth. Other aliases are soft symlinks - this is due to Dropbox soft links not supported)
+ln -nfs $DROPBOX/vscode/bookmarks.json $DOTFILES/.vscode/bookmarks.json
 
 # -------------------------------------------------
 # Install vim plugin manager (vim-plug)

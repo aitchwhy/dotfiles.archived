@@ -4,6 +4,11 @@
 export DOTFILES=$HOME/dotfiles
 
 #-------------------------------------------------------------------------------
+# Path to Dropbox root folder (real-time synced)
+#-------------------------------------------------------------------------------
+export DROPBOX=$HOME/Library/CloudStorage/Dropbox/
+
+#-------------------------------------------------------------------------------
 # Path to oh-my-zsh installation
 #-------------------------------------------------------------------------------
 export ZSH=$HOME/.oh-my-zsh
@@ -34,7 +39,6 @@ export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs custom_kube_ps1)
 export POWERLEVEL9K_MODE="nerdfont-complete"
 export POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 export POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-
 
 #-------------------------------------------------------------------------------
 # FZF settings
@@ -97,7 +101,7 @@ export TMUX_FZF_SED="/usr/local/bin/gsed"
 #-------------------------------------------------------------------------------
 # Python + Pyenv setup
 #-------------------------------------------------------------------------------
-# No __pycache__ 
+# No __pycache__
 export PYTHONDONTWRITEBYTECODE=1
 export PYENV_ROOT=$HOME/.pyenv
 
