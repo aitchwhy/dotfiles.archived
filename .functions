@@ -415,3 +415,31 @@ bind-git-helper() {
 }
 bind-git-helper f b t r l
 unset -f bind-git-helper
+
+
+# Symlinks
+link() {
+    local src=$1
+    local dest=$2
+    local dest_dir=$(dirname "$dest")
+
+    # Create the directory if it does not exist
+    mkdir -p "$dest_dir"
+
+    # Create the symlink
+    # echo "Creating symlink: $dest ---pointer--> $src"
+    ln -nfs "$src" "$dest"
+}
+
+sudo_link() {
+    local src=$1
+    local dest=$2
+    local dest_dir=$(dirname "$dest")
+
+    # Create the directory if it does not exist
+    mkdir -p "$dest_dir"
+
+    # Create the symlink
+    # echo "Creating symlink: $dest ---pointer--> $src"
+    sudo ln -nfs "$src" "$dest"
+}

@@ -1,10 +1,10 @@
 # Custom function to adding valid directories (dir exists, non-duplicate)
 # https://superuser.com/questions/39751/add-directory-to-path-if-its-not-already-there
 pathadd() {
-  if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
-    PATH="${PATH:+"$PATH:"}$1" # append
-    #PATH="$1${PATH:+":$PATH"}" # prepend
-  fi
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="${PATH:+"$PATH:"}$1" # append
+        #PATH="$1${PATH:+":$PATH"}" # prepend
+    fi
 }
 
 #-------------------------------------------------------------------------------
@@ -30,11 +30,7 @@ pathadd "$BREW_PREFIX/bin"
 # Make sure coreutils are loaded before system commands
 #-------------------------------------------------------------------------------
 
-# TODO: below is too slow!!! (0.5 ~ 0.8 sec) for (brew --prefix)
-# PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-# PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 pathadd "$BREW_PREFIX/opt/coreutils/libexec/gnubin"
-
 
 #-------------------------------------------------------------------------------
 # Javascript (Deno, etc)
@@ -86,7 +82,7 @@ pathadd "$HOME/.emacs.d/bin"
 # Golang (homebrew go binaries M1+)
 #-------------------------------------------------------------------------------
 pathadd "$GOPATH/bin"
-pathadd "$(brew --prefix golang)/bin"
+pathadd "$BREW_PREFIX/opt/go/bin"
 
 #-------------------------------------------------------------------------------
 # tgswitcher (Terragrunt switcher) setup  - https://github.com/warrensbox/tgswitch

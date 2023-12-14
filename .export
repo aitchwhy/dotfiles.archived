@@ -84,11 +84,6 @@ export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/zlib/include"
 export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} /usr/local/opt/zlib/lib/pkgconfig"
 
 #-------------------------------------------------------------------------------
-# Java home (class path for .class files path)
-#-------------------------------------------------------------------------------
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
-
-#-------------------------------------------------------------------------------
 # Javascript (Node, Deno, etc)
 #-------------------------------------------------------------------------------
 export DENO_INSTALL="/Users/hanklee/.deno"
@@ -104,9 +99,3 @@ export TMUX_FZF_SED="/usr/local/bin/gsed"
 # No __pycache__
 export PYTHONDONTWRITEBYTECODE=1
 export PYENV_ROOT=$HOME/.pyenv
-
-#-------------------------------------------------------------------------------
-# Golang setup
-#-------------------------------------------------------------------------------
-export GOPATH="$HOME/go"
-export GOROOT="$(brew --prefix golang)/libexec"

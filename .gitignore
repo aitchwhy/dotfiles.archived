@@ -6,3 +6,6 @@ tags
 
 .sgptrc
 .vscode
+
+# Brew bundle (Brewfile) lockfile (https://github.com/Homebrew/homebrew-bundle?tab=readme-ov-file#versions-and-lockfiles)
+Brewfile.lock.json

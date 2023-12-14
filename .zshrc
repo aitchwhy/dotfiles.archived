@@ -17,7 +17,7 @@ source "$HOME/dotfiles/.extra"
 # Set name of the theme to load
 #-------------------------------------------------------------------------------
 # source kube-ps1 for Kubernetes prompts
-source "$(brew --prefix kube-ps1)/share/kube-ps1.sh"
+source "$BREW_PREFIX/opt/kube-ps1/share/kube-ps1.sh"
 
 #-------------------------------------------------------------------------------
 # Uncomment the following line to use case-sensitive completion.
@@ -141,6 +141,13 @@ unset files file;
 # Set Vim editor mode in shell CLI (activate using ESC key)
 set -o vi
 
+
+#-------------------------------------------------------------------------------
+# create symlinks
+#-------------------------------------------------------------------------------
+source $DOTFILES/symlinks_config.sh
+create_symlinks
+
 #-------------------------------------------------------------------------------
 # Add Pyenv functionality to ZSH shell + pyenv setup
 # Also install pipsi, pipenv
@@ -212,5 +219,5 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV{PATH}))')"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
+source $BREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

@@ -6,6 +6,9 @@ if test ! $(which brew); then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
+# create shell env var for brew prefix path since (brew --prefix) is too slow (0.5 ~ 0.8 sec)
+export BREW_PREFIX=$(brew --prefix)
+
 # -------------------------------------------------
 # Set temporary variables (from .extra <- created from .extra.template)
 # -------------------------------------------------
@@ -85,36 +88,13 @@ sleep 3
 rm -rf fonts
 
 # -------------------------------------------------
-# Config files linked (mostly home-----alias---->dotfiles)
-# NOTE: ln -nfs ${ORIG} ${ALIAS}
+# Config files linked
 # -------------------------------------------------
-echo "Symlink all config dotfiles to home"
+echo "Symlink all config dotfiles"
+source $DOTFILES/symlinks_config.sh
 
-# Zsh configs linked
-ln -nfs $DOTFILES/.zshrc $HOME/.zshrc
-
-# Vim configs linked
-ln -nfs $DOTFILES/.vimrc $HOME/.vimrc
-
-# tmux config files linked
-ln -nfs $DOTFILES/.tmux.conf $HOME/.tmux.conf
-
-# Direnv global RC file link (env vars per project)
-mkdir -p $HOME/.config/direnv
-ln -nfs $DOTFILES/.direnvrc $HOME/.config/direnv/direnvrc
-
-# dir colors (zsh color config)
-ln -nfs $DOTFILES/.dir_colors $HOME/.dir_colors
-
-# Doom directory
-ln -nfs $DOTFILES/.doom.d $HOME/.doom.d
-
-# Powerlevel10k
-ln -nfs $DOTFILES/.p10k.zsh $HOME/.p10k.zsh
-
-# Global VSCode Bookmarks file (use "dotfiles" git repo as global) + use Dropbox to real-time sync
-# (tl;dr -> Dropbox bookmark JSON is the MAIN source of truth. Other aliases are soft symlinks - this is due to Dropbox soft links not supported)
-ln -nfs $DROPBOX/vscode/bookmarks.json $DOTFILES/.vscode/bookmarks.json
+create_sudo_symlinks
+create_symlinks
 
 # -------------------------------------------------
 # Install vim plugin manager (vim-plug)

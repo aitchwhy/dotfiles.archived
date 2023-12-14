@@ -1,4 +1,7 @@
-# Homebrew Brewfile docs -> https://homebrew-file.readthedocs.io/en/latest/usage.html
+# Homebrew Brewfile docs
+# - https://docs.brew.sh/Manpage#bundle-subcommand
+# TODO: Brewfile manager 
+# - https://homebrew-file.readthedocs.io/en/latest/usage.html
 
 #-------------------------------------------------------------------------------
 # Taps
@@ -169,12 +172,13 @@ brew 'golang-migrate' # golang DB migration
 
 #-------------------------------------------------------------------------------
 # Development-Java
+# NOTE: needed for 'swagger-codegen'
 #-------------------------------------------------------------------------------
 
-brew 'java'
+brew 'java' # java == openjdk
+brew 'maven'
 brew 'gradle'
 brew 'kotlin'
-brew 'maven'
 
 #-------------------------------------------------------------------------------
 # Databases
