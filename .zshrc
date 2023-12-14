@@ -207,6 +207,29 @@ export NVM_DIR="$HOME/.nvm"
 # Remove PATH duplicates - https://unix.stackexchange.com/questions/40749/remove-duplicate-path-entries-with-awk-command/149054#149054
 export PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV{PATH}))')"
 
+###################
+# Redocly CLI completion
+###################
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 source $BREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#compdef redocly
+###-begin-redocly-completions-###
+#
+# yargs command completion script
+#
+# Installation: redocly completion >> ~/.zshrc
+#    or redocly completion >> ~/.zsh_profile on OSX.
+#
+_redocly_yargs_completions()
+{
+  local reply
+  local si=$IFS
+  IFS=$'
+' reply=($(COMP_CWORD="$((CURRENT-1))" COMP_LINE="$BUFFER" COMP_POINT="$CURSOR" redocly --get-yargs-completions "${words[@]}"))
+  IFS=$si
+  _describe 'values' reply
+}
+compdef _redocly_yargs_completions redocly
+###-end-redocly-completions-###
+
