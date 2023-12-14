@@ -7,6 +7,7 @@
 # Taps
 #-------------------------------------------------------------------------------
 
+tap 'homebrew/bundle'
 tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/services'
@@ -48,6 +49,12 @@ brew 'bash'
 # Mac App store CLI (https://github.com/mas-cli/mas)
 #-------------------------------------------------------------------------------
 brew 'mas'
+
+#-------------------------------------------------------------------------------
+# Whalebrew allows you to install CLI apps as Docker containers but maintain them in file like Brewfile
+# - (https://github.com/whalebrew/whalebrew)
+#-------------------------------------------------------------------------------
+brew 'whalebrew'
 
 #-------------------------------------------------------------------------------
 # Install Binaries
@@ -159,9 +166,11 @@ brew 'pyenv-virtualenv'
 brew 'jupyter'
 
 #-------------------------------------------------------------------------------
-# OpenAPI/Swagger-codegen
+# OpenAPI/Swagger
+# 
 #-------------------------------------------------------------------------------
 brew 'swagger-codegen'
+# TODO: brew 'redocly-cli'
 
 #-------------------------------------------------------------------------------
 # Development-Go
