@@ -92,9 +92,7 @@ rm -rf fonts
 # -------------------------------------------------
 echo "Symlink all config dotfiles"
 source $DOTFILES/symlinks_config.sh
-
 create_sudo_symlinks
-create_symlinks
 
 # -------------------------------------------------
 # Install vim plugin manager (vim-plug)

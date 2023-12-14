@@ -28,6 +28,9 @@ SYMLINKS=(
 
     # Powerlevel10k
     "$DOTFILES/.p10k.zsh:$HOME/.p10k.zsh"
+
+    # NVM setup (Node version manager) (e.g. default GLOBAL NPM packages for NVM)
+    "$DOTFILES/nvm-global-npm-default-packages:$NVM_DIR/default-packages"
 )
 
 # import "link" function
@@ -47,3 +50,6 @@ create_sudo_symlinks() {
         sudo_link "$src" "$dest"
     done
 }
+
+# Create symlinks by default (but not sudo ones)
+create_symlinks

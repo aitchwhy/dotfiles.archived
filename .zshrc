@@ -130,8 +130,9 @@ files=(
     "$DOTFILES/.functions"
     "$DOTFILES/.aliases"
     "$DOTFILES/.extra"
+    "$DOTFILES/.extra"
+    "$DOTFILES/symlinks_config.sh"
     );
-
 for file in "${files[@]}"; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
@@ -140,13 +141,6 @@ unset files file;
 
 # Set Vim editor mode in shell CLI (activate using ESC key)
 set -o vi
-
-
-#-------------------------------------------------------------------------------
-# create symlinks
-#-------------------------------------------------------------------------------
-source $DOTFILES/symlinks_config.sh
-create_symlinks
 
 #-------------------------------------------------------------------------------
 # Add Pyenv functionality to ZSH shell + pyenv setup
@@ -200,17 +194,12 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 source $DOTFILES/secrets.sh
 
 #-------------------------------------------------------------------------------
-# AWS ElasticBeanstalk CLI
-#-------------------------------------------------------------------------------
-export PATH="/Users/hank/.ebcli-virtual-env/executables:$PATH"
-
-#-------------------------------------------------------------------------------
 # Activate Oh-My-Zsh
 #-------------------------------------------------------------------------------
 source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# NVM setup
+# NVM setup (Node version manager)
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
