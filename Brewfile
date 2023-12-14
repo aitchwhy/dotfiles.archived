@@ -133,8 +133,12 @@ brew 'nvm'                                       # Node version manager
 # terraform + terragrunt
 #-------------------------------------------------------------------------------
 
+brew 'terragrunt'
+
 # Terraform version manager (tfenv) - no need for separate "terraform" brew install with tfenv.
+# EXPLICITLY NOT including (brew 'terraform') because it is now managed by "tfenv" above.
 brew 'tfenv'
+
 # Terraform official language server (ls)
 brew 'terraform-ls' # Used for VSCode IDE terraform plugin to do Goto Symbol + etc.
 

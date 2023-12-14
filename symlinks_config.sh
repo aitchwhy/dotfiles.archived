@@ -29,8 +29,11 @@ SYMLINKS=(
     # Powerlevel10k
     "$DOTFILES/.p10k.zsh:$HOME/.p10k.zsh"
 
-    # NVM setup (Node version manager) (e.g. default GLOBAL NPM packages for NVM)
-    "$DOTFILES/nvm-global-npm-default-packages:$NVM_DIR/default-packages"
+    # Default global NPM packages installed for every NVM new version installation
+    # nvm reinstall-packages <node-version> <---- Reinstall global `npm` packages contained in <version> to current version
+    # NOTE: <version> CANNOT be same as current NVM selected version when running this command
+    # NOTE: default-packages MUST have 1 line at the end of file (otherwise it will not work)
+    "$DOTFILES/default-packages:$NVM_DIR/default-packages"
 )
 
 # import "link" function
