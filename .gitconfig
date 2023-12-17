@@ -25,9 +25,10 @@ pretty = '%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>
 default = simple
 
 [filter "lfs"]
-clean = git-lfs clean %f
-smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 required = true
+	process = git-lfs filter-process
 
 [pager]
 diff = diff-so-fancy | less --tabs=1,5 -RFX
