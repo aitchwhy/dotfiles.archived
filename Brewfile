@@ -204,6 +204,7 @@ brew 'sqlite'
 # Apps
 #-------------------------------------------------------------------------------
 
+cask 'firefox'
 cask 'visual-studio-code'
 cask 'spotify'
 cask 'fantastical'
