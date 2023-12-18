@@ -9,6 +9,11 @@ export DOTFILES=$HOME/dotfiles
 export DROPBOX=$HOME/Library/CloudStorage/Dropbox/
 
 #-------------------------------------------------------------------------------
+# NVM (NVM_DIR)
+#-------------------------------------------------------------------------------
+export NVM_DIR="$HOME/.nvm"
+
+#-------------------------------------------------------------------------------
 # Path to oh-my-zsh installation
 #-------------------------------------------------------------------------------
 export ZSH=$HOME/.oh-my-zsh
@@ -86,7 +91,7 @@ export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} /usr/local/opt/zlib/lib/pkgconfig"
 #-------------------------------------------------------------------------------
 # Javascript (Node, Deno, etc)
 #-------------------------------------------------------------------------------
-export DENO_INSTALL="/Users/hanklee/.deno"
+export DENO_INSTALL="$HOME/.deno"
 
 #-------------------------------------------------------------------------------
 # Tmux fzf gnu-sed (gsed) path

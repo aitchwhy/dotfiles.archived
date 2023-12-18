@@ -1,3 +1,8 @@
+# export SHELL=/opt/homebrew/bin/zsh
+# /opt/homebrew/bin/zsh
+
+echo "Symlink all config dotfiles ---> SHELL: $SHELL --- NVM_DIR: $NVM_DIR"
+
 # Define symlink mappings
 # {src ORIG path}:{ALIAS symlink}
 SUDO_SYMLINKS=(
@@ -46,6 +51,7 @@ create_symlinks() {
     for pair in "${SYMLINKS[@]}"; do
         local src="${pair%%:*}"
         local dest="${pair##*:}"
+        echo "[SHELL:$SHELL] Creating symlink $src -> $dest"
         link "$src" "$dest"
     done
 }
@@ -53,6 +59,7 @@ create_sudo_symlinks() {
     for pair in "${SUDO_SYMLINKS[@]}"; do
         local src="${pair%%:*}"
         local dest="${pair##*:}"
+        echo "[SHELL:$SHELL] Creating symlink $src -> $dest"
         sudo_link "$src" "$dest"
     done
 }

@@ -74,8 +74,6 @@ git config --global user.email "${GIT_EMAIL}"
 # -------------------------------------------------
 
 echo "Make ZSH the default shell (the homebrew installation Zsh path)"
-# chsh -s $(which zsh)
-# chsh -s $BREW_PREFIX/bin/zsh
 # we want default homebrew Zsh : /opt/homebrew/bin/zsh (for M1 versions)
 source $DOTFILES/scripts/.functions.sh
 set_user_shell $BREW_PREFIX/bin/zsh

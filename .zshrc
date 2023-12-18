@@ -108,7 +108,7 @@ WORKDIRS=(
   "dotfiles"
   "workspace"
   "Downloads"
-  "Library/CloudStorage/Dropbox"
+  "$DROPBOX"
 );
 # Join working dir strings for RipGrep file search (using conditional parameter expansion - https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
 WORKDIR_PATHS=""
@@ -202,7 +202,7 @@ source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # NVM setup (Node version manager) - installed via Homebrew
-export NVM_DIR="$HOME/.nvm"
+export NVM_DIR="$NVM_DIR"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
