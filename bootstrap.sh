@@ -149,11 +149,16 @@ echo "Add template file for secrets"
 echo "export ENV_VAR=foobar" >$DOTFILES/secrets.sh
 
 # -------------------------------------------------
-# Install python stuff (pyenv, pipsi, pipenv)
+# Install python stuff (pyenv, pipsi, pipenv) + global setup
 # -------------------------------------------------
 echo "Install Python util binaries"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# Set global python version
+pyenv global 3.10.12
+# Install global python binaries
+pip install git-remote-dropbox
 
 # -------------------------------------------------
 # Source profile
