@@ -40,7 +40,7 @@ SYMLINKS=(
 )
 
 # import "link" function
-source $DOTFILES/.functions
+source $DOTFILES/scripts/.functions.sh
 
 create_symlinks() {
     for pair in "${SYMLINKS[@]}"; do

@@ -8,7 +8,7 @@ alias dc="docker-compose"
 #-------------------------------------------------------------------------------
 # Git (sensible aliases + https://hackernoon.com/be-125-more-efficient-with-git-60556a1ce971)
 #   - smart shortcut (frequenty usage)  ->  (g${short-command} - like gl for [git log]
-#   - MOST of these will be overridden by functions in ".functions"
+#   - MOST of these will be overridden by functions in ".functions.sh"
 #-------------------------------------------------------------------------------
 
 # GIT CONFIG

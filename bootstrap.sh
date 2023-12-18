@@ -13,7 +13,7 @@ export BREW_PREFIX=$(brew --prefix)
 # Set temporary variables (from .extra <- created from .extra.template)
 # -------------------------------------------------
 echo "Exporting env vars for per-machine config"
-source "$HOME/dotfiles/.extra"
+source "$HOME/dotfiles/scripts/.extra.sh"
 
 # -------------------------------------------------
 # Update brew Cellar filepath permissions to write to it
@@ -70,13 +70,14 @@ git config --global user.email "${GIT_EMAIL}"
 
 # -------------------------------------------------
 # Make ZSH the default shell environment
+# - https://rick.cogley.info/post/use-homebrew-zsh-instead-of-the-osx-default/
 # -------------------------------------------------
 
 echo "Make ZSH the default shell (the homebrew installation Zsh path)"
 # chsh -s $(which zsh)
 # chsh -s $BREW_PREFIX/bin/zsh
 # we want default homebrew Zsh : /opt/homebrew/bin/zsh (for M1 versions)
-source $DOTFILES/.functions
+source $DOTFILES/scripts/.functions.sh
 set_user_shell $BREW_PREFIX/bin/zsh
 
 #-------------------------------------------------------------------------------
@@ -95,7 +96,7 @@ rm -rf fonts
 # Config files linked
 # -------------------------------------------------
 echo "Symlink all config dotfiles"
-source $DOTFILES/symlinks_config.sh
+source $DOTFILES/scripts/symlinks_config.sh
 create_sudo_symlinks
 
 # -------------------------------------------------
@@ -150,7 +151,7 @@ $BREW_PREFIX/opt/fzf/install
 # Create secrets file (should be manually populated)
 # -------------------------------------------------
 echo "Add template file for secrets"
-echo "export ENV_VAR=foobar" >$DOTFILES/secrets.sh
+echo "export ENV_VAR=foobar" >$DOTFILES/scripts/secrets.sh
 
 # -------------------------------------------------
 # Install python stuff (pyenv, pipsi, pipenv) + global setup

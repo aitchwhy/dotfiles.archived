@@ -2,7 +2,6 @@
 
 Environment setup files for OSX setup
 
-
 TODOS
 
 ## 0. Hardware setup
@@ -11,7 +10,7 @@ TODOS
 - enable key hold [link](https://www.macworld.com/article/351347/how-to-activate-key-repetition-through-the-macos-terminal.html)
 
 ```
-$ defaults write -g ApplePressAndHoldEnabled -bool false
+defaults write -g ApplePressAndHoldEnabled -bool false
 ```
 
 ## 1. Xcode Installation + other App Store apps
@@ -46,7 +45,7 @@ Make sure the dotfiles directory is downloaded to $HOME directory
 Open necessary files to update correct Git user info
 
 ```bash
-# ~/dotfiles/.extra <--- copy afresh from .extra.template
+# ~/dotfiles/scripts/.extra.sh <--- copy afresh from .extra.sh.template
 
 CODE_DIR=$HOME/workspace
 GIT_USER_NAME="foo"
@@ -64,8 +63,8 @@ Run dotfiles setup script
 Change iterm2 font to one that supports Powerline
 
 Install Google Material color scheme for Iterm2 (or whichever color preset you'd like)
-- [Google's Material Design Color Palette for Iterm2](https://github.com/MartinSeeler/iterm2-material-design)
 
+- [Google's Material Design Color Palette for Iterm2](https://github.com/MartinSeeler/iterm2-material-design)
 
 ## App Store setup (apps not on Brew Cask)
 
@@ -79,13 +78,12 @@ Install Google Material color scheme for Iterm2 (or whichever color preset you'd
 
 ## Additonal Apps (Non-app store)
 
-- Install Bitwarden (App) : https://bitwarden.com/
-- Install Raycast : https://www.raycast.com/
-- Install Todoist : https://todoist.com/downloads
-- Install Signal : https://signal.org/download/
-- Bartender 5 : https://www.macbartender.com/
-- Install Anki : https://apps.ankiweb.net/
-
+- Install Bitwarden (App) : <https://bitwarden.com/>
+- Install Raycast : <https://www.raycast.com/>
+- Install Todoist : <https://todoist.com/downloads>
+- Install Signal : <https://signal.org/download/>
+- Bartender 5 : <https://www.macbartender.com/>
+- Install Anki : <https://apps.ankiweb.net/>
 
 ## main tools configuration setup
 
@@ -95,17 +93,18 @@ Install Google Material color scheme for Iterm2 (or whichever color preset you'd
 
 ### Python (installed by Brewfile)
 
-- [pyenv](https://github.com/pyenv/pyenv) ---> shoudl be installed by Homebrew 
+- [pyenv](https://github.com/pyenv/pyenv) ---> shoudl be installed by Homebrew
 
 ```shell
-$ pyenv install 3.10 # installs python version (3.10)
-$ pyenv versions # list installed python versions
-$ pyenv global 3.10 # set global default version
+pyenv install 3.10 # installs python version (3.10)
+pyenv versions # list installed python versions
+pyenv global 3.10 # set global default version
 ```
 
-###  Node/nvm (nvm installed by Brewfile)
+### Node/nvm (nvm installed by Brewfile)
 
 - nvm install global version
+
 ```shell
 $ nvm install node # installs latest "node" version
 $ nvm ls

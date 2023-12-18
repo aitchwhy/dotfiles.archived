@@ -9,7 +9,7 @@ fi
 # Set temporary variables (from .extra <- created from .extra.template)
 # -------------------------------------------------
 #echo "Exporting env vars for per-machine config"
-source "$HOME/dotfiles/.extra"
+source "$HOME/dotfiles/scripts/.extra.sh"
 
 #-------------------------------------------------------------------------------
 # Shell prompt + theme setting
@@ -105,12 +105,10 @@ plugins=(
 # Set working directories (for rg, fzf, fd searching)
 #-------------------------------------------------------------------------------
 WORKDIRS=(
-  "workspace"
-  "lacework"
-  "Dropbox"
   "dotfiles"
+  "workspace"
   "Downloads"
-  "Google\ Drive"
+  "Library/CloudStorage/Dropbox"
 );
 # Join working dir strings for RipGrep file search (using conditional parameter expansion - https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
 WORKDIR_PATHS=""
@@ -125,13 +123,12 @@ done
 # * ~/.extra can be used for other settings you don’t want to commit.
 #-------------------------------------------------------------------------------
 files=(
-    "$DOTFILES/.path"
-    "$DOTFILES/.export"
-    "$DOTFILES/.functions"
-    "$DOTFILES/.aliases"
-    "$DOTFILES/.extra"
-    "$DOTFILES/.extra"
-    "$DOTFILES/symlinks_config.sh"
+    "$DOTFILES/scripts/.path.sh"
+    "$DOTFILES/scripts/.export.sh"
+    "$DOTFILES/scripts/.functions.sh"
+    "$DOTFILES/scripts/.aliases.sh"
+    "$DOTFILES/scripts/.extra.sh"
+    "$DOTFILES/scripts/symlinks_config.sh"
     );
 for file in "${files[@]}"; do
   [ -r "$file" ] && [ -f "$file" ] && echo "sourcing file $file in shell $SHELL" && source "$file";
@@ -196,7 +193,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 #-------------------------------------------------------------------------------
 # Activate secrets shell (should be empty on bootstrap)
 #-------------------------------------------------------------------------------
-source $DOTFILES/secrets.sh
+source $DOTFILES/scripts/secrets.sh
 
 #-------------------------------------------------------------------------------
 # Activate Oh-My-Zsh
