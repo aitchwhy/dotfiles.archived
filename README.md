@@ -60,11 +60,15 @@ Run dotfiles setup script
 
 ## 5. Iterm2 setup
 
-Change iterm2 font to one that supports Powerline
+### Change iterm2 font to one that supports Powerline
 
 Install Google Material color scheme for Iterm2 (or whichever color preset you'd like)
 
 - [Google's Material Design Color Palette for Iterm2](https://github.com/MartinSeeler/iterm2-material-design)
+
+### Update iTerm2 key for FZF
+
+- (Pref -> Profiles -> Keys -> Left Option Key = Esc+)
 
 ## App Store setup (apps not on Brew Cask)
 

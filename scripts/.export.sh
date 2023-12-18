@@ -48,17 +48,67 @@ export POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 #-------------------------------------------------------------------------------
 # FZF settings
 #-------------------------------------------------------------------------------
-# m : multi-select with TAB
-# reverse layout : filter prompt on TOP not bottom
-# inline-info : filtered result count shown INLINE with filter prompt
-# border : draw border around fuzzy finder
-# key bind : bind keys WHILE in FZF to execute without leaving FZF
-# * Press F1 to open the file with less without leaving fzf
-# * Press CTRL-Y to copy the line to clipboard and aborts fzf (requires pbcopy)
-export FZF_DEFAULT_OPTS="-m --layout=reverse --inline-info --border --bind 'f1:execute(less -f {}),ctrl-y:execute-silent(echo {} | pbcopy)+abort'"
-export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden $WORKDIR_PATHS"
+# Default settings for CLI fuzzy finder
+# https://github.com/junegunn/fzf?tab=readme-ov-file#key-bindings-for-command-line
+#
+# - m : multi-select with TAB
+# - layout=reverse : filter prompt on TOP not bottom
+# - inline-info : filtered result count shown INLINE with filter prompt
+# - border : draw border around fuzzy finder
+# - bind : bind keys WHILE in FZF to execute without leaving FZF
+#
+# NOTE: {} is replaced with the single-quoted string of the focused line
+# NOTE: "alt" == "option" key in Mac
+#
+# - Press F1 to open the file with less without leaving fzf
+# - Press CTRL-Y to copy the line to clipboard and aborts fzf (requires pbcopy)
+#   --bind 'f1:execute(less -f {}),ctrl-y:execute-silent(echo {} | pbcopy)+abort'
+#-------------------------------------------------------------------------------
+#
+export FZF_DEFAULT_OPTS="
+  -m
+  --layout=reverse
+  --inline-info
+  --border
+  --bind 'f1:execute(less -f {})'
+  --bind 'ctrl-y:execute-silent(echo {} | pbcopy)+abort'
+  --header '(1) Press F1 to open the file with less without leaving fzf. (2) Press CTRL-Y to copy the line to clipboard and aborts fzf (requires pbcopy)'"
+export FZF_DEFAULT_COMMAND="rg --no-ignore-vcs --hidden --files $WORKDIR_PATHS"
+#########################
+#########################
+# Ctrl+t -> FILES+DIRS search and paste into CLI
+#########################
+#########################
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+# FZF_CTRL_T_OPTS to override options if desired
+#########################
+#########################
+# Ctrl+r -> shell command history (zsh) search and paste into CLI
+# NOTE: press Ctrl+r again to SORT toggle (relevance + time)
+# NOTE: "alt" == "option" key in Mac
+#########################
+#########################
 export FZF_ALT_C_COMMAND="fd . $HOME --hidden --no-ignore --type d"
+# FZF_CTRL_R_OPTS if we want more options for Ctrl+r
+# CTRL-/ to toggle small preview window to see the full command
+# CTRL-Y to copy the command into clipboard using pbcopy
+export FZF_CTRL_R_OPTS="
+  --preview 'echo {}' --preview-window up:3:hidden:wrap
+  --bind 'ctrl-/:toggle-preview,ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+  --color header:italic
+  --header 'Press CTRL-Y to copy command into clipboard'"
+#########################
+# Esc+c -> search and CD into directory
+# NOTE: updated at iTerm2 level to use "Esc" as "Option" -> https://github.com/junegunn/fzf/issues/164
+# NOTE: press Ctrl+r again to SORT toggle (relevance + time)
+#########################
+# FZF_ALT_C_COMMAND -> to override Alt+c command
+# FZF_ALT_C_OPTS -> to override Alt+c options
+# Print tree structure (-C means "colored") in the preview window
+export FZF_ALT_C_OPTS="
+  --preview 'tree -C {}'
+  --header 'Print directory tree structure in the preview window'"
+#########################
 
 #-------------------------------------------------------------------------------
 # For brew cask available options
