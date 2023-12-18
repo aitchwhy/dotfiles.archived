@@ -107,7 +107,7 @@ export FZF_CTRL_R_OPTS="
 # Print tree structure (-C means "colored") in the preview window
 export FZF_ALT_C_OPTS="
   --preview 'tree -C {}'
-  --header 'Print directory tree structure in the preview window'"
+  --header 'Dir tree structure in the preview window'"
 #########################
 
 #-------------------------------------------------------------------------------
