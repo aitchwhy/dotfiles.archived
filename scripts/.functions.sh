@@ -23,14 +23,15 @@ function cleanupds() {
 # https://rick.cogley.info/post/use-homebrew-zsh-instead-of-the-osx-default/
 function get_user_shell() {
     dscl . -read /Users/$USER UserShell
-
 }
+
 # we want homebrew Zsh : /opt/homebrew/bin/zsh (for M1 versions)
 function set_user_shell() {
     local shell_path=$(which $1)
+    chsh -s $shell_path $USER
+    # below could be unnecessary but just in case (persists across reboots)
     sudo dscl . -create /Users/$USER UserShell $shell_path
 }
-
 
 #-------------------------------------------------------------------------------
 # Simple calculator
