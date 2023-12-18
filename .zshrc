@@ -148,8 +148,8 @@ eval "$(pyenv virtualenv-init -)"
 
 # Set global python version
 pyenv global 3.10.12
-# Install global python binaries
-pip install git-remote-dropbox
+# Install global python binaries (do not install if not already installed)
+# pip install --quiet --upgraade foobar
 
 #-------------------------------------------------------------------------------
 # Init fast filesystem navigation with smarter cd command (zoxide) 
