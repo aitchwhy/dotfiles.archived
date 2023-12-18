@@ -108,7 +108,6 @@ WORKDIRS=(
   "dotfiles"
   "workspace"
   "Downloads"
-  "$DROPBOX"
 );
 # Join working dir strings for RipGrep file search (using conditional parameter expansion - https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
 WORKDIR_PATHS=""
@@ -116,6 +115,10 @@ for WORKDIR in "${WORKDIRS[@]}";
 do
   WORKDIR_PATHS+="$HOME/${WORKDIR} "
 done
+# append fully formed paths
+WORKDIR_PATHS+="$DROPBOX "
+
+echo "WORKDIR_PATHS: $WORKDIR_PATHS"
 
 #-------------------------------------------------------------------------------
 # Load the shell dotfiles, and then some:

@@ -6,7 +6,7 @@ export DOTFILES=$HOME/dotfiles
 #-------------------------------------------------------------------------------
 # Path to Dropbox root folder (real-time synced)
 #-------------------------------------------------------------------------------
-export DROPBOX=$HOME/Library/CloudStorage/Dropbox/
+export DROPBOX=$HOME/Library/CloudStorage/Dropbox
 
 #-------------------------------------------------------------------------------
 # NVM (NVM_DIR)
@@ -64,23 +64,31 @@ export POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 # - Press CTRL-Y to copy the line to clipboard and aborts fzf (requires pbcopy)
 #   --bind 'f1:execute(less -f {}),ctrl-y:execute-silent(echo {} | pbcopy)+abort'
 #-------------------------------------------------------------------------------
-#
+
+source $DOTFILES/scripts/.functions.sh
+# TODO: ripgrep_fzf_search_file() from .functions.sh
+
+# export FZF_DEFAULT_COMMAND="rg --no-ignore-vcs --hidden --files $WORKDIR_PATHS"
+export FZF_DEFAULT_COMMAND="fd . $HOME"
+# export FZF_DEFAULT_COMMAND="fd --hidden --no-ignore --type file --files $WORKDIR_PATHS"
 export FZF_DEFAULT_OPTS="
-  -m
+  --multi
   --layout=reverse
   --inline-info
-  --border
-  --bind 'f1:execute(less -f {})'
-  --bind 'ctrl-y:execute-silent(echo {} | pbcopy)+abort'
-  --header '(1) Press F1 to open the file with less without leaving fzf. (2) Press CTRL-Y to copy the line to clipboard and aborts fzf (requires pbcopy)'"
-export FZF_DEFAULT_COMMAND="rg --no-ignore-vcs --hidden --files $WORKDIR_PATHS"
+  --border"
+
 #########################
 #########################
-# Ctrl+t -> FILES+DIRS search and paste into CLI
+# Ctrl+t -> FILES-only search and paste into CLI
 #########################
 #########################
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-# FZF_CTRL_T_OPTS to override options if desired
+# Preview file content using bat (https://github.com/sharkdp/bat)
+export FZF_CTRL_T_COMMAND="rg --no-ignore-vcs --hidden --files $WORKDIR_PATHS"
+# FZF_CTRL_T_OPTS to ADD ADDITIONAL options if desired
+export FZF_CTRL_T_OPTS="
+  --preview 'bat -n --color=always {}'
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'
+  --header 'Paste selected into shell CLI. All files (rg)'"
 #########################
 #########################
 # Ctrl+r -> shell command history (zsh) search and paste into CLI
@@ -88,26 +96,25 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # NOTE: "alt" == "option" key in Mac
 #########################
 #########################
-export FZF_ALT_C_COMMAND="fd . $HOME --hidden --no-ignore --type d"
-# FZF_CTRL_R_OPTS if we want more options for Ctrl+r
+# FZF_CTRL_R_OPTS if we want more options (ADDITIONAL) for Ctrl+r
 # CTRL-/ to toggle small preview window to see the full command
 # CTRL-Y to copy the command into clipboard using pbcopy
 export FZF_CTRL_R_OPTS="
-  --preview 'echo {}' --preview-window up:3:hidden:wrap
-  --bind 'ctrl-/:toggle-preview,ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
-  --color header:italic
-  --header 'Press CTRL-Y to copy command into clipboard'"
+--preview 'echo {}' --preview-window up:3:hidden:wrap
+--bind 'ctrl-/:toggle-preview'
+--bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+--color header:italic
+--header 'Paste selected Shell command. Press CTRL-Y to copy command into clipboard'"
 #########################
 # Esc+c -> search and CD into directory
 # NOTE: updated at iTerm2 level to use "Esc" as "Option" -> https://github.com/junegunn/fzf/issues/164
 # NOTE: press Ctrl+r again to SORT toggle (relevance + time)
 #########################
 # FZF_ALT_C_COMMAND -> to override Alt+c command
-# FZF_ALT_C_OPTS -> to override Alt+c options
+# FZF_ALT_C_OPTS -> to pass ADDITIONAL Alt+c options
+export FZF_ALT_C_COMMAND="fd -t d . $HOME"
 # Print tree structure (-C means "colored") in the preview window
-export FZF_ALT_C_OPTS="
-  --preview 'tree -C {}'
-  --header 'Dir tree structure in the preview window'"
+export FZF_ALT_C_OPTS="--preview 'tree -C {}'"
 #########################
 
 #-------------------------------------------------------------------------------
