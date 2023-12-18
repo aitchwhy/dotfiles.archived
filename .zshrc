@@ -134,7 +134,7 @@ files=(
     "$DOTFILES/symlinks_config.sh"
     );
 for file in "${files[@]}"; do
-  [ -r "$file" ] && [ -f "$file" ] && source "$file";
+  [ -r "$file" ] && [ -f "$file" ] && echo "sourcing file $file in shell $SHELL" && source "$file";
 done;
 
 unset files file;
