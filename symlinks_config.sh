@@ -29,6 +29,9 @@ SYMLINKS=(
     # Powerlevel10k
     "$DOTFILES/.p10k.zsh:$HOME/.p10k.zsh"
 
+    # pyenv global python version
+    "$DOTFILES/pyenv-global-python.version:$PYENV_ROOT/version"
+
     # Default global NPM packages installed for every NVM new version installation
     # nvm reinstall-packages <node-version> <---- Reinstall global `npm` packages contained in <version> to current version
     # NOTE: <version> CANNOT be same as current NVM selected version when running this command
