@@ -236,6 +236,7 @@ cask 'ngrok' # ingress-as-a-service (easiest way to expose localhost to public i
 # Magnet (window sizing)
 mas "Magnet", id: 441258766
 mas "KakaoTalk", id: 869223134
+mas "LINE", id: 539883307
 mas "Bear", id: 1091189122
 mas "TestFlight", id: 899247664
 mas "Omnivore", id: 1564031042
