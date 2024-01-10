@@ -90,6 +90,11 @@ git clone git@github.com:powerline/fonts.git && bash fonts/install.sh
 sleep 3
 rm -rf fonts
 
+# Install Zsh custom plugins (e.g. Zsh history database 'zsh-histdb')
+# https://github.com/larkery/zsh-histdb?tab=readme-ov-file#installation
+mkdir -p $HOME/.oh-my-zsh/custom/plugins/
+git clone https://github.com/larkery/zsh-histdb $HOME/.oh-my-zsh/custom/plugins/zsh-histdb
+
 # -------------------------------------------------
 # Config files linked
 # -------------------------------------------------

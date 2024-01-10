@@ -204,6 +204,15 @@ source $DOTFILES/scripts/secrets.sh
 source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+#-------------------------------------------------------------------------------
+# Activate Zsh history database custom plugin (zsh-histdb)
+#-------------------------------------------------------------------------------
+source $HOME/.oh-my-zsh/custom/plugins/zsh-histdb/sqlite-history.zsh
+autoload -Uz add-zsh-hook
+
+#-------------------------------------------------------------------------------
+# Nvm
+#-------------------------------------------------------------------------------
 # NVM setup (Node version manager) - installed via Homebrew
 export NVM_DIR="$NVM_DIR"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
