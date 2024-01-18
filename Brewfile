@@ -13,6 +13,7 @@ tap 'homebrew/cask-fonts'
 tap 'homebrew/services'
 tap 'romkatv/powerlevel10k'
 tap 'ngrok/ngrok'
+tap 'warrensbox/tap'
 
 #-------------------------------------------------------------------------------
 # Make sure apps get installed in system Applications dir
@@ -98,7 +99,7 @@ brew 'powerlevel10k'				                # zsh shell powerline
 brew 'git-recent'                                   # viewing latest git branches
 brew 'broot'                                        # broot - tree,cd,fuzzy-search
 brew 'chrome-cli'
-brew 'bitwarden-cli' # password manager CLI
+# brew 'bitwarden-cli'                          # password manager CLI -> DO NOT install via Homebrew. Installed via Node (NVM default ver)
 
 brew 'cfr-decompiler'
 brew 'zola'
@@ -142,8 +143,8 @@ brew 'tfenv'
 # Terraform official language server (ls)
 brew 'terraform-ls' # Used for VSCode IDE terraform plugin to do Goto Symbol + etc.
 
-# Terragrunt version manager (tgswitch)
-brew 'warrensbox/tap/tgswitch'
+# Terragrunt version manager (tgswitch - https://github.com/warrensbox/tgswitch)
+brew 'tgswitch'
 
 #-------------------------------------------------------------------------------
 # kubernetes
