@@ -63,7 +63,6 @@ brew 'whalebrew'
 brew 'ripgrep'                                   # fast search
 brew 'fd'                                        # Upgrade to 'find'
 brew 'sd'                                        # Upgrade to 'sed'
-brew 'git-delta'                                 # Upgrade to 'diff'
 brew 'tldr'                                      # Simplified to 'man' pages
 brew 'dust'                                      # Upgrade to 'du'
 brew 'eza'                                       # modern 'ls'
@@ -95,7 +94,6 @@ brew 'hexyl'                                        # Better 'xxd' (hex code vie
 brew 'neovim'                                       # Better 'vim'
 brew 'zlib'
 brew 'powerlevel10k'				                # zsh shell powerline
-brew 'git-recent'                                   # viewing latest git branches
 brew 'broot'                                        # broot - tree,cd,fuzzy-search
 brew 'chrome-cli'
 brew 'bitwarden-cli' # password manager CLI
@@ -127,6 +125,9 @@ brew 'git-flow'
 brew 'hub'
 brew 'gh' # github cli
 brew 'act' # local Github Actions (GHA) runner (using docker)
+brew 'git-recent'                                   # viewing latest git branches
+brew 'git-delta'                                 # Upgrade to 'diff'
+brew 'git-lfs' # Git LFS (large files in Git)
 
 #-------------------------------------------------------------------------------
 # Node
