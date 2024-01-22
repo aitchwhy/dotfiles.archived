@@ -11,6 +11,7 @@ tap 'homebrew/bundle'
 tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/services'
+tap 'warrensbox/tap'
 tap 'romkatv/powerlevel10k'
 tap 'ngrok/ngrok'
 
@@ -96,8 +97,9 @@ brew 'zlib'
 brew 'powerlevel10k'				                # zsh shell powerline
 brew 'broot'                                        # broot - tree,cd,fuzzy-search
 brew 'chrome-cli'
-brew 'bitwarden-cli' # password manager CLI
+# brew 'bitwarden-cli' # password manager CLI (NOTE: DO NOT install via Homebrew, install via NVM + Node system wide instead)
 
+brew 'tgswitch'
 brew 'cfr-decompiler'
 brew 'zola'
 brew 'httrack' # website download / mirror tool
