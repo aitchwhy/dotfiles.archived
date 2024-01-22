@@ -210,6 +210,7 @@ brew 'sqlite'
 # Apps
 #-------------------------------------------------------------------------------
 
+cask 'anki' # Anki flashcards (memory retention) - https://apps.ankiweb.net/
 cask 'firefox'
 cask 'visual-studio-code'
 cask 'spotify'
