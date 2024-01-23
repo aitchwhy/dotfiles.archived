@@ -11,6 +11,7 @@ tap 'homebrew/bundle'
 tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/services'
+tap 'warrensbox/tap'
 tap 'romkatv/powerlevel10k'
 tap 'ngrok/ngrok'
 tap 'warrensbox/tap'
@@ -64,7 +65,6 @@ brew 'whalebrew'
 brew 'ripgrep'                                   # fast search
 brew 'fd'                                        # Upgrade to 'find'
 brew 'sd'                                        # Upgrade to 'sed'
-brew 'git-delta'                                 # Upgrade to 'diff'
 brew 'tldr'                                      # Simplified to 'man' pages
 brew 'dust'                                      # Upgrade to 'du'
 brew 'eza'                                       # modern 'ls'
@@ -96,16 +96,21 @@ brew 'hexyl'                                        # Better 'xxd' (hex code vie
 brew 'neovim'                                       # Better 'vim'
 brew 'zlib'
 brew 'powerlevel10k'				                # zsh shell powerline
-brew 'git-recent'                                   # viewing latest git branches
 brew 'broot'                                        # broot - tree,cd,fuzzy-search
 brew 'chrome-cli'
 # brew 'bitwarden-cli'                          # password manager CLI -> DO NOT install via Homebrew. Installed via Node (NVM default ver)
 
+brew 'tgswitch'
 brew 'cfr-decompiler'
 brew 'zola'
 brew 'httrack' # website download / mirror tool
 brew 'jc' # CLI JSON converter + other useful conversions CLI tool
 brew 'rsync'
+
+#-------------------------------------------------------------------------------
+# Swift + iOS
+#-------------------------------------------------------------------------------
+brew 'cocoapods'
 
 #-------------------------------------------------------------------------------
 # AWS
@@ -123,6 +128,9 @@ brew 'git-flow'
 brew 'hub'
 brew 'gh' # github cli
 brew 'act' # local Github Actions (GHA) runner (using docker)
+brew 'git-recent'                                   # viewing latest git branches
+brew 'git-delta'                                 # Upgrade to 'diff'
+brew 'git-lfs' # Git LFS (large files in Git)
 
 #-------------------------------------------------------------------------------
 # Node
@@ -205,6 +213,7 @@ brew 'sqlite'
 # Apps
 #-------------------------------------------------------------------------------
 
+cask 'anki' # Anki flashcards (memory retention) - https://apps.ankiweb.net/
 cask 'firefox'
 cask 'visual-studio-code'
 cask 'spotify'
