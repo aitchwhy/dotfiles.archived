@@ -16,7 +16,7 @@ export_alias() {
 #
 # Example usage in ".envrc"
 #########################
-# # with no node ver specified, below "use node" will look for ".nvmrc" or ".node-version"
+# # with no node ver specified, below "use nvm" will look for ".nvmrc" or ".node-version"
 # use nvm
 #
 # # source .env.local file using "dotenv"
