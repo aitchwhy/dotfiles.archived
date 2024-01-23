@@ -20,6 +20,10 @@ function cleanupds() {
   find . -type f -name '*.DS_Store' -ls -delete
 }
 
+function show_paths() {
+    echo $PATH | tr ":" "\n"
+}
+
 # https://rick.cogley.info/post/use-homebrew-zsh-instead-of-the-osx-default/
 function get_user_shell() {
     dscl . -read /Users/$USER UserShell
