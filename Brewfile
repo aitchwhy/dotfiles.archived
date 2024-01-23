@@ -8,10 +8,8 @@
 #-------------------------------------------------------------------------------
 
 tap 'homebrew/bundle'
-tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/services'
-tap 'warrensbox/tap'
 tap 'romkatv/powerlevel10k'
 tap 'ngrok/ngrok'
 tap 'warrensbox/tap'
