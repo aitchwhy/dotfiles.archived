@@ -155,12 +155,14 @@ brew 'terraform-ls' # Used for VSCode IDE terraform plugin to do Goto Symbol + e
 brew 'tgswitch'
 
 #-------------------------------------------------------------------------------
-# kubernetes
+# kubernetes (k8s)
 #-------------------------------------------------------------------------------
 
 brew 'kube-ps1'
 brew 'kops'
 brew 'ksh'
+brew 'eksctl'
+brew 'kubectx'
 
 #-------------------------------------------------------------------------------
 # Development-Ruby
