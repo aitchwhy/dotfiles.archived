@@ -131,6 +131,7 @@ files=(
     "$DOTFILES/scripts/.functions.sh"
     "$DOTFILES/scripts/.aliases.sh"
     "$DOTFILES/scripts/.extra.sh"
+    "$DOTFILES/scripts/bitwarden.sh"
     "$DOTFILES/scripts/database_switcher.sh"
     "$DOTFILES/scripts/symlinks_config.sh"
     );

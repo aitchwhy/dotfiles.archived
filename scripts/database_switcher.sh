@@ -2,52 +2,19 @@
 
 PG_SERVICE_FILE="$HOME/.pg_service.conf"
 DOWNLOADS_FOLDER="$HOME/Downloads"
-LOCAL_DB_PROFILE="localhost-db-ansa-ios-backend"
-LOCAL_DB_TARGET_PROFILES=(
-    "localhost-db-ansa-ios-backend"
-    "localhost-db-ansa-platform"
-)
+BW_NOT_LOGGED_IN_PHRASE="not logged in"
 
-# Function to list Bitwarden items
-list_bw_items() {
-    bw list items | jq -r '.[] | select(.attachments) | .name'
-}
-
-# Function to list Bitwarden secure notes
-list_bw_notes() {
-    bw list items | jq -r '.[] | select(.type == 2) | .name'
-}
-
-update_pg_service_from_bitwarden() {
-    local DEFAULT_BW_ITEM_NAME="pg_service.conf"
-
-    # Unlock Bitwarden and synchronize
-    bw login
-    bw unlock
-    bw sync
-
-    # Use provided argument or select using fzf
-    BW_ITEM_NAME=$(list_bw_notes | fzf --prompt="Select a Bitwarden secure note: ") || echo "$DEFAULT_BW_ITEM_NAME"
-
-    # Use default if no item is selected or provided
-    if [ -z "$BW_ITEM_NAME" ]; then
-        BW_ITEM_NAME="$DEFAULT_BW_ITEM_NAME"
-    fi
-
-    # Fetch and overwrite pg_service.conf
-    BW_ITEM_CONTENT=$(bw get item "$BW_ITEM_NAME" | jq -r '.notes')
-    if [ -z "$BW_ITEM_CONTENT" ]; then
-        echo "Secure note content not found in Bitwarden. Returning."
-        return
-    fi
-
-    echo "$BW_ITEM_CONTENT" >"$PG_SERVICE_FILE"
-    echo "pg_service.conf updated from secure note: $BW_ITEM_NAME"
-}
+source "$DOTFILES/scripts/bitwarden.sh"
+LOCAL_DB_PROFILE="ansa-ios-backend_localhost"
 
 # Function to list profiles from pg_service.conf
 list_pg_profiles() {
     grep '^\[' "$PG_SERVICE_FILE" | tr -d '[]'
+}
+
+# Function to list ONLY localhost profiles from pg_service.conf
+list_pg_profiles_localhost() {
+    list_pg_profiles | grep 'localhost'
 }
 
 dump_file_name() {
@@ -108,7 +75,8 @@ db_clone() {
     ################################
 
     # Use fzf to pick a target profile, or use 'localhost_db' as default
-    TARGET_PROFILE=$(printf '%s\n' "${LOCAL_DB_TARGET_PROFILES[@]}" | fzf --prompt="Select a target PostgreSQL profile (default: $LOCAL_DB_PROFILE): ")
+    localhost_db_target_profiles=$(list_pg_profiles_localhost)
+    TARGET_PROFILE=$(printf '%s\n' "${localhost_db_target_profiles[@]}" | fzf --prompt="Select a target PostgreSQL profile (default: $LOCAL_DB_PROFILE): ")
 
     # Use default if no profile is selected
     if [ -z "$TARGET_PROFILE" ]; then
