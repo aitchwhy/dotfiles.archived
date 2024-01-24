@@ -30,6 +30,13 @@ pathadd "$BREW_PREFIX/opt/coreutils/libexec/gnubin"
 pathadd "$HOME/.deno/bin"
 
 #-------------------------------------------------------------------------------
+# Sqlite DB setup (Homebrew version)
+#
+# See Brewfile 'sqlite' comments for more info
+#-------------------------------------------------------------------------------
+pathadd "$BREW_PREFIX/opt/sqlite/bin"
+
+#-------------------------------------------------------------------------------
 # Local bin directories before anything else
 #-------------------------------------------------------------------------------
 pathadd "/usr/local/bin:/usr/local/sbin"
@@ -49,6 +56,7 @@ pathadd "$HOME/.local/bin"
 # dotfiles scripts
 #-------------------------------------------------------------------------------
 pathadd "$HOME/dotfiles/scripts"
+
 
 #-------------------------------------------------------------------------------
 # Emacs binaries

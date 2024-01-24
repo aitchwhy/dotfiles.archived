@@ -161,3 +161,14 @@ export TMUX_FZF_SED="/usr/local/bin/gsed"
 # No __pycache__
 export PYTHONDONTWRITEBYTECODE=1
 export PYENV_ROOT=$HOME/.pyenv
+
+#-------------------------------------------------------------------------------
+# Sqlite DB setup (Homebrew version)
+#
+# See Brewfile 'sqlite' comments for more info
+#-------------------------------------------------------------------------------
+# For compilers to find sqlite you may need to set:
+export LDFLAGS="-L$BREW_PREFIX/opt/sqlite/lib"
+export CPPFLAGS="-I$BREW_PREFIX/opt/sqlite/include"
+# For pkg-config to find sqlite you may need to set:
+export PKG_CONFIG_PATH="$BREW_PREFIX/opt/sqlite/lib/pkgconfig"

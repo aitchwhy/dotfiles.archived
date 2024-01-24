@@ -207,6 +207,22 @@ brew 'kotlin'
 #-------------------------------------------------------------------------------
 
 brew 'postgresql'                                # DBMS
+#-------------------------------------------------------------------------------
+# Sqlite setup (Homebrew version)
+#
+# sqlite is keg-only, which means it was not symlinked into /opt/homebrew,
+# because macOS already provides this software and installing another version in
+# parallel can cause all kinds of trouble.
+#
+# If you need to have sqlite first in your PATH, run:
+#   echo 'export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"' >> ~/.zshrc
+# For compilers to find sqlite you may need to set:
+#   export LDFLAGS="-L/opt/homebrew/opt/sqlite/lib"
+#   export CPPFLAGS="-I/opt/homebrew/opt/sqlite/include"
+# For pkg-config to find sqlite you may need to set:
+#   export PKG_CONFIG_PATH="/opt/homebrew/opt/sqlite/lib/pkgconfig"
+#
+#-------------------------------------------------------------------------------
 brew 'sqlite'
 
 #-------------------------------------------------------------------------------
