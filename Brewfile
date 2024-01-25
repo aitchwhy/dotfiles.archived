@@ -251,7 +251,10 @@ cask '1password' # 1password 8
 cask '1password-cli' # 1password CLI
 cask 'devutils' # devutils (~50 various dev utils like cron parser, uuid generator, etc)
 cask 'ngrok' # ingress-as-a-service (easiest way to expose localhost to public internet)
-
+cask 'signal' # private msg app - signal.org
+cask 'bartender' # menu bar app manager (v5) - https://www.macbartender.com/
+cask 'raycast' # Spotlight replacement - https://raycast.com/
+cask 'bitwarden' # password manager - https://bitwarden.com/
 
 #-------------------------------------------------------------------------------
 # Mac App store downloads into Brewfile (Uses Mac App store CLI - https://github.com/mas-cli/mas).
@@ -260,16 +263,30 @@ cask 'ngrok' # ingress-as-a-service (easiest way to expose localhost to public i
 #-------------------------------------------------------------------------------
 
 # Magnet (window sizing)
-mas "Magnet", id: 441258766
-mas "KakaoTalk", id: 869223134
-mas "LINE", id: 539883307
 mas "Bear", id: 1091189122
-mas "TestFlight", id: 899247664
-mas "Omnivore", id: 1564031042
-mas "Slack", id: 803453959
-mas "The Unarchiver", id: 425424353
-mas "Xcode", id: 497799835
-mas "WhatsApp", id: 1147396723
-mas "Bitwarden", id: 1352778147
-mas "Toggl Track", id: 1291898086
+mas "Commander One", id: 1035236694
+mas "Developer", id: 640199958
+mas "GarageBand", id: 682658836
+mas "Habitify", id: 1111447047
 mas "Human Japanese", id: 412213489
+mas "KakaoTalk", id: 869223134
+mas "Keynote", id: 409183694
+mas "Kindle Classic", id: 405399194
+mas "LINE", id: 539883307
+mas "Magnet", id: 441258766
+mas "Numbers", id: 409203825
+mas "Omnivore", id: 1564031042
+mas "Pages", id: 409201541
+mas "Slack", id: 803453959
+mas "Tailscale", id: 1475387142
+mas "TestFlight", id: 899247664
+mas "The Unarchiver", id: 425424353
+mas "Toggl Track", id: 1291898086
+mas "WhatsApp", id: 1147396723
+mas "Xcode", id: 497799835
+mas "iMovie", id: 408981434
+# # Authy CAN also be installed via website Mac dmg download, BUT App Store Authy is preferred
+# # TODO: App Store ID doesn't work well with Authy. Need to figure out how to install via Brewfile.
+# mas "Authy", id: 494168017
+# # TODO: App Store ID doesn't work well with Todoist. Need to figure out how to install via Brewfile.
+# mas "Todoist", id: 585829637

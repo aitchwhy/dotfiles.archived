@@ -70,24 +70,9 @@ Install Google Material color scheme for Iterm2 (or whichever color preset you'd
 
 - (Pref -> Profiles -> Keys -> Left Option Key = Esc+)
 
-## App Store setup (apps not on Brew Cask)
+## App Store setup (listed in Brewfile as 'mas' deps)
 
-- Install Magnet (window sizing)
-- Spark (email)
-- Bear (notes)
-- Authy (NOT website download .dmg)
-  - Authy CAN also be installed via website Mac dmg download, BUT App Store Authy is preferred
-- Install KakaoTalk
-- Install Ominvore (read it later app)
-
-## Additonal Apps (Non-app store)
-
-- Install Bitwarden (App) : <https://bitwarden.com/>
-- Install Raycast : <https://www.raycast.com/>
-- Install Todoist : <https://todoist.com/downloads>
-- Install Signal : <https://signal.org/download/>
-- Bartender 5 : <https://www.macbartender.com/>
-- Install Anki : <https://apps.ankiweb.net/>
+- [mas CLI (for Mac App Store)](https://github.com/mas-cli/mas)
 
 ## main tools configuration setup
 
