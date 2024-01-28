@@ -38,8 +38,6 @@ SYMLINKS=(
     "$DOTFILES/pyenv-global-python.version:$PYENV_ROOT/version"
 
     # TODO: make this link more resilient
-    # symlinking hardcoded VSCode paths for Bookmarks extension DB state.vscdb
-    "$DROPBOX/vscode/bookmarks/vscode-bookmarks-state.vscdb:$HOME/Library/Application Support/Code/User/workspaceStorage/279a2dfee561e11c715be198899854be/state.vscdb"
 
     # Default global NPM packages installed for every NVM new version installation
     # nvm reinstall-packages <node-version> <---- Reinstall global `npm` packages contained in <version> to current version
@@ -68,5 +66,46 @@ create_sudo_symlinks() {
     done
 }
 
+vscode_dotfiles_sync() {
+    # Sync VSCode settings to Dropbox
+    # Assumes VSCode user setting for extension ("bookmarks.saveBookmarksInProject = true)
+    # https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks
+
+    # Define the root directory of your local GitHub repositories
+    GITHUB_ROOT="$HOME/workspace"
+
+    # Define the Dropbox root directory for bookmarks
+    DROPBOX_ROOT="$DROPBOX/vscode/bookmarks"
+
+    # Ensure the Dropbox bookmarks directory exists
+    mkdir -p "$DROPBOX_ROOT"
+
+    echo "Symlinking bookmarks with (local workspace folder : $GITHUB_ROOT) -> (dropbox folder : $DROPBOX_ROOT)"
+
+    # Loop through each project in the GitHub root directory
+    for project_dir in "$GITHUB_ROOT"/*; do
+        if [ -d "$project_dir" ]; then
+            # Extract the project folder name
+            project_folder_name=$(basename "$project_dir")
+
+            # Path to the bookmarks file in the project
+            bookmarks_file="$project_dir/.vscode/bookmarks.json"
+
+            # Symlinking bookmarks file to Dropbox
+            # ln -s "$bookmarks_file" "$DROPBOX_ROOT/${project_folder_name}-bookmarks.json"
+            local src="${bookmarks_file}"
+            local dst="${DROPBOX_ROOT}/${project_folder_name}-bookmarks.json"
+            echo "Symlinking bookmarks file: $src -> $dst"
+            link "$src" "$dst"
+
+        fi
+    done
+
+    echo "Syncing completed."
+
+}
+
 # Create symlinks by default (but not sudo ones)
 create_symlinks
+
+vscode_dotfiles_sync
