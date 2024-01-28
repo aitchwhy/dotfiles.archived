@@ -37,6 +37,10 @@ SYMLINKS=(
     # pyenv global python version
     "$DOTFILES/pyenv-global-python.version:$PYENV_ROOT/version"
 
+    # TODO: make this link more resilient
+    # symlinking hardcoded VSCode paths for Bookmarks extension DB state.vscdb
+    "$DROPBOX/vscode/bookmarks/vscode-bookmarks-state.vscdb:$HOME/Library/Application Support/Code/User/workspaceStorage/279a2dfee561e11c715be198899854be/state.vscdb"
+
     # Default global NPM packages installed for every NVM new version installation
     # nvm reinstall-packages <node-version> <---- Reinstall global `npm` packages contained in <version> to current version
     # NOTE: <version> CANNOT be same as current NVM selected version when running this command
