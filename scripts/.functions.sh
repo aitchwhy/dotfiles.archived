@@ -517,3 +517,29 @@ ripgrep_fzf_search_file() {
         # --preview-window 'up,60%,border-bottom,+{2}+3/3,~3' \
         # --bind 'enter:become(vim {1} +{2})'
 }
+
+
+#-------------------------------------------------------------------------------
+# VSCode scripts
+#-------------------------------------------------------------------------------
+
+# grep through ALL VSCode SQLite files (state.vscdb)
+# Loop over all files found by 'fd' that match "state.vscdb" and are not backups
+grep_vscode_sqlite() {
+    # TODO: update to make base folder path dynamic
+    local base_path="/Users/hank/Library/Application Support/Code/User"
+    local search_term="$1"
+
+    # for db in $(fd --hidden --no-ignore "state.vscdb" "$base_path" | rg -v "state.vscdb.backup"); do
+    fd --hidden --no-ignore "state.vscdb" "$base_path" | rg -v "state.vscdb.backup" | while read -r db; do
+        if [ -f "$db" ]; then
+            # Print the name of the database being processed
+            echo "SQLite Database: $db --- search term: $search_term"
+
+            # Dump the content of the SQLite database and grep for the search term
+            sqlite3 "$db" .dump | rg --hidden --no-ignore "$search_term"
+        else
+            echo "Skipping: $db is not a regular file."
+        fi
+    done
+}
