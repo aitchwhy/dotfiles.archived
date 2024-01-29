@@ -93,9 +93,9 @@ vscode_dotfiles_sync() {
 
             # Symlinking bookmarks file to Dropbox
             # ln -s "$bookmarks_file" "$DROPBOX_ROOT/${project_folder_name}-bookmarks.json"
-            local src="${bookmarks_file}"
-            local dst="${DROPBOX_ROOT}/${project_folder_name}-bookmarks.json"
-            echo "Symlinking bookmarks file: $src -> $dst"
+            local src="${DROPBOX_ROOT}/${project_folder_name}-bookmarks.json"
+            local dst="${bookmarks_file}"
+            echo "Symlinking bookmarks file: $src <- $dst"
             link "$src" "$dst"
 
         fi
