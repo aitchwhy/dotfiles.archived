@@ -108,4 +108,4 @@ vscode_dotfiles_sync() {
 # Create symlinks by default (but not sudo ones)
 create_symlinks
 
-vscode_dotfiles_sync
+# vscode_dotfiles_sync
