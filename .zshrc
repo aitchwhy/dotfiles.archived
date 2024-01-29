@@ -98,7 +98,7 @@ HIST_STAMPS="yyyy-mm-dd"
 
 plugins=(
     kube-ps1
-    zoxide
+    # zoxide
     )
 
 #-------------------------------------------------------------------------------
@@ -158,6 +158,7 @@ pyenv global 3.10.12
 
 #-------------------------------------------------------------------------------
 # Init fast filesystem navigation with smarter cd command (zoxide) 
+# NOTE: For completions to work, the above line must be added after compinit is called. You may have to rebuild your completions cache by running rm ~/.zcompdump*; compinit.
 #-------------------------------------------------------------------------------
 eval "$(zoxide init zsh)"
 
