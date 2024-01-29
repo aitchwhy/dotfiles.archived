@@ -254,7 +254,8 @@ cask 'ngrok' # ingress-as-a-service (easiest way to expose localhost to public i
 cask 'signal' # private msg app - signal.org
 cask 'bartender' # menu bar app manager (v5) - https://www.macbartender.com/
 cask 'raycast' # Spotlight replacement - https://raycast.com/
-# cask 'bitwarden' # password manager - https://bitwarden.com/
+# Bitwarden password manager (exists in Mac App store + Brew Cask) - some issues with App Store version
+cask 'bitwarden' # password manager - https://bitwarden.com/
 
 #-------------------------------------------------------------------------------
 # Mac App store downloads into Brewfile (Uses Mac App store CLI - https://github.com/mas-cli/mas).
@@ -262,7 +263,7 @@ cask 'raycast' # Spotlight replacement - https://raycast.com/
 # mas "App Name", id: 123456789 (get ID from `$ mas list`)
 #-------------------------------------------------------------------------------
 
-mas "Bitwarden", id: 1352778147 # Bitwarden password manager (brew cask also installs Bitwarden, but this is the App Store version which allows biometric touchID unlock)
+# mas "Bitwarden", id: 1352778147 
 mas "Bear", id: 1091189122
 mas "Commander One", id: 1035236694
 mas "Developer", id: 640199958
