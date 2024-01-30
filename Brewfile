@@ -252,6 +252,7 @@ cask '1password-cli' # 1password CLI
 cask 'devutils' # devutils (~50 various dev utils like cron parser, uuid generator, etc)
 cask 'ngrok' # ingress-as-a-service (easiest way to expose localhost to public internet)
 cask 'signal' # private msg app - signal.org
+cask 'notion'
 cask 'bartender' # menu bar app manager (v5) - https://www.macbartender.com/
 cask 'raycast' # Spotlight replacement - https://raycast.com/
 # Bitwarden password manager (exists in Mac App store + Brew Cask) - some issues with App Store version
