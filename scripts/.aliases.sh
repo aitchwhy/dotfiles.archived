@@ -97,3 +97,8 @@ alias xxd='hexyl'
 if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
 fi
+
+#-------------------------------------------------------------------------------
+# Tailscale CLI (https://tailscale.com/kb/1080/cli#using-the-cli)
+#-------------------------------------------------------------------------------
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
