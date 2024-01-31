@@ -257,6 +257,9 @@ cask 'bartender' # menu bar app manager (v5) - https://www.macbartender.com/
 cask 'raycast' # Spotlight replacement - https://raycast.com/
 # Bitwarden password manager (exists in Mac App store + Brew Cask) - some issues with App Store version
 cask 'bitwarden' # password manager - https://bitwarden.com/
+cask 'microsoft-teams'
+cask 'arc'
+cask 'copilot' # finance app (https://copilot.money/)
 
 #-------------------------------------------------------------------------------
 # Mac App store downloads into Brewfile (Uses Mac App store CLI - https://github.com/mas-cli/mas).
@@ -287,6 +290,8 @@ mas "Toggl Track", id: 1291898086
 mas "WhatsApp", id: 1147396723
 mas "Xcode", id: 497799835
 mas "iMovie", id: 408981434
+# # TODO: App Store ID doesn't work well with Speechify Need to figure out how to install via Brewfile.
+# mas "Speechify", id: 1209815023
 # # Authy CAN also be installed via website Mac dmg download, BUT App Store Authy is preferred
 # # TODO: App Store ID doesn't work well with Authy. Need to figure out how to install via Brewfile.
 # mas "Authy", id: 494168017
