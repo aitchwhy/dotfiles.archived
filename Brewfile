@@ -205,7 +205,11 @@ brew 'kotlin'
 # Databases
 #-------------------------------------------------------------------------------
 
-brew 'postgresql'                                # DBMS
+# Postgres
+# Feature matrix comparison for major versions (14,15,16) - https://www.postgresql.org/about/featurematrix/
+brew 'postgresql@14'
+brew 'postgresql@16'
+
 #-------------------------------------------------------------------------------
 # Sqlite setup (Homebrew version)
 #
