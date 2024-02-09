@@ -202,6 +202,32 @@ brew 'gradle'
 brew 'kotlin'
 
 #-------------------------------------------------------------------------------
+# Cache (e.g. Redis)
+#-------------------------------------------------------------------------------
+brew 'redis'
+
+#-------------------------------------------------------------------------------
+# Message Queues/Brokers (e.g. Kafka)
+#-------------------------------------------------------------------------------
+brew 'kafka'
+
+#-------------------------------------------------------------------------------
+# Observability/Monitoring
+#-------------------------------------------------------------------------------
+
+# TODO: consider using 'whalebrew' to install these as Docker container (OR try using other custom script ways)
+# NOTE: HOMEBREW NO LONGER SUPPORTS ELASTICSEARCH - need ZIP file manual install (tap 'elastic/tap') - https://www.elastic.co/guide/en/elasticsearch/reference/8.12/install-elasticsearch.html#elasticsearch-install-packages
+# ELK stack Logging (e.g. ElasticSearch, Logstash, Filebeat)
+# https://www.elastic.co/guide/en/elasticsearch/reference/7.17/elasticsearch-intro.html
+# Elasticsearch : the distributed search and analytics engine at the heart of the Elastic Stack. Elasticsearch is where the indexing, search, and analysis magic happens.
+# Logstash and Beats (filebeat?) : facilitate collecting, aggregating, and enriching your data and storing it in Elasticsearch
+# Kibana : enables you to interactively explore, visualize, and share insights into your data and manage and monitor the stack. 
+
+# Metrics Visualization (e.g. Grafana, Kibana)
+brew 'prometheus' # Service monitoring system and time series database (https://prometheus.io/)
+brew 'grafana' # Gorgeous metric visualizations and dashboards for timeseries databases (grafana.com)
+
+#-------------------------------------------------------------------------------
 # Databases
 #-------------------------------------------------------------------------------
 
