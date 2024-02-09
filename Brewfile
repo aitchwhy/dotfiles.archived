@@ -170,12 +170,12 @@ brew 'rbenv'
 
 #-------------------------------------------------------------------------------
 # Development-Python (includes pip, easy_install)
-# ... Also jupyter for jupyter notebook
+# + jupyterlab for jupyter notebooks
 #-------------------------------------------------------------------------------
 
 brew 'pyenv'
 brew 'pyenv-virtualenv'
-brew 'jupyter'
+brew 'jupyterlab' # Jupyter notebook (https://jupyter.org/)
 
 #-------------------------------------------------------------------------------
 # OpenAPI/Swagger
