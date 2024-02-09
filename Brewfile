@@ -133,7 +133,6 @@ brew 'git-lfs' # Git LFS (large files in Git)
 #-------------------------------------------------------------------------------
 # Node
 #-------------------------------------------------------------------------------
-
 brew 'nvm'                                       # Node version manager
 
 #-------------------------------------------------------------------------------
@@ -156,11 +155,11 @@ brew 'tgswitch'
 # kubernetes (k8s)
 #-------------------------------------------------------------------------------
 
-brew 'kube-ps1'
-brew 'kops'
-brew 'ksh'
-brew 'eksctl'
-brew 'kubectx'
+brew 'kubernetes-cli' # CLI tool for k8s control plane mgmt (kubectl - https://kubernetes.io/docs/reference/kubectl/)
+brew 'kubectx' # CLI tool that can switch between kubectl contexts easily and create aliases
+brew 'kube-ps1' # kubernetes prompt for zsh + bash
+brew 'kops' # Production Grade K8s Installation, Upgrades, and Management
+brew 'eksctl' # CLI tool for creating k8s clusters on Amazon EKS
 
 #-------------------------------------------------------------------------------
 # Development-Ruby
