@@ -320,10 +320,10 @@ mas "Toggl Track", id: 1291898086
 mas "WhatsApp", id: 1147396723
 mas "Xcode", id: 497799835
 mas "iMovie", id: 408981434
-# # TODO: App Store ID doesn't work well with Speechify Need to figure out how to install via Brewfile.
-# mas "Speechify", id: 1209815023
+# TODO: App Store ID doesn't work well with below App Store apps - need to figure out how to install via Brewfile.
 # # Authy CAN also be installed via website Mac dmg download, BUT App Store Authy is preferred
-# # TODO: App Store ID doesn't work well with Authy. Need to figure out how to install via Brewfile.
 # mas "Authy", id: 494168017
-# # TODO: App Store ID doesn't work well with Todoist. Need to figure out how to install via Brewfile.
 # mas "Todoist", id: 585829637
+# mas "Speechify", id: 1209815023
+# mas "MuseScore", id: 835731296 # Piano sheet music + music notation software
+# mas "MusicNotes", id: 924050984 # Sheet music store
