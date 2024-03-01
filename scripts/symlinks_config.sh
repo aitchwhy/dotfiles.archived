@@ -10,8 +10,8 @@ SUDO_SYMLINKS=(
     "$BREW_PREFIX/opt/openjdk/libexec/openjdk.jdk:/Library/Java/JavaVirtualMachines/openjdk.jdk"
 )
 SYMLINKS=(
-    # Brew Bundle file
-    "$DOTFILES/Brewfile:$HOME/Brewfile"
+    # Brew Bundle file (default looks for ~/.Brewfile OR can set with HOMEBREW_BUNDLE_FILE_GLOBAL)
+    "$DOTFILES/Brewfile:$HOME/.Brewfile"
 
     # Zsh configs linked
     "$DOTFILES/.zshrc:$HOME/.zshrc"
@@ -72,7 +72,7 @@ vscode_dotfiles_sync() {
     # https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks
 
     # Define the root directory of your local GitHub repositories
-    GITHUB_ROOT="$HOME/workspace"
+    GITHUB_ROOT="$WORKSPACE_ROOT"
 
     # Define the Dropbox root directory for bookmarks
     DROPBOX_ROOT="$DROPBOX/vscode/bookmarks"

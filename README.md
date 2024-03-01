@@ -47,7 +47,7 @@ Open necessary files to update correct Git user info
 ```bash
 # ~/dotfiles/scripts/.extra.sh <--- copy afresh from .extra.sh.template
 
-CODE_DIR=$HOME/workspace
+WORKSPACE_ROOT=$HOME/workspace
 GIT_USER_NAME="foo"
 GIT_EMAIL="foo@bar.com"
 ```

@@ -2,6 +2,6 @@
 
 export BREW_PREFIX="$(brew --prefix)"
 export DOTFILES="$HOME/dotfiles"
-export CODE_DIR="$HOME/workspace"
+export WORKSPACE_ROOT="$HOME/workspace"
 export GIT_USER_NAME="hdd2k"
 export GIT_EMAIL="hank.lee.qed@gmail.com"

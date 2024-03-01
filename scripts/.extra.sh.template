@@ -2,6 +2,7 @@
 
 export BREW_PREFIX="$(brew --prefix)"
 export DOTFILES="$HOME/dotfiles"
-export CODE_DIR="$HOME/workspace"
+export WORKSPACE_ROOT="$HOME/workspace"
+export HOMEBREW_BUNDLE_FILE_GLOBAL="$DOTFILES/Brewfile"
 export GIT_USER_NAME="GIT_USER_NAME"
 export GIT_EMAIL="GIT_EMAIL"

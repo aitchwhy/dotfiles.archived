@@ -24,6 +24,11 @@ function show_paths() {
     echo $PATH | tr ":" "\n"
 }
 
+# util function for refreshing machine state (e.g. Homebrew bundle deps, etc)
+function refresh() {
+    
+}
+
 # https://rick.cogley.info/post/use-homebrew-zsh-instead-of-the-osx-default/
 function get_user_shell() {
     dscl . -read /Users/$USER UserShell
