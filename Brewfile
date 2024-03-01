@@ -293,6 +293,7 @@ cask 'arc'
 cask 'copilot' # finance app (https://copilot.money/)
 cask 'warp' # Rust-based terminal emulator (alternative to iTerm2 - https://www.warp.dev/)
 cask 'sunsama' # Sunsama - calendar + task manager (sunsama.com)
+cask 'lm-studio' # platform for local LLMs
 
 #-------------------------------------------------------------------------------
 # Mac App store downloads into Brewfile (Uses Mac App store CLI - https://github.com/mas-cli/mas).
