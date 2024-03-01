@@ -26,7 +26,18 @@ function show_paths() {
 
 # util function for refreshing machine state (e.g. Homebrew bundle deps, etc)
 function refresh() {
-    
+    #######################################################################
+    # Homebrew 
+    #######################################################################
+    brew update && brew upgrade && brew bundle --file $DOTFILES/Brewfile
+
+    #######################################################################
+    # For all subfolders in main $WORKSPACE_ROOT folder, run common Git actions
+    # - we use `fd` (modern "find") to find all directories and execute git command at the custom path
+    # - "{}" is the path result of "fd"
+    # - use "--threads=N" to change concurrency
+    #######################################################################
+    fd --type directory --exact-depth 1 --exec git -C "{}" fetch --all
 }
 
 # https://rick.cogley.info/post/use-homebrew-zsh-instead-of-the-osx-default/
