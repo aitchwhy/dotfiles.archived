@@ -118,7 +118,7 @@ done
 # append fully formed paths
 WORKDIR_PATHS+="$DROPBOX "
 
-echo "WORKDIR_PATHS: $WORKDIR_PATHS"
+# echo "WORKDIR_PATHS: $WORKDIR_PATHS"
 
 #-------------------------------------------------------------------------------
 # Load the shell dotfiles, and then some:
@@ -136,7 +136,9 @@ files=(
     "$DOTFILES/scripts/symlinks_config.sh"
     );
 for file in "${files[@]}"; do
-  [ -r "$file" ] && [ -f "$file" ] && echo "sourcing file $file in shell $SHELL" && source "$file";
+  [ -r "$file" ] && [ -f "$file" ] && 
+#   echo "sourcing file $file in shell $SHELL" && 
+  source "$file";
 done;
 
 unset files file;
@@ -199,19 +201,13 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 #-------------------------------------------------------------------------------
 # Activate secrets shell (should be empty on bootstrap)
 #-------------------------------------------------------------------------------
-source $DOTFILES/scripts/secrets.sh
+# source $DOTFILES/scripts/secrets.sh
 
 #-------------------------------------------------------------------------------
 # Activate Oh-My-Zsh
 #-------------------------------------------------------------------------------
 source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-#-------------------------------------------------------------------------------
-# Activate Zsh history database custom plugin (zsh-histdb)
-#-------------------------------------------------------------------------------
-source $HOME/.oh-my-zsh/custom/plugins/zsh-histdb/sqlite-history.zsh
-autoload -Uz add-zsh-hook
 
 #-------------------------------------------------------------------------------
 # Nvm

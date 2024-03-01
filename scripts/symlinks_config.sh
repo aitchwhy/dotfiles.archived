@@ -1,7 +1,6 @@
-# export SHELL=/opt/homebrew/bin/zsh
-# /opt/homebrew/bin/zsh
+#!/opt/homebrew/bin/zsh
 
-echo "Symlink all config dotfiles ---> SHELL: $SHELL --- NVM_DIR: $NVM_DIR"
+# echo "Symlink all config dotfiles ---> SHELL: $SHELL --- NVM_DIR: $NVM_DIR"
 
 # Define symlink mappings
 # {src ORIG path}:{ALIAS symlink}
@@ -53,7 +52,7 @@ create_symlinks() {
     for pair in "${SYMLINKS[@]}"; do
         local src="${pair%%:*}"
         local dest="${pair##*:}"
-        echo "[SHELL:$SHELL] Creating symlink $src -> $dest"
+        # echo "[SHELL:$SHELL] Creating symlink $src -> $dest"
         link "$src" "$dest"
     done
 }
@@ -61,7 +60,7 @@ create_sudo_symlinks() {
     for pair in "${SUDO_SYMLINKS[@]}"; do
         local src="${pair%%:*}"
         local dest="${pair##*:}"
-        echo "[SHELL:$SHELL] Creating symlink $src -> $dest"
+        # echo "[SHELL:$SHELL] Creating symlink $src -> $dest"
         sudo_link "$src" "$dest"
     done
 }
@@ -80,7 +79,7 @@ vscode_dotfiles_sync() {
     # Ensure the Dropbox bookmarks directory exists
     mkdir -p "$DROPBOX_ROOT"
 
-    echo "Symlinking bookmarks with (local workspace folder : $GITHUB_ROOT) -> (dropbox folder : $DROPBOX_ROOT)"
+    # echo "Symlinking bookmarks with (local workspace folder : $GITHUB_ROOT) -> (dropbox folder : $DROPBOX_ROOT)"
 
     # Loop through each project in the GitHub root directory
     for project_dir in "$GITHUB_ROOT"/*; do
