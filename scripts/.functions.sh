@@ -37,7 +37,9 @@ function refresh() {
     # - "{}" is the path result of "fd"
     # - use "--threads=N" to change concurrency
     #######################################################################
+    pushd $WORKSPACE_ROOT
     fd --type directory --exact-depth 1 --exec git -C "{}" fetch --all
+    popd
 }
 
 # https://rick.cogley.info/post/use-homebrew-zsh-instead-of-the-osx-default/
