@@ -104,6 +104,7 @@ brew 'zola'
 brew 'httrack' # website download / mirror tool
 brew 'jc' # CLI JSON converter + other useful conversions CLI tool
 brew 'rsync'
+brew 'atuin' # Atuin (https://atuin.sh/) - shell history service (multi-device sync)
 
 #-------------------------------------------------------------------------------
 # Swift + iOS
