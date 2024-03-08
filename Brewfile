@@ -117,6 +117,7 @@ brew 'cocoapods'
 
 brew 'awslogs'
 brew 'awscli'
+brew 'localstack' # local AWS cloud stack
 
 #-------------------------------------------------------------------------------
 # Git + Github
