@@ -24,6 +24,39 @@ function show_paths() {
     echo $PATH | tr ":" "\n"
 }
 
+# Checks if the specified directory is a Git repository
+function is_git_directory() {
+    local target_dir_path=$1
+    # echo "Checking if $target_dir_path is a Git repository"
+    # (git rev-parse) flags
+    #   --is-inside-work-tree: When the current working directory is inside the work tree of the repository print "true", otherwise "false".
+    if git -C "$target_dir_path" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+        return 0  # True, it is a Git directory
+    else
+        return 1  # False, not a Git directory
+    fi
+}
+
+# Runs a command in all subdirectories of the given directory
+function run_git_sub_command_in_git_subdirs() {
+    local root_dir="$1"
+    local git_subcommand="$2"
+    local dotfiles_path="${DOTFILES:-$HOME/dotfiles}"
+    echo "> Running command in all subdirectories of $root_dir with command $git_subcommand (DOTFILES: $DOTFILES)"
+
+    # fd
+    # - we use `fd` (modern "find") to find all directories and execute git command at the custom path
+    # - "{}" is the path result of "fd"
+    # - NOTE that `fd` function does NOT allow chaining commands (e.g. cmd1 && cmd2)
+    # xargs
+    # -I {replstr} : Replace occurrences of replstr with names read from standard input.
+    # -S {replsize} : Specify the amount of space (in bytes) that -I can use for replacements. The default for replsize is 255.
+    # -P {maxprocs} : Specify the maximum number of processes to run at a time. The default is 1.
+    CONCURRENCY=10
+    REPL_STR_LIMIT_IN_BYTES=1024
+    fd --type directory --exact-depth 1 . "$root_dir" | xargs -S $REPL_STR_LIMIT_IN_BYTES -I {} -P $CONCURRENCY zsh -c "source '$dotfiles_path/scripts/.functions.sh'; if is_git_directory '{}'; then git $git_subcommand && echo 'Finished Git $git_subcommand in {}'; else echo 'Skipping: {} (Not a Git repo)'; fi"
+}
+
 # util function for refreshing machine state (e.g. Homebrew bundle deps, etc)
 function refresh() {
     #######################################################################
@@ -33,13 +66,8 @@ function refresh() {
 
     #######################################################################
     # For all subfolders in main $WORKSPACE_ROOT folder, run common Git actions
-    # - we use `fd` (modern "find") to find all directories and execute git command at the custom path
-    # - "{}" is the path result of "fd"
-    # - use "--threads=N" to change concurrency
     #######################################################################
-    pushd $WORKSPACE_ROOT
-    fd --type directory --exact-depth 1 --exec git -C "{}" fetch --all
-    popd
+    run_git_sub_command_in_git_subdirs $WORKSPACE_ROOT "fetch --all"
 }
 
 # https://rick.cogley.info/post/use-homebrew-zsh-instead-of-the-osx-default/
