@@ -47,7 +47,8 @@ perform_pg_restore() {
 
     echo "Performing psql restore to target profile: $target"
     # pg_restore -d "service=$target" <"$dump_file"
-    psql "service=$target" -f "$dump_file"
+    # psql version 14.11 or above. Use --file with FULL path (if with --file) or relative path OK if (without --file)
+    psql "service=$target" --file "$dump_file"
     echo "Restore completed to profile: $target"
 }
 
