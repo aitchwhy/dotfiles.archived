@@ -193,7 +193,7 @@ brew 'openapi-generator'
 
 brew 'golang'
 brew 'golang-migrate' # golang DB migration
-brew 'golangci-lint' # golang ci linter
+# brew 'golangci-lint' # golang ci linter
 
 #-------------------------------------------------------------------------------
 # Development-Java
