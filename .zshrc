@@ -134,6 +134,7 @@ files=(
     "$DOTFILES/scripts/bitwarden.sh"
     "$DOTFILES/scripts/database_switcher.sh"
     "$DOTFILES/scripts/symlinks_config.sh"
+    "$DOTFILES/scripts/github_helpers.sh"
     );
 for file in "${files[@]}"; do
   [ -r "$file" ] && [ -f "$file" ] && 

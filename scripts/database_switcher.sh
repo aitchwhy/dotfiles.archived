@@ -114,41 +114,4 @@ db_clone() {
     SOURCE_PROFILE=$(db_source_pick)
     DUMP_FILE=$(db_dump $SOURCE_PROFILE)
     db_restore $DUMP_FILE
-
-
-    # ################################
-    # # Pick source profile from pg_service.conf service profiles (pg_dump)
-    # ################################
-
-    # # Fuzzy search to pick source profile
-    # SOURCE_PROFILE=$(list_pg_profiles | fzf --prompt="Select a source PostgreSQL profile: ")
-
-    # if [ -z "$SOURCE_PROFILE" ]; then
-    #     echo "No source profile selected. Returning."
-    #     return
-    # fi
-
-    # echo "Selected source profile: $SOURCE_PROFILE"
-
-    # # Perform pg_dump
-    # dump_file=$(dump_file_name "$SOURCE_PROFILE")
-    # perform_pg_dump "$SOURCE_PROFILE" "$dump_file"
-
-    # ################################
-    # # Restore data snapshot to target profile on localhost (pg_restore)
-    # ################################
-
-    # # Use fzf to pick a target profile, or use 'localhost_db' as default
-    # localhost_db_target_profiles=$(list_pg_profiles_localhost)
-    # TARGET_PROFILE=$(printf '%s\n' "${localhost_db_target_profiles[@]}" | fzf --prompt="Select a target PostgreSQL profile (default: $LOCAL_DB_PROFILE): ")
-
-    # # Use default if no profile is selected
-    # if [ -z "$TARGET_PROFILE" ]; then
-    #     TARGET_PROFILE="$LOCAL_DB_PROFILE"
-    # fi
-
-    # echo "Selected target profile: $TARGET_PROFILE"
-
-    # # Perform pg_restore
-    # perform_pg_restore "$SOURCE_PROFILE" "$TARGET_PROFILE" "$dump_file"
 }
