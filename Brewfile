@@ -297,6 +297,7 @@ cask 'warp' # Rust-based terminal emulator (alternative to iTerm2 - https://www.
 cask 'sunsama' # Sunsama - calendar + task manager (sunsama.com)
 cask 'lm-studio' # platform for local LLMs
 cask 'obsidian' # notes app Obsidian
+cask 'asana' # project management app Asana
 
 #-------------------------------------------------------------------------------
 # Mac App store downloads into Brewfile (Uses Mac App store CLI - https://github.com/mas-cli/mas).
