@@ -1,7 +1,12 @@
 #!/bin/bash
 
 gh_org_repos_sync() {
+    ##########################
+    # Run like this 
+    # $ bash -c 'echo "running in Bash"; source ~/dotfiles/scripts/github_helpers.sh && WORKSPACE_BASE_DIR=~/Library/CloudStorage/Dropbox/work/ansa/github GITHUB_ORG_NAME=GetAnsa GITHUB_TOKEN=ghp_Wca... gh_org_repos_sync'
+    ##########################
     set -x
+
     # Replace ORG_NAME with your GitHub organization name
     # Replace YOUR_GITHUB_ACCESS_TOKEN with your GitHub access token
     GITHUB_ORG_NAME=${GITHUB_ORG_NAME:-"GITHUB_ORG_NAME"}
@@ -18,7 +23,7 @@ gh_org_repos_sync() {
     readarray -t REPO_ARRAY <<< "$REPOS"
     # echo "(REPO_ARRAY : $REPO_ARRAY)"
 
-    # To verify, you can print all elements of the array
+    # (DEBUG) To verify, you can print all elements of the array
     # for repo in "${REPO_ARRAY[@]}"; do
     #     echo "########### (REPO_ARRAY repo : $repo)"
     # done

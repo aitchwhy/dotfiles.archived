@@ -191,9 +191,9 @@ brew 'openapi-generator'
 # Development-Go
 #-------------------------------------------------------------------------------
 
-brew 'golang'
-brew 'golang-migrate' # golang DB migration
-# brew 'golangci-lint' # golang ci linter
+# brew 'golang' # go language (TODO: preferred : install per-project using direct binary install or goenv similar to pyenv + virtualenvs)
+# brew 'golang-migrate' # golang DB migration (TODO: preferred : install per-project using go install)
+# brew 'golangci-lint' # golang ci linter (TODO: preferred : install per-project using go install)
 
 #-------------------------------------------------------------------------------
 # Development-Java
