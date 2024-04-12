@@ -1,4 +1,10 @@
 # -------------------------------------------------
+# Install Nix (https://nixos.org/manual/nix/stable/installation/)
+# -------------------------------------------------
+source $DOTFILES/scripts/nix_helpers.sh
+nix_init
+
+# -------------------------------------------------
 # Check for Homebrew and install if we don't have it
 # -------------------------------------------------
 echo "Install brew if not exist"

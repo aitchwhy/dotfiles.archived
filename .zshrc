@@ -2,7 +2,14 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# -------------------------------------------------
+# Configure Nix for shell
+# -------------------------------------------------
+if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
+    . ~/.nix-profile/etc/profile.d/nix.sh
 fi
 
 # -------------------------------------------------
@@ -135,6 +142,7 @@ files=(
     "$DOTFILES/scripts/database_switcher.sh"
     "$DOTFILES/scripts/symlinks_config.sh"
     "$DOTFILES/scripts/github_helpers.sh"
+    "$DOTFILES/scripts/nix_helpers.sh"
     );
 for file in "${files[@]}"; do
   [ -r "$file" ] && [ -f "$file" ] && 
@@ -146,6 +154,9 @@ unset files file;
 
 # Set Vim editor mode in shell CLI (activate using ESC key)
 set -o vi
+
+
+
 
 #-------------------------------------------------------------------------------
 # Add Pyenv functionality to ZSH shell + pyenv setup
