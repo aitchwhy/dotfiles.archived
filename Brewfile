@@ -107,6 +107,7 @@ brew 'rsync' # Util for sync+transfer file+folders (local+remote)
 brew 'rclone' # Rsync-like file+folders sync+transfer (local+remote+cloud-providers)
 brew 'atuin' # Atuin (https://atuin.sh/) - shell history service (multi-device sync)
 brew 'websocat' # Websocket CLI tool
+brew 'restic' # Restic (backups) https://restic.net/
 
 #-------------------------------------------------------------------------------
 # Swift + iOS
