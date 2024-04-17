@@ -103,7 +103,8 @@ brew 'cfr-decompiler'
 brew 'zola'
 brew 'httrack' # website download / mirror tool
 brew 'jc' # CLI JSON converter + other useful conversions CLI tool
-brew 'rsync'
+brew 'rsync' # Util for sync+transfer file+folders (local+remote)
+brew 'rclone' # Rsync-like file+folders sync+transfer (local+remote+cloud-providers)
 brew 'atuin' # Atuin (https://atuin.sh/) - shell history service (multi-device sync)
 brew 'websocat' # Websocket CLI tool
 
@@ -301,6 +302,7 @@ cask 'obsidian' # notes app Obsidian
 cask 'asana' # project management app Asana
 cask 'sizzy' # Sizzy dev web browser (https://sizzy.co/)
 cask 'maestral' # Maestral alt Dropbox CLI Client
+cask 'insync' # Insync (multi cloud storage syncs) - https://www.insynchq.com/
 
 #-------------------------------------------------------------------------------
 # Mac App store downloads into Brewfile (Uses Mac App store CLI - https://github.com/mas-cli/mas).
