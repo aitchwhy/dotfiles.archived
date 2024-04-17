@@ -300,6 +300,7 @@ cask 'lm-studio' # platform for local LLMs
 cask 'obsidian' # notes app Obsidian
 cask 'asana' # project management app Asana
 cask 'sizzy' # Sizzy dev web browser (https://sizzy.co/)
+cask 'maestral' # Maestral alt Dropbox CLI Client
 
 #-------------------------------------------------------------------------------
 # Mac App store downloads into Brewfile (Uses Mac App store CLI - https://github.com/mas-cli/mas).
