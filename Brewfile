@@ -108,8 +108,7 @@ brew 'rclone' # Rsync-like file+folders sync+transfer (local+remote+cloud-provid
 brew 'atuin' # Atuin (https://atuin.sh/) - shell history service (multi-device sync)
 brew 'websocat' # Websocket CLI tool
 brew 'restic' # Restic (backups) https://restic.net/
-brew 'wkhtmltopdf' # Convert HTML->PDF CLI tool (https://wkhtmltopdf.org/)
-brew 'wkhtmltoimage' # Convert HTML->image CLI tool (https://wkhtmltopdf.org/)
+brew 'imagemagick' # ImageMagick (convert to/from images) - https://imagemagick.org/index.php
 
 #-------------------------------------------------------------------------------
 # Swift + iOS
