@@ -109,6 +109,8 @@ brew 'atuin' # Atuin (https://atuin.sh/) - shell history service (multi-device s
 brew 'websocat' # Websocket CLI tool
 brew 'restic' # Restic (backups) https://restic.net/
 brew 'imagemagick' # ImageMagick (convert to/from images) - https://imagemagick.org/index.php
+brew 'htmlq' # imagemagick dependency
+brew 'ghostscript' # imagemagick dependency
 
 #-------------------------------------------------------------------------------
 # Swift + iOS
