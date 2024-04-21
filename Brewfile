@@ -309,6 +309,7 @@ cask 'maestral' # Maestral alt Dropbox CLI Client
 cask 'insync' # Insync (multi cloud storage syncs) - https://www.insynchq.com/
 cask 'rippling' # Rippling HR app (for Patter AI)
 cask 'beeper' # Universal chat app powered by Matrix - https://www.beeper.com/
+cask 'cardhop' # Apple Contacts+CRM app (by Flexibits - same company as calendar app Fantastical)
 
 #-------------------------------------------------------------------------------
 # Mac App store downloads into Brewfile (Uses Mac App store CLI - https://github.com/mas-cli/mas).
