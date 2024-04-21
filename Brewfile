@@ -111,6 +111,8 @@ brew 'restic' # Restic (backups) https://restic.net/
 brew 'imagemagick' # ImageMagick (convert to/from images) - https://imagemagick.org/index.php
 brew 'htmlq' # imagemagick dependency
 brew 'ghostscript' # imagemagick dependency
+brew 'chezmoi' # Chezmoi dotfiles manager (https://www.chezmoi.io/)
+brew 'atuin' # Zsh shell history manager (atuin.sh)
 
 #-------------------------------------------------------------------------------
 # Swift + iOS

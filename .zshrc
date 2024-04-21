@@ -259,3 +259,4 @@ _redocly_yargs_completions()
 compdef _redocly_yargs_completions redocly
 ###-end-redocly-completions-###
 
+eval "$(atuin init zsh)"
