@@ -509,18 +509,6 @@ sudo_link() {
 }
 
 #-------------------------------------------------------------------------------
-# dropbox
-#-------------------------------------------------------------------------------
-# Ignore file/folder from sync (Selective Sync) -> https://help.dropbox.com/sync/ignored-files
-# NOTE: The icon beside your file or folder will change to a gray minus sign indicating that it has been ignored.
-dropbox_sync_ignore() {
-    local ignore_path=$1
-    xattr -d 'com.apple.fileprovider.ignore#P' "$1"
-    xattr -d 'com.apple.fileprovider.ignore#P' "$1"
-}
-
-
-#-------------------------------------------------------------------------------
 # FZF
 #-------------------------------------------------------------------------------
 # ripgrep_fzf_search_file() {

@@ -65,44 +65,45 @@ create_sudo_symlinks() {
     done
 }
 
-vscode_dotfiles_sync() {
-    # Sync VSCode settings to Dropbox
-    # Assumes VSCode user setting for extension ("bookmarks.saveBookmarksInProject = true)
-    # https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks
+# TODO: delete this after ensuring not needed anymore for reference
+# vscode_dotfiles_sync() {
+#     # Sync VSCode settings to Dropbox
+#     # Assumes VSCode user setting for extension ("bookmarks.saveBookmarksInProject = true)
+#     # https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks
 
-    # Define the root directory of your local GitHub repositories
-    GITHUB_ROOT="$WORKSPACE_ROOT"
+#     # Define the root directory of your local GitHub repositories
+#     GITHUB_ROOT="$WORKSPACE_ROOT"
 
-    # Define the Dropbox root directory for bookmarks
-    DROPBOX_ROOT="$DROPBOX/vscode/bookmarks"
+#     # Define the Dropbox root directory for bookmarks
+#     DROPBOX_ROOT="$DROPBOX/vscode/bookmarks"
 
-    # Ensure the Dropbox bookmarks directory exists
-    mkdir -p "$DROPBOX_ROOT"
+#     # Ensure the Dropbox bookmarks directory exists
+#     mkdir -p "$DROPBOX_ROOT"
 
-    # echo "Symlinking bookmarks with (local workspace folder : $GITHUB_ROOT) -> (dropbox folder : $DROPBOX_ROOT)"
+#     # echo "Symlinking bookmarks with (local workspace folder : $GITHUB_ROOT) -> (dropbox folder : $DROPBOX_ROOT)"
 
-    # Loop through each project in the GitHub root directory
-    for project_dir in "$GITHUB_ROOT"/*; do
-        if [ -d "$project_dir" ]; then
-            # Extract the project folder name
-            project_folder_name=$(basename "$project_dir")
+#     # Loop through each project in the GitHub root directory
+#     for project_dir in "$GITHUB_ROOT"/*; do
+#         if [ -d "$project_dir" ]; then
+#             # Extract the project folder name
+#             project_folder_name=$(basename "$project_dir")
 
-            # Path to the bookmarks file in the project
-            bookmarks_file="$project_dir/.vscode/bookmarks.json"
+#             # Path to the bookmarks file in the project
+#             bookmarks_file="$project_dir/.vscode/bookmarks.json"
 
-            # Symlinking bookmarks file to Dropbox
-            # ln -s "$bookmarks_file" "$DROPBOX_ROOT/${project_folder_name}-bookmarks.json"
-            local src="${DROPBOX_ROOT}/${project_folder_name}-bookmarks.json"
-            local dst="${bookmarks_file}"
-            echo "Symlinking bookmarks file: $src <- $dst"
-            link "$src" "$dst"
+#             # Symlinking bookmarks file to Dropbox
+#             # ln -s "$bookmarks_file" "$DROPBOX_ROOT/${project_folder_name}-bookmarks.json"
+#             local src="${DROPBOX_ROOT}/${project_folder_name}-bookmarks.json"
+#             local dst="${bookmarks_file}"
+#             echo "Symlinking bookmarks file: $src <- $dst"
+#             link "$src" "$dst"
 
-        fi
-    done
+#         fi
+#     done
 
-    echo "Syncing completed."
+#     echo "Syncing completed."
 
-}
+# }
 
 # Create symlinks by default (but not sudo ones)
 create_symlinks

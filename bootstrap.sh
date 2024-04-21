@@ -169,10 +169,9 @@ echo "Install Python util binaries"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-# Set global python version
-pyenv global 3.10.12
-# Install global python binaries
-# pip install git-remote-dropbox
+# Set global python version (TODO: update this to use global venv (?) pyenv accepts virtualenv names as well)
+# pyenv global 3.10.12
+# Install global env python packages
 
 # -------------------------------------------------
 # Source profile
