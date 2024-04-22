@@ -1,18 +1,14 @@
+#!/usr/bin/env bash
 
 #####################
 # Nix helpers 
 #####################
 
-nix_init() {
-    nix_install_latest_ver
-    nix_home_manager_install
-}
-
 # Install Nix latest version
 nix_install_latest_ver() {
-    # Install Nix (latest version)
+    # Install Nix (latest version) - https://nixos.org/manual/nix/stable/installation/
     echo "Installing Nix latest version"
-    sh <(curl -L https://nixos.org/nix/install) --darwin-use-unencrypted-nix-store-volume
+    bash <(curl -L https://nixos.org/nix/install) --daemon
 }
 
 # Install Nix pinned version (2.21.0 latest as of Apr 12, 2024)
@@ -20,11 +16,20 @@ nix_install_pinned_ver() {
     # see all release versions on (https://nixos.org/download.html)
     local VERSION=2.21.0
     echo "Installing Nix version $VERSION"
-    curl -L https://releases.nixos.org/nix/nix-$VERSION/install | sh
+    curl -L "https://releases.nixos.org/nix/nix-$VERSION/install" | sh
 }
 
 nix_upgrade() {
     # TODO: https://nixos.org/manual/nix/stable/installation/upgrading
+    echo "TODO"
+}
+
+nix_package_install_chezmoi_dotfiles() {
+    echo "Installing Chezmoi with Nix package manager..."
+    nix profile install nixpkgs#chezmoi
+
+    # echo "Initializing Chezmoi with local dotfiles directory..."
+    # chezmoi init --apply --source $DOTFILES/chezmoi
 }
 
 nix_clean() {
@@ -68,4 +73,19 @@ flakify() {
         direnv allow
     fi
     ${EDITOR:-vim} flake.nix
+}
+
+nix_init() {
+    nix_install_latest_ver
+
+    echo "Reloading Zsh configuration..."
+    source ~/.zshrc
+
+    # Install Chezmoi dotfiles manager via Nix pkg manager (nix profile)
+    nix_package_install_chezmoi_dotfiles
+
+    # TODO: Nix home-manager
+    # nix_home_manager_install
+
+    # TODO: Nix-darwin
 }
