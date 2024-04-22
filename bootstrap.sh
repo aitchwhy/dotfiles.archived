@@ -4,6 +4,8 @@
 source $DOTFILES/scripts/nix_helpers.sh
 nix_init
 
+exit 0
+
 # -------------------------------------------------
 # Check for Homebrew and install if we don't have it
 # -------------------------------------------------
@@ -40,12 +42,8 @@ echo "Create neovim config"
 mkdir -p $HOME/.config/nvim
 ln -nfs $DOTFILES/.vimrc ~/.config/nvim/init.vim
 
-# -------------------------------------------------
-# create shell GPT config folder (https://github.com/TheR1D/shell_gpt)
-# -------------------------------------------------
-echo "Create shell_gpt config"
-mkdir -p $HOME/.config/shell_gpt/.sgptrc
-ln -nfs $DOTFILES/.sgptrc $HOME/.config/shell_gpt/.sgptrc
+# TODO: exit here if Nix
+exit 
 
 # -------------------------------------------------
 # Update Homebrew recipes
