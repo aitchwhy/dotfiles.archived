@@ -311,6 +311,7 @@ cask 'rippling' # Rippling HR app (for Patter AI)
 cask 'beeper' # Universal chat app powered by Matrix - https://www.beeper.com/
 cask 'cardhop' # Apple Contacts+CRM app (by Flexibits - same company as calendar app Fantastical)
 cask 'forklift' # Forklift 4 (dual pane file manager + FTP file transfer) app
+cask 'paletro' # mac app for vscode IDE-like command palette everywhere on every app (https://appmakes.io/paletro)
 
 #-------------------------------------------------------------------------------
 # Mac App store downloads into Brewfile (Uses Mac App store CLI - https://github.com/mas-cli/mas).
