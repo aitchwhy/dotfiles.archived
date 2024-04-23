@@ -313,6 +313,7 @@ cask 'cardhop' # Apple Contacts+CRM app (by Flexibits - same company as calendar
 cask 'forklift' # Forklift 4 (dual pane file manager + FTP file transfer) app
 cask 'paletro' # mac app for vscode IDE-like command palette everywhere on every app (https://appmakes.io/paletro)
 cask 'findergo' # mac app for quickly opening terminal from Finder app (files)
+cask 'sf' # Salesforce CLI (v2) - https://developer.salesforce.com/tools/salesforcecli
 
 #-------------------------------------------------------------------------------
 # Mac App store downloads into Brewfile (Uses Mac App store CLI - https://github.com/mas-cli/mas).
