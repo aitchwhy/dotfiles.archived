@@ -162,13 +162,6 @@ set -o vi
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-# Set global python version
-export GLOBAL_PYTHON_VERSION="3.10.12"
-export GLOBAL_PYTHON_VIRTUAL_ENV="global-venv"
-pyenv install $GLOBAL_PYTHON_VERSION
-pyenv virtualenv $GLOBAL_PYTHON_VERSION $GLOBAL_PYTHON_VIRTUAL_ENV
-pyenv global $GLOBAL_PYTHON_VIRTUAL_ENV
-
 # NOTE: Install global python binaries (do not install if not already installed)
 # pip install --quiet --upgrade foobar
 

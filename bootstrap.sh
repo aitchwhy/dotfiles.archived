@@ -167,6 +167,13 @@ echo "Install Python util binaries"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# Set global python version
+export GLOBAL_PYTHON_VERSION="3.10.12"
+export GLOBAL_PYTHON_VIRTUAL_ENV="global-venv"
+pyenv install $GLOBAL_PYTHON_VERSION
+pyenv virtualenv $GLOBAL_PYTHON_VERSION $GLOBAL_PYTHON_VIRTUAL_ENV
+pyenv global $GLOBAL_PYTHON_VIRTUAL_ENV
+
 # Set global python version (TODO: update this to use global venv (?) pyenv accepts virtualenv names as well)
 # pyenv global 3.10.12
 # Install global env python packages
