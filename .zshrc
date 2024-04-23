@@ -155,9 +155,6 @@ unset files file;
 # Set Vim editor mode in shell CLI (activate using ESC key)
 set -o vi
 
-
-
-
 #-------------------------------------------------------------------------------
 # Add Pyenv functionality to ZSH shell + pyenv setup
 # Also install pipsi, pipenv
@@ -166,9 +163,14 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 # Set global python version
-pyenv global 3.10.12
-# Install global python binaries (do not install if not already installed)
-# pip install --quiet --upgraade foobar
+export GLOBAL_PYTHON_VERSION="3.10.12"
+export GLOBAL_PYTHON_VIRTUAL_ENV="global-venv"
+pyenv install $GLOBAL_PYTHON_VERSION
+pyenv virtualenv $GLOBAL_PYTHON_VERSION $GLOBAL_PYTHON_VIRTUAL_ENV
+pyenv global $GLOBAL_PYTHON_VIRTUAL_ENV
+
+# NOTE: Install global python binaries (do not install if not already installed)
+# pip install --quiet --upgrade foobar
 
 #-------------------------------------------------------------------------------
 # Init fast filesystem navigation with smarter cd command (zoxide) 
