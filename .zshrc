@@ -255,3 +255,5 @@ compdef _redocly_yargs_completions redocly
 ###-end-redocly-completions-###
 
 eval "$(atuin init zsh)"
+eval 
+SF_AC_ZSH_SETUP_PATH=/Users/hank/Library/Caches/sf/autocomplete/zsh_setup && test -f $SF_AC_ZSH_SETUP_PATH && source $SF_AC_ZSH_SETUP_PATH; # sf autocomplete setup
