@@ -4,7 +4,11 @@
 source $DOTFILES/scripts/nix_helpers.sh
 nix_init
 
-exit 0
+#-------------------------------------------------------------------------------
+# NVM (Node/Npm) installation (NOTE: DO NOT install via Homebrew)
+#-------------------------------------------------------------------------------
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
 
 # -------------------------------------------------
 # Check for Homebrew and install if we don't have it

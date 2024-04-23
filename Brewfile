@@ -142,15 +142,8 @@ brew 'git-delta'                                 # Upgrade to 'diff'
 brew 'git-lfs' # Git LFS (large files in Git)
 
 #-------------------------------------------------------------------------------
-# Node
-#-------------------------------------------------------------------------------
-brew 'nvm'                                       # Node version manager
-
-#-------------------------------------------------------------------------------
 # terraform + terragrunt
 #-------------------------------------------------------------------------------
-
-
 # Terraform version manager (tfenv) - no need for separate "terraform" brew install with tfenv.
 # EXPLICITLY NOT including (brew 'terraform') because it is now managed by "tfenv".
 # brew 'terraform'
