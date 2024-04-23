@@ -113,6 +113,7 @@ brew 'htmlq' # imagemagick dependency
 brew 'ghostscript' # imagemagick dependency
 brew 'chezmoi' # Chezmoi dotfiles manager (https://www.chezmoi.io/)
 brew 'ollama' # Ollama offline LLM models tool (CLI) - https://ollama.com/
+brew 'azure-cli' # Azure CLI (https://docs.microsoft.com/en-us/cli/azure/)
 
 #-------------------------------------------------------------------------------
 # Swift + iOS
