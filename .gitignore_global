@@ -91,3 +91,6 @@ cscope.po.out
 # Emacs projectile project specific configs
 #-------------------------------------------------------------------------------
 .dir-locals.el
+
+# Aider AI coding helper
+.aider*
