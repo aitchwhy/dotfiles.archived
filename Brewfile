@@ -112,6 +112,7 @@ brew 'imagemagick' # ImageMagick (convert to/from images) - https://imagemagick.
 brew 'htmlq' # imagemagick dependency
 brew 'ghostscript' # imagemagick dependency
 brew 'chezmoi' # Chezmoi dotfiles manager (https://www.chezmoi.io/)
+brew 'ollama' # Ollama offline LLM models tool (CLI) - https://ollama.com/
 
 #-------------------------------------------------------------------------------
 # Swift + iOS
