@@ -228,6 +228,9 @@ export NVM_DIR="$NVM_DIR"
 # Remove PATH duplicates - https://unix.stackexchange.com/questions/40749/remove-duplicate-path-entries-with-awk-command/149054#149054
 export PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV{PATH}))')"
 
+# Add NVM-managed Node.js binary to the beginning of PATH
+export PATH="$NVM_DIR/versions/node/$(nvm version default)/bin:$PATH"
+
 ###################
 # Redocly CLI completion
 ###################
@@ -255,5 +258,3 @@ compdef _redocly_yargs_completions redocly
 ###-end-redocly-completions-###
 
 eval "$(atuin init zsh)"
-eval 
-SF_AC_ZSH_SETUP_PATH=/Users/hank/Library/Caches/sf/autocomplete/zsh_setup && test -f $SF_AC_ZSH_SETUP_PATH && source $SF_AC_ZSH_SETUP_PATH; # sf autocomplete setup
