@@ -111,6 +111,8 @@ Plug 'airblade/vim-gitgutter'
 " Colorscheme approx (gvim only colors on terminal)
 " Plug 'vim-scripts/CSApprox'
 
+" Just (command runner) - https://github.com/NoahTheDuke/vim-just
+Plug 'NoahTheDuke/vim-just'
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
