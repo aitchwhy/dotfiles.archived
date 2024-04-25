@@ -284,7 +284,6 @@ cask 'istat-menus'
 cask 'slack'
 cask 'postman'
 cask 'flux'
-cask 'dropbox'
 cask 'zoom'
 cask 'pdf-expert'
 cask 'monitorcontrol'
@@ -318,6 +317,9 @@ cask 'paletro' # mac app for vscode IDE-like command palette everywhere on every
 cask 'findergo' # mac app for quickly opening terminal from Finder app (files)
 cask 'sf' # Salesforce CLI (v2) - https://developer.salesforce.com/tools/salesforcecli
 cask 'orbstack' # Orbstack (Docker alternative) for running local container workload (https://orbstack.dev/)
+cask 'dropbox' # Dropbox file storage on cloud
+cask 'dropbox-capture' # Dropbox-capture (image+video recordings capture+share)
+cask 'dropbox-dash' # Dropbox-dash (AI search for files)
 
 #-------------------------------------------------------------------------------
 # Mac App store downloads into Brewfile (Uses Mac App store CLI - https://github.com/mas-cli/mas).
