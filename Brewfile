@@ -122,6 +122,7 @@ brew 'azure-cli' # Azure CLI (https://docs.microsoft.com/en-us/cli/azure/)
 brew 'just' # Command runner Just (https://github.com/casey/just)
 brew 'pulumi' # Pulumi (Infra as Cloud tool similar to Terraform) - https://www.pulumi.com/docs/install/
 brew 'temporal' # Temporal distributed state tool (https://docs.temporal.io/)
+brew 'newman' # CLI tool for API by Postman
 
 #-------------------------------------------------------------------------------
 # Swift + iOS
