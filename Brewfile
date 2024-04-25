@@ -123,6 +123,8 @@ brew 'just' # Command runner Just (https://github.com/casey/just)
 brew 'pulumi' # Pulumi (Infra as Cloud tool similar to Terraform) - https://www.pulumi.com/docs/install/
 brew 'temporal' # Temporal distributed state tool (https://docs.temporal.io/)
 brew 'newman' # CLI tool for API by Postman
+brew 'wiremock-standalone' # Wiremock HTTP mocking tool
+brew 'postman-cli' # Postman CLI tool
 
 #-------------------------------------------------------------------------------
 # Swift + iOS
