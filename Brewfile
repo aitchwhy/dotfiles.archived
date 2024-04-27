@@ -124,7 +124,6 @@ brew 'pulumi' # Pulumi (Infra as Cloud tool similar to Terraform) - https://www.
 brew 'temporal' # Temporal distributed state tool (https://docs.temporal.io/)
 brew 'newman' # CLI tool for API by Postman
 brew 'wiremock-standalone' # Wiremock HTTP mocking tool
-brew 'postman-cli' # Postman CLI tool
 
 #-------------------------------------------------------------------------------
 # Swift + iOS
@@ -286,6 +285,8 @@ cask 'wireshark'
 cask 'istat-menus'
 cask 'slack'
 cask 'postman'
+cask 'postman-cli'
+cask 'postman-agent'
 cask 'flux'
 cask 'zoom'
 cask 'pdf-expert'
@@ -322,7 +323,7 @@ cask 'sf' # Salesforce CLI (v2) - https://developer.salesforce.com/tools/salesfo
 cask 'orbstack' # Orbstack (Docker alternative) for running local container workload (https://orbstack.dev/)
 cask 'dropbox' # Dropbox file storage on cloud
 cask 'dropbox-capture' # Dropbox-capture (image+video recordings capture+share)
-cask 'dropbox-dash' # Dropbox-dash (AI search for files)
+# cask 'dropbox-dash' # Dropbox-dash (AI search for files) --- doesn't work well (search doesn't find any connected apps)
 
 #-------------------------------------------------------------------------------
 # Mac App store downloads into Brewfile (Uses Mac App store CLI - https://github.com/mas-cli/mas).
