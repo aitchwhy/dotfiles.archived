@@ -1,0 +1,2452 @@
+{
+  "Analysis__c": {
+    "name": "Analysis__c",
+    "fields": [
+      {
+        "name": "Id",
+        "type": "ID"
+      },
+      {
+        "name": "IsDeleted",
+        "type": "Boolean"
+      },
+      {
+        "name": "Name",
+        "type": "String"
+      },
+      {
+        "name": "CreatedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "CreatedById",
+        "type": "reference"
+      },
+      {
+        "name": "LastModifiedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastModifiedById",
+        "type": "reference"
+      },
+      {
+        "name": "SystemModstamp",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastActivityDate",
+        "type": "Date"
+      },
+      {
+        "name": "Cost__c",
+        "type": "Float"
+      },
+      {
+        "name": "Quantity__c",
+        "type": "Float"
+      },
+      {
+        "name": "Rate__c",
+        "type": "Float"
+      },
+      {
+        "name": "Consumption__c",
+        "type": "reference"
+      },
+      {
+        "name": "Series_Id__c",
+        "type": "String"
+      },
+      {
+        "name": "From_Date_Time_Formula__c",
+        "type": "Date"
+      },
+      {
+        "name": "To_Date_Time__c",
+        "type": "String"
+      },
+      {
+        "name": "Display_Label__c",
+        "type": "String"
+      },
+      {
+        "name": "Series_Period__c",
+        "type": "Picklist"
+      },
+      {
+        "name": "From_Date_Time__c",
+        "type": "String"
+      }
+    ]
+  },
+  "Array__c": {
+    "name": "Array__c",
+    "fields": [
+      {
+        "name": "Id",
+        "type": "ID"
+      },
+      {
+        "name": "OwnerId",
+        "type": "reference"
+      },
+      {
+        "name": "IsDeleted",
+        "type": "Boolean"
+      },
+      {
+        "name": "Name",
+        "type": "String"
+      },
+      {
+        "name": "CreatedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "CreatedById",
+        "type": "reference"
+      },
+      {
+        "name": "LastModifiedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastModifiedById",
+        "type": "reference"
+      },
+      {
+        "name": "SystemModstamp",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastActivityDate",
+        "type": "Date"
+      }
+    ]
+  },
+  "Associated_Territory__c": {
+    "name": "Associated_Territory__c",
+    "fields": [
+      {
+        "name": "Id",
+        "type": "ID"
+      },
+      {
+        "name": "OwnerId",
+        "type": "reference"
+      },
+      {
+        "name": "IsDeleted",
+        "type": "Boolean"
+      },
+      {
+        "name": "Name",
+        "type": "String"
+      },
+      {
+        "name": "CreatedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "CreatedById",
+        "type": "reference"
+      },
+      {
+        "name": "LastModifiedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastModifiedById",
+        "type": "reference"
+      },
+      {
+        "name": "SystemModstamp",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastActivityDate",
+        "type": "Date"
+      },
+      {
+        "name": "LastViewedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastReferencedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "Territory__c",
+        "type": "reference"
+      },
+      {
+        "name": "User__c",
+        "type": "reference"
+      }
+    ]
+  },
+  "Consumption__c": {
+    "name": "Consumption__c",
+    "fields": [
+      {
+        "name": "Id",
+        "type": "ID"
+      },
+      {
+        "name": "OwnerId",
+        "type": "reference"
+      },
+      {
+        "name": "IsDeleted",
+        "type": "Boolean"
+      },
+      {
+        "name": "Name",
+        "type": "String"
+      },
+      {
+        "name": "CreatedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "CreatedById",
+        "type": "reference"
+      },
+      {
+        "name": "LastModifiedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastModifiedById",
+        "type": "reference"
+      },
+      {
+        "name": "SystemModstamp",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastActivityDate",
+        "type": "Date"
+      },
+      {
+        "name": "August_kWh__c",
+        "type": "Float"
+      },
+      {
+        "name": "April_kWh__c",
+        "type": "Float"
+      },
+      {
+        "name": "December_kWh__c",
+        "type": "Float"
+      },
+      {
+        "name": "February_kWh__c",
+        "type": "Float"
+      },
+      {
+        "name": "January_kWh__c",
+        "type": "Float"
+      },
+      {
+        "name": "July_kWh__c",
+        "type": "Float"
+      },
+      {
+        "name": "June_kWh__c",
+        "type": "Float"
+      },
+      {
+        "name": "March_kWh__c",
+        "type": "Float"
+      },
+      {
+        "name": "May_kWh__c",
+        "type": "Float"
+      },
+      {
+        "name": "Net_Avoided_kWh__c",
+        "type": "Float"
+      },
+      {
+        "name": "November_kWh__c",
+        "type": "Float"
+      },
+      {
+        "name": "October_kWh__c",
+        "type": "Float"
+      },
+      {
+        "name": "Post_Total_kWh__c",
+        "type": "Float"
+      },
+      {
+        "name": "September_kWh__c",
+        "type": "Float"
+      },
+      {
+        "name": "Utility_Provider__c",
+        "type": "String"
+      },
+      {
+        "name": "Utility_Tariff__c",
+        "type": "String"
+      },
+      {
+        "name": "Sales_Opportunity__c",
+        "type": "reference"
+      },
+      {
+        "name": "lseId__c",
+        "type": "String"
+      },
+      {
+        "name": "masterTariffId__c",
+        "type": "String"
+      },
+      {
+        "name": "Total_Cost_Before_Solar__c",
+        "type": "Float"
+      },
+      {
+        "name": "Total_Cost_After_Solar__c",
+        "type": "Float"
+      },
+      {
+        "name": "isActive__c",
+        "type": "Boolean"
+      }
+    ]
+  },
+  "Design__c": {
+    "name": "Design__c",
+    "fields": [
+      {
+        "name": "Id",
+        "type": "ID"
+      },
+      {
+        "name": "OwnerId",
+        "type": "reference"
+      },
+      {
+        "name": "IsDeleted",
+        "type": "Boolean"
+      },
+      {
+        "name": "Name",
+        "type": "String"
+      },
+      {
+        "name": "CreatedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "CreatedById",
+        "type": "reference"
+      },
+      {
+        "name": "LastModifiedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastModifiedById",
+        "type": "reference"
+      },
+      {
+        "name": "SystemModstamp",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastActivityDate",
+        "type": "Date"
+      },
+      {
+        "name": "LastViewedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastReferencedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "Sales_Opportunity__c",
+        "type": "reference"
+      },
+      {
+        "name": "isActive__c",
+        "type": "Boolean"
+      },
+      {
+        "name": "Number_of_Modules__c",
+        "type": "Float"
+      },
+      {
+        "name": "System_Size__c",
+        "type": "Float"
+      },
+      {
+        "name": "Product__c",
+        "type": "reference"
+      }
+    ]
+  },
+  "Document__c": {
+    "name": "Document__c",
+    "fields": [
+      {
+        "name": "Id",
+        "type": "ID"
+      },
+      {
+        "name": "OwnerId",
+        "type": "reference"
+      },
+      {
+        "name": "IsDeleted",
+        "type": "Boolean"
+      },
+      {
+        "name": "Name",
+        "type": "String"
+      },
+      {
+        "name": "CreatedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "CreatedById",
+        "type": "reference"
+      },
+      {
+        "name": "LastModifiedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastModifiedById",
+        "type": "reference"
+      },
+      {
+        "name": "SystemModstamp",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastActivityDate",
+        "type": "Date"
+      },
+      {
+        "name": "Template_Id__c",
+        "type": "String"
+      },
+      {
+        "name": "Status__c",
+        "type": "String"
+      },
+      {
+        "name": "Quote__c",
+        "type": "reference"
+      },
+      {
+        "name": "Sequence__c",
+        "type": "String"
+      }
+    ]
+  },
+  "Docusign_API_Settings__mdt": {
+    "name": "Docusign_API_Settings__mdt",
+    "fields": [
+      {
+        "name": "Id",
+        "type": "ID"
+      },
+      {
+        "name": "DeveloperName",
+        "type": "String"
+      },
+      {
+        "name": "MasterLabel",
+        "type": "String"
+      },
+      {
+        "name": "Language",
+        "type": "Picklist"
+      },
+      {
+        "name": "NamespacePrefix",
+        "type": "String"
+      },
+      {
+        "name": "Label",
+        "type": "String"
+      },
+      {
+        "name": "QualifiedApiName",
+        "type": "String"
+      },
+      {
+        "name": "API_Token__c",
+        "type": "String"
+      }
+    ]
+  },
+  "Docusign_Recipient__c": {
+    "name": "Docusign_Recipient__c",
+    "fields": [
+      {
+        "name": "Id",
+        "type": "ID"
+      },
+      {
+        "name": "IsDeleted",
+        "type": "Boolean"
+      },
+      {
+        "name": "Name",
+        "type": "String"
+      },
+      {
+        "name": "CreatedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "CreatedById",
+        "type": "reference"
+      },
+      {
+        "name": "LastModifiedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastModifiedById",
+        "type": "reference"
+      },
+      {
+        "name": "SystemModstamp",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastActivityDate",
+        "type": "Date"
+      },
+      {
+        "name": "Docusign_Template__c",
+        "type": "reference"
+      },
+      {
+        "name": "Email_Field_Mapping__c",
+        "type": "String"
+      },
+      {
+        "name": "Name_Field_Mapping__c",
+        "type": "String"
+      }
+    ]
+  },
+  "Docusign_Template__c": {
+    "name": "Docusign_Template__c",
+    "fields": [
+      {
+        "name": "Id",
+        "type": "ID"
+      },
+      {
+        "name": "OwnerId",
+        "type": "reference"
+      },
+      {
+        "name": "IsDeleted",
+        "type": "Boolean"
+      },
+      {
+        "name": "Name",
+        "type": "String"
+      },
+      {
+        "name": "CreatedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "CreatedById",
+        "type": "reference"
+      },
+      {
+        "name": "LastModifiedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastModifiedById",
+        "type": "reference"
+      },
+      {
+        "name": "SystemModstamp",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastActivityDate",
+        "type": "Date"
+      },
+      {
+        "name": "LastViewedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastReferencedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "Template_Id__c",
+        "type": "String"
+      },
+      {
+        "name": "Criteria_Field_API__c",
+        "type": "String"
+      }
+    ]
+  },
+  "ForecastingItem__hd": {
+    "name": "ForecastingItem__hd",
+    "fields": [
+      {
+        "name": "Id",
+        "type": "ID"
+      },
+      {
+        "name": "ParentId",
+        "type": "reference"
+      },
+      {
+        "name": "IsDeleted",
+        "type": "Boolean"
+      },
+      {
+        "name": "ValidFromDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "ValidToDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "CreatedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "CreatedById",
+        "type": "reference"
+      },
+      {
+        "name": "SystemModstamp",
+        "type": "DateTime"
+      },
+      {
+        "name": "AmountWithoutAdjustments__hpr",
+        "type": "Float"
+      },
+      {
+        "name": "AmountWithoutAdjustments__hst",
+        "type": "Float"
+      },
+      {
+        "name": "AmountWithoutManagerAdjustment__hpr",
+        "type": "Float"
+      },
+      {
+        "name": "AmountWithoutManagerAdjustment__hst",
+        "type": "Float"
+      },
+      {
+        "name": "QuantityWithoutAdjustments__hpr",
+        "type": "Float"
+      },
+      {
+        "name": "QuantityWithoutAdjustments__hst",
+        "type": "Float"
+      },
+      {
+        "name": "QuantityWithoutManagerAdjustment__hpr",
+        "type": "Float"
+      },
+      {
+        "name": "QuantityWithoutManagerAdjustment__hst",
+        "type": "Float"
+      },
+      {
+        "name": "ForecastAmount__hpr",
+        "type": "Float"
+      },
+      {
+        "name": "ForecastAmount__hst",
+        "type": "Float"
+      },
+      {
+        "name": "ForecastQuantity__hpr",
+        "type": "Float"
+      },
+      {
+        "name": "ForecastQuantity__hst",
+        "type": "Float"
+      },
+      {
+        "name": "OwnerOnlyAmount__hpr",
+        "type": "Float"
+      },
+      {
+        "name": "OwnerOnlyAmount__hst",
+        "type": "Float"
+      },
+      {
+        "name": "OwnerOnlyQuantity__hpr",
+        "type": "Float"
+      },
+      {
+        "name": "OwnerOnlyQuantity__hst",
+        "type": "Float"
+      }
+    ]
+  },
+  "HttpRequest_Log__c": {
+    "name": "HttpRequest_Log__c",
+    "fields": [
+      {
+        "name": "Id",
+        "type": "ID"
+      },
+      {
+        "name": "OwnerId",
+        "type": "reference"
+      },
+      {
+        "name": "IsDeleted",
+        "type": "Boolean"
+      },
+      {
+        "name": "Name",
+        "type": "String"
+      },
+      {
+        "name": "CreatedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "CreatedById",
+        "type": "reference"
+      },
+      {
+        "name": "LastModifiedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastModifiedById",
+        "type": "reference"
+      },
+      {
+        "name": "SystemModstamp",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastActivityDate",
+        "type": "Date"
+      },
+      {
+        "name": "LastViewedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastReferencedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "Status_Code__c",
+        "type": "String"
+      },
+      {
+        "name": "Status__c",
+        "type": "String"
+      },
+      {
+        "name": "Requested_Date__c",
+        "type": "DateTime"
+      },
+      {
+        "name": "Requested_By__c",
+        "type": "reference"
+      },
+      {
+        "name": "Request_Payload__c",
+        "type": "String"
+      },
+      {
+        "name": "Response_Payload__c",
+        "type": "String"
+      },
+      {
+        "name": "Endpoint__c",
+        "type": "String"
+      }
+    ]
+  },
+  "In_App_Checklist_Settings__c": {
+    "name": "In_App_Checklist_Settings__c",
+    "fields": [
+      {
+        "name": "Id",
+        "type": "ID"
+      },
+      {
+        "name": "IsDeleted",
+        "type": "Boolean"
+      },
+      {
+        "name": "Name",
+        "type": "String"
+      },
+      {
+        "name": "SetupOwnerId",
+        "type": "reference"
+      },
+      {
+        "name": "CreatedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "CreatedById",
+        "type": "reference"
+      },
+      {
+        "name": "LastModifiedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastModifiedById",
+        "type": "reference"
+      },
+      {
+        "name": "SystemModstamp",
+        "type": "DateTime"
+      },
+      {
+        "name": "ProfileKey__c",
+        "type": "String"
+      },
+      {
+        "name": "Sales_Cloud_In_App_Page__c",
+        "type": "String"
+      }
+    ]
+  },
+  "Module__c": {
+    "name": "Module__c",
+    "fields": [
+      {
+        "name": "Id",
+        "type": "ID"
+      },
+      {
+        "name": "IsDeleted",
+        "type": "Boolean"
+      },
+      {
+        "name": "Name",
+        "type": "String"
+      },
+      {
+        "name": "CreatedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "CreatedById",
+        "type": "reference"
+      },
+      {
+        "name": "LastModifiedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastModifiedById",
+        "type": "reference"
+      },
+      {
+        "name": "SystemModstamp",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastActivityDate",
+        "type": "Date"
+      },
+      {
+        "name": "Roof__c",
+        "type": "reference"
+      },
+      {
+        "name": "isEnabled__c",
+        "type": "Boolean"
+      }
+    ]
+  },
+  "Opportunity__hd": {
+    "name": "Opportunity__hd",
+    "fields": [
+      {
+        "name": "Id",
+        "type": "ID"
+      },
+      {
+        "name": "ParentId",
+        "type": "reference"
+      },
+      {
+        "name": "IsDeleted",
+        "type": "Boolean"
+      },
+      {
+        "name": "ValidFromDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "ValidToDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "CreatedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "CreatedById",
+        "type": "reference"
+      },
+      {
+        "name": "SystemModstamp",
+        "type": "DateTime"
+      },
+      {
+        "name": "Amount__hpr",
+        "type": "Float"
+      },
+      {
+        "name": "Amount__hst",
+        "type": "Float"
+      },
+      {
+        "name": "CloseDate__hpr",
+        "type": "Date"
+      },
+      {
+        "name": "CloseDate__hst",
+        "type": "Date"
+      },
+      {
+        "name": "StageName__hpr",
+        "type": "Picklist"
+      },
+      {
+        "name": "StageName__hst",
+        "type": "Picklist"
+      },
+      {
+        "name": "Probability__hpr",
+        "type": "Float"
+      },
+      {
+        "name": "Probability__hst",
+        "type": "Float"
+      },
+      {
+        "name": "ForecastCategoryName__hpr",
+        "type": "Picklist"
+      },
+      {
+        "name": "ForecastCategoryName__hst",
+        "type": "Picklist"
+      },
+      {
+        "name": "NextStep__hpr",
+        "type": "String"
+      },
+      {
+        "name": "NextStep__hst",
+        "type": "String"
+      }
+    ]
+  },
+  "PresentationTemplateContentBlock__c": {
+    "name": "PresentationTemplateContentBlock__c",
+    "fields": [
+      {
+        "name": "Id",
+        "type": "ID"
+      },
+      {
+        "name": "IsDeleted",
+        "type": "Boolean"
+      },
+      {
+        "name": "Name",
+        "type": "String"
+      },
+      {
+        "name": "CreatedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "CreatedById",
+        "type": "reference"
+      },
+      {
+        "name": "LastModifiedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastModifiedById",
+        "type": "reference"
+      },
+      {
+        "name": "SystemModstamp",
+        "type": "DateTime"
+      },
+      {
+        "name": "type__c",
+        "type": "Picklist"
+      },
+      {
+        "name": "size__c",
+        "type": "Float"
+      },
+      {
+        "name": "styleOverride__c",
+        "type": "String"
+      },
+      {
+        "name": "PresentationTemplateSlide__c",
+        "type": "reference"
+      },
+      {
+        "name": "ChildProps__c",
+        "type": "String"
+      },
+      {
+        "name": "hasGutters__c",
+        "type": "Boolean"
+      },
+      {
+        "name": "ContentUrl__c",
+        "type": "String"
+      },
+      {
+        "name": "Parent_Content_Block__c",
+        "type": "reference"
+      },
+      {
+        "name": "PresentationTemplate__c",
+        "type": "reference"
+      }
+    ]
+  },
+  "PresentationTemplateSlide__c": {
+    "name": "PresentationTemplateSlide__c",
+    "fields": [
+      {
+        "name": "Id",
+        "type": "ID"
+      },
+      {
+        "name": "IsDeleted",
+        "type": "Boolean"
+      },
+      {
+        "name": "Name",
+        "type": "String"
+      },
+      {
+        "name": "CreatedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "CreatedById",
+        "type": "reference"
+      },
+      {
+        "name": "LastModifiedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastModifiedById",
+        "type": "reference"
+      },
+      {
+        "name": "SystemModstamp",
+        "type": "DateTime"
+      },
+      {
+        "name": "Order__c",
+        "type": "Float"
+      },
+      {
+        "name": "Layout__c",
+        "type": "String"
+      },
+      {
+        "name": "PresentationTemplate__c",
+        "type": "reference"
+      },
+      {
+        "name": "Condition__c",
+        "type": "String"
+      }
+    ]
+  },
+  "PresentationTemplate__c": {
+    "name": "PresentationTemplate__c",
+    "fields": [
+      {
+        "name": "Id",
+        "type": "ID"
+      },
+      {
+        "name": "OwnerId",
+        "type": "reference"
+      },
+      {
+        "name": "IsDeleted",
+        "type": "Boolean"
+      },
+      {
+        "name": "Name",
+        "type": "String"
+      },
+      {
+        "name": "CreatedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "CreatedById",
+        "type": "reference"
+      },
+      {
+        "name": "LastModifiedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastModifiedById",
+        "type": "reference"
+      },
+      {
+        "name": "SystemModstamp",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastViewedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastReferencedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "Enabled__c",
+        "type": "Boolean"
+      },
+      {
+        "name": "Condition__c",
+        "type": "String"
+      },
+      {
+        "name": "DefaultData__c",
+        "type": "String"
+      },
+      {
+        "name": "Account__c",
+        "type": "reference"
+      },
+      {
+        "name": "Tags__c",
+        "type": "String"
+      }
+    ]
+  },
+  "Pricing_Strategy__c": {
+    "name": "Pricing_Strategy__c",
+    "fields": [
+      {
+        "name": "Id",
+        "type": "ID"
+      },
+      {
+        "name": "OwnerId",
+        "type": "reference"
+      },
+      {
+        "name": "IsDeleted",
+        "type": "Boolean"
+      },
+      {
+        "name": "Name",
+        "type": "String"
+      },
+      {
+        "name": "CreatedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "CreatedById",
+        "type": "reference"
+      },
+      {
+        "name": "LastModifiedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastModifiedById",
+        "type": "reference"
+      },
+      {
+        "name": "SystemModstamp",
+        "type": "DateTime"
+      },
+      {
+        "name": "EffectiveDate__c",
+        "type": "Date"
+      },
+      {
+        "name": "ExpirationDate__c",
+        "type": "Date"
+      },
+      {
+        "name": "BasePrice__c",
+        "type": "Float"
+      },
+      {
+        "name": "RuleType__c",
+        "type": "Picklist"
+      },
+      {
+        "name": "Value__c",
+        "type": "Float"
+      },
+      {
+        "name": "MinValue__c",
+        "type": "Float"
+      },
+      {
+        "name": "MaxValue__c",
+        "type": "Float"
+      },
+      {
+        "name": "CustomCondition__c",
+        "type": "String"
+      },
+      {
+        "name": "CustomAction__c",
+        "type": "String"
+      },
+      {
+        "name": "Territory__c",
+        "type": "reference"
+      },
+      {
+        "name": "Product__c",
+        "type": "reference"
+      },
+      {
+        "name": "Description__c",
+        "type": "String"
+      }
+    ]
+  },
+  "Product__c": {
+    "name": "Product__c",
+    "fields": [
+      {
+        "name": "Id",
+        "type": "ID"
+      },
+      {
+        "name": "OwnerId",
+        "type": "reference"
+      },
+      {
+        "name": "IsDeleted",
+        "type": "Boolean"
+      },
+      {
+        "name": "Name",
+        "type": "String"
+      },
+      {
+        "name": "CreatedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "CreatedById",
+        "type": "reference"
+      },
+      {
+        "name": "LastModifiedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastModifiedById",
+        "type": "reference"
+      },
+      {
+        "name": "SystemModstamp",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastActivityDate",
+        "type": "Date"
+      },
+      {
+        "name": "LastViewedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastReferencedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "isActive__c",
+        "type": "Boolean"
+      },
+      {
+        "name": "Display_URL__c",
+        "type": "String"
+      },
+      {
+        "name": "Product_Code__c",
+        "type": "String"
+      },
+      {
+        "name": "Product_SKU__c",
+        "type": "String"
+      },
+      {
+        "name": "Description__c",
+        "type": "String"
+      },
+      {
+        "name": "External_Id__c",
+        "type": "String"
+      },
+      {
+        "name": "Family__c",
+        "type": "Picklist"
+      },
+      {
+        "name": "Quantity_Unity_Of_Measure__c",
+        "type": "Picklist"
+      },
+      {
+        "name": "Panel_Name__c",
+        "type": "String"
+      },
+      {
+        "name": "Manufacturer__c",
+        "type": "String"
+      },
+      {
+        "name": "Width__c",
+        "type": "Float"
+      },
+      {
+        "name": "Height__c",
+        "type": "Float"
+      },
+      {
+        "name": "Width_mm__c",
+        "type": "Float"
+      },
+      {
+        "name": "Height_mm__c",
+        "type": "Float"
+      },
+      {
+        "name": "Thickness_mm__c",
+        "type": "Float"
+      },
+      {
+        "name": "Weight_mm__c",
+        "type": "Float"
+      },
+      {
+        "name": "Cell_Count__c",
+        "type": "Float"
+      },
+      {
+        "name": "Voltage_Rating__c",
+        "type": "Float"
+      },
+      {
+        "name": "isBlackPanel__c",
+        "type": "Boolean"
+      },
+      {
+        "name": "isAcModule__c",
+        "type": "Boolean"
+      },
+      {
+        "name": "Size_In_Watts__c",
+        "type": "Float"
+      },
+      {
+        "name": "PTC_In_Watts__c",
+        "type": "Float"
+      },
+      {
+        "name": "Energy_Degradation__c",
+        "type": "Float"
+      },
+      {
+        "name": "Efficiency__c",
+        "type": "Float"
+      },
+      {
+        "name": "Additional_Document_URL__c",
+        "type": "String"
+      },
+      {
+        "name": "Max_Out_Power__c",
+        "type": "Float"
+      },
+      {
+        "name": "Max_OCPD_Rating__c",
+        "type": "Float"
+      },
+      {
+        "name": "Manufacturer_Name__c",
+        "type": "String"
+      },
+      {
+        "name": "Manufacturer_Id__c",
+        "type": "String"
+      },
+      {
+        "name": "Total_Capacity__c",
+        "type": "Float"
+      },
+      {
+        "name": "Usable_Capacity__c",
+        "type": "Float"
+      },
+      {
+        "name": "Depth_of_Discharge__c",
+        "type": "Float"
+      },
+      {
+        "name": "Power_Rating__c",
+        "type": "Float"
+      },
+      {
+        "name": "Peak_Power_Rating__c",
+        "type": "Float"
+      },
+      {
+        "name": "Type__c",
+        "type": "Picklist"
+      },
+      {
+        "name": "hasInverter__c",
+        "type": "Boolean"
+      },
+      {
+        "name": "Peak_Output_Power__c",
+        "type": "Float"
+      },
+      {
+        "name": "Rated_Output_Power__c",
+        "type": "Float"
+      },
+      {
+        "name": "Inverter_Type__c",
+        "type": "Picklist"
+      },
+      {
+        "name": "CEC_Weighted_Efficiency__c",
+        "type": "Float"
+      },
+      {
+        "name": "Spec_Sheet__c",
+        "type": "String"
+      },
+      {
+        "name": "Image_URL__c",
+        "type": "String"
+      },
+      {
+        "name": "Video_URL__c",
+        "type": "String"
+      },
+      {
+        "name": "Account__c",
+        "type": "reference"
+      }
+    ]
+  },
+  "Prospect__c": {
+    "name": "Prospect__c",
+    "fields": [
+      {
+        "name": "Id",
+        "type": "ID"
+      },
+      {
+        "name": "OwnerId",
+        "type": "reference"
+      },
+      {
+        "name": "IsDeleted",
+        "type": "Boolean"
+      },
+      {
+        "name": "Name",
+        "type": "String"
+      },
+      {
+        "name": "CreatedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "CreatedById",
+        "type": "reference"
+      },
+      {
+        "name": "LastModifiedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastModifiedById",
+        "type": "reference"
+      },
+      {
+        "name": "SystemModstamp",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastActivityDate",
+        "type": "Date"
+      },
+      {
+        "name": "LastViewedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastReferencedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "First_Name__c",
+        "type": "String"
+      },
+      {
+        "name": "Middle_Name__c",
+        "type": "String"
+      },
+      {
+        "name": "Last_Name__c",
+        "type": "String"
+      },
+      {
+        "name": "Suffix__c",
+        "type": "String"
+      },
+      {
+        "name": "Email__c",
+        "type": "String"
+      },
+      {
+        "name": "Phone__c",
+        "type": "String"
+      },
+      {
+        "name": "Time_Zone__c",
+        "type": "Picklist"
+      },
+      {
+        "name": "Source__c",
+        "type": "String"
+      },
+      {
+        "name": "Account__c",
+        "type": "reference"
+      },
+      {
+        "name": "External_Id__c",
+        "type": "String"
+      },
+      {
+        "name": "Sales_Rep__c",
+        "type": "reference"
+      }
+    ]
+  },
+  "Question__c": {
+    "name": "Question__c",
+    "fields": [
+      {
+        "name": "Id",
+        "type": "ID"
+      },
+      {
+        "name": "OwnerId",
+        "type": "reference"
+      },
+      {
+        "name": "IsDeleted",
+        "type": "Boolean"
+      },
+      {
+        "name": "Name",
+        "type": "String"
+      },
+      {
+        "name": "CreatedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "CreatedById",
+        "type": "reference"
+      },
+      {
+        "name": "LastModifiedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastModifiedById",
+        "type": "reference"
+      },
+      {
+        "name": "SystemModstamp",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastActivityDate",
+        "type": "Date"
+      },
+      {
+        "name": "Question__c",
+        "type": "String"
+      },
+      {
+        "name": "Answers__c",
+        "type": "String"
+      },
+      {
+        "name": "isActive__c",
+        "type": "Boolean"
+      },
+      {
+        "name": "Territory__c",
+        "type": "reference"
+      },
+      {
+        "name": "Account__c",
+        "type": "reference"
+      },
+      {
+        "name": "Type__c",
+        "type": "Picklist"
+      }
+    ]
+  },
+  "QuoteLineItem__c": {
+    "name": "QuoteLineItem__c",
+    "fields": [
+      {
+        "name": "Id",
+        "type": "ID"
+      },
+      {
+        "name": "OwnerId",
+        "type": "reference"
+      },
+      {
+        "name": "IsDeleted",
+        "type": "Boolean"
+      },
+      {
+        "name": "Name",
+        "type": "String"
+      },
+      {
+        "name": "CreatedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "CreatedById",
+        "type": "reference"
+      },
+      {
+        "name": "LastModifiedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastModifiedById",
+        "type": "reference"
+      },
+      {
+        "name": "SystemModstamp",
+        "type": "DateTime"
+      },
+      {
+        "name": "SalesOpportunity__c",
+        "type": "reference"
+      },
+      {
+        "name": "Product__c",
+        "type": "reference"
+      },
+      {
+        "name": "Account__c",
+        "type": "reference"
+      },
+      {
+        "name": "ListPrice__c",
+        "type": "Float"
+      },
+      {
+        "name": "Quantity__c",
+        "type": "Float"
+      },
+      {
+        "name": "FinalPrice__c",
+        "type": "Float"
+      },
+      {
+        "name": "Status__c",
+        "type": "Picklist"
+      },
+      {
+        "name": "Quote__c",
+        "type": "reference"
+      },
+      {
+        "name": "PricingStrategy__c",
+        "type": "reference"
+      }
+    ]
+  },
+  "Quote__c": {
+    "name": "Quote__c",
+    "fields": [
+      {
+        "name": "Id",
+        "type": "ID"
+      },
+      {
+        "name": "OwnerId",
+        "type": "reference"
+      },
+      {
+        "name": "IsDeleted",
+        "type": "Boolean"
+      },
+      {
+        "name": "Name",
+        "type": "String"
+      },
+      {
+        "name": "CreatedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "CreatedById",
+        "type": "reference"
+      },
+      {
+        "name": "LastModifiedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastModifiedById",
+        "type": "reference"
+      },
+      {
+        "name": "SystemModstamp",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastActivityDate",
+        "type": "Date"
+      },
+      {
+        "name": "LastViewedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastReferencedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "Sales_Opportunity__c",
+        "type": "reference"
+      },
+      {
+        "name": "isActive__c",
+        "type": "Boolean"
+      },
+      {
+        "name": "Design__c",
+        "type": "reference"
+      },
+      {
+        "name": "Consumption__c",
+        "type": "reference"
+      },
+      {
+        "name": "April_kWh__c",
+        "type": "Float"
+      },
+      {
+        "name": "Annual_Production_kWh__c",
+        "type": "Float"
+      },
+      {
+        "name": "August_kWh__c",
+        "type": "Float"
+      },
+      {
+        "name": "December_kWh__c",
+        "type": "Float"
+      },
+      {
+        "name": "February_kWh__c",
+        "type": "Float"
+      },
+      {
+        "name": "January_kWh__c",
+        "type": "Float"
+      },
+      {
+        "name": "July_kWh__c",
+        "type": "Float"
+      },
+      {
+        "name": "June_kWh__c",
+        "type": "Float"
+      },
+      {
+        "name": "March_kWh__c",
+        "type": "Float"
+      },
+      {
+        "name": "May_kWh__c",
+        "type": "Float"
+      },
+      {
+        "name": "November_kWh__c",
+        "type": "Float"
+      },
+      {
+        "name": "September_kWh__c",
+        "type": "Float"
+      },
+      {
+        "name": "System_Size_kW__c",
+        "type": "Float"
+      },
+      {
+        "name": "October_kWh__c",
+        "type": "Float"
+      },
+      {
+        "name": "Utility_Provider__c",
+        "type": "String"
+      },
+      {
+        "name": "Utility_Tariff__c",
+        "type": "String"
+      },
+      {
+        "name": "Module_Type__c",
+        "type": "String"
+      },
+      {
+        "name": "Panel_Count__c",
+        "type": "Float"
+      }
+    ]
+  },
+  "Recipient__c": {
+    "name": "Recipient__c",
+    "fields": [
+      {
+        "name": "Id",
+        "type": "ID"
+      },
+      {
+        "name": "OwnerId",
+        "type": "reference"
+      },
+      {
+        "name": "IsDeleted",
+        "type": "Boolean"
+      },
+      {
+        "name": "Name",
+        "type": "String"
+      },
+      {
+        "name": "CreatedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "CreatedById",
+        "type": "reference"
+      },
+      {
+        "name": "LastModifiedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastModifiedById",
+        "type": "reference"
+      },
+      {
+        "name": "SystemModstamp",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastActivityDate",
+        "type": "Date"
+      },
+      {
+        "name": "Quote__c",
+        "type": "reference"
+      },
+      {
+        "name": "First_Name__c",
+        "type": "String"
+      },
+      {
+        "name": "Middle_Name__c",
+        "type": "String"
+      },
+      {
+        "name": "Last_Name__c",
+        "type": "String"
+      },
+      {
+        "name": "Role__c",
+        "type": "String"
+      },
+      {
+        "name": "Suffix__c",
+        "type": "String"
+      },
+      {
+        "name": "Order__c",
+        "type": "String"
+      },
+      {
+        "name": "Email__c",
+        "type": "String"
+      },
+      {
+        "name": "Phone__c",
+        "type": "String"
+      },
+      {
+        "name": "Status__c",
+        "type": "String"
+      }
+    ]
+  },
+  "Response__c": {
+    "name": "Response__c",
+    "fields": [
+      {
+        "name": "Id",
+        "type": "ID"
+      },
+      {
+        "name": "OwnerId",
+        "type": "reference"
+      },
+      {
+        "name": "IsDeleted",
+        "type": "Boolean"
+      },
+      {
+        "name": "Name",
+        "type": "String"
+      },
+      {
+        "name": "CreatedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "CreatedById",
+        "type": "reference"
+      },
+      {
+        "name": "LastModifiedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastModifiedById",
+        "type": "reference"
+      },
+      {
+        "name": "SystemModstamp",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastActivityDate",
+        "type": "Date"
+      },
+      {
+        "name": "Related_Question__c",
+        "type": "reference"
+      },
+      {
+        "name": "Question__c",
+        "type": "String"
+      },
+      {
+        "name": "Answer__c",
+        "type": "String"
+      },
+      {
+        "name": "Sales_Opportunity__c",
+        "type": "reference"
+      }
+    ]
+  },
+  "Roof__c": {
+    "name": "Roof__c",
+    "fields": [
+      {
+        "name": "Id",
+        "type": "ID"
+      },
+      {
+        "name": "IsDeleted",
+        "type": "Boolean"
+      },
+      {
+        "name": "Name",
+        "type": "String"
+      },
+      {
+        "name": "CreatedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "CreatedById",
+        "type": "reference"
+      },
+      {
+        "name": "LastModifiedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastModifiedById",
+        "type": "reference"
+      },
+      {
+        "name": "SystemModstamp",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastActivityDate",
+        "type": "Date"
+      },
+      {
+        "name": "Design__c",
+        "type": "reference"
+      },
+      {
+        "name": "Tilt__c",
+        "type": "Float"
+      },
+      {
+        "name": "Azimuth__c",
+        "type": "Float"
+      },
+      {
+        "name": "Number_of_Modules__c",
+        "type": "Float"
+      },
+      {
+        "name": "System_Size__c",
+        "type": "Float"
+      },
+      {
+        "name": "Panel_Array_Id__c",
+        "type": "String"
+      },
+      {
+        "name": "Losses__c",
+        "type": "String"
+      },
+      {
+        "name": "Inverter_Efficiency__c",
+        "type": "String"
+      },
+      {
+        "name": "Bifaciality__c",
+        "type": "String"
+      },
+      {
+        "name": "Albedo__c",
+        "type": "String"
+      },
+      {
+        "name": "Use_Weather_File_Albedo__c",
+        "type": "String"
+      },
+      {
+        "name": "Soiling__c",
+        "type": "String"
+      },
+      {
+        "name": "Solar_Access_Value__c",
+        "type": "String"
+      }
+    ]
+  },
+  "Sales_Opportunity__c": {
+    "name": "Sales_Opportunity__c",
+    "fields": [
+      {
+        "name": "Id",
+        "type": "ID"
+      },
+      {
+        "name": "OwnerId",
+        "type": "reference"
+      },
+      {
+        "name": "IsDeleted",
+        "type": "Boolean"
+      },
+      {
+        "name": "Name",
+        "type": "String"
+      },
+      {
+        "name": "CreatedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "CreatedById",
+        "type": "reference"
+      },
+      {
+        "name": "LastModifiedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastModifiedById",
+        "type": "reference"
+      },
+      {
+        "name": "SystemModstamp",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastActivityDate",
+        "type": "Date"
+      },
+      {
+        "name": "LastViewedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastReferencedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "Prospect__c",
+        "type": "reference"
+      },
+      {
+        "name": "Site__c",
+        "type": "reference"
+      },
+      {
+        "name": "Notes__c",
+        "type": "String"
+      },
+      {
+        "name": "Envelope_Id__c",
+        "type": "String"
+      },
+      {
+        "name": "Analysis_Fetched__c",
+        "type": "Boolean"
+      },
+      {
+        "name": "Genability_Site__c",
+        "type": "Boolean"
+      },
+      {
+        "name": "Design_Initialized__c",
+        "type": "Boolean"
+      },
+      {
+        "name": "Project_Id__c",
+        "type": "String"
+      }
+    ]
+  },
+  "Signer__c": {
+    "name": "Signer__c",
+    "fields": [
+      {
+        "name": "Id",
+        "type": "ID"
+      },
+      {
+        "name": "OwnerId",
+        "type": "reference"
+      },
+      {
+        "name": "IsDeleted",
+        "type": "Boolean"
+      },
+      {
+        "name": "Name",
+        "type": "String"
+      },
+      {
+        "name": "CreatedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "CreatedById",
+        "type": "reference"
+      },
+      {
+        "name": "LastModifiedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastModifiedById",
+        "type": "reference"
+      },
+      {
+        "name": "SystemModstamp",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastActivityDate",
+        "type": "Date"
+      },
+      {
+        "name": "Sales_Opportunity__c",
+        "type": "reference"
+      },
+      {
+        "name": "Email__c",
+        "type": "String"
+      },
+      {
+        "name": "First_Name__c",
+        "type": "String"
+      },
+      {
+        "name": "Last_Name__c",
+        "type": "String"
+      },
+      {
+        "name": "Middle_Name__c",
+        "type": "String"
+      },
+      {
+        "name": "Phone__c",
+        "type": "String"
+      },
+      {
+        "name": "Suffix__c",
+        "type": "String"
+      }
+    ]
+  },
+  "Site__c": {
+    "name": "Site__c",
+    "fields": [
+      {
+        "name": "Id",
+        "type": "ID"
+      },
+      {
+        "name": "OwnerId",
+        "type": "reference"
+      },
+      {
+        "name": "IsDeleted",
+        "type": "Boolean"
+      },
+      {
+        "name": "Name",
+        "type": "String"
+      },
+      {
+        "name": "CreatedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "CreatedById",
+        "type": "reference"
+      },
+      {
+        "name": "LastModifiedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastModifiedById",
+        "type": "reference"
+      },
+      {
+        "name": "SystemModstamp",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastActivityDate",
+        "type": "Date"
+      },
+      {
+        "name": "LastViewedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastReferencedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "New_Build__c",
+        "type": "Picklist"
+      },
+      {
+        "name": "Address_G__c",
+        "type": "String"
+      },
+      {
+        "name": "Address__Street__s",
+        "type": "String"
+      },
+      {
+        "name": "Address__City__s",
+        "type": "String"
+      },
+      {
+        "name": "Address__PostalCode__s",
+        "type": "String"
+      },
+      {
+        "name": "Address__StateCode__s",
+        "type": "Picklist"
+      },
+      {
+        "name": "Address__CountryCode__s",
+        "type": "Picklist"
+      },
+      {
+        "name": "Address__Latitude__s",
+        "type": "Float"
+      },
+      {
+        "name": "Address__Longitude__s",
+        "type": "Float"
+      },
+      {
+        "name": "Address__GeocodeAccuracy__s",
+        "type": "Picklist"
+      },
+      {
+        "name": "Address__c",
+        "type": "address"
+      },
+      {
+        "name": "Territory__c",
+        "type": "reference"
+      },
+      {
+        "name": "Location__Latitude__s",
+        "type": "Float"
+      },
+      {
+        "name": "Location__Longitude__s",
+        "type": "Float"
+      },
+      {
+        "name": "Location__c",
+        "type": "location"
+      },
+      {
+        "name": "Geolocation__c",
+        "type": "String"
+      },
+      {
+        "name": "Property_Zoning_Type__c",
+        "type": "Picklist"
+      }
+    ]
+  },
+  "Territory__c": {
+    "name": "Territory__c",
+    "fields": [
+      {
+        "name": "Id",
+        "type": "ID"
+      },
+      {
+        "name": "OwnerId",
+        "type": "reference"
+      },
+      {
+        "name": "IsDeleted",
+        "type": "Boolean"
+      },
+      {
+        "name": "Name",
+        "type": "String"
+      },
+      {
+        "name": "CreatedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "CreatedById",
+        "type": "reference"
+      },
+      {
+        "name": "LastModifiedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastModifiedById",
+        "type": "reference"
+      },
+      {
+        "name": "SystemModstamp",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastActivityDate",
+        "type": "Date"
+      },
+      {
+        "name": "LastViewedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "LastReferencedDate",
+        "type": "DateTime"
+      },
+      {
+        "name": "ParentTerritory__c",
+        "type": "reference"
+      },
+      {
+        "name": "Account__c",
+        "type": "reference"
+      },
+      {
+        "name": "TerritoryManager__c",
+        "type": "reference"
+      }
+    ]
+  }
+}

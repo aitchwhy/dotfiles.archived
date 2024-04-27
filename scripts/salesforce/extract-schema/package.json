@@ -1,0 +1,18 @@
+{
+  "name": "local-dev",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "download-schema": "bun convert-schema-to-graphql.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "graphql": "^16.8.1",
+    "jsforce": "^1.11.1"
+  }
+}

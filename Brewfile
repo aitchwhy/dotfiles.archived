@@ -311,7 +311,7 @@ cask 'lm-studio' # platform for local LLMs
 cask 'obsidian' # notes app Obsidian
 cask 'asana' # project management app Asana
 cask 'sizzy' # Sizzy dev web browser (https://sizzy.co/)
-cask 'maestral' # Maestral alt Dropbox CLI Client
+# cask 'maestral' # Maestral alt Dropbox CLI Client --- don't use this for now, seems to be causing some Dropbox issues
 cask 'rippling' # Rippling HR app (for Patter AI)
 cask 'beeper' # Universal chat app powered by Matrix - https://www.beeper.com/
 cask 'cardhop' # Apple Contacts+CRM app (by Flexibits - same company as calendar app Fantastical)
