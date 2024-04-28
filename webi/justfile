@@ -1,0 +1,10 @@
+# website : https://webinstall.dev/faq
+
+# Install NERD fonts
+nerd-font:
+    @echo "Installing NERD fonts..."
+    webi nerdfont
+    @$(MAKE) -s nerd-font-install
+    @echo "NERD fonts installed."
+
+

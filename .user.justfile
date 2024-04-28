@@ -10,6 +10,9 @@ user_justfile_name := ".user.justfile"
 dotfiles_root_dir := justfile_directory()
 scripts_root_dir := dotfiles_root_dir / "scripts"
 chezmoi_root_dir := dotfiles_root_dir / "chezmoi"
+webi_root_dir := dotfiles_root_dir / "webi"
+
+import 'webi/justfile'
 
 # List available recipes
 # (TODO: update to add 2nd user justfile command to run aliased HOME dir user justfile)
