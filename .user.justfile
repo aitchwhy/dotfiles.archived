@@ -13,6 +13,7 @@ chezmoi_root_dir := dotfiles_root_dir / "chezmoi"
 webi_root_dir := dotfiles_root_dir / "webi"
 
 import 'webi/justfile'
+import 'asdf/justfile'
 
 # List available recipes
 # (TODO: update to add 2nd user justfile command to run aliased HOME dir user justfile)
@@ -27,7 +28,3 @@ system-info:
     @echo "Operating system type: {{ os_family() }}"
     @echo "Operating system: {{ os() }}"
     @echo "Home directory: {{ home_directory() }}"
-
-# Install webi (https://webinstall.dev/)
-webi-install:
-    @curl https://webinstall.dev/ | bash

@@ -1,10 +1,29 @@
 # website : https://webinstall.dev/faq
 
-# Install NERD fonts
-nerd-font:
-    @echo "Installing NERD fonts..."
+# Install webi
+webi-install:
+    @echo "Installing webi..."
+    curl https://webi.sh/webi | sh
+    @echo "webi installed."
+
+webi-uninstall:
+    rm -rf ~/.local/bin*/webi*
+    rm -rf ~/.local/opt ~/.local/*bin* ~/.config/envman/PATH.env
+
+# Install iTerm2 related webi packages
+webi-iterm2:
+    @echo "Installing iterm2 related packages (Nerd font, themes, utils, ...)"
     webi nerdfont
-    @$(MAKE) -s nerd-font-install
-    @echo "NERD fonts installed."
+    webi iterm2-themes
+    webi iterm2-utils
+    @echo "installed"
+
+# Install common shell utils
+webi-common-utils:
+    @echo "Installing common shell utils"
+    webi pathman
+    webi aliasman
+    webi trip
+    @echo "installed"
 
 

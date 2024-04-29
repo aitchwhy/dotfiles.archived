@@ -1,0 +1,8 @@
+
+# website : https://asdf-vm.com/
+
+# Install asdf
+asdf:
+    @echo "Installing asdf..."
+    @echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >> ${ZDOTDIR:-~}/.zshrc
+    @echo "installed."
