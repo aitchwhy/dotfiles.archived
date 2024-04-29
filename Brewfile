@@ -59,7 +59,7 @@ brew 'whalebrew'
 #-------------------------------------------------------------------------------
 # Node (nvm+etc) --- NOTE: NVM installed Brew is NOT supported officially but works fine
 #-------------------------------------------------------------------------------
-brew 'nvm'
+# brew 'nvm'
 
 #-------------------------------------------------------------------------------
 # Install Binaries
@@ -84,7 +84,7 @@ brew 'mutt'                                      # CLI email util (for crontab)
 brew 'jq'                                        # CLI JSON manipulator
 brew 'fx'                                        # CLI JSON editor
 brew 'cscope'                                    # Ctags complement for tagged code
-brew 'direnv'
+# brew 'direnv'
 brew 'grep'
 brew 'parallel'
 brew 'htop'

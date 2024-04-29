@@ -27,22 +27,12 @@ SYMLINKS=(
     # dir colors (zsh color config)
     "$DOTFILES/.dir_colors:$HOME/.dir_colors"
 
-    # Doom directory
-    "$DOTFILES/.doom.d:$HOME/.doom.d"
-
     # Powerlevel10k
     "$DOTFILES/.p10k.zsh:$HOME/.p10k.zsh"
 
     # pyenv global python version
     "$DOTFILES/pyenv-global-python.version:$PYENV_ROOT/version"
 
-    # TODO: make this link more resilient
-
-    # Default global NPM packages installed for every NVM new version installation
-    # nvm reinstall-packages <node-version> <---- Reinstall global `npm` packages contained in <version> to current version
-    # NOTE: <version> CANNOT be same as current NVM selected version when running this command
-    # NOTE: default-packages MUST have 1 line at the end of file (otherwise it will not work)
-    "$DOTFILES/default-packages:$NVM_DIR/default-packages"
 )
 
 # import "link" function

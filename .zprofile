@@ -8,6 +8,3 @@ fi
 # Set ZSH as default shell for M1 mac homebrew. 
 # Zsh (installed via brew), will be installed in /opt/homebrew/bin/zsh.
 SHELL=/opt/homebrew/bin/zsh
-
-# Nix env-vars (https://nixos.org/manual/nix/stable/installation/env-variables)
-source prefix/etc/profile.d/nix.sh

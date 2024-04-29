@@ -216,21 +216,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-#-------------------------------------------------------------------------------
-# Nvm
-#-------------------------------------------------------------------------------
-# NVM setup (Node version manager) - installed via Homebrew
-export NVM_DIR="$NVM_DIR"
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-# THIS IS NECESSARY (Jan 23, 2024)
-# Remove PATH duplicates - https://unix.stackexchange.com/questions/40749/remove-duplicate-path-entries-with-awk-command/149054#149054
-export PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV{PATH}))')"
-
-# Add NVM-managed Node.js binary to the beginning of PATH
-export PATH="$NVM_DIR/versions/node/$(nvm version default)/bin:$PATH"
-
 ###################
 # Redocly CLI completion
 ###################
@@ -261,3 +246,5 @@ eval "$(atuin init zsh)"
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+. $HOME/.asdf/asdf.sh
