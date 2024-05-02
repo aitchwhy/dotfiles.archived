@@ -22,7 +22,8 @@ SYMLINKS=(
     "$DOTFILES/.tmux.conf:$HOME/.tmux.conf"
 
     # Direnv global RC file link (env vars per project)
-    "$DOTFILES/.direnvrc:$HOME/.config/direnv/direnvrc"
+    # "$DOTFILES/.direnvrc:$HOME/.config/direnv/direnvrc"
+    "$DOTFILES/.direnvrc:$HOME/.config/asdf-direnv/direnvrc"
 
     # dir colors (zsh color config)
     "$DOTFILES/.dir_colors:$HOME/.dir_colors"
@@ -32,7 +33,6 @@ SYMLINKS=(
 
     # pyenv global python version
     "$DOTFILES/pyenv-global-python.version:$PYENV_ROOT/version"
-
 )
 
 # import "link" function

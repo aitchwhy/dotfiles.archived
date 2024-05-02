@@ -176,10 +176,11 @@ eval "$(zoxide init zsh)"
 #-------------------------------------------------------------------------------
 eval "$(tfenv init -)"
 
-#-------------------------------------------------------------------------------
-# Hook direnv binary to shell so it activates on each directory change
-#-------------------------------------------------------------------------------
-eval "$(direnv hook zsh)"
+##-------------------------------------------------------------------------------
+## Hook direnv binary to shell so it activates on each directory change
+##-------------------------------------------------------------------------------
+#eval "$(direnv hook zsh)"
+eval "$(asdf exec direnv hook zsh)"
 
 #-------------------------------------------------------------------------------
 # Add Terragrunt switcher hook (tgswitch)
@@ -248,3 +249,13 @@ eval "$(atuin init zsh)"
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
 . $HOME/.asdf/asdf.sh
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+autoload -U compinit; compinit
+
+# pnpm
+export PNPM_HOME="/Users/hank/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
