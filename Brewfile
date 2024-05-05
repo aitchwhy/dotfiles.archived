@@ -188,9 +188,9 @@ brew 'rbenv'
 # + jupyterlab for jupyter notebooks
 #-------------------------------------------------------------------------------
 
-brew 'pyenv'
-brew 'pyenv-virtualenv'
-brew 'jupyterlab' # Jupyter notebook (https://jupyter.org/)
+# brew 'pyenv'
+# brew 'pyenv-virtualenv'
+# brew 'jupyterlab' # Jupyter notebook (https://jupyter.org/)
 
 #-------------------------------------------------------------------------------
 # OpenAPI/Swagger

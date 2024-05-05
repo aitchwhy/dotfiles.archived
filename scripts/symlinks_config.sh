@@ -26,7 +26,7 @@ SYMLINKS=(
     "$DOTFILES/.direnvrc:$HOME/.config/asdf-direnv/direnvrc"
 
     # Vim configs linked
-    "$DOTFILES/.envrc.example:$HOME/.envrc"
+    "$DOTFILES/.envrc:$HOME/.envrc"
 
     # dir colors (zsh color config)
     "$DOTFILES/.dir_colors:$HOME/.dir_colors"
@@ -35,7 +35,7 @@ SYMLINKS=(
     "$DOTFILES/.p10k.zsh:$HOME/.p10k.zsh"
 
     # pyenv global python version
-    "$DOTFILES/pyenv-global-python.version:$PYENV_ROOT/version"
+    # "$DOTFILES/pyenv-global-python.version:$PYENV_ROOT/version"
 )
 
 # import "link" function

@@ -155,8 +155,8 @@ export TMUX_FZF_SED="/usr/local/bin/gsed"
 # Python + Pyenv setup
 #-------------------------------------------------------------------------------
 # No __pycache__
-export PYTHONDONTWRITEBYTECODE=1
-export PYENV_ROOT=$HOME/.pyenv
+# export PYTHONDONTWRITEBYTECODE=1
+# export PYENV_ROOT=$HOME/.pyenv
 
 #-------------------------------------------------------------------------------
 # Sqlite DB setup (Homebrew version)
