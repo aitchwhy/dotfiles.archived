@@ -25,6 +25,9 @@ SYMLINKS=(
     # "$DOTFILES/.direnvrc:$HOME/.config/direnv/direnvrc"
     "$DOTFILES/.direnvrc:$HOME/.config/asdf-direnv/direnvrc"
 
+    # Vim configs linked
+    "$DOTFILES/.envrc.example:$HOME/.envrc"
+
     # dir colors (zsh color config)
     "$DOTFILES/.dir_colors:$HOME/.dir_colors"
 
