@@ -180,7 +180,7 @@ eval "$(tfenv init -)"
 ## Hook direnv binary to shell so it activates on each directory change
 ##-------------------------------------------------------------------------------
 #eval "$(direnv hook zsh)"
-eval "$(asdf exec direnv hook zsh)"
+# eval "$(asdf exec direnv hook zsh)"
 
 #-------------------------------------------------------------------------------
 # Add Terragrunt switcher hook (tgswitch)
@@ -248,8 +248,8 @@ eval "$(atuin init zsh)"
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
-. $HOME/.asdf/asdf.sh
-source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+# . $HOME/.asdf/asdf.sh
+# source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
 autoload -U compinit; compinit
 
 # pnpm
@@ -259,3 +259,16 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+source ~/completion-for-pnpm.zsh
+
+# bun completions
+[ -s "/Users/hank/.bun/_bun" ] && source "/Users/hank/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
