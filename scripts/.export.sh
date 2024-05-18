@@ -8,7 +8,6 @@ export DOTFILES=$HOME/dotfiles
 #-------------------------------------------------------------------------------
 export DROPBOX=$HOME/Library/CloudStorage/Dropbox
 
-
 #-------------------------------------------------------------------------------
 # Path to oh-my-zsh installation
 #-------------------------------------------------------------------------------
@@ -60,6 +59,9 @@ export POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 # - Press CTRL-Y to copy the line to clipboard and aborts fzf (requires pbcopy)
 #   --bind 'f1:execute(less -f {}),ctrl-y:execute-silent(echo {} | pbcopy)+abort'
 #-------------------------------------------------------------------------------
+
+# echo "fzf settings : $DOTFILES/scripts/.functions.sh --- FZF_DEFAULT_COMMAND $FZF_DEFAULT_COMMAND"
+# echo "fzf settings : $DOTFILES/scripts/.functions.sh --- FZF_DEFAULT_OPTS $FZF_DEFAULT_OPTS"
 
 source $DOTFILES/scripts/.functions.sh
 # TODO: ripgrep_fzf_search_file() from .functions.sh
@@ -150,6 +152,12 @@ export DENO_INSTALL="$HOME/.deno"
 # Tmux fzf gnu-sed (gsed) path
 #-------------------------------------------------------------------------------
 export TMUX_FZF_SED="/usr/local/bin/gsed"
+
+#-------------------------------------------------------------------------------
+# Justfile
+#-------------------------------------------------------------------------------
+export USER_JUSTFILE_NAME=".user.justfile"
+export USER_JUSTFILE_PATH="~/.user.justfile"
 
 #-------------------------------------------------------------------------------
 # Python + Pyenv setup

@@ -145,6 +145,13 @@ Plug 'bronson/vim-trailing-whitespace'
 " Shows indent level with thin vertical lines
 Plug 'Yggdroot/indentLine'
 
+
+"*****************************************************************************
+"" Database / ORM / Data
+"*****************************************************************************
+" Prisma
+Plug 'prisma/vim-prisma'
+
 "*****************************************************************************
 "" Custom language syntax bundles
 "*****************************************************************************

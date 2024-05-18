@@ -249,7 +249,7 @@ brew 'grafana' # Gorgeous metric visualizations and dashboards for timeseries da
 
 # Postgres
 # Feature matrix comparison for major versions (14,15,16) - https://www.postgresql.org/about/featurematrix/
-brew 'postgresql@14'
+# brew 'postgresql@14'
 brew 'postgresql@16'
 
 #-------------------------------------------------------------------------------

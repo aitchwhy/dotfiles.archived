@@ -1,0 +1,177 @@
+############################################################
+# Justfile settings (https://just.systems/man/en/chapter_26.html)
+# - 'shell' : Set the command used to invoke recipes and evaluate backticks.
+############################################################
+set shell := ["bash", "-cu"]
+
+############################################################
+# Justfile imports (other justfiles + modules)
+############################################################
+# PROJ_ROOT/env.just
+mod env
+
+############################################################
+# Justfile Env-vars (https://just.systems/man/en/chapter_31.html#environment-variables)
+############################################################
+# set dotenv-filename := ".env.local"
+# set dotenv-filename := "../../.env"
+# set dotenv-filename := "~/.env"
+# set dotenv-filename := "~/.env"
+# Define the environment file based on the parameter
+set dotenv_load := true
+
+# just faster - https://just.systems/man/en/chapter_64.html
+# alias j=just
+
+# Justfile docs - https://just.systems/man/en/
+# Justfile cheatsheet https://cheatography.com/linux-china/cheat-sheets/justfile/
+
+# TODO: update to use tips from below links
+# - https://just.systems/man/en/chapter_68.html
+# - https://www.stuartellis.name/articles/just-task-runner/
+# - https://github.com/casey/just#fallback-to-parent-justfiles
+
+# set dotenv-filename := ".env.local"
+# set dotenv-filename := ".env"
+# set dotenv-filename := "../../.env"
+set dotenv-filename := ".env"
+
+# Justfile Env-vars (https://just.systems/man/en/chapter_31.html#environment-variables)
+salesforce-host := env_var('SALESFORCE_PATTER_AI_ORG_HOST')
+salesforce-user := env_var('SALESFORCE_PATTER_AI_ORG_USER')
+salesforce-password := env_var('SALESFORCE_PATTER_AI_ORG_PASS')
+salesforce-token := env_var('SALESFORCE_PATTER_AI_ORG_SECURITY_TOKEN')
+
+
+
+# npx jsforce --loginUrl ${SALESFORCE_PATTER_AI_ORG_HOST} \
+# --sandbox \
+# --username ${SALESFORCE_PATTER_AI_ORG_USER} \
+# --password ${SALESFORCE_PATTER_AI_ORG_PASS}${SALESFORCE_PATTER_AI_ORG_SECURITY_TOKEN}
+
+
+project_root_justfile_dir := justfile_directory()
+openapi_root := project_root_justfile_dir / "openapi"
+backend_root := project_root_justfile_dir / "backend"
+
+import 'backend/codegen/justfile'
+import 'backend/sunlight_financial/justfile'
+import 'openapi/justfile'
+# import 'apps/q-client/justfile'
+
+help:
+    @echo "###################################"
+    @echo "salesforce config env-vars"
+    @printenv | grep SALESFORCE
+    @echo "###################################"
+    @echo ""
+    @echo ""
+    @just --list --unsorted
+
+run-recipe:
+    @just --choose
+
+format-justfile-in-place:
+    @just --fmt --unstable
+
+# Generate all external API python clients
+codegen-clients: codegen-client-sunlight-financial
+
+# Generate q-server FastAPI code
+codegen-server: codegen-server-qual-check
+
+# Generate client+server code
+codegen-all: codegen-server
+
+# Start FastAPI server and database
+start-backend: codegen-all
+    docker compose -f {{project_root_justfile_dir}}/docker-compose.yml up
+
+# Start FastAPI server and database in detached mode
+start-backend-detached: codegen-all 
+    docker compose -f {{project_root_justfile_dir}}/docker-compose.yml up -d
+
+# Stop FastAPI server and database (only if started with detached mode -d)
+stop-backend:
+    docker compose -f {{project_root_justfile_dir}}/docker-compose.yml down
+
+# Run all unit tests
+unit-tests: start-backend-detached
+    @echo "TODO: Running Unit tests"
+
+# Run all unit tests
+api-tests: start-backend-detached
+    @echo "TODO: Running API tests"
+
+
+# https://redocly.com/docs/cli/commands/split/#options
+# redocly split openapi.yaml --outDir myApi
+# redocly bundle openapi.yaml -o bundled.yaml
+
+
+# First time Salesforce login (need security token appended to password)
+# Salesforce Security doc : https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_concepts_security.htm
+
+# sf configs
+# [main]
+#  - org-instance-url               URL of the Salesforce instance hosting your org. Default: https://login.salesforce.com.
+#  - target-org                     Username or alias of the org that all commands run against by default. (sf only)
+# [etc]
+#  - org-api-version                API version of your project. Default: API version of your Dev Hub org.
+#  - target-dev-hub                 Username or alias of your default Dev Hub org. (sf only)
+#  - org-isv-debugger-sid           ISV debugger SID.
+#  - org-isv-debugger-url           ISV debugger URL.
+#  - org-custom-metadata-templates  A valid repository URL or directory for the custom org metadata templates.
+#  - org-max-query-limit            Maximum number of Salesforce records returned by a CLI command. Default: 10,000.
+#  - org-capitalize-record-types    Whether record types are capitalized on scratch org creation.
+
+sf-cli-org-login:
+    sf org login web
+    
+sf-cli-org-list:
+    sf org list --verbose
+
+sf-cli-config-list:
+    sf config list --verbose
+
+sf-cli-config-set-local configName configValue:
+    sf config set {{configName}} {{configValue}}
+
+sf-cli-config-set-global configName configValue:
+    sf config set --global {{configName}} {{configValue}}
+
+# sf-cli-config-set-global-org-instance-url:
+#     just sf-cli-config-set-global org-instance-url {{SALESFORCE_PATTER_AI_ORG_HOST}}
+
+# sf-cli-config-set-global-org-target-org:
+#     sf config set target-org {{SALESFORCE_PATTER_AI_ORG_USER}}
+
+
+
+jsforce-cli:
+    npx jsforce --loginUrl ${SALESFORCE_PATTER_AI_ORG_HOST} \
+    --sandbox \
+    --username ${SALESFORCE_PATTER_AI_ORG_USER} \
+    --password ${SALESFORCE_PATTER_AI_ORG_PASS}${SALESFORCE_PATTER_AI_ORG_SECURITY_TOKEN}
+
+# Query sObjects using SOQL (Salesforce Object Query Language) (https://jsforce.github.io/document/#query)
+# SOQL search syntax docs (https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm)
+jsforce-find-sobject namePattern:
+    npx jsforce --loginUrl ${SALESFORCE_PATTER_AI_ORG_HOST} \
+    --sandbox \
+    --username ${SALESFORCE_PATTER_AI_ORG_USER} \
+    --password ${SALESFORCE_PATTER_AI_ORG_PASS}${SALESFORCE_PATTER_AI_ORG_SECURITY_TOKEN} \
+    --evalScript "query(\"SELECT QualifiedApiName, Label FROM EntityDefinition WHERE QualifiedApiName LIKE '%{{namePattern}}%'\")" | jq
+
+# Query sObjects using SOQL (Salesforce Object Query Language) (https://jsforce.github.io/document/#query)
+# SOQL search syntax docs (https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm)
+jsforce-describe-sobject name:
+    npx jsforce --loginUrl ${SALESFORCE_PATTER_AI_ORG_HOST} \
+    --sandbox \
+    --username ${SALESFORCE_PATTER_AI_ORG_USER} \
+    --password ${SALESFORCE_PATTER_AI_ORG_PASS}${SALESFORCE_PATTER_AI_ORG_SECURITY_TOKEN} \
+    --evalScript "sobject(\"{{name}}\").describe()" | jq
+
+jsforce-sobject-schema name:
+    just frontend-jsforce-describe-sobject {{name}} | jq '{ObjectName: .name, Fields: [.fields[] | {FieldName: .name, FieldType: .type}]}'
+

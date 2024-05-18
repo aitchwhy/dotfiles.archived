@@ -211,6 +211,42 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 #-------------------------------------------------------------------------------
 # source $DOTFILES/scripts/secrets.sh
 
+
+#-------------------------------------------------------------------------------
+# Justfile (user global level)
+#-------------------------------------------------------------------------------
+
+############################################################
+# Global user level Justfile for commands (https://just.systems/man/en/chapter_68.html)
+############################################################
+# - To NOT create all aliases for ALL user global justfile recipes, have a "forwarding alias" in .zshrc (Add to shell e.g. ZSH rc file .zshrc)
+# ...
+# alias .j='just --justfile ~/.user.justfile --working-directory .'
+# ...
+# Now, If you have a recipe called foo in ~/.user.justfile, you can just type call foo like below
+# $ .j foo
+##########################################
+# - To create aliases for ALL user global justfile recipes (Add to shell e.g. ZSH rc file .zshrc) 
+# ...
+# for recipe in `just --justfile ~/.user.justfile --summary`; do
+#   alias $recipe="just --justfile ~/.user.justfile --working-directory . $recipe"
+# done
+# ...
+# Now, If you have a recipe called foo in ~/.user.justfile, you can just type foo at the command line to run it.
+# $ foo 
+##########################################
+# User justfile customizations
+#
+# You can customize the above aliases with additional options.
+# For example, if you’d prefer to have the recipes in your justfile run in your home directory, instead of the current directory:
+#
+# alias .j='just --justfile ~/.user.justfile --working-directory ~'
+############################################################
+
+for recipe in `just --justfile ~/.user.justfile --summary`; do
+  alias $recipe="just --justfile ~/.user.justfile --working-directory . $recipe"
+done
+
 #-------------------------------------------------------------------------------
 # Activate Oh-My-Zsh
 #-------------------------------------------------------------------------------
