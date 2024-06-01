@@ -1,0 +1,36 @@
+############################################################
+# Justfile docs - https://just.systems/man/en/
+# Justfile cheatsheet https://cheatography.com/linux-china/cheat-sheets/justfile/
+############################################################
+
+############################################################
+# Justfile Env-vars (https://just.systems/man/en/chapter_31.html#environment-variables)
+############################################################
+set dotenv-filename := ".env"
+set dotenv_load := true
+
+# Justfile Env-vars (https://just.systems/man/en/chapter_31.html#environment-variables)
+project_root_justfile_dir := justfile_directory()
+
+############################################################
+# Common Utils
+############################################################
+
+help:
+    @just --list --unsorted
+
+run-recipe:
+    @just --choose
+
+format-justfile-in-place:
+    @just --fmt --unstable
+
+############################################################
+# Main
+############################################################
+
+install:
+    @echo "Installing dotenvx via curl..."
+    curl -fsS https://dotenvx.sh/ | sh
+    @echo "Setting Global dotenvx configs (e.g. alias 'e'='dotenvx')..."
+    alias e="dotenvx"

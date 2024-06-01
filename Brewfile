@@ -59,7 +59,14 @@ brew 'whalebrew'
 #-------------------------------------------------------------------------------
 # Node (nvm+etc) --- NOTE: NVM installed Brew is NOT supported officially but works fine
 #-------------------------------------------------------------------------------
-# brew 'nvm'
+brew 'nvm'
+
+#-------------------------------------------------------------------------------
+# Env files (.env files) + direnv (env file manager
+# dotenvx -> https://dotenvx.com/
+#-------------------------------------------------------------------------------
+brew 'direnv'
+brew 'dotenvx/brew/dotenvx'  # better version of dotenv (env file) manager
 
 #-------------------------------------------------------------------------------
 # Install Binaries
@@ -84,7 +91,6 @@ brew 'mutt'                                      # CLI email util (for crontab)
 brew 'jq'                                        # CLI JSON manipulator
 brew 'fx'                                        # CLI JSON editor
 brew 'cscope'                                    # Ctags complement for tagged code
-# brew 'direnv'
 brew 'grep'
 brew 'parallel'
 brew 'htop'

@@ -1,0 +1,7 @@
+# NVM default packages (every new NVM Node ver install will have these packages installed by default)
+# the location of this config file is expected at $NVM_DIR/default-packages (usually ~/.nvm/default-packages)
+# https://github.com/nvm-sh/nvm?tab=readme-ov-file#default-global-packages-from-file-while-installing
+
+rimraf
+@bitwarden/cli
+@dotenvx/dotenvx

@@ -3,6 +3,9 @@
 - Justfile docs - https://just.systems/man/en/
 - Justfile cheatsheet https://cheatography.com/linux-china/cheat-sheets/justfile/
 
+- Justfile Settings - https://just.systems/man/en/chapter_27.html
+
+
 <!-- TODO: add below commented out to current Justfile README -->
 
 <!-- ############################################################
