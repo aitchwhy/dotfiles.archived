@@ -5,3 +5,4 @@
 rimraf
 @bitwarden/cli
 @dotenvx/dotenvx
+@quicktype

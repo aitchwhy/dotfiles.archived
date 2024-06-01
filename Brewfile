@@ -280,6 +280,7 @@ brew 'sqlite'
 # Apps
 #-------------------------------------------------------------------------------
 
+cask 'dadroit-json-viewer' # JSON viewer Dadroit
 cask 'anki' # Anki flashcards (memory retention) - https://apps.ankiweb.net/
 cask 'firefox'
 cask 'visual-studio-code'
