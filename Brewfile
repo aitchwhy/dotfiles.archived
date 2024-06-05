@@ -331,6 +331,7 @@ cask 'orbstack' # Orbstack (Docker alternative) for running local container work
 cask 'dropbox' # Dropbox file storage on cloud
 cask 'dropbox-capture' # Dropbox-capture (image+video recordings capture+share)
 # cask 'dropbox-dash' # Dropbox-dash (AI search for files) --- doesn't work well (search doesn't find any connected apps)
+cask 'chatgpt' # ChatGPT Mac App
 
 #-------------------------------------------------------------------------------
 # Mac App store downloads into Brewfile (Uses Mac App store CLI - https://github.com/mas-cli/mas).
