@@ -6,3 +6,6 @@ rimraf
 @bitwarden/cli
 @dotenvx/dotenvx
 @quicktype
+@nestjs/cli
+pino-pretty
+json-server
