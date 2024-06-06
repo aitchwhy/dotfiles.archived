@@ -5,16 +5,13 @@
 
 ############################################################
 # Justfile settings (https://just.systems/man/en/chapter_26.html)
-# - 'shell' : Set the command used to invoke recipes and evaluate backticks.
-############################################################
-
-############################################################
-# Justfile Env-vars (https://just.systems/man/en/chapter_31.html#environment-variables)
 ############################################################
 set dotenv-filename := ".env"
 set dotenv-load := true
 
+############################################################
 # Justfile Env-vars (https://just.systems/man/en/chapter_31.html#environment-variables)
+############################################################
 project_root_justfile_dir := justfile_directory()
 
 ############################################################
