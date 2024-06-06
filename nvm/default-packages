@@ -9,3 +9,6 @@ rimraf
 @nestjs/cli
 pino-pretty
 json-server
+@salesforce/cli
+@redocly/cli
+@apidevtools/swagger-cli

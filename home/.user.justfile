@@ -13,15 +13,18 @@
 ############################################################
 
 ############################################################
+# Justfile exporter (https://just.systems/man/en/chapter_74.html)
+############################################################
+# Justfile compat with NodeJS+package.json
+export PATH := "./node_modules/.bin:" + env_var('PATH')
+
+############################################################
 # Justfile imports (other justfiles + modules)
 # - modules : https://just.systems/man/en/chapter_54.html
 ############################################################
 # import 'asdf/justfile'
 # mod 'modNameFolderName' 'module path'
 
-############################################################
-# Justfile Env-vars (https://just.systems/man/en/chapter_31.html#environment-variables)
-############################################################
 # set dotenv-filename := ".env.local"
 
 # use dotfiles/.export.sh to set these env vars (or use default)
