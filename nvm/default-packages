@@ -9,4 +9,3 @@ rimraf
 @nestjs/cli
 pino-pretty
 json-server
-prisma
