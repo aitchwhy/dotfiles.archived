@@ -1,9 +1,24 @@
 # Justfile
 
+## Conventions
+
+- `$HOME/.user.justfile` -> Mac OS User root level justfile (e.g. for `~/Users/hank` root)
+- `$PROJ_ROOT/justfile` -> per-project root level justfile (e.g. for `~/Users/hank/workspace/someproject` root)
+- `$PROJ_ROOT/env.just` -> per-project root level justfile
+- `$PROJ_ROOT/python/mod.just` -> project's module justfile (e.g. python in this instance)
+- `$PROJ_ROOT/PROJ_ROOT/.` -> per-project root level justfile
+
+#                                        e.g. PROJROOT/python/mod.just (imported as 'mod python')
+
+## Resources
+
 - Justfile docs - https://just.systems/man/en/
 - Justfile cheatsheet https://cheatography.com/linux-china/cheat-sheets/justfile/
 
+- https://just.systems/man/en/chapter_73.html
 - Justfile Settings - https://just.systems/man/en/chapter_27.html
+- https://www.stuartellis.name/articles/just-task-runner/#creating-a-user-justfile-for-global-tasks
+- https://www.stuartellis.name/articles/just-task-runner/#using-modules
 
 
 <!-- TODO: add below commented out to current Justfile README -->

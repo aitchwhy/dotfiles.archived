@@ -37,6 +37,9 @@ SYMLINKS=(
     # NodeJS NVM global node packages list (will install auto for new vers)
     "$DOTFILES/nvm/default-packages:$HOME/.nvm/default-packages"
 
+    # Global user justfile
+    "$DOTFILES/home/.user.justfile:$HOME/.user.justfile"
+
     # pyenv global python version
     # "$DOTFILES/pyenv-global-python.version:$PYENV_ROOT/version"
 )

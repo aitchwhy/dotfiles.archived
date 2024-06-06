@@ -7,33 +7,55 @@
 # Justfile settings (https://just.systems/man/en/chapter_26.html)
 # - 'shell' : Set the command used to invoke recipes and evaluate backticks.
 ############################################################
-# set shell := ["bash", "-cu"]
 
 ############################################################
 # Justfile Env-vars (https://just.systems/man/en/chapter_31.html#environment-variables)
 ############################################################
 set dotenv-filename := ".env"
-# Define the environment file based on the parameter
-set dotenv_load := true
-# set dotenv-filename := ".env.local"
+set dotenv-load := true
 
 # Justfile Env-vars (https://just.systems/man/en/chapter_31.html#environment-variables)
 project_root_justfile_dir := justfile_directory()
-openapi_root := project_root_justfile_dir / "openapi"
-salesforce-host := env_var('SALESFORCE_PATTER_AI_ORG_HOST')
-salesforce-user := env_var('SALESFORCE_PATTER_AI_ORG_USER')
-salesforce-password := env_var('SALESFORCE_PATTER_AI_ORG_PASS')
-salesforce-token := env_var('SALESFORCE_PATTER_AI_ORG_SECURITY_TOKEN')
 
 ############################################################
 # Common Utils
 ############################################################
 
+# List available recipes
 help:
     @just --list --unsorted
 
+# Run recipe by choosing interactively from list
 run-recipe:
     @just --choose
 
-format-justfile-in-place:
+fmt-justfile-in-place:
     @just --fmt --unstable
+
+# mod precommit  # Defined by pre-commit.just file in root directory
+# mod python  # Defined by mod.just file in python/ directory
+
+############################################################
+# https://www.stuartellis.name/articles/just-task-runner/#example-justfile-for-a-project
+############################################################
+# Install tools and dependencies, then set up environment for development
+bootstrap:
+    @just --unstable install
+    @just --unstable setup
+
+# Build artifacts
+build:
+    @just --unstable python::build
+
+# Install project tools and dependencies
+install:
+    @just --unstable python::install
+
+# Run all checks
+lint:
+    @just --unstable pre-commit::check
+
+# Set up environment for development
+setup:
+    @just --unstable python::setup
+    @just --unstable pre-commit::setup

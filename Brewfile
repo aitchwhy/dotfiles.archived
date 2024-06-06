@@ -123,7 +123,6 @@ brew 'imagemagick' # ImageMagick (convert to/from images) - https://imagemagick.
 brew 'htmlq' # imagemagick dependency
 brew 'ghostscript' # imagemagick dependency
 brew 'chezmoi' # Chezmoi dotfiles manager (https://www.chezmoi.io/)
-brew 'ollama' # Ollama offline LLM models tool (CLI) - https://ollama.com/
 brew 'azure-cli' # Azure CLI (https://docs.microsoft.com/en-us/cli/azure/)
 brew 'just' # Command runner Just (https://github.com/casey/just)
 brew 'pulumi' # Pulumi (Infra as Cloud tool similar to Terraform) - https://www.pulumi.com/docs/install/
@@ -194,8 +193,8 @@ brew 'rbenv'
 # + jupyterlab for jupyter notebooks
 #-------------------------------------------------------------------------------
 
-# brew 'pyenv'
-# brew 'pyenv-virtualenv'
+brew 'pyenv'
+brew 'pyenv-virtualenv'
 # brew 'jupyterlab' # Jupyter notebook (https://jupyter.org/)
 
 #-------------------------------------------------------------------------------
@@ -311,11 +310,10 @@ cask 'raycast' # Spotlight replacement - https://raycast.com/
 # Bitwarden password manager (exists in Mac App store + Brew Cask) - some issues with App Store version
 cask 'bitwarden' # password manager - https://bitwarden.com/
 cask 'microsoft-teams'
-cask 'arc'
+# cask 'arc'
 cask 'copilot' # finance app (https://copilot.money/)
-cask 'warp' # Rust-based terminal emulator (alternative to iTerm2 - https://www.warp.dev/)
+# cask 'warp' # Rust-based terminal emulator (alternative to iTerm2 - https://www.warp.dev/)
 cask 'sunsama' # Sunsama - calendar + task manager (sunsama.com)
-cask 'lm-studio' # platform for local LLMs
 cask 'obsidian' # notes app Obsidian
 cask 'asana' # project management app Asana
 cask 'sizzy' # Sizzy dev web browser (https://sizzy.co/)
@@ -332,6 +330,8 @@ cask 'dropbox' # Dropbox file storage on cloud
 cask 'dropbox-capture' # Dropbox-capture (image+video recordings capture+share)
 # cask 'dropbox-dash' # Dropbox-dash (AI search for files) --- doesn't work well (search doesn't find any connected apps)
 cask 'chatgpt' # ChatGPT Mac App
+cask 'ollama' # Ollama LLM App - https://ollama.com/
+cask 'lm-studio' # platform for local LLMs
 
 #-------------------------------------------------------------------------------
 # Mac App store downloads into Brewfile (Uses Mac App store CLI - https://github.com/mas-cli/mas).

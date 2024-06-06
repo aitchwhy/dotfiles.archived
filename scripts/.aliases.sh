@@ -1,4 +1,3 @@
-
 #-------------------------------------------------------------------------------
 # Docker
 #-------------------------------------------------------------------------------
@@ -27,7 +26,7 @@ alias gbd='git branch -d'
 alias gbdd='git push origin --delete'
 
 # GIT CHECKOUT
-alias gco='git checkout $(gb)' # command single quoted to avoid execution before alias call
+alias gco='git checkout $(gb)'   # command single quoted to avoid execution before alias call
 alias gcoa='git checkout $(gba)' # command single quoted to avoid execution before alias call
 alias gcob="git checkout -b"
 
@@ -94,8 +93,8 @@ alias xxd='hexyl'
 #-------------------------------------------------------------------------------
 # Vim -> NVim (muscle memory)
 #-------------------------------------------------------------------------------
-if type nvim > /dev/null 2>&1; then
-  alias vim='nvim'
+if type nvim >/dev/null 2>&1; then
+    alias vim='nvim'
 fi
 
 #-------------------------------------------------------------------------------

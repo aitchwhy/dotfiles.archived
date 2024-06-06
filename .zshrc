@@ -212,9 +212,25 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # source $DOTFILES/scripts/secrets.sh
 
 
+
 #-------------------------------------------------------------------------------
 # Justfile (user global level)
+# https://just.systems/man/en/chapter_73.html
+# https://www.stuartellis.name/articles/just-task-runner/#creating-a-user-justfile-for-global-tasks
 #-------------------------------------------------------------------------------
+# TODO: hank setup global user justfile aliases
+# for recipe in `just --justfile ~/.user.justfile --summary`; do
+#   alias $recipe="just --justfile ~/.user.justfile --working-directory . $recipe"
+# done
+# # Fish
+# # Add abbr to call recipes in user Justfile by typing ".j RECIPE-NAME"
+# if command -s just > /dev/null
+#     abbr --add .j just --justfile $HOME/.user.justfile --working-directory .
+# end
+
+alias .j='just --justfile ~/.user.justfile --working-directory .'
+alias j="just"
+
 
 ############################################################
 # Global user level Justfile for commands (https://just.systems/man/en/chapter_68.html)

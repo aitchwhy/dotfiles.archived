@@ -1,0 +1,28 @@
+mod precommit  # Defined by pre-commit.just file in root directory
+mod python  # Defined by mod.just file in python/ directory
+
+# List available recipes
+help:
+    @just --unstable --list
+
+# Install tools and dependencies, then set up environment for development
+bootstrap:
+    @just --unstable install
+    @just --unstable setup
+
+# Build artifacts
+build:
+    @just --unstable python::build
+
+# Install project tools and dependencies
+install:
+    @just --unstable python::install
+
+# Run all checks
+lint:
+    @just --unstable pre-commit::check
+
+# Set up environment for development
+setup:
+    @just --unstable python::setup
+    @just --unstable pre-commit::setup
