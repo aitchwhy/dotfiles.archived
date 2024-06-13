@@ -1,15 +1,8 @@
-
-# -------------------------------------------------
-# Install asdf tool manager (+ its versions) (https://asdf-vm.com/guide/getting-started.html)
-# -------------------------------------------------
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
-
-
 # -------------------------------------------------
 # Install Nix (https://nixos.org/manual/nix/stable/installation/)
 # -------------------------------------------------
-source $DOTFILES/scripts/nix_helpers.sh
-nix_init
+# source $DOTFILES/scripts/nix_helpers.sh
+# nix_init
 
 # -------------------------------------------------
 # Check for Homebrew and install if we don't have it
@@ -26,7 +19,7 @@ export BREW_PREFIX=$(brew --prefix)
 # Set temporary variables (from .extra <- created from .extra.template)
 # -------------------------------------------------
 echo "Exporting env vars for per-machine config"
-source "$HOME/dotfiles/scripts/.extra.sh"
+# source "$HOME/dotfiles/scripts/.extra.sh"
 
 # -------------------------------------------------
 # Update brew Cellar filepath permissions to write to it
@@ -38,7 +31,7 @@ sudo chown -R $(whoami) $BREW_PREFIX/*
 # Add zsh to standard shells
 # -------------------------------------------------
 echo "Add ZSH to standard shells"
-echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
+# echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
 
 # -------------------------------------------------
 # create neovim config (init <- vimrc)
@@ -47,8 +40,8 @@ echo "Create neovim config"
 mkdir -p $HOME/.config/nvim
 ln -nfs $DOTFILES/.vimrc ~/.config/nvim/init.vim
 
-# TODO: exit here if Nix
-exit 
+# # TODO: exit here if Nix
+# exit
 
 # -------------------------------------------------
 # Update Homebrew recipes
@@ -124,33 +117,28 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 # Git - global
 # -------------------------------------------------
 
-echo "NPM global installs"
-npm install --global git-open
+# echo "NPM global installs"
+# npm install --global git-open
 
 # -------------------------------------------------
 # Install global Node packages
 # -------------------------------------------------
 
 # yarn package manager
-npm install -g yarn
+# npm install -g yarn
 
-# -------------------------------------------------
-# Pip installs
-# -------------------------------------------------
-# Python client for Neovim
-echo "PIP global installs"
-pip3 install pynvim
-pip3 install shell-gpt # shell-gpt==0.9.0
+# # -------------------------------------------------
+# # Pip installs
+# # -------------------------------------------------
+# # Python client for Neovim
+# echo "PIP global installs"
+# pip3 install pynvim
+# pip3 install shell-gpt # shell-gpt==0.9.0
 
 # -------------------------------------------------
 # Install Langauge server
 # -------------------------------------------------
 echo "Install language server (LSP)"
-
-# Javascript
-npm install -g javascript-typescript-langserver
-# Python
-pip3 install python-language-server
 
 # -------------------------------------------------
 # FZF additional install (fuzzy completion + key-bindings)
@@ -162,22 +150,15 @@ $BREW_PREFIX/opt/fzf/install
 # Secrets management
 # Create secrets file (should be manually populated)
 # -------------------------------------------------
-echo "Add template file for secrets"
-echo "export ENV_VAR=foobar" >$DOTFILES/scripts/secrets.sh
+# echo "Add template file for secrets"
+# echo "export ENV_VAR=foobar" >$DOTFILES/scripts/secrets.sh
 
 # -------------------------------------------------
 # Install python stuff (pyenv, pipsi, pipenv) + global setup
 # -------------------------------------------------
-echo "Install Python util binaries"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
-# Set global python version
-export GLOBAL_PYTHON_VERSION="3.10.12"
-export GLOBAL_PYTHON_VIRTUAL_ENV="global-venv"
-pyenv install $GLOBAL_PYTHON_VERSION
-pyenv virtualenv $GLOBAL_PYTHON_VERSION $GLOBAL_PYTHON_VIRTUAL_ENV
-pyenv global $GLOBAL_PYTHON_VIRTUAL_ENV
+# echo "Install Python util binaries"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 
 # Set global python version (TODO: update this to use global venv (?) pyenv accepts virtualenv names as well)
 # pyenv global 3.10.12

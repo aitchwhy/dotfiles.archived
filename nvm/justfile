@@ -54,3 +54,8 @@ start-backend: codegen-all
 # Run all unit tests
 api-tests: start-backend-detached
     @echo "TODO: Running API tests"
+
+
+# TODO: clear npx cache (e.g. NX cache)
+# alias clearnpx="rm -rf ~/.npm/_npx"
+

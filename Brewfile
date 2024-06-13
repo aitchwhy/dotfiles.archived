@@ -11,7 +11,6 @@ tap 'homebrew/bundle'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/services'
 tap 'romkatv/powerlevel10k'
-tap 'ngrok/ngrok'
 tap 'warrensbox/tap'
 
 #-------------------------------------------------------------------------------
@@ -38,29 +37,6 @@ brew 'coreutils'
 #-------------------------------------------------------------------------------
 
 brew 'findutils'
-
-#-------------------------------------------------------------------------------
-# Install Bash 4
-#-------------------------------------------------------------------------------
-
-brew 'bash'
-
-#-------------------------------------------------------------------------------
-# Mac App store CLI (https://github.com/mas-cli/mas)
-#-------------------------------------------------------------------------------
-brew 'mas'
-
-#-------------------------------------------------------------------------------
-# Whalebrew allows you to install CLI apps as Docker containers but maintain them in file like Brewfile
-# - (https://github.com/whalebrew/whalebrew)
-#-------------------------------------------------------------------------------
-brew 'whalebrew'
-
-#-------------------------------------------------------------------------------
-# Node (nvm+etc) --- NOTE: NVM installed Brew is NOT supported officially but works fine
-#-------------------------------------------------------------------------------
-brew 'nvm'
-
 #-------------------------------------------------------------------------------
 # Env files (.env files) + direnv (env file manager
 # dotenvx -> https://dotenvx.com/
@@ -78,16 +54,12 @@ brew 'sd'                                        # Upgrade to 'sed'
 brew 'tldr'                                      # Simplified to 'man' pages
 brew 'dust'                                      # Upgrade to 'du'
 brew 'eza'                                       # modern 'ls'
-brew 'graphviz'                                  # Graph visualizations
 brew 'diff-so-fancy'                             # 'diff' upgrade for Git usage
 brew 'bat'                                       # 'cat' upgrade
 brew 'ctags'                                     # tags for Project navigation
-brew 'nginx'                                     # web server
-brew 'dnsmasq'                                   # lightweight DNS forwarder + DHCP server
 brew 'prettyping'                                # Pretty ping (simple, colorized output)
 brew 'tmux'                                      # terminal multiplexing
 brew 'zoxide'                                    # Filesystem Navigation
-brew 'mutt'                                      # CLI email util (for crontab)
 brew 'jq'                                        # CLI JSON manipulator
 brew 'fx'                                        # CLI JSON editor
 brew 'cscope'                                    # Ctags complement for tagged code
@@ -106,34 +78,32 @@ brew 'neovim'                                       # Better 'vim'
 brew 'zlib'
 brew 'powerlevel10k'				                # zsh shell powerline
 brew 'broot'                                        # broot - tree,cd,fuzzy-search
-brew 'chrome-cli'
-# brew 'bitwarden-cli'                          # password manager CLI -> DO NOT install via Homebrew. Installed via Node (NVM default ver)
+# brew 'chrome-cli'
 
 brew 'tgswitch'
-brew 'cfr-decompiler'
-brew 'zola'
-brew 'httrack' # website download / mirror tool
+# brew 'cfr-decompiler'
+# brew 'zola'
 brew 'jc' # CLI JSON converter + other useful conversions CLI tool
-brew 'rsync' # Util for sync+transfer file+folders (local+remote)
-brew 'rclone' # Rsync-like file+folders sync+transfer (local+remote+cloud-providers)
+# brew 'rsync' # Util for sync+transfer file+folders (local+remote)
+# brew 'rclone' # Rsync-like file+folders sync+transfer (local+remote+cloud-providers)
 brew 'atuin' # Atuin (https://atuin.sh/) - shell history service (multi-device sync)
 brew 'websocat' # Websocket CLI tool
-brew 'restic' # Restic (backups) https://restic.net/
-brew 'imagemagick' # ImageMagick (convert to/from images) - https://imagemagick.org/index.php
-brew 'htmlq' # imagemagick dependency
-brew 'ghostscript' # imagemagick dependency
-brew 'chezmoi' # Chezmoi dotfiles manager (https://www.chezmoi.io/)
-brew 'azure-cli' # Azure CLI (https://docs.microsoft.com/en-us/cli/azure/)
+# brew 'restic' # Restic (backups) https://restic.net/
+# brew 'imagemagick' # ImageMagick (convert to/from images) - https://imagemagick.org/index.php
+# brew 'htmlq' # imagemagick dependency
+# brew 'ghostscript' # imagemagick dependency
+# brew 'chezmoi' # Chezmoi dotfiles manager (https://www.chezmoi.io/)
+# brew 'azure-cli' # Azure CLI (https://docs.microsoft.com/en-us/cli/azure/)
 brew 'just' # Command runner Just (https://github.com/casey/just)
-brew 'pulumi' # Pulumi (Infra as Cloud tool similar to Terraform) - https://www.pulumi.com/docs/install/
-brew 'temporal' # Temporal distributed state tool (https://docs.temporal.io/)
-brew 'newman' # CLI tool for API by Postman
-brew 'wiremock-standalone' # Wiremock HTTP mocking tool
+# brew 'pulumi' # Pulumi (Infra as Cloud tool similar to Terraform) - https://www.pulumi.com/docs/install/
+# brew 'temporal' # Temporal distributed state tool (https://docs.temporal.io/)
+# brew 'newman' # CLI tool for API by Postman
+# brew 'wiremock-standalone' # Wiremock HTTP mocking tool
 
 #-------------------------------------------------------------------------------
 # Swift + iOS
 #-------------------------------------------------------------------------------
-brew 'cocoapods'
+# brew 'cocoapods'
 
 #-------------------------------------------------------------------------------
 # AWS
@@ -148,13 +118,11 @@ brew 'localstack' # local AWS cloud stack
 #-------------------------------------------------------------------------------
 
 brew 'git'
-brew 'git-flow'
-brew 'hub'
 brew 'gh' # github cli
 brew 'act' # local Github Actions (GHA) runner (using docker)
-brew 'git-recent'                                   # viewing latest git branches
-brew 'git-delta'                                 # Upgrade to 'diff'
-brew 'git-lfs' # Git LFS (large files in Git)
+# brew 'git-recent'                                   # viewing latest git branches
+# brew 'git-delta'                                 # Upgrade to 'diff'
+# brew 'git-lfs' # Git LFS (large files in Git)
 
 #-------------------------------------------------------------------------------
 # terraform + terragrunt
@@ -169,7 +137,7 @@ brew 'terraform-ls' # Used for VSCode IDE terraform plugin to do Goto Symbol + e
 
 # Terragrunt version manager (tgswitch - https://github.com/warrensbox/tgswitch)
 # brew 'terragrunt'
-brew 'tgswitch'
+# brew 'tgswitch'
 
 #-------------------------------------------------------------------------------
 # kubernetes (k8s)
@@ -201,8 +169,8 @@ brew 'pyenv-virtualenv'
 # OpenAPI/Swagger
 # 
 #-------------------------------------------------------------------------------
-brew 'swagger-codegen'
-brew 'openapi-generator'
+# brew 'swagger-codegen'
+# brew 'openapi-generator'
 
 #-------------------------------------------------------------------------------
 # Development-Go
@@ -279,7 +247,10 @@ brew 'sqlite'
 # Apps
 #-------------------------------------------------------------------------------
 
-cask 'dadroit-json-viewer' # JSON viewer Dadroit
+# [MAIN] Spotlight replacement - https://raycast.com/
+cask 'raycast' 
+
+# cask 'dadroit-json-viewer' # JSON viewer Dadroit
 cask 'anki' # Anki flashcards (memory retention) - https://apps.ankiweb.net/
 cask 'firefox'
 cask 'visual-studio-code'
@@ -287,16 +258,14 @@ cask 'spotify'
 cask 'fantastical'
 cask 'docker'
 cask 'iterm2'
-cask 'wireshark'
+# cask 'wireshark'
 cask 'istat-menus'
 cask 'slack'
 cask 'postman'
-cask 'postman-cli'
 cask 'postman-agent'
 cask 'flux'
 cask 'zoom'
 cask 'pdf-expert'
-cask 'monitorcontrol'
 cask 'datagrip' # JetBrains data IDE
 cask 'superhuman' # Superhuman email client
 cask '1password' # 1password 8
@@ -304,30 +273,26 @@ cask '1password-cli' # 1password CLI
 cask 'devutils' # devutils (~50 various dev utils like cron parser, uuid generator, etc)
 cask 'ngrok' # ingress-as-a-service (easiest way to expose localhost to public internet)
 cask 'signal' # private msg app - signal.org
-cask 'notion'
+# cask 'notion'
 cask 'bartender' # menu bar app manager (v5) - https://www.macbartender.com/
-cask 'raycast' # Spotlight replacement - https://raycast.com/
 # Bitwarden password manager (exists in Mac App store + Brew Cask) - some issues with App Store version
 cask 'bitwarden' # password manager - https://bitwarden.com/
-cask 'microsoft-teams'
+# cask 'microsoft-teams'
 # cask 'arc'
 cask 'copilot' # finance app (https://copilot.money/)
 # cask 'warp' # Rust-based terminal emulator (alternative to iTerm2 - https://www.warp.dev/)
 cask 'sunsama' # Sunsama - calendar + task manager (sunsama.com)
 cask 'obsidian' # notes app Obsidian
 cask 'asana' # project management app Asana
-cask 'sizzy' # Sizzy dev web browser (https://sizzy.co/)
 # cask 'maestral' # Maestral alt Dropbox CLI Client --- don't use this for now, seems to be causing some Dropbox issues
 cask 'rippling' # Rippling HR app (for Patter AI)
-cask 'beeper' # Universal chat app powered by Matrix - https://www.beeper.com/
+# cask 'beeper' # Universal chat app powered by Matrix - https://www.beeper.com/
 cask 'cardhop' # Apple Contacts+CRM app (by Flexibits - same company as calendar app Fantastical)
-cask 'forklift' # Forklift 4 (dual pane file manager + FTP file transfer) app
-cask 'paletro' # mac app for vscode IDE-like command palette everywhere on every app (https://appmakes.io/paletro)
-cask 'findergo' # mac app for quickly opening terminal from Finder app (files)
+# cask 'forklift' # Forklift 4 (dual pane file manager + FTP file transfer) app
 cask 'sf' # Salesforce CLI (v2) - https://developer.salesforce.com/tools/salesforcecli
-cask 'orbstack' # Orbstack (Docker alternative) for running local container workload (https://orbstack.dev/)
+# cask 'orbstack' # Orbstack (Docker alternative) for running local container workload (https://orbstack.dev/)
 cask 'dropbox' # Dropbox file storage on cloud
-cask 'dropbox-capture' # Dropbox-capture (image+video recordings capture+share)
+# cask 'dropbox-capture' # Dropbox-capture (image+video recordings capture+share)
 # cask 'dropbox-dash' # Dropbox-dash (AI search for files) --- doesn't work well (search doesn't find any connected apps)
 cask 'chatgpt' # ChatGPT Mac App
 cask 'ollama' # Ollama LLM App - https://ollama.com/

@@ -12,3 +12,6 @@ json-server
 @salesforce/cli
 @redocly/cli
 @apidevtools/swagger-cli
+nx@latest
+bun@latest
+npm-run-all@latest

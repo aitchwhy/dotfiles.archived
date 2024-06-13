@@ -105,6 +105,7 @@ HIST_STAMPS="yyyy-mm-dd"
 
 plugins=(
     kube-ps1
+    nx-completion
     # zoxide
     )
 
