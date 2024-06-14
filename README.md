@@ -4,6 +4,22 @@ Environment setup files for OSX setup
 
 # Dotfiles setup (May 2, 2024 ~)
 
+- use Bun for speed global + project-specific
+- Homebrew (this one just seems unavoidable)
+- use Nx monorepo (?)
+- Neovim (https://neovim.io/)
+  - + Lua (?) e.g. JSON : https://neovim.io/doc/user/lua.html#vim.json
+- IDE VSCode (+ consider fast Zed? https://zed.dev/)
+- use homebrew Zsh + Oh-my-zsh (but actually use omz aliases + tools more)
+- MacOS CLI for managing OS defaults (defaults - https://keith.github.io/xcode-man-pages/defaults.1.html)
+- Nix + Devenv + nix-darwin + home-manager + (?chezmoi) (?) for pkgs truly sandboxing (but community support seems ... not great)
+defaults
+
+
+---
+
+# Dotfiles setup (May 2, 2024 ~)
+
 Use tools below
 (bootstrap.sh should be updated to reflect this but WIP)
 
